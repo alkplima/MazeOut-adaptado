@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee91f1533dfd535bbb58efcd3f7bd1ec, type: 3}
+  m_Name: Finish
+  m_EditorClassIdentifier: 
+  category: {fileID: 11400000, guid: 8d8019db6aa0173c0aa99c0b5f11d2b8, type: 2}
+  uiCategory: {fileID: 11400000, guid: 3e44aa62d67e5e563bd9a624b8bec712, type: 2}
+  tileBase: {fileID: 11400000, guid: ba4210cf7ea53568c802784c9da5a6be, type: 2}
+  placeType: 0

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2252edd59f5df3709d5e68926e4840b, type: 3}
+  m_Name: Eraser
+  m_EditorClassIdentifier: 
+  category: {fileID: 11400000, guid: c053e51f1bb1f65ad821ba5ddde4a7e9, type: 2}
+  uiCategory: {fileID: 11400000, guid: 46fa9880e1fac01a5a84546bbae14389, type: 2}
+  tileBase: {fileID: 11400000, guid: 91a512313b004bf80978e840bcb4ff16, type: 2}
+  placeType: 0
+  toolType: 1
