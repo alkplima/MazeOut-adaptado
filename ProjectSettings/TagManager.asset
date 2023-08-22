@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Diamond
+  - CameraTwo
   layers:
   - Default
   - TransparentFX

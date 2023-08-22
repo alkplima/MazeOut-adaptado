@@ -219,7 +219,8 @@ public class Controller_Ativ01_QuebraCabeca : MonoBehaviour
     public void VerificarPecaIndividual(PieceController piece)
     {
         int indicePecaMeta = -1;
-        for (int i = 0; i < pecas.Length; i++)
+        // for (int i = 0; i < pecas.Length; i++)
+        for (int i = 0; i < 4; i++)
             if (pecas[i].name == piece.gameObject.name)
                 indicePecaMeta = i;
 
