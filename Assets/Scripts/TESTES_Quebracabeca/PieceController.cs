@@ -5,7 +5,6 @@ using UnityEngine;
 public class PieceController : MonoBehaviour
 {
     public Controller_Ativ01_QuebraCabeca controller;
-    public GameObject labirinto;
     public RectTransform posicaoAtualNoGrid;
     public GameObject ponto, ponto2;
     public bool ChegouNoAlvo = false;
@@ -15,7 +14,6 @@ public class PieceController : MonoBehaviour
     {
         if (posicaoAtualNoGrid)
             transform.position = posicaoAtualNoGrid.position;
-        labirinto = GameObject.Find("Labirinto");
     }
 
     // Update is called once per frame
