@@ -33,7 +33,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
         base.Awake();
         playerInput = new PlayerInput();
         // _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        _camera = GameObject.Find("BuilderCamera").GetComponent<Camera>();
+        _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     private void OnEnable()
