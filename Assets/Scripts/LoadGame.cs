@@ -147,8 +147,9 @@ public class LoadGame : Singleton<SaveHandler> {
     }
 
     public void GenerateTilemapElementsFromFile(GameObject tile, Vector3Int position) {
-        var element = Instantiate(tile, position, Quaternion.identity);
+        var element = Instantiate(tile, position, Quaternion.identity) as GameObject;
         element.transform.parent = GameObject.Find("GameScreen").transform;
+        element.transform.localScale = new Vector3(100f, 100f, 100f);
     }
 }
 
