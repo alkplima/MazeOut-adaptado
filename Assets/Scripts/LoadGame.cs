@@ -43,29 +43,24 @@ public class LoadGame : Singleton<SaveHandler> {
     }
 
     private void InitTilemaps() {
-        // get all tilemaps from scene
-        // and write to dictionary
+        // pega todos tilemaps da cena e escreve no discionário
         Tilemap[] maps = FindObjectsOfType<Tilemap>();
 
-        // the hierarchy name must be unique
-        // you might add some checks here to make sure
         foreach (var map in maps) {
-            // if you have tilemaps you don't want to safe - filter them here
             tilemaps.Add(map.name, map);
         }
     }
 
     public void onSave() {
-        // List that will later be safed
+        // Lista que será salva posteriormente
         List<TilemapData> data = new List<TilemapData>();
 
-        // foreach existing tilemap
+        // para cada mapa
         foreach (var mapObj in tilemaps) {
             TilemapData mapData = new TilemapData();
             mapData.key = mapObj.Key;
 
-            // use your boundsInt variable for the bounds
-            // alternatetively you can use mapObj.Value.cellBounds
+            // alternativa: usar mapObj.Value.cellBounds
             // https://docs.unity3d.com/ScriptReference/Tilemaps.Tilemap-cellBounds.html
 
             BoundsInt boundsForThisMap = mapObj.Value.cellBounds;
@@ -78,13 +73,11 @@ public class LoadGame : Singleton<SaveHandler> {
                     if (tile != null && tileBaseToBuildingObject.ContainsKey(tile)) {
                         String guid = tileBaseToBuildingObject[tile].name;
                         TileInfo ti = new TileInfo(pos, guid);
-                        // Add "TileInfo" to "Tiles" List of "TilemapData"
                         mapData.tiles.Add(ti);
                     }
                 }
             }
 
-            // Add "TilemapData" Object to List
             data.Add(mapData);
         }
         FileHandler.SaveToJSON<TilemapData>(data, filename);
@@ -94,16 +87,15 @@ public class LoadGame : Singleton<SaveHandler> {
         List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(filename);
 
         foreach (var mapData in data) {
-            // if key does NOT exist in dictionary skip it
             if (!tilemaps.ContainsKey(mapData.key)) {
                 Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");
                 continue;
             }
 
-            // get according map
+            // pega o mapa correspondente
             var map = tilemaps[mapData.key];
 
-            // clear map
+            // limpa mapa
             map.ClearAllTiles();
 
             if (mapData.tiles != null && mapData.tiles.Count > 0) {
@@ -115,6 +107,7 @@ public class LoadGame : Singleton<SaveHandler> {
                         // Debug.Log("Tipo de Tile: "+guidToTileBase[tile.guidForBuildable].ToString());
                         switch (guidToTileBase[tile.guidForBuildable].ToString())
                         {
+                            // Gera os GameObjects na posição dos tiles no tilemap
                             case "Moeda (UnityEngine.Tilemaps.AnimatedTile)":
                                 GenerateTilemapElementsFromFile(MoedaAmarela, tile.position);
                                 break;
@@ -146,10 +139,10 @@ public class LoadGame : Singleton<SaveHandler> {
         }
     }
 
+    // Instancia os elementos do jogo definidos no Tilemap como GameObjects na tela
     public void GenerateTilemapElementsFromFile(GameObject tile, Vector3Int position) {
         var element = Instantiate(tile, position, Quaternion.identity) as GameObject;
         element.transform.parent = GameObject.Find("GameScreen").transform;
-        element.transform.localScale = new Vector3(100f, 100f, 100f);
     }
 }
 
