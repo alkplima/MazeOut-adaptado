@@ -5,4 +5,5 @@ using UnityEngine;
 public class CelulaInfo : MonoBehaviour
 {
     public Sprite selecionadoSprite;
+    public Vector3 position;
 }

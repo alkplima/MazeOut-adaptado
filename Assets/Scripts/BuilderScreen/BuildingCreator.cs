@@ -30,7 +30,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
     bool isPointerOverGameObject = false;
     bool isPointerOverLimiter = false;
 
-    // Variáveis de teste 
+    // Variï¿½veis de teste 
     GameObject tempLimiter, tempAnteriorLimiter;
     Vector2 localLimiterPoint = new Vector2(0, 0);
     public Sprite referenceVoid;

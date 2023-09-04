@@ -11,11 +11,13 @@ public class SaveHandler : Singleton<SaveHandler> {
 
     [SerializeField] BoundsInt bounds;
     [SerializeField] GameObject moeda;
+    [SerializeField] GameObject grid;
     [SerializeField] string filename = "tilemapData.json";
 
     private void Start() {
-        InitTilemaps();
-        InitTileReferences();
+        // InitTilemaps();
+        // InitTileReferences();
+        grid = GameObject.Find("NewGrid");
     }
 
     private void InitTileReferences() {
@@ -42,65 +44,106 @@ public class SaveHandler : Singleton<SaveHandler> {
 
     public void onSave() {
         // Lista que será salva posteriormente
-        List<TilemapData> data = new List<TilemapData>();
+        // List<TilemapData> data = new List<TilemapData>();
+
+        List<CelulaData> data = new List<CelulaData>();
 
         // para cada mapa
-        foreach (var mapObj in tilemaps) {
-            TilemapData mapData = new TilemapData();
-            mapData.key = mapObj.Key;
+        // foreach (var mapObj in tilemaps) {
+        //     TilemapData mapData = new TilemapData();
+        //     mapData.key = mapObj.Key;
+
+        foreach (Transform col in grid.transform) {
+            foreach (Transform cel in col.transform) {
+                CelulaData celData = new CelulaData();
+                celData.position = cel.position;
+                celData.selecionadoSprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                data.Add(celData);
+            }
+        }
 
             // alternativa: usar mapObj.Value.cellBounds
             // https://docs.unity3d.com/ScriptReference/Tilemaps.Tilemap-cellBounds.html
 
-            BoundsInt boundsForThisMap = mapObj.Value.cellBounds;
+            // BoundsInt boundsForThisMap = mapObj.Value.cellBounds;
 
-            for (int x = boundsForThisMap.xMin; x < boundsForThisMap.xMax; x++) {
-                for (int y = boundsForThisMap.yMin; y < boundsForThisMap.yMax; y++) {
-                    Vector3Int pos = new Vector3Int(x, y, 0);
-                    TileBase tile = mapObj.Value.GetTile(pos);
+            // for (int x = boundsForThisMap.xMin; x < boundsForThisMap.xMax; x++) {
+            //     for (int y = boundsForThisMap.yMin; y < boundsForThisMap.yMax; y++) {
+            //         Vector3Int pos = new Vector3Int(x, y, 0);
+            //         TileBase tile = mapObj.Value.GetTile(pos);
 
-                    if (tile != null && tileBaseToBuildingObject.ContainsKey(tile)) {
-                        String guid = tileBaseToBuildingObject[tile].name;
-                        TileInfo ti = new TileInfo(pos, guid);
-                        mapData.tiles.Add(ti);
-                    }
-                }
-            }
+            //         if (tile != null && tileBaseToBuildingObject.ContainsKey(tile)) {
+            //             String guid = tileBaseToBuildingObject[tile].name;
+            //             TileInfo ti = new TileInfo(pos, guid);
+            //             mapData.tiles.Add(ti);
+            //         }
+            //     }
+            // }
 
-            data.Add(mapData);
-        }
-        FileHandler.SaveToJSON<TilemapData>(data, filename);
+            // data.Add(mapData);
+        // }
+        // FileHandler.SaveToJSON<TilemapData>(data, filename);
+        FileHandler.SaveToJSON<CelulaData>(data, filename);
     }
 
     public void onLoad() {
-        List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(filename);
+        // List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(filename);
+        List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
 
-        foreach (var mapData in data) {
-            if (!tilemaps.ContainsKey(mapData.key)) {
-                Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");
-                continue;
-            }
+        // foreach (var mapData in data) {
+        //     if (!tilemaps.ContainsKey(mapData.key)) {
+        //         Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");
+        //         continue;
+        //     }
 
-            // pega o mapa correspondente
-            var map = tilemaps[mapData.key];
+        //     // pega o mapa correspondente
+        //     var map = tilemaps[mapData.key];
 
-            // limpa mapa
-            map.ClearAllTiles();
+        //     // limpa mapa
+        //     map.ClearAllTiles();
 
-            if (mapData.tiles != null && mapData.tiles.Count > 0) {
-                foreach (var tile in mapData.tiles) {
+        //     if (mapData.tiles != null && mapData.tiles.Count > 0) {
+        //         foreach (var tile in mapData.tiles) {
 
-                    if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
-                        map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
+        //             if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
+        //                 map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
                         
-                    } else {
-                        Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
-                    }
+        //             } else {
+        //                 Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
+        //             }
 
+        //         }
+        //     }
+        // }
+        // previewMap.ClearAllTiles();
+
+
+// TODO: FAZER O LOAD FUNCIONAR
+        foreach (Transform col in grid.transform) {
+            foreach (Transform cel in col.transform) {
+                for (int i = 0; i < data.Count; i++) {
+                    cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
+                    Debug.Log(cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite);
+                    Debug.Log(data[i].selecionadoSprite);
+                    break;
                 }
             }
         }
-        previewMap.ClearAllTiles();
+
+
+            // if (celData.tiles != null && celData.tiles.Count > 0) {
+            //     foreach (var tile in celData.tiles) {
+
+            //         if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
+            //             map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
+                        
+            //         } else {
+            //             Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
+            //         }
+
+            //     }
+            // }
+        // }
     }
 }
 
@@ -120,4 +163,15 @@ public class TileInfo {
         position = pos;
         guidForBuildable = guid;
     }
+}
+
+[Serializable]
+public class CelulaData {
+    public Sprite selecionadoSprite;
+    public Vector3 position;
+
+    // public CelulaData(Sprite sprite, Vector3 pos) {
+    //     selecionadoSprite = sprite;
+    //     position = pos;
+    // }
 }
