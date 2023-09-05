@@ -204,7 +204,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
         // Set current tile to current mouse positoins tile
         Tile tempTileBase = (Tile)tileBase;
-        currentCellPosition = tempTileBase.sprite;
+        currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorLimiter.GetComponent<Image>().sprite;
         if (tempLimiter)
         {
             tempLimiter.GetComponent<Image>().sprite = currentCellPosition;

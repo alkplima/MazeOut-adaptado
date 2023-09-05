@@ -118,15 +118,13 @@ public class SaveHandler : Singleton<SaveHandler> {
         // previewMap.ClearAllTiles();
 
 
-// TODO: FAZER O LOAD FUNCIONAR
+        int i = 0; 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
-                for (int i = 0; i < data.Count; i++) {
-                    cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
-                    Debug.Log(cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite);
-                    Debug.Log(data[i].selecionadoSprite);
-                    break;
-                }
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                // cel.GetComponent<UnityEngine.UI.Image>().sprite = data[i].selecionadoSprite;
+                i++;
             }
         }
 
