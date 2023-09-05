@@ -15,4 +15,4 @@ MonoBehaviour:
   category: {fileID: 11400000, guid: a9577ec1a66454144ad803aec83d0f01, type: 2}
   uiCategory: {fileID: 11400000, guid: cc1970719e766614fbab76de7926e937, type: 2}
   tileBase: {fileID: 11400000, guid: 33a8a198d2097109aabaacaf4d8ff181, type: 2}
-  placeType: 0
+  placeType: 3

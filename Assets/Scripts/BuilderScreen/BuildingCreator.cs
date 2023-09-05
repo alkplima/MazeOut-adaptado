@@ -31,11 +31,17 @@ public class BuildingCreator : Singleton<BuildingCreator>
     bool isPointerOverLimiter = false;
 
     // Vari�veis de teste 
-    GameObject tempLimiter, tempAnteriorLimiter;
+    [SerializeField] GameObject tempLimiter, tempAnteriorLimiter;
+    [SerializeField] GameObject tempSimulate, tempAnteriorSimulate;
     Vector2 localLimiterPoint = new Vector2(0, 0);
     public Sprite referenceVoid;
     Sprite currentCellPosition;
     Sprite lastCellPosition;
+
+    GameObject newGrid, previewGrid;
+
+    int colStartIndex, rowStartIndex;
+    bool isUnderLeftClick = false;
 
     protected override void Awake()
     {
@@ -43,6 +49,8 @@ public class BuildingCreator : Singleton<BuildingCreator>
         playerInput = new PlayerInput();
         // _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         _camera = GameObject.Find("BuilderCamera").GetComponent<Camera>();
+        newGrid = GameObject.Find("NewGrid");
+        previewGrid = GameObject.Find("PreviewGrid");
     }
 
     private void OnEnable()
@@ -117,6 +125,12 @@ public class BuildingCreator : Singleton<BuildingCreator>
                     tempAnteriorLimiter = tempLimiter;
                     tempLimiter = go.gameObject;
                 }
+                if (go.gameObject.name.StartsWith("Simulate"))
+                {
+                    isPointerOverLimiter = true;
+                    tempAnteriorSimulate = tempSimulate;
+                    tempSimulate = go.gameObject;
+                }
                 //else tempLimiter = null;
             }
         }
@@ -139,11 +153,11 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
                 UpdatePreview();
 
-                if (holdActive)
-                {
-                    HandleDrawing();
-                }
             }*/
+            if (holdActive)
+            {
+                HandleDrawing();
+            }
         }
     }
 
@@ -163,7 +177,10 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
                 if (ctx.interaction is TapInteraction) 
                 {
-                    holdStartPosition = currentGridPosition;
+                    // holdStartPosition = currentGridPosition;
+                    // holdStartPosition =  Vector3Int.FloorToInt(tempLimiter.transform.position);
+                    colStartIndex = tempLimiter.transform.GetSiblingIndex();
+                    rowStartIndex = tempLimiter.transform.parent.GetSiblingIndex();
                 }
                 HandleDrawing ();
             } 
@@ -198,18 +215,27 @@ public class BuildingCreator : Singleton<BuildingCreator>
         //previewMap.SetTile(lastGridPosition, null);
 
         //lastCellPosition = referenceVoid;
-        if (tempAnteriorLimiter)
-            tempAnteriorLimiter.GetComponent<Image>().sprite = tempAnteriorLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
+            
+
+        if (tempAnteriorSimulate)
+            tempAnteriorSimulate.GetComponent<Image>().sprite = tempAnteriorSimulate.GetComponent<CelulaInfo>().selecionadoSprite;
+
+        // if (tempAnteriorLimiter)
+        //     tempAnteriorLimiter.GetComponent<Image>().sprite = tempAnteriorLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
    
 
         // Set current tile to current mouse positoins tile
         Tile tempTileBase = (Tile)tileBase;
-        currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorLimiter.GetComponent<Image>().sprite;
-        if (tempLimiter)
+        // currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorLimiter.GetComponent<Image>().sprite;
+        currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorSimulate.GetComponent<Image>().sprite;
+        // if (tempLimiter)
+        // {
+        //     tempLimiter.GetComponent<Image>().sprite = currentCellPosition;
+        // }
+        if (tempSimulate)
         {
-            tempLimiter.GetComponent<Image>().sprite = currentCellPosition;
+            tempSimulate.GetComponent<Image>().sprite = currentCellPosition;
         }
-            
         //previewMap.SetTile(currentGridPosition, tileBase);
     }
 
@@ -217,21 +243,17 @@ public class BuildingCreator : Singleton<BuildingCreator>
     {
         if (selectedObj != null)
         {
-            if (!selectedObj.name.StartsWith("Eraser"))
-                tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
-            else
-                tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
-
-/*            switch (selectedObj.PlaceType)
+            switch (selectedObj.PlaceType)
             {
-                case PlaceType.Line:
-                    LineRenderer();
-                    break;
                 case PlaceType.Rectangle:
-                    RectangleRenderer();
+                    RectanglePreviewRenderer();
+                    break;
+                case PlaceType.Single: 
+                default:
+                    DrawPreviewItem();
                     break;
             }
-*/
+
         }
     }
 
@@ -239,91 +261,107 @@ public class BuildingCreator : Singleton<BuildingCreator>
     {
         if (selectedObj != null)
         {
-            if (!selectedObj.name.StartsWith("Eraser"))
-                tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
-            else
-                tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
 
-/*            switch(selectedObj.PlaceType)
+            switch(selectedObj.PlaceType)
             {
-                case PlaceType.Line:
                 case PlaceType.Rectangle:
-                    DrawBounds(tilemap);
-                    previewMap.ClearAllTiles();
+                    DrawBounds();
+                    // previewMap.ClearAllTiles();
+                    // ClearPreviewGrid();
                     break;
                 case PlaceType.Single: 
                 default:
-                    DrawItem(tilemap, currentGridPosition, tileBase);
+                    DrawItem();
                     break;
             }
-*/
         }
+        ClearPreviewGrid();
     }
 
-    private void RectangleRenderer()
+    private void RectanglePreviewRenderer()
     {
         // Render Preview on UI Map, draw real one on Release
-        previewMap.ClearAllTiles();
+        // previewMap.ClearAllTiles();
+        ClearPreviewGrid();
+        bounds.xMin = tempLimiter.transform.parent.GetSiblingIndex() < rowStartIndex ? tempLimiter.transform.parent.GetSiblingIndex() : rowStartIndex;
+        bounds.xMax = tempLimiter.transform.parent.GetSiblingIndex() > rowStartIndex ? tempLimiter.transform.parent.GetSiblingIndex() : rowStartIndex;
+        bounds.yMin = tempLimiter.transform.GetSiblingIndex() < colStartIndex ? tempLimiter.transform.GetSiblingIndex() : colStartIndex;
+        bounds.yMax = tempLimiter.transform.GetSiblingIndex() > colStartIndex ? tempLimiter.transform.GetSiblingIndex() : colStartIndex;
 
-        bounds.xMin = currentGridPosition.x < holdStartPosition.x ? currentGridPosition.x : holdStartPosition.x;
-        bounds.xMax = currentGridPosition.x > holdStartPosition.x ? currentGridPosition.x : holdStartPosition.x;
-        bounds.yMin = currentGridPosition.y < holdStartPosition.y ? currentGridPosition.y : holdStartPosition.y;
-        bounds.yMax = currentGridPosition.y > holdStartPosition.y ? currentGridPosition.y : holdStartPosition.y;
-
-        DrawBounds(previewMap);
+        DrawPreviewBounds();
     }
 
-    private void LineRenderer() 
-    {
-        //  Render Preview on UI Map, draw real one on Release
-        previewMap.ClearAllTiles ();
-
-        float diffX = Mathf.Abs (currentGridPosition.x - holdStartPosition.x);
-        float diffY = Mathf.Abs (currentGridPosition.y - holdStartPosition.y);
-
-        bool lineIsHorizontal = diffX >= diffY;
-
-        if (lineIsHorizontal) 
-        {
-            bounds.xMin = currentGridPosition.x < holdStartPosition.x ? currentGridPosition.x : holdStartPosition.x;
-            bounds.xMax = currentGridPosition.x > holdStartPosition.x ? currentGridPosition.x : holdStartPosition.x;
-            bounds.yMin = holdStartPosition.y;
-            bounds.yMax = holdStartPosition.y;
-        } 
-        else 
-        {
-            bounds.xMin = holdStartPosition.x;
-            bounds.xMax = holdStartPosition.x;
-            bounds.yMin = currentGridPosition.y < holdStartPosition.y ? currentGridPosition.y : holdStartPosition.y;
-            bounds.yMax = currentGridPosition.y > holdStartPosition.y ? currentGridPosition.y : holdStartPosition.y;
-        }
-
-        DrawBounds(previewMap);
-    }
-
-    private void DrawBounds(Tilemap map)
+    private void DrawPreviewBounds()
     {
         // Draw bounds on given map
-        for (int x = bounds.xMin; x <= bounds.xMax; x++)
+        for (int col = bounds.xMin; col <= bounds.xMax; col++)
         {
-            for (int y = bounds.yMin; y <= bounds.yMax; y++)
+            for (int row = bounds.yMin; row <= bounds.yMax; row++)
             {
-                DrawItem(map, new Vector3Int(x, y, 0), tileBase);
+                // if (selectedObj.name.StartsWith("Eraser"))
+                //     currentCellPosition = referenceVoid;
+                previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
+                previewGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite;
             }
         }
     }
 
-    private void DrawItem(Tilemap map, Vector3Int position, TileBase tileBase) {
+    private void DrawPreviewItem() {
+        // if (!selectedObj.name.StartsWith("Eraser"))
+        // else
+        tempSimulate.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
+            // tempSimulate.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
 
-        if (map != previewMap && selectedObj.GetType() == typeof(BuildingTool)) {
-            // it is a tool
-            BuildingTool tool = (BuildingTool)selectedObj;
+    }
 
-            tool.Use(position);
+    private void DrawBounds()
+    {
+        // Draw bounds on given map
+        for (int col = bounds.xMin; col <= bounds.xMax; col++)
+        {
+            for (int row = bounds.yMin; row <= bounds.yMax; row++)
+            {
+                if (selectedObj.name.StartsWith("Eraser"))
+                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = referenceVoid;
+                else {
+                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
+                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite;
+                }
+            }
+        }
+    }
 
-        } else {
-            map.SetTile(position, tileBase);
+    private void DrawItem() {
+
+        // if (map != previewMap && selectedObj.GetType() == typeof(BuildingTool)) {
+        //     // it is a tool
+        //     BuildingTool tool = (BuildingTool)selectedObj;
+
+        //     tool.Use(position);
+
+        // } else {
+        //     map.SetTile(position, tileBase);
+        // }
+
+        if (!selectedObj.name.StartsWith("Eraser")) {   
+            tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
+            tempLimiter.GetComponent<UnityEngine.UI.Image>().sprite = tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
+        }
+        else {
+            tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+            tempLimiter.GetComponent<UnityEngine.UI.Image>().sprite = tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
         }
 
+    }
+
+    private void ClearPreviewGrid () {
+
+        foreach (Transform col in previewGrid.transform) {
+            foreach (Transform cel in col.transform) {
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                // cel.GetComponent<UnityEngine.UI.Image>().sprite = data[i].selecionadoSprite;
+            }
+        }
     }
 }   
