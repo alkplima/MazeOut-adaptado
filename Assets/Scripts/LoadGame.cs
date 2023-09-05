@@ -18,15 +18,17 @@ public class LoadGame : Singleton<SaveHandler> {
     [SerializeField] GameObject MoedaAmarela;
     [SerializeField] GameObject MoedaVerde;
     [SerializeField] GameObject MoedaAzul;
+    [SerializeField] GameObject handGear;
+    [SerializeField] GameObject grid;
     [SerializeField] string filename = "tilemapData.json";
 
     private void Start() {
-        InitTilemaps();
-        Debug.Log("Starting Game");
-        InitTileReferences();
+        // InitTilemaps();
+        // Debug.Log("Starting Game");
+        // InitTileReferences();
+        handGear = GameObject.Find("HandGear");
+        grid = GameObject.Find("NewGrid");
         onLoad();
-        Debug.Log("Screen Height: " + Screen.height);
-        Debug.Log("Screen Width: " + Screen.width);
     }
 
     private void InitTileReferences() {
@@ -84,59 +86,93 @@ public class LoadGame : Singleton<SaveHandler> {
     }
 
     public void onLoad() {
-        List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(filename);
+        // List<TilemapData> data = FileHandler.ReadListFromJSON<TilemapData>(filename);
 
-        foreach (var mapData in data) {
-            if (!tilemaps.ContainsKey(mapData.key)) {
-                Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");
-                continue;
-            }
+        // foreach (var mapData in data) {
+        //     if (!tilemaps.ContainsKey(mapData.key)) {
+        //         Debug.LogError("Found saved data for tilemap called '" + mapData.key + "', but Tilemap does not exist in scene.");
+        //         continue;
+        //     }
 
-            // pega o mapa correspondente
-            var map = tilemaps[mapData.key];
+        //     // pega o mapa correspondente
+        //     var map = tilemaps[mapData.key];
 
-            // limpa mapa
-            map.ClearAllTiles();
+        //     // limpa mapa
+        //     map.ClearAllTiles();
 
-            if (mapData.tiles != null && mapData.tiles.Count > 0) {
-                foreach (var tile in mapData.tiles) {
-                    Debug.Log(tile);
+        //     if (mapData.tiles != null && mapData.tiles.Count > 0) {
+        //         foreach (var tile in mapData.tiles) {
+        //             Debug.Log(tile);
 
-                    if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
-                        map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
-                        // Debug.Log("Tipo de Tile: "+guidToTileBase[tile.guidForBuildable].ToString());
-                        switch (guidToTileBase[tile.guidForBuildable].ToString())
-                        {
-                            // Gera os GameObjects na posição dos tiles no tilemap
-                            case "Moeda (UnityEngine.Tilemaps.AnimatedTile)":
-                                GenerateTilemapElementsFromFile(MoedaAmarela, tile.position);
-                                break;
-                            case "MoedaVerde (UnityEngine.Tilemaps.AnimatedTile)":
-                                GenerateTilemapElementsFromFile(MoedaVerde, tile.position);
-                                break;
-                            case "MoedaAzul (UnityEngine.Tilemaps.AnimatedTile)":
-                                GenerateTilemapElementsFromFile(MoedaAzul, tile.position);
-                                break;
-                            case "Tiles_0 (UnityEngine.Tilemaps.Tile)":
-                                GenerateTilemapElementsFromFile(ParedeCinza, tile.position);
-                                break;
-                            case "Tiles_2 (UnityEngine.Tilemaps.Tile)":
-                                GenerateTilemapElementsFromFile(ParedeAmarela, tile.position);
-                                break;
-                            case "Start (UnityEngine.Tilemaps.Tile)":
-                                GenerateTilemapElementsFromFile(Inicio, tile.position);
-                                break;
-                            case "Finish (UnityEngine.Tilemaps.Tile)":
-                                GenerateTilemapElementsFromFile(Fim, tile.position);
-                                break;
-                        }
-                    } else {
-                        Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
-                    }
+        //             if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
+        //                 map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
+        //                 // Debug.Log("Tipo de Tile: "+guidToTileBase[tile.guidForBuildable].ToString());
+        //                 switch (guidToTileBase[tile.guidForBuildable].ToString())
+        //                 {
+        //                     // Gera os GameObjects na posição dos tiles no tilemap
+        //                     case "Moeda (UnityEngine.Tilemaps.AnimatedTile)":
+        //                         GenerateTilemapElementsFromFile(MoedaAmarela, tile.position);
+        //                         break;
+        //                     case "MoedaVerde (UnityEngine.Tilemaps.AnimatedTile)":
+        //                         GenerateTilemapElementsFromFile(MoedaVerde, tile.position);
+        //                         break;
+        //                     case "MoedaAzul (UnityEngine.Tilemaps.AnimatedTile)":
+        //                         GenerateTilemapElementsFromFile(MoedaAzul, tile.position);
+        //                         break;
+        //                     case "Tiles_0 (UnityEngine.Tilemaps.Tile)":
+        //                         GenerateTilemapElementsFromFile(ParedeCinza, tile.position);
+        //                         break;
+        //                     case "Tiles_2 (UnityEngine.Tilemaps.Tile)":
+        //                         GenerateTilemapElementsFromFile(ParedeAmarela, tile.position);
+        //                         break;
+        //                     case "Start (UnityEngine.Tilemaps.Tile)":
+        //                         GenerateTilemapElementsFromFile(Inicio, tile.position);
+        //                         break;
+        //                     case "Finish (UnityEngine.Tilemaps.Tile)":
+        //                         GenerateTilemapElementsFromFile(Fim, tile.position);
+        //                         break;
+        //                 }
+        //             } else {
+        //                 Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
+        //             }
 
+        //         }
+        //     }
+        // }
+        List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
+
+        int i = 0; 
+        foreach (Transform col in grid.transform) {
+            foreach (Transform cel in col.transform) {
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                if (data[i].selecionadoSprite.ToString().StartsWith("Tiles")) {
+                    cel.gameObject.AddComponent<BlocoImpeditivo>();
+                    cel.gameObject.AddComponent<Rigidbody2D>();
+                    cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                    cel.gameObject.AddComponent<BoxCollider2D>();
+                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(43, 43);
+                    cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
+                else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
+                else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
+                    handGear.transform.position = cel.gameObject.transform.position;
+                    // element.transform.parent = GameObject.Find("Itens").transform;
+                    
+                }
+                else if (data[i].selecionadoSprite.ToString().StartsWith("fim")) {}
+                // else if (data[i].selecionadoSprite.ToString().StartsWith("check")) {
+                //     cel.gameObject.AddComponent<CheckPoint>();
+                // }
+                // else if (data[i].selecionadoSprite.ToString().StartsWith("vazio")) {}
+                // else {
+                //     Debug.Log("Sprite não reconhecido: "+data[i].selecionadoSprite.ToString()
+
+                // }
+                i++;
             }
         }
+
     }
 
     // Instancia os elementos do jogo definidos no Tilemap como GameObjects na tela
