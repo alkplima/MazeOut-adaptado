@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
+using System.IO;
 
 public class SaveHandler : Singleton<SaveHandler> {
     Dictionary<string, Tilemap> tilemaps = new Dictionary<string, Tilemap>();
@@ -11,13 +13,14 @@ public class SaveHandler : Singleton<SaveHandler> {
 
     [SerializeField] BoundsInt bounds;
     [SerializeField] GameObject moeda;
-    [SerializeField] GameObject grid;
-    [SerializeField] string filename = "tilemapData.json";
+    //[SerializeField] GameObject grid;
+    public GameObject grid;
+    internal string filename = "tilemapData.json";
 
-    private void Start() {
+    void Start()
+    {
         // InitTilemaps();
         // InitTileReferences();
-        grid = GameObject.Find("NewGrid");
     }
 
     private void InitTileReferences() {
@@ -58,6 +61,7 @@ public class SaveHandler : Singleton<SaveHandler> {
                 CelulaData celData = new CelulaData();
                 celData.position = cel.position;
                 celData.selecionadoSprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                celData.nomeSelecionadoSprite = celData.selecionadoSprite.name;
                 data.Add(celData);
             }
         }
@@ -107,7 +111,7 @@ public class SaveHandler : Singleton<SaveHandler> {
 
         //             if (guidToTileBase.ContainsKey(tile.guidForBuildable)) {
         //                 map.SetTile(tile.position, guidToTileBase[tile.guidForBuildable]);
-                        
+
         //             } else {
         //                 Debug.LogError("Reference " + tile.guidForBuildable + " could not be found.");
         //             }
@@ -116,18 +120,16 @@ public class SaveHandler : Singleton<SaveHandler> {
         //     }
         // }
         // previewMap.ClearAllTiles();
+        int i = 0;
 
-
-        int i = 0; 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
-                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
-                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + data[i].nomeSelecionadoSprite);
+                cel.GetComponent<Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
                 // cel.GetComponent<UnityEngine.UI.Image>().sprite = data[i].selecionadoSprite;
                 i++;
             }
         }
-
 
             // if (celData.tiles != null && celData.tiles.Count > 0) {
             //     foreach (var tile in celData.tiles) {
@@ -167,6 +169,7 @@ public class TileInfo {
 public class CelulaData {
     public Sprite selecionadoSprite;
     public Vector3 position;
+    public String nomeSelecionadoSprite;
 
     // public CelulaData(Sprite sprite, Vector3 pos) {
     //     selecionadoSprite = sprite;
