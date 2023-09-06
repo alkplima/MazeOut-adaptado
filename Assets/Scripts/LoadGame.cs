@@ -156,7 +156,7 @@ public class LoadGame : Singleton<SaveHandler> {
                 }
                 else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
                 else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
-                    handGear.transform.position = cel.gameObject.transform.position;
+                    // handGear.transform.position = cel.gameObject.transform.position;
                     // element.transform.parent = GameObject.Find("Itens").transform;
                     
                 }
