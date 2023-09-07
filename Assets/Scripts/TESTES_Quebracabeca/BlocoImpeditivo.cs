@@ -18,7 +18,6 @@ public class BlocoImpeditivo : MonoBehaviour
                 !(other.transform.position.x < (this.transform.position.x - (larguraParede / 2 + larguraHandGear / 2)) &&
                 other.transform.position.x > (this.transform.position.x + (larguraParede / 2 + larguraHandGear / 2))))
             {
-                Debug.Log("EM CIMA");
                 other.GetComponent<PieceController>().MovimentarPeca('C', 3, 20);
             }
             // Embaixo da parede
@@ -26,7 +25,6 @@ public class BlocoImpeditivo : MonoBehaviour
                 !(other.transform.position.x < (this.transform.position.x - (larguraParede / 2 + larguraHandGear / 2)) &&
                 other.transform.position.x > (this.transform.position.x + (larguraParede / 2 + larguraHandGear / 2))))
             {
-                Debug.Log("EMBAIXO");
                 other.GetComponent<PieceController>().MovimentarPeca('B', 3, 20);
             }
             // À direita da parede
@@ -34,7 +32,6 @@ public class BlocoImpeditivo : MonoBehaviour
                 !(other.transform.position.y < (this.transform.position.y - (alturaParede / 2 + alturaHandGear / 2)) &&
                 other.transform.position.y > (this.transform.position.y + (alturaParede / 2 + alturaHandGear / 2))))
             {
-                Debug.Log("DIREITA");
                 other.GetComponent<PieceController>().MovimentarPeca('D', 3, 20);
             }
             // À esquerda da parede
@@ -42,7 +39,6 @@ public class BlocoImpeditivo : MonoBehaviour
             !(other.transform.position.y < (this.transform.position.y - (alturaParede / 2 + alturaHandGear / 2)) &&
             other.transform.position.y > (this.transform.position.y + (alturaParede / 2 + alturaHandGear / 2))))
             {
-                Debug.Log("ESQUERDA");
                 other.GetComponent<PieceController>().MovimentarPeca('E', 3, 20);
             }
         }        

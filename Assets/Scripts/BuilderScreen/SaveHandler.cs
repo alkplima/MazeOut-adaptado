@@ -19,7 +19,7 @@ public class SaveHandler : Singleton<SaveHandler> {
 
     void Start()
     {
-        // InitTilemaps();
+        InitEmptyGrid();
         // InitTileReferences();
     }
 
@@ -36,13 +36,21 @@ public class SaveHandler : Singleton<SaveHandler> {
         }
     }
 
-    private void InitTilemaps() {
+    private void InitEmptyGrid() {
         // pega todos tilemaps da cena e escreve no discionário
         Tilemap[] maps = FindObjectsOfType<Tilemap>();
 
         foreach (var map in maps) {
             tilemaps.Add(map.name, map);
         }
+        // foreach (Transform col in grid.transform) {
+        //     foreach (Transform cel in col.transform) {
+        //         cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
+        //         cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+        //     Debug.Log(cel.GetComponent<UnityEngine.UI.Image>().sprite);
+        //     }
+        //     Debug.Log("Deu bom");
+        // }
     }
 
     public void onSave() {

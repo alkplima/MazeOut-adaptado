@@ -155,7 +155,7 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.AddComponent<Rigidbody2D>();
                     cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                     cel.gameObject.AddComponent<BoxCollider2D>();
-                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(43, 43);
+                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(29, 29);
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
                 //else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}

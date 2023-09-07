@@ -33,14 +33,22 @@ public class CaminhoWebcamItemController : MonoBehaviour
                     float distanciaParaDireita = Vector3.Distance(new Vector3(VariaveisGlobais.atualControllerLabirinto.pecas[i].position.x + (VariaveisGlobais.atualControllerLabirinto.pecas[i].rect.width / 2), VariaveisGlobais.atualControllerLabirinto.pecas[i].position.y, VariaveisGlobais.atualControllerLabirinto.pecas[i].position.z), transform.position);
                     float distanciaParaEsquerda = Vector3.Distance(new Vector3(VariaveisGlobais.atualControllerLabirinto.pecas[i].position.x - (VariaveisGlobais.atualControllerLabirinto.pecas[i].rect.width / 2), VariaveisGlobais.atualControllerLabirinto.pecas[i].position.y, VariaveisGlobais.atualControllerLabirinto.pecas[i].position.z), transform.position);
 
-                    if ((distanciaParaCima <= distanciaParaBaixo) && (distanciaParaCima <= distanciaParaEsquerda) && (distanciaParaCima <= distanciaParaDireita))
+                    if ((distanciaParaCima <= distanciaParaBaixo) && (distanciaParaCima <= distanciaParaEsquerda) && (distanciaParaCima <= distanciaParaDireita)) {
                         sentido = 'N';
-                    else if ((distanciaParaBaixo <= distanciaParaCima) && (distanciaParaBaixo <= distanciaParaEsquerda) && (distanciaParaBaixo <= distanciaParaDireita))
-                        sentido = 'S';
-                    else if ((distanciaParaEsquerda <= distanciaParaCima) && (distanciaParaEsquerda <= distanciaParaBaixo) && (distanciaParaEsquerda <= distanciaParaDireita))
+                        Debug.Log("Bateu em N");
+                    }
+                    else if ((distanciaParaEsquerda <= distanciaParaCima) && (distanciaParaEsquerda <= distanciaParaBaixo) && (distanciaParaEsquerda <= distanciaParaDireita)) {
                         sentido = 'L';
-                    else if ((distanciaParaDireita <= distanciaParaCima) && (distanciaParaDireita <= distanciaParaEsquerda) && (distanciaParaDireita <= distanciaParaBaixo))
+                        Debug.Log("Bateu em L");
+                    }
+                    else if ((distanciaParaBaixo <= distanciaParaCima) && (distanciaParaBaixo <= distanciaParaEsquerda) && (distanciaParaBaixo <= distanciaParaDireita)) {
+                        sentido = 'S';
+                        Debug.Log("Bateu em S");
+                    }
+                    else if ((distanciaParaDireita <= distanciaParaCima) && (distanciaParaDireita <= distanciaParaEsquerda) && (distanciaParaDireita <= distanciaParaBaixo)) {
                         sentido = 'O';
+                        Debug.Log("Bateu em O");
+                    }
 
 
                     switch (sentido)
