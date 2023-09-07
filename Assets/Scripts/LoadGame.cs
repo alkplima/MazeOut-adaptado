@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic; 
 using System.Linq;
+using System.IO;
 
 public class LoadGame : Singleton<SaveHandler> {
     Dictionary<string, Tilemap> tilemaps = new Dictionary<string, Tilemap>();
@@ -144,9 +145,12 @@ public class LoadGame : Singleton<SaveHandler> {
         int i = 0; 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
-                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
+                //cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = data[i].selecionadoSprite;
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + data[i].nomeSelecionadoSprite);
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
-                if (data[i].selecionadoSprite.ToString().StartsWith("Tiles")) {
+                //if (data[i].selecionadoSprite.ToString().StartsWith("Tiles")) {
+                if (data[i].nomeSelecionadoSprite.StartsWith("Tiles"))
+                {
                     cel.gameObject.AddComponent<BlocoImpeditivo>();
                     cel.gameObject.AddComponent<Rigidbody2D>();
                     cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -154,13 +158,17 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(43, 43);
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
-                else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
-                else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
+                //else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
+                else if (data[i].nomeSelecionadoSprite.StartsWith("moeda")) { }
+                //else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
+                else if (data[i].nomeSelecionadoSprite.StartsWith("start"))
+                {
                     // handGear.transform.position = cel.gameObject.transform.position;
                     // element.transform.parent = GameObject.Find("Itens").transform;
-                    
+
                 }
-                else if (data[i].selecionadoSprite.ToString().StartsWith("fim")) {}
+                //else if (data[i].selecionadoSprite.ToString().StartsWith("fim")) { }
+                else if (data[i].nomeSelecionadoSprite.StartsWith("fim")) {}
                 // else if (data[i].selecionadoSprite.ToString().StartsWith("check")) {
                 //     cel.gameObject.AddComponent<CheckPoint>();
                 // }

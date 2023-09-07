@@ -15,14 +15,7 @@ public class Controller_Ativ01_QuebraCabeca : MonoBehaviour
     public Webcam webcamInstance;
     void Awake()
     {
-        // Rotina para garantir que é o único ControllerJogo em operação (Singleton).
-        if (VariaveisGlobais.currentControllerQuebraCabeca == null)
-        {
-            VariaveisGlobais.currentControllerQuebraCabeca = this;
-            AtividadesIniciais();
-        }
-        // Caso a variável flag de restauração esteja setada, iniciar o processo de restauração.
-        else Destroy(this.gameObject);
+
     }
 
     public void AtividadesIniciais()
@@ -219,8 +212,8 @@ public class Controller_Ativ01_QuebraCabeca : MonoBehaviour
     public void VerificarPecaIndividual(PieceController piece)
     {
         int indicePecaMeta = -1;
-        // for (int i = 0; i < pecas.Length; i++)
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < pecas.Length; i++)
+        //for (int i = 0; i < 4; i++)
             if (pecas[i].name == piece.gameObject.name)
                 indicePecaMeta = i;
 

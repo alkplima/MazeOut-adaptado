@@ -14,6 +14,6 @@ public class ResizeJigsawPieceByCellSize : MonoBehaviour
         {
             transform.GetChild(i).GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, cellRef.rect.width * TaxaTamanhoPecaPorTamanhoCell);
             transform.GetChild(i).GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, cellRef.rect.height * TaxaTamanhoPecaPorTamanhoCell);
-        }        
+        }
     }
 }

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public static class VariaveisGlobais
 {
+    public static ControllerLabirinto atualControllerLabirinto;
+
     public static bool passedThroughtStart = false;
     public static string NomeDoJogo = "Basquete";
     //public static string Idioma = "BR";
     public static string Idioma = "EN";
     public static int QuantidadeDefensores, VelocidadeDefensores, idWebcam;
-
-    public static Controller_Ativ01_QuebraCabeca currentControllerQuebraCabeca;
 
     // Grupo de variáveis a serem preenchidas nos atos
     public static string Device_ID, OperationalSystem, DateTime_Full, TempoRestante,
