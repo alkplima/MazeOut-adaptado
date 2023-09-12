@@ -11,11 +11,6 @@ public static class PaterlandGlobal
     internal static Webcam currentWebcam;
     internal static bool autorizadoMovimento;
 
-    internal static bool som;
-    internal static int[] TemporadasAutorizadasNoMenu = new int[0];
-    public static REF_imagem REF_image_instance;
-    public static Sprite quebracabeca_da_vez = null;
-
     internal static string SomaMd5(string string_A_Encriptar)
     {
         System.Text.UTF8Encoding ue = new System.Text.UTF8Encoding();

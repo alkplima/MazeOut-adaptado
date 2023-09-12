@@ -49,16 +49,6 @@ public class Webcam : MonoBehaviour {
 	Coroutine cr;
 	bool crIsRunning = true;
 
-
-	void Awake()
-	{
-		//if (PaterlandGlobal.currentWebcam == null)
-		//{
-			//PaterlandGlobal.currentWebcam = this;
-		//}
-		//else Destroy(this.gameObject);
-	}
-
 	IEnumerator Start() {
         yield return Application.RequestUserAuthorization(UserAuthorization.WebCam | UserAuthorization.Microphone);
         if( Application.HasUserAuthorization(UserAuthorization.WebCam | UserAuthorization.Microphone) ){
@@ -77,9 +67,9 @@ public class Webcam : MonoBehaviour {
 
 		if (VariaveisGlobais.idWebcam >= WebCamTexture.devices.Length)
 			VariaveisGlobais.idWebcam = 0;
-		
-		webcamTexture = new WebCamTexture(devices[VariaveisGlobais.idWebcam].name, 320, 240, 15);
-		webcamTexture.Play();
+
+        webcamTexture = new WebCamTexture(devices[VariaveisGlobais.idWebcam].name, 320, 240, 15);
+        webcamTexture.Play();
 
         //Debug.Log(webcamTexture.width+"x"+webcamTexture.height);
 
@@ -128,7 +118,8 @@ public class Webcam : MonoBehaviour {
 		UPDATE
 		Todo frame calcula a diferença de frames e atualiza a textura
 	 */
-	void Update(){
+	void Update()
+	{
 		// Aguarda inicialização e inicializa variaveis
 		if( !initialized || webcamTexture.width == 0 ) return;
 		if( lastData == null ){
@@ -138,18 +129,18 @@ public class Webcam : MonoBehaviour {
             {
 				bufferData_H = new Color32[lastData.Length];
 				lastData.CopyTo(bufferData_H, 0);
-				for (int i = 0; i < 320; i++)
-					for (int j = 0; j < 240; j++)
-						lastData[i + (320 * j)] = bufferData_H[((i - 319)*(-1)) + (320 * j)];
+				for (int i = 0; i < webcamTexture.width; i++)
+					for (int j = 0; j < webcamTexture.height; j++)
+						lastData[i + (webcamTexture.width * j)] = bufferData_H[((i - webcamTexture.width - 1) *(-1)) + (webcamTexture.width * j)];
 			}
 			
 			if (VariaveisGlobais.Webcam_espelhar_V)
 			{
 				bufferData_V = new Color32[lastData.Length];
 				lastData.CopyTo(bufferData_V, 0);
-				for (int i = 0; i < 320; i++)
-					for (int j = 0; j < 240; j++)
-						lastData[i + (320 * j)] = bufferData_V[i + (320 * ((j - 239)*(-1)))];
+				for (int i = 0; i < webcamTexture.width; i++)
+					for (int j = 0; j < webcamTexture.height; j++)
+						lastData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - webcamTexture.height - 1) *(-1)))];
 			}
 
 
@@ -187,7 +178,6 @@ public class Webcam : MonoBehaviour {
         copyTexture.Apply();
     }
 
-
 	/*
 		DIFFERENCE
 		Calcula a diferença entre o frame atual e o frame anterior
@@ -201,18 +191,18 @@ public class Webcam : MonoBehaviour {
 		{
 			bufferData_H = new Color32[actualData.Length];
 			actualData.CopyTo(bufferData_H, 0);
-			for (int i = 0; i < 320; i++)
-				for (int j = 0; j < 240; j++)
-					actualData[i + (320 * j)] = bufferData_H[((i - 319) * (-1)) + (320 * j)];
+			for (int i = 0; i < webcamTexture.width; i++)
+				for (int j = 0; j < webcamTexture.height; j++)
+					actualData[i + (webcamTexture.width * j)] = bufferData_H[((i - webcamTexture.width - 1) * (-1)) + (webcamTexture.width * j)];
 		}
 
 		if (VariaveisGlobais.Webcam_espelhar_V)
 		{
 			bufferData_V = new Color32[actualData.Length];
 			actualData.CopyTo(bufferData_V, 0);
-			for (int i = 0; i < 320; i++)
-				for (int j = 0; j < 240; j++)
-					actualData[i + (320 * j)] = bufferData_V[i + (320 * ((j - 239) * (-1)))];
+			for (int i = 0; i < webcamTexture.width; i++)
+				for (int j = 0; j < webcamTexture.height; j++)
+					actualData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - webcamTexture.height - 1) * (-1)))];
 		}
 
 		diffsum = 0;

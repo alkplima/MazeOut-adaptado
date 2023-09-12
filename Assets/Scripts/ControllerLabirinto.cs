@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ControllerLabirinto : MonoBehaviour
 {
-    public RectTransform[] pecas, metas, sombras, posIniciais, pecas_ajuste, sombras_ajuste;
-    public AudioSource audioAcertou, audioVoceGanhou;
+    public RectTransform[] pecas, metas, posIniciais, pecas_ajuste, sombras_ajuste;
+    public AudioSource audioPegouItem, audioVoceGanhou;
     public GameObject[] go_Bloquear_2Seg, go_Desativar, go_Ativar;
     Vector2 ScreenDimensions;
     public RectTransform primeiraPosGrid, ultimaPosGrid;
@@ -40,11 +40,6 @@ public class ControllerLabirinto : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        for (int i = 0; i < sombras.Length; i++)
-        {
-            yield return new WaitForEndOfFrame();
-            sombras[i].position = metas[i].position;
-        }
         for (int i = 0; i < posIniciais.Length; i++)
         {
             yield return new WaitForEndOfFrame();
@@ -55,6 +50,12 @@ public class ControllerLabirinto : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         PaterlandGlobal.autorizadoMovimento = true;
+
+        if (!PlayerPrefs.HasKey("Velocidade"))
+            PlayerPrefs.SetInt("Velocidade", 75);
+
+        if (!PlayerPrefs.HasKey("Arraste"))
+            PlayerPrefs.SetInt("Arraste", 5);
     }
 
 
@@ -92,12 +93,7 @@ public class ControllerLabirinto : MonoBehaviour
     {
         Vector2 newScreenDimensions = new Vector2(Screen.width, Screen.height);
         if (newScreenDimensions != ScreenDimensions)
-        {
-            Debug.Log("Mudou resolução: " + Screen.width + "x" + Screen.height + "controller.primeiraPosGrid.rect.width = " + primeiraPosGrid.rect.width + " controller.primeiraPosGrid.rect.height = " + primeiraPosGrid.rect.height);
-            for (int i = 0; i < sombras.Length; i++)
-                sombras[i].position = metas[i].position;
             ScreenDimensions = newScreenDimensions;
-        }
     }
 
     public void ReiniciarCena()
