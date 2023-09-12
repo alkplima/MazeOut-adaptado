@@ -10,7 +10,6 @@ using UnityEngine.UI;
 
 public class BuildingCreator : Singleton<BuildingCreator>
 {
-    [SerializeField] Tilemap previewMap, defaultMap;
     PlayerInput playerInput;
 
     TileBase tileBase;
@@ -19,21 +18,15 @@ public class BuildingCreator : Singleton<BuildingCreator>
     Camera _camera;
 
     Vector2 mousePos;
-    Vector3Int currentGridPosition;
-    Vector3Int lastGridPosition;
     
     bool holdActive;
-    Vector3Int holdStartPosition;
 
     BoundsInt bounds;
-
-    bool isPointerOverGameObject = false;
     bool isPointerOverLimiter = false;
 
     // Vari�veis de teste 
     [SerializeField] GameObject tempLimiter, tempAnteriorLimiter;
     [SerializeField] GameObject tempSimulate, tempAnteriorSimulate;
-    Vector2 localLimiterPoint = new Vector2(0, 0);
     public Sprite referenceVoid;
     Sprite currentCellPosition;
     Sprite lastCellPosition;
@@ -41,7 +34,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
     GameObject newGrid, previewGrid;
 
     int colStartIndex, rowStartIndex;
-    bool isUnderLeftClick = false;
 
     protected override void Awake()
     {
@@ -91,19 +83,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
         }
     }
 
-    private Tilemap tilemap
-    {
-        get
-        {
-            if (selectedObj != null && selectedObj.Category != null && selectedObj.Category.Tilemap != null)
-            {
-                return selectedObj.Category.Tilemap;
-            }
-
-            return defaultMap;
-        }
-    }
-
     private void Update()
     {
         isPointerOverLimiter = false;
@@ -117,8 +96,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
         if(raycastResults.Count > 0)
         {
             foreach(var go in raycastResults)
-            {  
-                //if (go.gameObject.name == "Limiter")
+            {
                 if (go.gameObject.name.StartsWith("Cell"))
                 {
                     isPointerOverLimiter = true;
@@ -131,29 +109,13 @@ public class BuildingCreator : Singleton<BuildingCreator>
                     tempAnteriorSimulate = tempSimulate;
                     tempSimulate = go.gameObject;
                 }
-                //else tempLimiter = null;
             }
         }
-        // isPointerOverGameObject = EventSystem.current.IsPointerOverGameObject();
-        // isPointerEnterHandler = EventSystem.IPointerEnterHandler();
-        // If something is selected - show preview
+
         if (selectedObj != null)
         {
-            //Vector3 pos = _camera.ScreenToWorldPoint(mousePos);
-
-            //Vector3Int gridPos = previewMap.WorldToCell(pos);
-            //RectTransformUtility.ScreenPointToLocalPointInRectangle(tempLimiter.GetComponent<RectTransform>(), mousePos, _camera, out localLimiterPoint);
-            //Vector3Int gridPos = previewMap.LocalToCell(localLimiterPoint);
-
             UpdatePreview();
-            /*if (gridPos != currentGridPosition && isPointerOverLimiter)
-            {
-                lastGridPosition = currentGridPosition;
-                currentGridPosition = gridPos;
 
-                UpdatePreview();
-
-            }*/
             if (holdActive)
             {
                 HandleDrawing();
@@ -168,7 +130,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void OnLeftClick (InputAction.CallbackContext ctx) 
     {
-        // if (selectedObj != null && !isPointerOverGameObject) 
         if (selectedObj != null && isPointerOverLimiter) 
         {
             if (ctx.phase == InputActionPhase.Started) 
@@ -177,8 +138,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
                 if (ctx.interaction is TapInteraction) 
                 {
-                    // holdStartPosition = currentGridPosition;
-                    // holdStartPosition =  Vector3Int.FloorToInt(tempLimiter.transform.position);
                     colStartIndex = tempLimiter.transform.GetSiblingIndex();
                     rowStartIndex = tempLimiter.transform.parent.GetSiblingIndex();
                 }
@@ -203,40 +162,21 @@ public class BuildingCreator : Singleton<BuildingCreator>
     public void ObjectSelected(BuildingObjectBase obj)
     {
         SelectedObj = obj;
-
-        // Set preview where mouse is
-        // on click draw
-        // on right click cancel drawing
     }
 
     private void UpdatePreview()
     {
-        // Remove old tile if existing
-        //previewMap.SetTile(lastGridPosition, null);
-
-        //lastCellPosition = referenceVoid;
-            
-
         if (tempAnteriorSimulate)
             tempAnteriorSimulate.GetComponent<Image>().sprite = tempAnteriorSimulate.GetComponent<CelulaInfo>().selecionadoSprite;
 
-        // if (tempAnteriorLimiter)
-        //     tempAnteriorLimiter.GetComponent<Image>().sprite = tempAnteriorLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
-   
-
-        // Set current tile to current mouse positoins tile
+        // Set current tile to current mouse position's tile
         Tile tempTileBase = (Tile)tileBase;
-        // currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorLimiter.GetComponent<Image>().sprite;
         currentCellPosition = tempTileBase ? tempTileBase.sprite : tempAnteriorSimulate.GetComponent<Image>().sprite;
-        // if (tempLimiter)
-        // {
-        //     tempLimiter.GetComponent<Image>().sprite = currentCellPosition;
-        // }
+
         if (tempSimulate)
         {
             tempSimulate.GetComponent<Image>().sprite = currentCellPosition;
         }
-        //previewMap.SetTile(currentGridPosition, tileBase);
     }
 
     private void HandleDrawing()
@@ -266,8 +206,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
             {
                 case PlaceType.Rectangle:
                     DrawBounds();
-                    // previewMap.ClearAllTiles();
-                    // ClearPreviewGrid();
                     break;
                 case PlaceType.Single: 
                 default:
@@ -280,8 +218,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void RectanglePreviewRenderer()
     {
-        // Render Preview on UI Map, draw real one on Release
-        // previewMap.ClearAllTiles();
         ClearPreviewGrid();
         bounds.xMin = tempLimiter.transform.parent.GetSiblingIndex() < rowStartIndex ? tempLimiter.transform.parent.GetSiblingIndex() : rowStartIndex;
         bounds.xMax = tempLimiter.transform.parent.GetSiblingIndex() > rowStartIndex ? tempLimiter.transform.parent.GetSiblingIndex() : rowStartIndex;
@@ -307,11 +243,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
     }
 
     private void DrawPreviewItem() {
-        // if (!selectedObj.name.StartsWith("Eraser"))
-        // else
         tempSimulate.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
-            // tempSimulate.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
-
     }
 
     private void DrawBounds()
@@ -321,8 +253,10 @@ public class BuildingCreator : Singleton<BuildingCreator>
         {
             for (int row = bounds.yMin; row <= bounds.yMax; row++)
             {
-                if (selectedObj.name.StartsWith("Eraser"))
+                if (selectedObj.name.StartsWith("Eraser")) {
+                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
                     newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = referenceVoid;
+                }
                 else {
                     newGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
                     newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite;
@@ -332,16 +266,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
     }
 
     private void DrawItem() {
-
-        // if (map != previewMap && selectedObj.GetType() == typeof(BuildingTool)) {
-        //     // it is a tool
-        //     BuildingTool tool = (BuildingTool)selectedObj;
-
-        //     tool.Use(position);
-
-        // } else {
-        //     map.SetTile(position, tileBase);
-        // }
 
         if (!selectedObj.name.StartsWith("Eraser")) {   
             tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
@@ -360,7 +284,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
             foreach (Transform cel in col.transform) {
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
-                // cel.GetComponent<UnityEngine.UI.Image>().sprite = data[i].selecionadoSprite;
             }
         }
     }
