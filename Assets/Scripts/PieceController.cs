@@ -8,6 +8,8 @@ public class PieceController : MonoBehaviour
     public GameObject ponto, ponto2;
     public bool ChegouNoAlvo = false;
 
+    int _rotationSpeed = 150;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class PieceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime, 0);
+
     }
 
     public void MovimentarPeca(char direcao)

@@ -9,6 +9,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private AudioClip _clip;
 
     ScoreHUD _uiManager;
+    int _rotationSpeed = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0, _rotationSpeed * Time.deltaTime, 0, 0);
     }    
     
     private void OnTriggerEnter2D(Collider2D other) 
@@ -27,7 +28,7 @@ public class Coin : MonoBehaviour
         if (other.tag.StartsWith("Bola")) {
 
             // this.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = null;
-            // this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = null;
+            this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = null;
             // _uiManager.Score += 1;
             // AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f); 
         }
