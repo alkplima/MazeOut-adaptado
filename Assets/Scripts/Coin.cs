@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using System.IO;
 
 public class Coin : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Coin : MonoBehaviour
     void Start()
     {
         // _uiManager = GameObject.Find("GameScreen").GetComponent<ScoreHUD>();
+        _clip = Resources.Load<AudioClip>("Audios" + Path.DirectorySeparatorChar + "coin");
     }
 
     // Update is called once per frame
@@ -28,9 +31,10 @@ public class Coin : MonoBehaviour
         if (other.tag.StartsWith("Bola")) {
 
             // this.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = null;
-            this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = null;
+            this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
             // _uiManager.Score += 1;
-            // AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f); 
+            AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
+            Destroy(this);
         }
 
         // if (VariaveisGlobais.passedThroughtStart == true) {
