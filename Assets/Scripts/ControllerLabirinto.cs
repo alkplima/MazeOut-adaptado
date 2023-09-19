@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ControllerLabirinto : MonoBehaviour
 {
     public RectTransform[] pecas, metas, posIniciais, pecas_ajuste, sombras_ajuste;
-    public AudioSource audioPegouItem, audioVoceGanhou;
+    public AudioSource audioPegouItem, audioVoceGanhou, audioFundo;
     public GameObject[] go_Bloquear_2Seg, go_Desativar, go_Ativar;
     Vector2 ScreenDimensions;
     public RectTransform primeiraPosGrid, ultimaPosGrid;
@@ -56,6 +56,12 @@ public class ControllerLabirinto : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("Arraste"))
             PlayerPrefs.SetInt("Arraste", 5);
+
+        if (!PlayerPrefs.HasKey("Som"))
+            PlayerPrefs.SetInt("Som", 1);
+
+        if (PlayerPrefs.GetInt("Som")==1)
+            audioFundo.Play();
     }
 
 
