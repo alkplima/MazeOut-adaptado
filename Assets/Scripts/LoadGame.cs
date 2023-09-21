@@ -11,20 +11,12 @@ public class LoadGame : Singleton<SaveHandler> {
     Dictionary<string, TileBase> guidToTileBase = new Dictionary<string, TileBase>();
 
     [SerializeField] BoundsInt bounds;
-    [SerializeField] GameObject ParedeCinza;
-    [SerializeField] GameObject ParedeAmarela;
-    [SerializeField] GameObject Inicio;
-    [SerializeField] GameObject CheckMark;
-    [SerializeField] GameObject Fim;
-    [SerializeField] GameObject MoedaAmarela;
-    [SerializeField] GameObject MoedaVerde;
-    [SerializeField] GameObject MoedaAzul;
     [SerializeField] GameObject handGear;
     [SerializeField] GameObject grid;
     [SerializeField] string filename = "mazeData.json";
 
     private void Start() {
-        handGear = GameObject.Find("HandGear");
+        // handGear = GameObject.Find("HandGear");
         grid = GameObject.Find("NewGrid");
         onLoad();
     }
@@ -44,7 +36,7 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.AddComponent<Rigidbody2D>();
                     cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                     cel.gameObject.AddComponent<BoxCollider2D>();
-                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(29, 29);
+                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
                 //else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
@@ -55,12 +47,13 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                     cel.gameObject.AddComponent<BoxCollider2D>();
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(29, 29);
+                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
                 }
                 //else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
                 else if (data[i].nomeSelecionadoSprite.StartsWith("start"))
                 {
-                    handGear.transform.position = cel.gameObject.transform.position;
+                    cel.gameObject.tag = "Start";
+                    // handGear.transform.position = cel.gameObject.transform.position;
                     // element.transform.parent = GameObject.Find("Itens").transform;
 
                 }

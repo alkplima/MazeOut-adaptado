@@ -17,8 +17,13 @@ public class BlocoImpeditivo : MonoBehaviour
             char sentido = ' ';
 
             if (other.GetComponent<PieceController>().enabled)
-                if (Vector2.Distance(other.GetComponent<RectTransform>().position, GetComponent<RectTransform>().position) < (other.GetComponent<RectTransform>().rect.width / 2))
+                if (Vector2.Distance(other.GetComponent<RectTransform>().position, GetComponent<RectTransform>().position) <= (0.8f * other.GetComponent<RectTransform>().rect.width / 2 + GetComponent<RectTransform>().rect.width / 2))
                 {
+                    float alturaParede = gameObject.GetComponent<RectTransform>().rect.height;
+                    float larguraParede = gameObject.GetComponent<RectTransform>().rect.width;
+                    float alturaHandGear = 0.7f * other.gameObject.GetComponent<RectTransform>().rect.height;
+                    float larguraHandGear = 0.7f * other.gameObject.GetComponent<RectTransform>().rect.width;
+
                     // Verificar se o movimento vem de baixo, de cima, do lado esquerdo ou do lado direito
 
                     float distanciaParaCima = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y - (other.GetComponent<RectTransform>().rect.height / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
@@ -28,41 +33,44 @@ public class BlocoImpeditivo : MonoBehaviour
 
                     if ((distanciaParaCima <= distanciaParaBaixo) && (distanciaParaCima <= distanciaParaEsquerda) && (distanciaParaCima <= distanciaParaDireita))
                     {
-                        sentido = 'N';
+                        // sentido = 'N';
                         //Debug.Log("Bateu em N");
-                    }
+                        other.transform.position = new Vector3(other.transform.position.x, this.transform.position.y + ((alturaParede/2) + (alturaHandGear/2)), other.transform.position.z);                    }
                     else if ((distanciaParaEsquerda <= distanciaParaCima) && (distanciaParaEsquerda <= distanciaParaBaixo) && (distanciaParaEsquerda <= distanciaParaDireita))
                     {
-                        sentido = 'L';
+                        // sentido = 'L';
                         //Debug.Log("Bateu em L");
+                        other.transform.position = new Vector3(this.transform.position.x + ((larguraParede/2) + (larguraHandGear/2)), other.transform.position.y, other.transform.position.z);
                     }
                     else if ((distanciaParaBaixo <= distanciaParaCima) && (distanciaParaBaixo <= distanciaParaEsquerda) && (distanciaParaBaixo <= distanciaParaDireita))
                     {
-                        sentido = 'S';
+                        // sentido = 'S';
                         //Debug.Log("Bateu em S");
+                        other.transform.position = new Vector3(other.transform.position.x, this.transform.position.y - ((alturaParede/2) + (alturaHandGear/2)), other.transform.position.z);
                     }
                     else if ((distanciaParaDireita <= distanciaParaCima) && (distanciaParaDireita <= distanciaParaEsquerda) && (distanciaParaDireita <= distanciaParaBaixo))
                     {
-                        sentido = 'O';
+                        // sentido = 'O';
                         //Debug.Log("Bateu em O");
+                        other.transform.position = new Vector3(this.transform.position.x - ((larguraParede/2) + (larguraHandGear/2)), other.transform.position.y, other.transform.position.z);
                     }
 
 
-                    switch (sentido)
-                    {
-                        case 'N':
-                            other.GetComponent<PieceController>().MovimentarPeca('C', 3, 999);
-                            break;
-                        case 'S':
-                            other.GetComponent<PieceController>().MovimentarPeca('B', 3, 999);
-                            break;
-                        case 'L':
-                            other.GetComponent<PieceController>().MovimentarPeca('D', 3, 999);
-                            break;
-                        case 'O':
-                            other.GetComponent<PieceController>().MovimentarPeca('E', 3, 999);
-                            break;
-                    }
+                    // switch (sentido)
+                    // {
+                    //     case 'N':
+                    //         other.GetComponent<PieceController>().MovimentarPeca('C', 3, 999);
+                    //         break;
+                    //     case 'S':
+                    //         other.GetComponent<PieceController>().MovimentarPeca('B', 3, 999);
+                    //         break;
+                    //     case 'L':
+                    //         other.GetComponent<PieceController>().MovimentarPeca('D', 3, 999);
+                    //         break;
+                    //     case 'O':
+                    //         other.GetComponent<PieceController>().MovimentarPeca('E', 3, 999);
+                    //         break;
+                    // }
                 }
         }
     }

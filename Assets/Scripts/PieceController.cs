@@ -15,13 +15,13 @@ public class PieceController : MonoBehaviour
     {
         if (posicaoAtualNoGrid)
             transform.position = posicaoAtualNoGrid.position;
+        else Invoke("PositionHandGear", 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime, 0);
-
     }
 
     public void MovimentarPeca(char direcao)
@@ -139,5 +139,10 @@ public class PieceController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void PositionHandGear() {
+        Vector3 startPosition = GameObject.FindGameObjectsWithTag("Start")[0].transform.position;
+        transform.position = new Vector3(startPosition.x, startPosition.y, transform.position.z);
     }
 }

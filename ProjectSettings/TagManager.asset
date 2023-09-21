@@ -8,6 +8,7 @@ TagManager:
   - Diamond
   - CameraTwo
   - Bola
+  - Start
   layers:
   - Default
   - TransparentFX
