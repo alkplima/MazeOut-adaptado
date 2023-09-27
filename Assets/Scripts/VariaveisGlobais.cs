@@ -6,7 +6,22 @@ public static class VariaveisGlobais
 {
     public static ControllerLabirinto atualControllerLabirinto;
 
-    public static bool passedThroughtStart = false;
+    // Variáveis Maze Out
+    // public static string NomeDoJogo = "MazeOut";
+    // //public static string Idioma = "BR";
+    // public static string Idioma = "EN";
+
+
+    // Grupo de variáveis a serem preenchidas nos atos
+    // public static string Device_ID, OperationalSystem, DateTime_Full, TempoRestante,
+    //     TipoInterface, SequenciaProgramada, IdentificadorNome, SimboloDiv,
+    //     TipoMarcacao, TipoInteracao, Senha_Pesquisa;
+
+    // public static int HandGear_Pos, 
+    //     idWebcam, ScreenSize_X, ScreenSize_Y, Touch_X, Touch_Y, PosicaoCorrenteSequencia,
+    //     DuracaoJogo, ColetaDados;
+
+
     public static string NomeDoJogo = "Basquete";
     //public static string Idioma = "BR";
     public static string Idioma = "EN";
