@@ -17,6 +17,11 @@ public class LoadGame : Singleton<SaveHandler> {
 
     private void Start() {
         // handGear = GameObject.Find("HandGear");
+        if (VariaveisGlobais.partidaCorrente == -1) {
+            filename = "mazeData.json";
+        } else {
+            filename = "level" + (VariaveisGlobais.partidaCorrente + 1).ToString() + ".json";
+        }
         grid = GameObject.Find("NewGrid");
         onLoad();
     }

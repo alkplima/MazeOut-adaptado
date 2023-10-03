@@ -22,7 +22,7 @@ public class StartMark : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        VariaveisGlobais.passedThroughtStart = true;
+        // VariaveisGlobais.passedThroughtStart = true;
         GameObject clone = Instantiate(checkMark, transform.position, Quaternion.identity);
         clone.transform.SetParent(this.transform.parent);
         AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f); 

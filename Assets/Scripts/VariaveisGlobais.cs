@@ -20,6 +20,7 @@ public static class VariaveisGlobais
     // public static int HandGear_Pos, 
     //     idWebcam, ScreenSize_X, ScreenSize_Y, Touch_X, Touch_Y, PosicaoCorrenteSequencia,
     //     DuracaoJogo, ColetaDados;
+    public static int partidaCorrente = -1;
 
 
     public static string NomeDoJogo = "Basquete";
@@ -183,7 +184,7 @@ public static bool Webcam_espelhar_H, Webcam_espelhar_V;
     }
     public static void ProtocoloToConfigValues()
     {
-        if (protocoloCorrente>=0 && partidaProtocoloCorrente >=0)
+        if (protocoloCorrente>=0 && partidaProtocoloCorrente>=0)
         {
             PlayerPrefs.SetInt("QTD_Defensores", 3);
             PlayerPrefs.SetInt("VLC_Defensores", protocolos[protocoloCorrente][partidaProtocoloCorrente].velocidade);
