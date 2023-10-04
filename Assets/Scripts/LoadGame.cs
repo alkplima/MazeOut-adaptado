@@ -15,7 +15,7 @@ public class LoadGame : Singleton<SaveHandler> {
     [SerializeField] GameObject grid;
     [SerializeField] string filename = "mazeData.json";
 
-    private void Start() {
+    private void OnEnable() {
         // handGear = GameObject.Find("HandGear");
         if (VariaveisGlobais.partidaCorrente == -1) {
             filename = "mazeData.json";
@@ -23,16 +23,47 @@ public class LoadGame : Singleton<SaveHandler> {
             filename = "level" + (VariaveisGlobais.partidaCorrente + 1).ToString() + ".json";
         }
         grid = GameObject.Find("NewGrid");
-        onLoad();
+        // Chama a função onLoad() após 0.3 segundos
+        Invoke("onLoad", 0.3f);
+    }
+
+    private void OnDisable() {
+
+        foreach (Transform col in grid.transform) {
+            foreach (Transform cel in col.transform) {
+
+                // Define a sprite para vazioBloco
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+
+                // Remove scripts e componentes específicos (exceto CelulaInfo e Image)
+                Component[] components = cel.gameObject.GetComponents<Component>();
+                foreach (Component component in components)
+                {
+                    // Verifica se o componente é um script que não deve ser removido
+                    if (component is MonoBehaviour && component.GetType() != typeof(CelulaInfo) && !(component is UnityEngine.UI.Image))
+                    {
+                        Destroy(component);
+                    }
+
+                    // Remove componentes específicos (Rigidbody2D e BoxCollider2D)
+                    if (component is Rigidbody2D || component is BoxCollider2D)
+                    {
+                        Destroy(component);
+                    }
+                }
+            }
+        }
     }
 
     public void onLoad() {
 
         List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
-
+        Debug.Log(grid);
         int i = 0; 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
+                Debug.Log(cel);
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + data[i].nomeSelecionadoSprite);
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
                 if (data[i].nomeSelecionadoSprite.StartsWith("Tiles"))

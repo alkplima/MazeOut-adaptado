@@ -159,6 +159,11 @@ public class BuildingCreator : Singleton<BuildingCreator>
         SelectedObj = null;
     }
 
+    public void OnButtonOutsideAreaClick()
+    {
+        SelectedObj = null;
+    }
+
     public void ObjectSelected(BuildingObjectBase obj)
     {
         SelectedObj = obj;
@@ -278,9 +283,26 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     }
 
-    private void ClearPreviewGrid () {
+    public void ClearPreviewGrid () {
 
         foreach (Transform col in previewGrid.transform) {
+            foreach (Transform cel in col.transform) {
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+            }
+        }
+    }
+
+    public void ClearAllGrids () {
+
+        foreach (Transform col in previewGrid.transform) {
+            foreach (Transform cel in col.transform) {
+                cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+                cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+            }
+        }
+
+        foreach (Transform col in newGrid.transform) {
             foreach (Transform cel in col.transform) {
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;

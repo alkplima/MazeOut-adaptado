@@ -51,7 +51,12 @@ public static class FileHandler {
 
     private static string GetPath (string filename)
     {
-        return Application.persistentDataPath + "/" + filename;
+        if (filename.StartsWith("level"))
+        {
+            string levelPath = Path.Combine("Resources", "LevelsSetup", filename);
+            return Path.Combine(Application.dataPath, levelPath);
+        }
+        return Path.Combine(Application.persistentDataPath, filename);
     }
 
     private static void WriteFile (string path, string content)
