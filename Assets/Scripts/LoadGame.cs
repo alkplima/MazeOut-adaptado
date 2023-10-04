@@ -64,6 +64,20 @@ public class LoadGame : Singleton<SaveHandler> {
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
                 Debug.Log(cel);
+                //Limpa informacoes anteriores
+                cel.SetLocalPositionAndRotation(cel.localPosition, new Quaternion(0, 0, 0, 0));
+                cel.gameObject.tag = "Untagged";
+
+                if (cel.gameObject.TryGetComponent<BlocoImpeditivo>(out BlocoImpeditivo bloco))
+                    Destroy(bloco);
+                if (cel.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigid))
+                    Destroy(rigid);
+                if (cel.gameObject.TryGetComponent<BoxCollider2D>(out BoxCollider2D box))
+                    Destroy(box);
+                if (cel.gameObject.TryGetComponent<Coin>(out Coin coin))
+                    Destroy(coin);
+
+                //Povoa com o que precisa
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + data[i].nomeSelecionadoSprite);
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
                 if (data[i].nomeSelecionadoSprite.StartsWith("Tiles"))

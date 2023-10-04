@@ -21,7 +21,7 @@ public static class VariaveisGlobais
     //     idWebcam, ScreenSize_X, ScreenSize_Y, Touch_X, Touch_Y, PosicaoCorrenteSequencia,
     //     DuracaoJogo, ColetaDados;
     public static int partidaCorrente = -1;
-
+    public static string estiloJogoCorrente = "";
 
     public static string NomeDoJogo = "Basquete";
     //public static string Idioma = "BR";

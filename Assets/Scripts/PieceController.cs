@@ -10,8 +10,7 @@ public class PieceController : MonoBehaviour
 
     int _rotationSpeed = 150;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         if (posicaoAtualNoGrid)
             transform.position = posicaoAtualNoGrid.position;

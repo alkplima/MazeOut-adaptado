@@ -31,7 +31,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
     Sprite currentCellPosition;
     Sprite lastCellPosition;
 
-    GameObject newGrid, previewGrid;
+    public GameObject newGrid, previewGrid;
 
     int colStartIndex, rowStartIndex;
 
@@ -41,8 +41,8 @@ public class BuildingCreator : Singleton<BuildingCreator>
         playerInput = new PlayerInput();
         // _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         _camera = GameObject.Find("BuilderCamera").GetComponent<Camera>();
-        newGrid = GameObject.Find("NewGrid");
-        previewGrid = GameObject.Find("PreviewGrid");
+        //newGrid = GameObject.Find("NewGrid");
+        //previewGrid = GameObject.Find("PreviewGrid");
     }
 
     private void OnEnable()
