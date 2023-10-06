@@ -20,7 +20,7 @@ public static class VariaveisGlobais
     // public static int HandGear_Pos, 
     //     idWebcam, ScreenSize_X, ScreenSize_Y, Touch_X, Touch_Y, PosicaoCorrenteSequencia,
     //     DuracaoJogo, ColetaDados;
-    public static int partidaCorrente = -1;
+    public static int partidaCorrente = 0;
     public static string estiloJogoCorrente = "";
 
     public static string NomeDoJogo = "Basquete";

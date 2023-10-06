@@ -31,7 +31,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
     Sprite currentCellPosition;
     Sprite lastCellPosition;
 
-    public GameObject newGrid, previewGrid;
+    public GameObject builderGrid, previewGrid;
 
     int colStartIndex, rowStartIndex;
 
@@ -41,7 +41,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
         playerInput = new PlayerInput();
         // _camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         _camera = GameObject.Find("BuilderCamera").GetComponent<Camera>();
-        //newGrid = GameObject.Find("NewGrid");
+        //builderGrid = GameObject.Find("BuilderGrid");
         //previewGrid = GameObject.Find("PreviewGrid");
     }
 
@@ -259,12 +259,12 @@ public class BuildingCreator : Singleton<BuildingCreator>
             for (int row = bounds.yMin; row <= bounds.yMax; row++)
             {
                 if (selectedObj.name.StartsWith("Eraser")) {
-                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
-                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = referenceVoid;
+                    builderGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+                    builderGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = referenceVoid;
                 }
                 else {
-                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
-                    newGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite;
+                    builderGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
+                    builderGrid.transform.GetChild(col).GetChild(row).GetComponent<UnityEngine.UI.Image>().sprite = previewGrid.transform.GetChild(col).GetChild(row).GetComponent<CelulaInfo>().selecionadoSprite;
                 }
             }
         }
@@ -302,7 +302,7 @@ public class BuildingCreator : Singleton<BuildingCreator>
             }
         }
 
-        foreach (Transform col in newGrid.transform) {
+        foreach (Transform col in builderGrid.transform) {
             foreach (Transform cel in col.transform) {
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;

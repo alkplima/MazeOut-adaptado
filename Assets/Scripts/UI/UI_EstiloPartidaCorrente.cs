@@ -23,7 +23,7 @@ public class UI_EstiloPartidaCorrente : MonoBehaviour
         }
         else if (VariaveisGlobais.estiloJogoCorrente == "Calibracao")
         {
-            //Continuar daqui        
+            menuOrigemMain.SetActive(true);  
         }
         else
         {

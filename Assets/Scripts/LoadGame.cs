@@ -16,18 +16,18 @@ public class LoadGame : Singleton<SaveHandler> {
     [SerializeField] string filename = "mazeData.json";
 
     private void OnEnable() {
-        // handGear = GameObject.Find("HandGear");
-        if (VariaveisGlobais.partidaCorrente == -1) {
+        if (VariaveisGlobais.partidaCorrente == 0) {
             filename = "mazeData.json";
+        } else if (VariaveisGlobais.partidaCorrente < 0) {
+            filename = "calibration" + (VariaveisGlobais.partidaCorrente * -1).ToString() + ".json";
         } else {
-            filename = "level" + (VariaveisGlobais.partidaCorrente + 1).ToString() + ".json";
+            filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
         }
-        grid = GameObject.Find("NewGrid");
-        // Chama a função onLoad() após 0.3 segundos
-        Invoke("onLoad", 0.3f);
+        onLoad();
     }
 
     private void OnDisable() {
+        handGear.SetActive(false);
 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
@@ -59,12 +59,10 @@ public class LoadGame : Singleton<SaveHandler> {
     public void onLoad() {
 
         List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
-        Debug.Log(grid);
         int i = 0; 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
-                Debug.Log(cel);
-                //Limpa informacoes anteriores
+                // Limpa informações anteriores
                 cel.SetLocalPositionAndRotation(cel.localPosition, new Quaternion(0, 0, 0, 0));
                 cel.gameObject.tag = "Untagged";
 
@@ -77,7 +75,7 @@ public class LoadGame : Singleton<SaveHandler> {
                 if (cel.gameObject.TryGetComponent<Coin>(out Coin coin))
                     Destroy(coin);
 
-                //Povoa com o que precisa
+                // Povoa com o que precisa
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + data[i].nomeSelecionadoSprite);
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
                 if (data[i].nomeSelecionadoSprite.StartsWith("Tiles"))
@@ -89,7 +87,6 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
-                //else if (data[i].selecionadoSprite.ToString().StartsWith("moeda")) {}
                 else if (data[i].nomeSelecionadoSprite.StartsWith("static")) 
                 {
                     cel.gameObject.AddComponent<Coin>();
@@ -99,16 +96,21 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                     cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
                 }
-                //else if (data[i].selecionadoSprite.ToString().StartsWith("start")) {
                 else if (data[i].nomeSelecionadoSprite.StartsWith("start"))
                 {
                     cel.gameObject.tag = "Start";
-                    // handGear.transform.position = cel.gameObject.transform.position;
-                    // element.transform.parent = GameObject.Find("Itens").transform;
-
+                    handGear.transform.position = cel.transform.position;
+                    handGear.SetActive(true);
                 }
-                //else if (data[i].selecionadoSprite.ToString().StartsWith("fim")) { }
-                else if (data[i].nomeSelecionadoSprite.StartsWith("fim")) {}
+                else if (data[i].nomeSelecionadoSprite.StartsWith("finish")) 
+                {
+                    cel.gameObject.AddComponent<FinalizouPartida>();
+                    cel.gameObject.AddComponent<Rigidbody2D>();
+                    cel.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                    cel.gameObject.AddComponent<BoxCollider2D>();
+                    cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
+                    cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                }
                 // else if (data[i].selecionadoSprite.ToString().StartsWith("check")) {
                 //     cel.gameObject.AddComponent<CheckPoint>();
                 // }

@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour
     int _rotationSpeed = 50;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         // _uiManager = GameObject.Find("GameScreen").GetComponent<ScoreHUD>();
         _clip = Resources.Load<AudioClip>("Audios" + Path.DirectorySeparatorChar + "coin");
