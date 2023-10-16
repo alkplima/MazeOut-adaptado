@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PieceController : MonoBehaviour
 {
+    private float maxX, maxY, minX, minY;
     public RectTransform posicaoAtualNoGrid;
     public GameObject ponto, ponto2;
     public bool ChegouNoAlvo = false;
@@ -15,12 +16,44 @@ public class PieceController : MonoBehaviour
         if (posicaoAtualNoGrid)
             transform.position = posicaoAtualNoGrid.position;
         else Invoke("PositionHandGear", 0.5f);
+
+        SetInitialMinMaxValues();
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime, 0);
+        UpdateMinMaxValues();
+    }
+
+    void OnDisable() 
+    {
+        VariaveisGlobais.maxX = maxX;
+        VariaveisGlobais.minX = minX;
+        VariaveisGlobais.maxY = maxY;
+        VariaveisGlobais.minY = minY;
+    }
+
+    private void SetInitialMinMaxValues()
+    {
+        maxX = transform.position.x;
+        minX = transform.position.x;
+        maxY = transform.position.y;
+        minY = transform.position.y;
+    }
+
+    private void UpdateMinMaxValues()
+    {
+        if (transform.position.x > maxX)
+            maxX = transform.position.x;
+        else if (transform.position.x < minX)
+            minX = transform.position.x;
+
+        if (transform.position.y > maxY)
+            maxY = transform.position.y;
+        else if (transform.position.y < minY)
+            minY = transform.position.y;
     }
 
     public void MovimentarPeca(char direcao)

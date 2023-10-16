@@ -54,6 +54,8 @@ public class LoadGame : Singleton<SaveHandler> {
                 }
             }
         }
+
+        Invoke("DelayedSaveData", 0.3f);
     }
 
     public void onLoad() {
@@ -122,6 +124,10 @@ public class LoadGame : Singleton<SaveHandler> {
                 i++;
             }
         }
+    }
 
+    private void DelayedSaveData()
+    {
+        AdaptionInfoFileManager.SaveDataToFile();
     }
 }

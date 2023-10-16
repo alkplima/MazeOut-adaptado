@@ -7,7 +7,7 @@ public class UI_DisplayTimer : MonoBehaviour
 {
     public TMP_Text textTimer;
 
-    private float timer;
+    public float timer;
     private bool isTimer = false;
 
     [SerializeField] GameObject gameScreenManager;

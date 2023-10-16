@@ -22,6 +22,8 @@ public static class VariaveisGlobais
     //     DuracaoJogo, ColetaDados;
     public static int partidaCorrente = 0;
     public static string estiloJogoCorrente = "";
+    public static float timePerCoinTopToBottom, timePerCoinBottomToTop, timePerCoinLeftToRight, timePerCoinRightToLeft;
+    public static float maxX, maxY, minX, minY;
 
     public static string NomeDoJogo = "Basquete";
     //public static string Idioma = "BR";
