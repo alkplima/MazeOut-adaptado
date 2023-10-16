@@ -7,6 +7,7 @@ public class UI_MessageScreen : MonoBehaviour
     public GameObject currentScreen;
     public GameObject messageScreen;
     public GameObject successModal;
+    public GameObject failureModal;
 
     void Star() {}
 
@@ -23,6 +24,19 @@ public class UI_MessageScreen : MonoBehaviour
     {
         currentScreen.SetActive(true);
         successModal.SetActive(false);
+        messageScreen.SetActive(false);
+    }
+    public void ShowFailureModal()
+    {
+        messageScreen.SetActive(true);
+        currentScreen.SetActive(false);
+        failureModal.SetActive(true);
+    }
+
+    public void HideFailureModal()
+    {
+        currentScreen.SetActive(true);
+        failureModal.SetActive(false);
         messageScreen.SetActive(false);
     }
 }
