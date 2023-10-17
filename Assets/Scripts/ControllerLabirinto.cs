@@ -58,7 +58,10 @@ public class ControllerLabirinto : MonoBehaviour
             PlayerPrefs.SetInt("Arraste", 5);
 
         if (!PlayerPrefs.HasKey("Som"))
-            PlayerPrefs.SetInt("Som", 1);
+            PlayerPrefs.SetInt("Som", 0);
+
+        if (!PlayerPrefs.HasKey("Timer"))
+            PlayerPrefs.SetInt("Timer", 60);
 
         if (PlayerPrefs.GetInt("Som")==1)
             audioFundo.Play();

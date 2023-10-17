@@ -273,7 +273,8 @@ public class Webcam : MonoBehaviour {
 	public void StopWebcam()
 	{
 		initialized = false;
-		webcamTexture.Stop();
+		if (webcamTexture)
+            webcamTexture.Stop();
 	}
 
 	private void OnDisable()

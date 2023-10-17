@@ -6,6 +6,7 @@ public class CaminhoWebcamItemController : MonoBehaviour
 {
     internal char sentido;
     public bool areaDeTolerancia = false;
+    public bool newDetection = false;
 
     void Update()
     {
@@ -15,7 +16,10 @@ public class CaminhoWebcamItemController : MonoBehaviour
 
     public void Verificar()
     {
-        Verificar(1);
+        if (newDetection)
+            Mover(gameObject.GetComponent<GrudaDetector>().lado, 1);
+        else
+            Verificar(1);
     }
 
     public void Verificar(float intensidade)
@@ -67,5 +71,24 @@ public class CaminhoWebcamItemController : MonoBehaviour
                     }
                 }
         }        
+    }
+
+    public void Mover(char lado, float intensidade)
+    {
+        switch (lado)
+        {
+            case 'L': // Veio de left, mover pra right
+                VariaveisGlobais.atualControllerLabirinto.pecas[0].GetComponent<PieceController>().MovimentarPeca('D', intensidade);
+                break;
+            case 'R':// Veio de right, mover pra left
+            VariaveisGlobais.atualControllerLabirinto.pecas[0].GetComponent<PieceController>().MovimentarPeca('E', intensidade);
+                break;
+            case 'T':// Veio de top, mover pra bottom
+            VariaveisGlobais.atualControllerLabirinto.pecas[0].GetComponent<PieceController>().MovimentarPeca('B', intensidade);
+                break;
+            case 'B':// Veio de bottom, mover pra top
+            VariaveisGlobais.atualControllerLabirinto.pecas[0].GetComponent<PieceController>().MovimentarPeca('C', intensidade);
+                break;
+        }
     }
 }

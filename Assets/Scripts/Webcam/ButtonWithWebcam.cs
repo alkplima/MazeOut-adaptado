@@ -29,7 +29,7 @@ public class ButtonWithWebcam : MonoBehaviour{
                 transform.GetComponent<Button>().onClick.Invoke();
             if (gameObject.GetComponent<CaminhoWebcamItemController>())
                 if (PaterlandGlobal.autorizadoMovimento && gameObject.GetComponent<CaminhoWebcamItemController>().isActiveAndEnabled)
-                 gameObject.GetComponent<CaminhoWebcamItemController>().Verificar();
+                    gameObject.GetComponent<CaminhoWebcamItemController>().Verificar();
         }
         else
         {
