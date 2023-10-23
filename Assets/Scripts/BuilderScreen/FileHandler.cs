@@ -53,13 +53,13 @@ public static class FileHandler {
     {
         if (filename.StartsWith("level"))
         {
-            string levelPath = Path.Combine("Resources", "LevelsSetup", filename);
-            return Path.Combine(Application.dataPath, levelPath);
+            string levelPath = Path.Combine("LevelsSetup", filename);
+            return Path.Combine(Application.streamingAssetsPath, levelPath);
         }
         if (filename.StartsWith("calibration"))
         {
-            string calibrationPath = Path.Combine("Resources", "CalibrationSetup", filename);
-            return Path.Combine(Application.dataPath, calibrationPath);
+            string calibrationPath = Path.Combine("CalibrationSetup", filename);
+            return Path.Combine(Application.streamingAssetsPath, calibrationPath);
         }
         return Path.Combine(Application.persistentDataPath, filename);
     }

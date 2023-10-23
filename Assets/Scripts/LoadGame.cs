@@ -13,17 +13,20 @@ public class LoadGame : Singleton<SaveHandler> {
     [SerializeField] BoundsInt bounds;
     [SerializeField] GameObject handGear;
     [SerializeField] GameObject grid;
-    [SerializeField] string filename = "mazeData.json";
+    [SerializeField] string filename;
 
     private void OnEnable() {
-        if (VariaveisGlobais.partidaCorrente == 0) {
-            filename = "mazeData.json";
-        } else if (VariaveisGlobais.partidaCorrente < 0) {
-            filename = "calibration" + (VariaveisGlobais.partidaCorrente * -1).ToString() + ".json";
-        } else {
-            filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
+        if (VariaveisGlobais.partidaCorrente != 2001)
+        {
+            if (VariaveisGlobais.partidaCorrente == 0) {
+                filename = "mazeData.json";
+            } else if (VariaveisGlobais.partidaCorrente < 0) {
+                filename = "calibration" + (VariaveisGlobais.partidaCorrente * -1).ToString() + ".json";
+            } else {
+                filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
+            }
+            onLoad();   
         }
-        onLoad();
     }
 
     private void OnDisable() {

@@ -18,27 +18,27 @@ public class ViewOptionItem : MonoBehaviour
         {
             case "TextoTimerContagem":
                 if (VariaveisGlobais.Idioma=="BR")
-                    text.text = "Contagem regressiva: " + PlayerPrefs.GetInt("Timer").ToString() + " seg (padrão '60')";
+                    text.text = "Contagem regressiva: " + PlayerPrefs.GetInt("Timer").ToString() + " segundos (padrão = 60)";
                 else if (VariaveisGlobais.Idioma == "EN")
-                    text.text = "Timer countdown: " + PlayerPrefs.GetInt("Timer").ToString() + " sec (default '60')";
+                    text.text = "Timer countdown: " + PlayerPrefs.GetInt("Timer").ToString() + " seconds (default = 60)";
                 else
-                    text.text = "Contagem regressiva: " + PlayerPrefs.GetInt("Timer").ToString() + " seg (padrão '60')";
+                    text.text = "Contagem regressiva: " + PlayerPrefs.GetInt("Timer").ToString() + " segundos (padrão = 60)";
                 break;
             case "TextoVelocidadeMov":
                 if (VariaveisGlobais.Idioma=="BR")
-                    text.text = "Velocidade de movimentação: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (padrão '75')";
+                    text.text = "Velocidade de movimentação: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (padrão = 75)";
                 else if (VariaveisGlobais.Idioma == "EN")
-                    text.text = "Movement speed: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (default '75')";
+                    text.text = "Movement speed: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (default = 75)";
                 else
-                    text.text = "Velocidade de movimentação: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (padrão '75')";
+                    text.text = "Velocidade de movimentação: " + PlayerPrefs.GetInt("Velocidade").ToString() + " (padrão = 75)";
                 break;
             case "TextoArraste":
                 if (VariaveisGlobais.Idioma == "BR") 
-                    text.text = "Efeito de atrito (\"arraste\"): " + PlayerPrefs.GetInt("Arraste").ToString() + " (padrão '05')";
+                    text.text = "Efeito de atrito (\"arraste\"): " + PlayerPrefs.GetInt("Arraste").ToString() + " (padrão = 05)";
                 else if (VariaveisGlobais.Idioma == "EN")
-                    text.text = "\"Friction\" effect: " + PlayerPrefs.GetInt("Arraste").ToString() + " (default '05')";
+                    text.text = "\"Friction\" effect: " + PlayerPrefs.GetInt("Arraste").ToString() + " (default = 05)";
                 else
-                    text.text = "Efeito de atrito (\"arraste\"): " + PlayerPrefs.GetInt("Arraste").ToString() + " (padrão '05')";
+                    text.text = "Efeito de atrito (\"arraste\"): " + PlayerPrefs.GetInt("Arraste").ToString() + " (padrão = 05)";
                 break;
             case "SliderTimerContagem":
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Timer");
