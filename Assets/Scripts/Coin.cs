@@ -15,6 +15,12 @@ public class Coin : MonoBehaviour
     ScoreHUD _uiManager;
     int _rotationSpeed = 50;
 
+    private Vector3[] cantosMoeda = new Vector3[4];
+    private Vector3[] cantosOtherSombra = new Vector3[4];
+
+    private float alturaMoeda, larguraMoeda, alturaOther, larguraOther;
+
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -32,6 +38,16 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.tag.StartsWith("Bola")) {
+
+            gameObject.GetComponent<RectTransform>().GetWorldCorners(cantosMoeda);
+            other.GetComponent<PieceController>().sombra.GetWorldCorners(cantosOtherSombra);
+
+            alturaMoeda = Mathf.Abs(cantosMoeda[0].y - cantosMoeda[1].y);
+            larguraMoeda = Mathf.Abs(cantosMoeda[1].x - cantosMoeda[2].x);
+
+            alturaOther = Mathf.Abs(cantosOtherSombra[0].y - cantosOtherSombra[1].y);
+            larguraOther = Mathf.Abs(cantosOtherSombra[1].x - cantosOtherSombra[2].x);
+
             VerificaLado(other);
 
             this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
@@ -53,17 +69,17 @@ public class Coin : MonoBehaviour
         if (other.GetComponent<PieceController>().enabled)
             if (Vector2.Distance(other.GetComponent<RectTransform>().position, GetComponent<RectTransform>().position) <= (0.8f * other.GetComponent<RectTransform>().rect.width / 2 + GetComponent<RectTransform>().rect.width / 2))
             {
-                float alturaParede = gameObject.GetComponent<RectTransform>().rect.height;
-                float larguraParede = gameObject.GetComponent<RectTransform>().rect.width;
-                float alturaHandGear = 0.7f * other.gameObject.GetComponent<RectTransform>().rect.height;
-                float larguraHandGear = 0.7f * other.gameObject.GetComponent<RectTransform>().rect.width;
+                float alturaParede = alturaMoeda;
+                float larguraParede = larguraMoeda;
+                float alturaHandGear = 0.7f * alturaOther;
+                float larguraHandGear = 0.7f * larguraOther;
 
                 // Verificar se o movimento vem de baixo, de cima, do lado esquerdo ou do lado direito
 
-                float distanciaParaCima = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y - (other.GetComponent<RectTransform>().rect.height / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
-                float distanciaParaBaixo = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y + (other.GetComponent<RectTransform>().rect.height / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
-                float distanciaParaDireita = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x + (other.GetComponent<RectTransform>().rect.width / 2), other.GetComponent<RectTransform>().position.y,    other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
-                float distanciaParaEsquerda = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x - (other.GetComponent<RectTransform>().rect.width / 2), other.GetComponent<RectTransform>().position.y, other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
+                float distanciaParaCima = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y - (alturaOther / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
+                float distanciaParaBaixo = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y + (alturaOther / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
+                float distanciaParaDireita = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x + (larguraOther / 2), other.GetComponent<RectTransform>().position.y,    other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
+                float distanciaParaEsquerda = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x - (larguraOther / 2), other.GetComponent<RectTransform>().position.y, other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
 
                 if ((distanciaParaCima <= distanciaParaBaixo) && (distanciaParaCima <= distanciaParaEsquerda) && (distanciaParaCima <= distanciaParaDireita))
                 {

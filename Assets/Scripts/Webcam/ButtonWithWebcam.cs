@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class ButtonWithWebcam : MonoBehaviour{
@@ -14,6 +15,9 @@ public class ButtonWithWebcam : MonoBehaviour{
     }
 
     void Update(){
+        Debug.Log("Scale H:" + PaterlandGlobal.currentWebcam.scaleH);
+        Debug.Log("Scale V:" + PaterlandGlobal.currentWebcam.scaleV);
+
         RectTransform rt = GetComponent<RectTransform>();
         int x = (int) (Mathf.Abs(rt.anchoredPosition.x)* PaterlandGlobal.currentWebcam.scaleH),
             y = (int) (Mathf.Abs(rt.anchoredPosition.y)* PaterlandGlobal.currentWebcam.scaleV),

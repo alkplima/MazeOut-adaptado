@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Webcam : MonoBehaviour {
 
@@ -131,7 +132,7 @@ public class Webcam : MonoBehaviour {
 				lastData.CopyTo(bufferData_H, 0);
 				for (int i = 0; i < webcamTexture.width; i++)
 					for (int j = 0; j < webcamTexture.height; j++)
-						lastData[i + (webcamTexture.width * j)] = bufferData_H[((i - webcamTexture.width - 1) *(-1)) + (webcamTexture.width * j)];
+						lastData[i + (webcamTexture.width * j)] = bufferData_H[((i - (webcamTexture.width - 1)) *(-1)) + (webcamTexture.width * j)];
 			}
 			
 			if (VariaveisGlobais.Webcam_espelhar_V)
@@ -140,7 +141,7 @@ public class Webcam : MonoBehaviour {
 				lastData.CopyTo(bufferData_V, 0);
 				for (int i = 0; i < webcamTexture.width; i++)
 					for (int j = 0; j < webcamTexture.height; j++)
-						lastData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - webcamTexture.height - 1) *(-1)))];
+						lastData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - (webcamTexture.height - 1)) *(-1)))];
 			}
 
 
@@ -193,7 +194,7 @@ public class Webcam : MonoBehaviour {
 			actualData.CopyTo(bufferData_H, 0);
 			for (int i = 0; i < webcamTexture.width; i++)
 				for (int j = 0; j < webcamTexture.height; j++)
-					actualData[i + (webcamTexture.width * j)] = bufferData_H[((i - webcamTexture.width - 1) * (-1)) + (webcamTexture.width * j)];
+					actualData[i + (webcamTexture.width * j)] = bufferData_H[((i - (webcamTexture.width - 1)) * (-1)) + (webcamTexture.width * j)];
 		}
 
 		if (VariaveisGlobais.Webcam_espelhar_V)
@@ -202,7 +203,7 @@ public class Webcam : MonoBehaviour {
 			actualData.CopyTo(bufferData_V, 0);
 			for (int i = 0; i < webcamTexture.width; i++)
 				for (int j = 0; j < webcamTexture.height; j++)
-					actualData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - webcamTexture.height - 1) * (-1)))];
+					actualData[i + (webcamTexture.width * j)] = bufferData_V[i + (webcamTexture.width * ((j - (webcamTexture.height - 1)) * (-1)))];
 		}
 
 		diffsum = 0;

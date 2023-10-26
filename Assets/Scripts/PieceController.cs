@@ -8,6 +8,10 @@ public class PieceController : MonoBehaviour
     public RectTransform posicaoAtualNoGrid;
     public GameObject ponto, ponto2;
     public bool ChegouNoAlvo = false;
+    public RectTransform sombra;
+    
+    private Vector3[] cantosSombra = new Vector3[4];
+    private float alturaPiece, larguraPiece;
 
     int _rotationSpeed = 150;
 
@@ -25,6 +29,10 @@ public class PieceController : MonoBehaviour
     {
         transform.Rotate(0, 0, _rotationSpeed * Time.deltaTime, 0);
         UpdateMinMaxValues();
+
+        sombra.GetWorldCorners(cantosSombra);
+        alturaPiece = Mathf.Abs(cantosSombra[0].y - cantosSombra[1].y);
+        larguraPiece = Mathf.Abs(cantosSombra[1].x - cantosSombra[2].x);
     }
 
     void OnDisable() 
@@ -73,23 +81,23 @@ public class PieceController : MonoBehaviour
         {
             case 'C':
                 // Ver se bate em cima
-                if (!(transform.position.y + 0.5f*(transform.GetComponent<RectTransform>().rect.height / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y))
+                if (!(transform.position.y + 0.5f*(alturaPiece / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y))
                     StartCoroutine(moverPeca('y', PlayerPrefs.GetInt("Velocidade") * -0.0001f * intensidade , PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'B':
                 // Ver se bate em baixo
-                if (!(transform.position.y - 0.5f*(transform.GetComponent<RectTransform>().rect.height / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y))
+                if (!(transform.position.y - 0.5f*(alturaPiece / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y))
                     StartCoroutine(moverPeca('y', PlayerPrefs.GetInt("Velocidade") * 0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'E':
                 // Ver se bate na esquerda
-                if (!(transform.position.x - 0.5f*(transform.GetComponent<RectTransform>().rect.width / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x))
+                if (!(transform.position.x - 0.5f*(larguraPiece / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x))
                     StartCoroutine(moverPeca('x', PlayerPrefs.GetInt("Velocidade") * -0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'D':
                 // Ver se bate na direita
-                if (!(transform.position.x + 0.5f*(transform.GetComponent<RectTransform>().rect.width / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x))
-                    StartCoroutine(moverPeca('x', PlayerPrefs.GetInt("Velocidade")*0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
+                if (!(transform.position.x + 0.5f * (larguraPiece / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x))
+                    StartCoroutine(moverPeca('x', PlayerPrefs.GetInt("Velocidade") * 0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
         }
         //controller.VerificarPecaIndividual(this);
@@ -108,7 +116,7 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido > 0)
                     {
-                        if (transform.position.x + 0.5f * (transform.GetComponent<RectTransform>().rect.width / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x)
+                        if (transform.position.x + 0.5f * (larguraPiece / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x)
                         {
                             valorDecrescido = 0;
                         }                            
@@ -125,7 +133,7 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido < 0)
                     {
-                        if (transform.position.x - 0.5f * (transform.GetComponent<RectTransform>().rect.width / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x)
+                        if (transform.position.x - 0.5f * (larguraPiece / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x)
                             valorDecrescido = 0;
                         else
                         {
@@ -143,7 +151,7 @@ public class PieceController : MonoBehaviour
                 {                
                     while (valorDecrescido > 0)
                     {
-                        if (transform.position.y - 0.5f * (transform.GetComponent<RectTransform>().rect.height / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y)
+                        if (transform.position.y - 0.5f * (alturaPiece / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y)
                             valorDecrescido = 0;
                         else
                         {
@@ -158,7 +166,7 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido < 0)
                     {
-                        if (transform.position.y + 0.5f * (transform.GetComponent<RectTransform>().rect.height / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y)
+                        if (transform.position.y + 0.5f * (alturaPiece / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y)
                             valorDecrescido = 0;
                         else
                         {

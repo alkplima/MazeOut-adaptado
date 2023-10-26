@@ -5,23 +5,59 @@ using UnityEngine;
 public class GrudaDetector : MonoBehaviour
 {
     public char lado;
+    public Transform bola;
     void Update()
     {
-        Transform bola = GameObject.FindGameObjectsWithTag("Bola")[0].transform;
-
         switch (lado.ToString().ToUpper())
         {
             case "L":
-                transform.position = new Vector2(bola.position.x - (bola.GetComponent<RectTransform>().rect.width * 0.5f), bola.position.y);
+                Modificar("L");
                 break;
             case "R":
-                transform.position = new Vector2(bola.position.x + (bola.GetComponent<RectTransform>().rect.width * 0.5f), bola.position.y);
+                Modificar("R");
                 break;
             case "T":
-                transform.position = new Vector2(bola.position.x, bola.position.y + (bola.GetComponent<RectTransform>().rect.height * 0.5f));
+                Modificar("T");
                 break;
             case "B":
-                transform.position = new Vector2(bola.position.x, bola.position.y - (bola.GetComponent<RectTransform>().rect.height * 0.5f));
+                Modificar("B");
+                break;
+            case "!":
+                Modificar("!");
+                break;
+        }
+    }
+
+    private void Modificar(string ladoStr)
+    {
+        Vector3[] cantosBola = new Vector3[4];
+        Vector3[] cantosBotaoSensor = new Vector3[4];
+
+        bola.GetComponent<RectTransform>().GetWorldCorners(cantosBola);
+        GetComponent<RectTransform>().GetWorldCorners(cantosBotaoSensor);
+
+        float alturaBola = Mathf.Abs(cantosBola[0].y - cantosBola[1].y);
+        float larguraBola = Mathf.Abs(cantosBola[1].x - cantosBola[2].x);
+
+        float alturaBotaoSensor = Mathf.Abs(cantosBotaoSensor[0].y - cantosBotaoSensor[1].y);
+        float larguraBotaoSensor = Mathf.Abs(cantosBotaoSensor[1].x - cantosBotaoSensor[2].x);
+
+        switch (ladoStr)
+        {
+            case "L":
+                transform.position = new Vector3(bola.position.x - (larguraBola * 0.5f) - larguraBotaoSensor, bola.position.y + (alturaBotaoSensor/2), bola.position.z);
+                break;
+            case "R":
+                transform.position = new Vector3(bola.position.x + (larguraBola * 0.5f), bola.position.y + (alturaBotaoSensor / 2), bola.position.z);
+                break;
+            case "T":
+                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor/2), bola.position.y + (alturaBola * 0.5f) + alturaBotaoSensor, bola.position.z);
+                break;
+            case "B":
+                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor / 2), bola.position.y - (alturaBola * 0.5f), bola.position.z);
+                break;
+            case "!":
+                transform.position = bola.position;
                 break;
         }
     }
