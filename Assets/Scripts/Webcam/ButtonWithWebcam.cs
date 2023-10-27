@@ -15,8 +15,8 @@ public class ButtonWithWebcam : MonoBehaviour{
     }
 
     void Update(){
-        Debug.Log("Scale H:" + PaterlandGlobal.currentWebcam.scaleH);
-        Debug.Log("Scale V:" + PaterlandGlobal.currentWebcam.scaleV);
+        // Debug.Log("Scale H:" + PaterlandGlobal.currentWebcam.scaleH);
+        // Debug.Log("Scale V:" + PaterlandGlobal.currentWebcam.scaleV);
 
         RectTransform rt = GetComponent<RectTransform>();
         int x = (int) (Mathf.Abs(rt.anchoredPosition.x)* PaterlandGlobal.currentWebcam.scaleH),
