@@ -13,6 +13,10 @@ public class SaveHandler : Singleton<SaveHandler> {
 
     [SerializeField] BoundsInt bounds;
     [SerializeField] GameObject moeda;
+
+    public GameObject confirmationPopup;
+    public GameObject constructionErrorPopup;
+
     public GameObject grid;
     internal string filename = "mazeData.json";
 
@@ -20,9 +24,20 @@ public class SaveHandler : Singleton<SaveHandler> {
         // Lista que será salva posteriormente
         List<CelulaData> data = new List<CelulaData>();
 
+        GameObject builderScreenManager = GameObject.Find("BuilderScreenManager");
+        int startPoints = 0;
+        int endPoints = 0;
 
         foreach (Transform col in grid.transform) {
             foreach (Transform cel in col.transform) {
+                if (cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite.name.StartsWith("start")) 
+                {
+                    startPoints++;
+                } 
+                else if (cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite.name.StartsWith("finish")) 
+                {
+                    endPoints++;
+                }
                 CelulaData celData = new CelulaData();
                 celData.position = cel.position;
                 celData.selecionadoSprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
@@ -30,6 +45,13 @@ public class SaveHandler : Singleton<SaveHandler> {
                 data.Add(celData);
             }
         }
+
+        if (startPoints != 1 || endPoints != 1) {
+            constructionErrorPopup.SetActive(true);
+            return;
+        }
+
+        confirmationPopup.SetActive(true);
 
         FileHandler.SaveToJSON<CelulaData>(data, filename);
     }
