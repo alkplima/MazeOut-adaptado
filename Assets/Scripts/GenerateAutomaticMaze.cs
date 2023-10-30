@@ -14,7 +14,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     private string[,] gridMatrix;
     private float minX, maxX, minY, maxY, timePerCoinBottomToTop, timePerCoinTopToBottom, timePerCoinLeftToRight, timePerCoinRightToLeft;
     int xMaxColumnIndex, yMaxCellIndex, xMinColumnIndex, yMinCellIndex;
-    private int maxCellGrowth = 1;
+    private int maxCellGrowthOrShrink = 1;
 
     int xCurrentIndexInGrid;
     int yCurrentIndexInGrid;
@@ -105,13 +105,13 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             // Verifica se a coluna tem o maxX
             if (!foundXMax && maxX >= column.transform.position.x - cellWidth / 2 && maxX <= column.transform.position.x + cellWidth / 2) 
             {
-                xMaxColumnIndex = IndexWithHalfRandomGrowth(col, timePerCoinLeftToRight, false, true);
+                xMaxColumnIndex = col;
                 foundXMax = true;
             }
             // Verifica se a coluna tem o minX
             else if (!foundXMin && minX >= column.transform.position.x - cellWidth / 2 && minX <= column.transform.position.x + cellWidth / 2) 
             {
-                xMinColumnIndex = IndexWithHalfRandomGrowth(col, timePerCoinRightToLeft, true, true);
+                xMinColumnIndex = col;
                 foundXMin = true;
             }
 
@@ -133,13 +133,13 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 // Verifica se a célula tem o maxY
                 if (!foundYMax && maxY >= cell.transform.position.y - cellHeight / 2 && maxY <= cell.transform.position.y + cellHeight / 2) 
                 {
-                    yMaxCellIndex = IndexWithHalfRandomGrowth(cel, timePerCoinBottomToTop, true, false);
+                    yMaxCellIndex = cel;
                     foundYMax = true;
                 }
                 // Verifica se a célula tem o minY
                 else if (!foundYMin && minY >= cell.transform.position.y - cellHeight / 2 && minY <= cell.transform.position.y + cellHeight / 2) 
                 {
-                    yMinCellIndex = IndexWithHalfRandomGrowth(cel, timePerCoinTopToBottom, false, false);
+                    yMinCellIndex = cel;
                     foundYMin = true;
                 }
 
@@ -149,11 +149,16 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 }
             }
         }
+        
+        int xMaxColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMaxColumnIndex, timePerCoinLeftToRight, false, true, xMinColumnIndex);
+        int xMinColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMinColumnIndex, timePerCoinRightToLeft, true, true, xMaxColumnIndex);
+        int yMaxCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMaxCellIndex, timePerCoinBottomToTop, true, false, yMinCellIndex);
+        int yMinCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMinCellIndex, timePerCoinTopToBottom, false, false, yMaxCellIndex);
 
-        return new int[] { xMaxColumnIndex, yMaxCellIndex, xMinColumnIndex, yMinCellIndex };
+        return new int[] { xMaxColumnFinalIndex, yMaxCellFinalIndex, xMinColumnFinalIndex, yMinCellFinalIndex };
     }
 
-    public int IndexWithHalfRandomGrowth(int index, float timePerCoinInDirection, bool shouldDecreaseToGrow, bool isColumn)
+    public int IndexWithPseudoGrowthOrShrink(int index, float timePerCoinInDirection, bool shouldDecreaseToGrow, bool isColumn, int otherCoordinateExtremeIndex)
     {
         // Checa se o índice já está no limite do grid
         if (index == 0 || (isColumn && index==maxColumns - 1) || (!isColumn && index==maxRows - 1)) 
@@ -166,17 +171,29 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         {
             if (timePerCoinInDirection < 1)
             {
-                cellGrowth = maxCellGrowth;
+                cellGrowth = maxCellGrowthOrShrink;
             }
             else
             {
-                cellGrowth = UnityEngine.Random.Range(0, maxCellGrowth + 1);
+                cellGrowth = UnityEngine.Random.Range(0, maxCellGrowthOrShrink + 1);
             }
         }
-        else 
-        {
-            cellGrowth = 0;
+        else {
+            // Conferindo se pode diminuir
+            if ((shouldDecreaseToGrow && otherCoordinateExtremeIndex - index > 3) || (!shouldDecreaseToGrow && index - otherCoordinateExtremeIndex > 3))
+            {
+                if (timePerCoinInDirection < 5)
+                    cellGrowth = UnityEngine.Random.Range(-maxCellGrowthOrShrink, 0 + 1);
+                else 
+                {
+                    cellGrowth = -maxCellGrowthOrShrink;
+                }
+            }
+            else {
+                cellGrowth = 0;
+            }
         }
+
         if (shouldDecreaseToGrow) // Índice negativo → deve subtrair para crescer 
         {
             return index - cellGrowth;
@@ -188,7 +205,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     {
         bool[] hasGone = new bool[4];
         float[] timePerCoin = new float[] { timePerCoinBottomToTop, timePerCoinLeftToRight, timePerCoinTopToBottom, timePerCoinRightToLeft };
-        int[] directions = new int[] { 0, 1, 2, 3}; // 0: cima, 1: direita, 2: baixo, 3: esquerda
+        int[] directions = new int[] { 0, 1, 2, 3 }; // 0: cima, 1: direita, 2: baixo, 3: esquerda
 
         // Array.Sort(timePerCoin, (x, y) => y.CompareTo(x)); // Ordena do maior para o menor
 
@@ -271,7 +288,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         gridMatrix[yCurrentIndexInGrid, xCurrentIndexInGrid] = "finish";
     }
 
-    public bool DrawLineUntilPossible(int direction)
+    public void DrawLineUntilPossible(int direction)
     {
         int xStep = 0;
         int yStep = 0;
@@ -281,13 +298,13 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             case 0: // Ir para cima
                 yStep = -1;
                 break;
-            case 1: // Ir para direita
+            case 1: // Ir para a direita
                 xStep = 1;
                 break;
             case 2: // Ir para baixo
                 yStep = 1;
                 break;
-            case 3: // Ir para esquerda
+            case 3: // Ir para a esquerda
                 xStep = -1;
                 break;
         }
@@ -300,25 +317,27 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 (xCurrentIndexInGrid == xMaxColumnIndex && xStep > 0))
             {
                 Debug.Log("Cheguei em algum limite: "+gridMatrix);
-                return true;
+                return;
             }
 
             int nextX = xCurrentIndexInGrid + xStep;
             int nextY = yCurrentIndexInGrid + yStep;
 
+            // Checa se já não está no limite do grid
             if (nextX < 0 || nextX >= maxColumns || nextY < 0 || nextY >= maxRows || gridMatrix[nextY, nextX] != null)
             {
-                return false;
+                return;
             }
             
             int twoBlocksAwayX = nextX + xStep;
             int twoBlocksAwayY = nextY + yStep;
             
+            // Checa se próximos 2 blocos não estão preenchidos
             if (twoBlocksAwayX >= 0 && twoBlocksAwayX < maxColumns && 
                 twoBlocksAwayY >= 0 && twoBlocksAwayY < maxRows && 
                 gridMatrix[twoBlocksAwayY, twoBlocksAwayX] != null)
             {
-                return false;
+                return;
             }
 
             if (firstOrSecondCoinInMaze && coinCount>2) 
@@ -327,13 +346,22 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             }
             coinCount++;
 
-            // checa se o início não está adjacente
-            if (!firstOrSecondCoinInMaze && (nextY - 1 >= 0 && gridMatrix[nextY - 1, nextX] == "start" ||
-                nextY + 1 <= maxRows - 1 && gridMatrix[nextY + 1, nextX] == "start" ||
-                nextX - 1 >= 0 && gridMatrix[nextY, nextX - 1] == "start" ||
-                nextX + 1 <= maxColumns - 1 && gridMatrix[nextY, nextX + 1] == "start"))
+            // Checa se o início não está em volta
+            if (!firstOrSecondCoinInMaze && 
+                (
+                    // adjacente
+                    nextY - 1 >= 0 && gridMatrix[nextY - 1, nextX] == "start" ||
+                    nextY + 1 <= maxRows - 1 && gridMatrix[nextY + 1, nextX] == "start" ||
+                    nextX - 1 >= 0 && gridMatrix[nextY, nextX - 1] == "start" ||
+                    nextX + 1 <= maxColumns - 1 && gridMatrix[nextY, nextX + 1] == "start" ||
+                    // diagonais
+                    nextY - 1 >= 0 && nextX - 1 >= 0 && gridMatrix[nextY - 1, nextX - 1] == "start" ||
+                    nextY + 1 <= maxRows - 1 && nextX - 1 >= 0 && gridMatrix[nextY + 1, nextX - 1] == "start" ||
+                    nextY - 1 >= 0 && nextX + 1 <= maxColumns - 1 && gridMatrix[nextY - 1, nextX + 1] == "start" ||
+                    nextY + 1 <= maxRows - 1 && nextX + 1 <= maxColumns - 1 && gridMatrix[nextY + 1, nextX + 1] == "start"
+                ))
             {
-                return false;
+                return;
             }
 
             gridMatrix[nextY, nextX] = "staticMoedaAmarela";
@@ -372,7 +400,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         {
             for (int rowIndex = 0; rowIndex < maxRows; rowIndex++)
             {
-                if (gridMatrix[rowIndex, colIndex] == null) // Checa célula vazia
+                if (gridMatrix[rowIndex, colIndex] == null) // célula vazia
                 {
                     gridMatrix[rowIndex, colIndex] = "vazioBloco"; // preenche com bloco vazio
                 }
