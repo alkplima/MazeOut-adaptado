@@ -20,6 +20,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     int yCurrentIndexInGrid;
     private Vector3[] cantosCelula = new Vector3[4];
     bool firstOrSecondCoinInMaze;
+    bool firstAutomaticMaze = true;
     int coinCount;
 
     void OnEnable()
@@ -51,17 +52,88 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         coinCount = 0;
     }
 
-    // TODO: Implementar análise dos dados de calibração considerando as 8 fases
     private void ProcessCalibrationData()
     {
-        minX = VariaveisGlobais.minX;
-        maxX = VariaveisGlobais.maxX;
-        minY = VariaveisGlobais.minY;
-        maxY = VariaveisGlobais.maxY;
-        timePerCoinBottomToTop = VariaveisGlobais.timePerCoinBottomToTop;
-        timePerCoinTopToBottom = VariaveisGlobais.timePerCoinTopToBottom;
-        timePerCoinLeftToRight = VariaveisGlobais.timePerCoinLeftToRight;
-        timePerCoinRightToLeft = VariaveisGlobais.timePerCoinRightToLeft;
+        if (firstAutomaticMaze)
+        {
+            int countTopToBottom = 0;
+            int countBottomToTop = 0;
+            int countLeftToRight = 0;
+            int countRightToLeft = 0;
+            timePerCoinBottomToTop = 0;
+            timePerCoinTopToBottom = 0;
+            timePerCoinLeftToRight = 0;
+            timePerCoinRightToLeft = 0;
+
+            for (int i = 1; i < 8; i++)
+            {
+                string saveData = PlayerPrefs.GetString("CalibrationData" + i.ToString());
+                string[] dataParts = saveData.Split(';');
+
+                foreach (string dataPart in dataParts)
+                {
+                    string[] keyValue = dataPart.Split(':');
+                    string key = keyValue[0];
+                    string value = keyValue[1];
+
+                    if (string.IsNullOrEmpty(value) || float.IsNaN(float.Parse(value)))
+                    {
+                        continue;
+                    }
+
+                    float parsedValue = float.Parse(value);
+
+                    switch (key)
+                    {
+                        case "minX":
+                            minX = (i == 1 || parsedValue < minX) ? parsedValue : minX;
+                            break;
+                        case "minY":
+                            minY = (i == 1 || parsedValue < minY) ? parsedValue : minY;
+                            break;
+                        case "maxX":
+                            maxX = (i == 1 || parsedValue > maxX) ? parsedValue : maxX;
+                            break;
+                        case "maxY":
+                            maxY = (i == 1 || parsedValue > maxY) ? parsedValue : maxY;
+                            break;
+                        case "timePerCoinBottomToTop":
+                            timePerCoinBottomToTop += parsedValue;
+                            countBottomToTop++;
+                            break;
+                        case "timePerCoinTopToBottom":
+                            timePerCoinTopToBottom += parsedValue;
+                            countTopToBottom++;
+                            break;
+                        case "timePerCoinLeftToRight":
+                            timePerCoinLeftToRight += parsedValue;
+                            countLeftToRight++;
+                            break;
+                        case "timePerCoinRightToLeft":
+                            timePerCoinRightToLeft += parsedValue;
+                            countRightToLeft++;
+                            break;
+                    }
+                }
+            }
+
+            timePerCoinBottomToTop /= countBottomToTop;
+            timePerCoinTopToBottom /= countTopToBottom;
+            timePerCoinLeftToRight /= countLeftToRight;
+            timePerCoinRightToLeft /= countRightToLeft;
+            firstAutomaticMaze = false;
+        }
+        else
+        {
+            minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) / 2 : minX;
+            minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) / 2 : minY;
+            maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) / 2 : maxX;
+            maxY = (!float.IsNaN(VariaveisGlobais.maxY)) ? (VariaveisGlobais.maxY > maxY) ? VariaveisGlobais.maxY : (0.7f * VariaveisGlobais.maxY + 0.3f * maxY) / 2 : maxY;
+            timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? (0.7f * VariaveisGlobais.timePerCoinBottomToTop + 0.3f * timePerCoinBottomToTop) / 2 : timePerCoinBottomToTop;
+            timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) / 2 : timePerCoinTopToBottom;
+            timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) / 2 : timePerCoinLeftToRight;
+            timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) / 2 : timePerCoinRightToLeft;
+        }
     }
 
     private void GenerateMaze() 
@@ -269,7 +341,8 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                     }
 
                     DrawLineUntilPossible(chosenOption);
-                    if (firstOrSecondCoinInMaze && !(walls.Count(b => b)==2)) // se não estava num canto e era a primeira moeda, deve poder voltar
+
+                    if (!(firstOrSecondCoinInMaze && !(walls.Count(b => b)==2))) // se não estava num canto e era a primeira moeda, deve poder voltar
                     {
                        hasGone[chosenOption] = true;
                     }

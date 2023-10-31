@@ -131,6 +131,6 @@ public class LoadGame : Singleton<SaveHandler> {
 
     private void DelayedSaveData()
     {
-        AdaptionInfoFileManager.SaveDataToFile();
+        AdaptationDataManager.SaveData();
     }
 }

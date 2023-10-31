@@ -33,7 +33,7 @@ public class UI_SelecionarPartida : MonoBehaviour {
 		}
 		else if (VariaveisGlobais.estiloJogoCorrente == "Calibracao")
 		{
-			if (VariaveisGlobais.partidaCorrente == -1 || VariaveisGlobais.partidaCorrente == 2001) { // TODO: Mudar pra -8
+			if (VariaveisGlobais.partidaCorrente == -7 || VariaveisGlobais.partidaCorrente == 2001) { // TODO: Mudar pra -7
 				VariaveisGlobais.partidaCorrente = 2001; // Partida de labirinto automático
 			} else {
 				VariaveisGlobais.partidaCorrente -= 1;
