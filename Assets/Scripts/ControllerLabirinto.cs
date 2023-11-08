@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class ControllerLabirinto : MonoBehaviour
@@ -109,4 +111,20 @@ public class ControllerLabirinto : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void ResetAllConfigs()
+    {
+        PlayerPrefs.DeleteAll();
+        foreach (var file in Directory.GetFiles(Application.persistentDataPath))
+        {
+            FileInfo file_info = new FileInfo(file);
+            file_info.Delete();
+        }
+#if ((UNITY_WEBGL) && (!UNITY_EDITOR))
+        Application.ExternalEval("FS.syncfs(false, function (err) {})");
+#endif
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }

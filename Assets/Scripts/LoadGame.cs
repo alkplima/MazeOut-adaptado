@@ -4,6 +4,8 @@ using UnityEngine.Tilemaps;
 using System.Collections.Generic; 
 using System.Linq;
 using System.IO;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class LoadGame : Singleton<SaveHandler> {
     Dictionary<string, Tilemap> tilemaps = new Dictionary<string, Tilemap>();
@@ -25,7 +27,7 @@ public class LoadGame : Singleton<SaveHandler> {
             } else {
                 filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
             }
-            onLoad();   
+            StartCoroutine(onLoad());   
         }
     }
 
@@ -61,7 +63,33 @@ public class LoadGame : Singleton<SaveHandler> {
         Invoke("DelayedSaveData", 0.3f);
     }
 
-    public void onLoad() {
+    public IEnumerator onLoad() {
+
+#if ((UNITY_WEBGL) && (!UNITY_EDITOR))
+        if (!File.Exists(Path.Combine(Application.persistentDataPath, filename)))
+        {
+            string relativeURL;
+
+            if ((Application.absoluteURL.IndexOf("index.htm") == -1))
+                relativeURL = Application.absoluteURL;
+            else relativeURL = Application.absoluteURL.Remove(Application.absoluteURL.IndexOf("index.htm"));
+
+            using (UnityWebRequest uwr = new UnityWebRequest(System.String.Concat(relativeURL, "StreamingAssets/", filename), UnityWebRequest.kHttpVerbGET))
+            {
+                uwr.timeout = 30;
+                uwr.downloadHandler = new DownloadHandlerFile(Path.Combine(Application.persistentDataPath, filename));
+
+                yield return uwr.SendWebRequest();
+
+                if (uwr.isNetworkError || uwr.isHttpError || uwr.error != null)
+                    Debug.LogError(uwr.error);
+                else
+                    Debug.Log("Arquivo baixado para " + Path.Combine(Application.persistentDataPath, filename));
+                yield return new WaitForEndOfFrame();
+            }
+        }
+#endif
+
 
         List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
         int i = 0; 
@@ -127,6 +155,8 @@ public class LoadGame : Singleton<SaveHandler> {
                 i++;
             }
         }
+
+        yield return new WaitForEndOfFrame();
     }
 
     private void DelayedSaveData()

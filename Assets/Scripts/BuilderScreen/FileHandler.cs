@@ -1,95 +1,117 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public static class FileHandler {
+public static class FileHandler
+{
 
-    public static void SaveToJSON<T> (List<T> toSave, string filename)
+    public static void SaveToJSON<T>(List<T> toSave, string filename)
     {
-        Debug.Log (GetPath (filename));
-        string content = JsonHelper.ToJson<T> (toSave.ToArray ());
-        WriteFile (GetPath (filename), content);
+        Debug.Log(GetPath(filename));
+        string content = JsonHelper.ToJson<T>(toSave.ToArray());
+#if (UNITY_WEBGL && (!UNITY_EDITOR))
+        EscritaWebGL(GetPath(filename), content);
+#else
+        WriteFile(GetPath(filename), content);
+#endif
     }
 
-    public static void SaveToJSON<T> (T toSave, string filename)
+    public static void SaveToJSON<T>(T toSave, string filename)
     {
-        string content = JsonUtility.ToJson (toSave);
-        WriteFile (GetPath (filename), content);
+        string content = JsonUtility.ToJson(toSave);
+#if (UNITY_WEBGL && (!UNITY_EDITOR))
+        EscritaWebGL(GetPath(filename), content);
+#else
+        WriteFile(GetPath(filename), content);
+#endif
     }
 
-    public static List<T> ReadListFromJSON<T> (string filename)
+    public static List<T> ReadListFromJSON<T>(string filename)
     {
-        string content = ReadFile (GetPath (filename));
+#if (UNITY_WEBGL && (!UNITY_EDITOR))
+        string content = LeituraWebGL(GetPath(filename));
+#else
+        string content = ReadFile(GetPath(filename));
+#endif
 
-        if (string.IsNullOrEmpty (content) || content == "{}")
+        if (string.IsNullOrEmpty(content) || content == "{}")
         {
-            return new List<T> ();
+            return new List<T>();
         }
 
-        List<T> res = JsonHelper.FromJson<T> (content).ToList ();
+        List<T> res = JsonHelper.FromJson<T>(content).ToList();
 
         return res;
 
     }
 
-    public static T ReadFromJSON<T> (string filename)
+    public static T ReadFromJSON<T>(string filename)
     {
-        string content = ReadFile (GetPath (filename));
+#if (UNITY_WEBGL && (!UNITY_EDITOR))
+        string content = LeituraWebGL(GetPath(filename));
+#else
+        string content = ReadFile(GetPath(filename));
+#endif
 
-        if (string.IsNullOrEmpty (content) || content == "{}")
+        if (string.IsNullOrEmpty(content) || content == "{}")
         {
-            return default (T);
+            return default(T);
         }
 
-        T res = JsonUtility.FromJson<T> (content);
+        T res = JsonUtility.FromJson<T>(content);
 
         return res;
 
     }
 
-    private static string GetPath (string filename)
+    private static string GetPath(string filename)
     {
-        if (filename.StartsWith("level"))
-        {
-            string levelPath = Path.Combine("LevelsSetup", filename);
-            return Path.Combine(Application.streamingAssetsPath, levelPath);
-        }
-        if (filename.StartsWith("calibration"))
-        {
-            string calibrationPath = Path.Combine("CalibrationSetup", filename);
-            return Path.Combine(Application.streamingAssetsPath, calibrationPath);
-        }
+#if (UNITY_WEBGL && (!UNITY_EDITOR))
         return Path.Combine(Application.persistentDataPath, filename);
+#else
+        return Path.Combine(Application.streamingAssetsPath, filename);
+#endif
     }
 
-    private static void WriteFile (string path, string content)
+    private static void WriteFile(string path, string content)
     {
-        FileStream fileStream = new FileStream (path, FileMode.Create);
+        FileStream fileStream = new FileStream(path, FileMode.Create);
 
-        using (StreamWriter writer = new StreamWriter (fileStream))
-        {
-            writer.Write (content);
-            #if UNITY_WEBGL
-                Application.ExternalEval("FS.syncfs(false, function (err) {})");
-            #endif
-        }
+        using (StreamWriter writer = new StreamWriter(fileStream))
+            writer.Write(content);
     }
 
-    private static string ReadFile (string path)
+    private static string ReadFile(string path)
     {
-        if (File.Exists (path))
+        if (File.Exists(path))
         {
-            using (StreamReader reader = new StreamReader (path))
+            using (StreamReader reader = new StreamReader(path))
             {
-                string content = reader.ReadToEnd ();
+                string content = reader.ReadToEnd();
                 return content;
             }
         }
         return "";
     }
+
+    private static string LeituraWebGL(string path)
+    {
+        if (File.Exists(path))
+            return File.ReadAllText(path);
+        else return "";
+    }
+
+    private static void EscritaWebGL(string path, string content)
+    {
+        File.WriteAllText(path, content);
+        Application.ExternalEval("FS.syncfs(false, function (err) {})");
+    }
 }
+
 
 public static class JsonHelper
 {

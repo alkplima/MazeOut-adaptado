@@ -45,16 +45,16 @@ public class GrudaDetector : MonoBehaviour
         switch (ladoStr)
         {
             case "L":
-                transform.position = new Vector3(bola.position.x - (larguraBola * 0.5f) - larguraBotaoSensor, bola.position.y + (alturaBotaoSensor/2), bola.position.z);
+                transform.position = new Vector3(bola.position.x - (larguraBola * 0.5f) - (larguraBotaoSensor/2), bola.position.y + (alturaBotaoSensor/2), bola.position.z);
                 break;
             case "R":
-                transform.position = new Vector3(bola.position.x + (larguraBola * 0.5f), bola.position.y + (alturaBotaoSensor / 2), bola.position.z);
+                transform.position = new Vector3(bola.position.x + (larguraBola * 0.5f) - (larguraBotaoSensor / 2), bola.position.y + (alturaBotaoSensor / 2), bola.position.z);
                 break;
             case "T":
-                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor/2), bola.position.y + (alturaBola * 0.5f) + alturaBotaoSensor, bola.position.z);
+                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor/2), bola.position.y + (alturaBola * 0.5f) + (alturaBotaoSensor/2), bola.position.z);
                 break;
             case "B":
-                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor / 2), bola.position.y - (alturaBola * 0.5f), bola.position.z);
+                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor / 2), bola.position.y - (alturaBola * 0.5f) + (alturaBotaoSensor / 2), bola.position.z);
                 break;
             case "!":
                 transform.position = bola.position;

@@ -15,6 +15,9 @@ public class PieceController : MonoBehaviour
 
     int _rotationSpeed = 150;
 
+    Vector3[] cantosPrimeiraPosGrid = new Vector3[4];
+    Vector3[] cantosUltimaPosGrid = new Vector3[4];
+
     private void OnEnable()
     {
         if (posicaoAtualNoGrid)
@@ -76,27 +79,31 @@ public class PieceController : MonoBehaviour
 
     public void MovimentarPeca(char direcao, float intensidade, float multArraste)
     {
+        VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.GetWorldCorners(cantosPrimeiraPosGrid);
+        VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.GetWorldCorners(cantosUltimaPosGrid);        
+
         //bool bateu = false;
         switch (direcao)
         {
             case 'C':
                 // Ver se bate em cima
-                if (!(transform.position.y + 0.5f*(alturaPiece / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y))
-                    StartCoroutine(moverPeca('y', PlayerPrefs.GetInt("Velocidade") * -0.0001f * intensidade , PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
+                //if (!(transform.position.y + 0.5f*(alturaPiece / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y))
+                if (!(transform.position.y + 0.5f*(alturaPiece / 2) > ((cantosPrimeiraPosGrid[1].y + cantosPrimeiraPosGrid[0].y) / 2)))
+                StartCoroutine(moverPeca('y', PlayerPrefs.GetInt("Velocidade") * -0.0001f * intensidade , PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'B':
                 // Ver se bate em baixo
-                if (!(transform.position.y - 0.5f*(alturaPiece / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y))
+                if (!(transform.position.y - 0.5f*(alturaPiece / 2) < ((cantosUltimaPosGrid[1].y + cantosUltimaPosGrid[0].y) / 2)))
                     StartCoroutine(moverPeca('y', PlayerPrefs.GetInt("Velocidade") * 0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'E':
                 // Ver se bate na esquerda
-                if (!(transform.position.x - 0.5f*(larguraPiece / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x))
+                if (!(transform.position.x - 0.5f*(larguraPiece / 2) < ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)))
                     StartCoroutine(moverPeca('x', PlayerPrefs.GetInt("Velocidade") * -0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
             case 'D':
                 // Ver se bate na direita
-                if (!(transform.position.x + 0.5f * (larguraPiece / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x))
+                if (!(transform.position.x + 0.5f * (larguraPiece / 2) > ((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2)))
                     StartCoroutine(moverPeca('x', PlayerPrefs.GetInt("Velocidade") * 0.0001f * intensidade, PlayerPrefs.GetInt("Arraste") * multArraste * 0.0001f));
                 break;
         }
@@ -116,13 +123,13 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido > 0)
                     {
-                        if (transform.position.x + 0.5f * (larguraPiece / 2) > VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x)
+                        if (transform.position.x + 0.5f * (larguraPiece / 2) > ((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2))
                         {
                             valorDecrescido = 0;
                         }                            
                         else
                         {
-                            transform.position = new Vector3(transform.position.x + ((VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x - VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z);
+                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z);
                             valorDecrescido = valorDecrescido - decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -133,11 +140,11 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido < 0)
                     {
-                        if (transform.position.x - 0.5f * (larguraPiece / 2) < VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x)
+                        if (transform.position.x - 0.5f * (larguraPiece / 2) < ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x)/2))
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x + ((VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x - VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z); ;
+                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z); ;
                             valorDecrescido = valorDecrescido + decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -151,11 +158,11 @@ public class PieceController : MonoBehaviour
                 {                
                     while (valorDecrescido > 0)
                     {
-                        if (transform.position.y - 0.5f * (alturaPiece / 2) < VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.y)
+                        if (transform.position.y - 0.5f * (alturaPiece / 2) < ((cantosUltimaPosGrid[1].y + cantosUltimaPosGrid[0].y)/2))
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x, transform.position.y - ((VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x - VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
+                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
                             valorDecrescido = valorDecrescido - decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -166,11 +173,11 @@ public class PieceController : MonoBehaviour
                 {
                     while (valorDecrescido < 0)
                     {
-                        if (transform.position.y + 0.5f * (alturaPiece / 2) > VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.y)
+                        if (transform.position.y + 0.5f * (alturaPiece / 2) > ((cantosPrimeiraPosGrid[1].y + cantosPrimeiraPosGrid[0].y)/2))
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x, transform.position.y - ((VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.position.x - VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.position.x) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
+                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
                             valorDecrescido = valorDecrescido + decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();                            
