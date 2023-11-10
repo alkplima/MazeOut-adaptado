@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +7,13 @@ using UnityEngine.UI;
 public class ViewOptionItem : MonoBehaviour
 {
     public Text text;
+    private string[] dataProcessingModes = new string[] { "OptionWeightedAverage", "OptionPerformanceFromPreviousMatchOnly", "OptionPerformanceFromCalibrationOnly" }; 
 
     private void OnEnable()
     {
+        if (!PlayerPrefs.HasKey("DataProcessingMode"))
+            PlayerPrefs.SetInt("DataProcessingMode", 1);
+
         UpdateValues(gameObject.name);
     }
 
@@ -40,6 +45,14 @@ public class ViewOptionItem : MonoBehaviour
                 else
                     text.text = "Efeito de atrito (\"arraste\"): " + PlayerPrefs.GetInt("Arraste").ToString() + " (padrão = 05)";
                 break;
+            case "TextoModoProcessamentoDeDados":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text.text = "Modo de processamento de dados: " + PlayerPrefs.GetInt("DataProcessingMode").ToString() + " (padrão = Média ponderada de todas as partidas)";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text.text = "Data processing mode: " + dataProcessingModes[PlayerPrefs.GetInt("DataProcessingMode")-1] + " (default = Weighted average from all matches)";
+                else
+                    text.text = "Modo de processamento de dados: " + PlayerPrefs.GetInt("DataProcessingMode").ToString() + " (padrão = Média ponderada de todas as partidas)";
+                break;
             case "SliderTimerContagem":
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Timer");
                 UpdateValues("TextoTimerContagem");
@@ -51,6 +64,39 @@ public class ViewOptionItem : MonoBehaviour
             case "SliderArraste":
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Arraste");
                 UpdateValues("TextoArraste");
+                break;
+            case "OptionWeightedAverage":
+                if (PlayerPrefs.GetInt("DataProcessingMode") == 1) 
+                {
+                    GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+                }
+                else
+                {
+                    GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = Color.white;
+                }
+                UpdateValues("DataProcessingMode");
+                break;
+            case "OptionPerformanceFromPreviousMatchOnly":
+                if (PlayerPrefs.GetInt("DataProcessingMode") == 2) 
+                {
+                    GameObject.Find("OptionPerformanceFromPreviousMatchOnly").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+                }
+                else
+                {
+                    GameObject.Find("OptionPerformanceFromPreviousMatchOnly").GetComponent<Image>().color = Color.white;
+                }
+                UpdateValues("DataProcessingMode");
+                break;
+            case "OptionPerformanceFromCalibrationOnly":
+                if (PlayerPrefs.GetInt("DataProcessingMode") == 3) 
+                {
+                    GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+                }
+                else
+                {
+                    GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = Color.white;
+                }
+                UpdateValues("DataProcessingMode");
                 break;
         }
     }
@@ -93,6 +139,18 @@ public class ViewOptionItem : MonoBehaviour
     public void SetValueArraste(int value)
     {
         PlayerPrefs.SetInt("Arraste", value);
+#if UNITY_WEBGL
+        Application.ExternalEval("FS.syncfs(false, function (err) {})");
+        Debug.Log("Sincronia disco - navegador realizada.");
+#endif
+    }
+
+    public void SetDataProcessingMode(int value)
+    {
+        PlayerPrefs.SetInt("DataProcessingMode", value);
+        UpdateValues("OptionWeightedAverage");
+        UpdateValues("OptionPerformanceFromPreviousMatchOnly");
+        UpdateValues("OptionPerformanceFromCalibrationOnly");
 #if UNITY_WEBGL
         Application.ExternalEval("FS.syncfs(false, function (err) {})");
         Debug.Log("Sincronia disco - navegador realizada.");

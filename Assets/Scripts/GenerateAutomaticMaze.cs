@@ -54,86 +54,24 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
 
     private void ProcessCalibrationData()
     {
-        if (firstAutomaticMaze)
+        int dataProcessingMode = PlayerPrefs.GetInt("DataProcessingMode");
+        
+        switch (dataProcessingMode)
         {
-            int countTopToBottom = 0;
-            int countBottomToTop = 0;
-            int countLeftToRight = 0;
-            int countRightToLeft = 0;
-            timePerCoinBottomToTop = 0;
-            timePerCoinTopToBottom = 0;
-            timePerCoinLeftToRight = 0;
-            timePerCoinRightToLeft = 0;
-
-            for (int i = 1; i < 8; i++)
-            {
-                string saveData = PlayerPrefs.GetString("CalibrationData" + i.ToString());
-                string[] dataParts = saveData.Split(';');
-
-                foreach (string dataPart in dataParts)
-                {
-                    string[] keyValue = dataPart.Split(':');
-                    string key = keyValue[0];
-                    string value = keyValue[1];
-
-                    if (string.IsNullOrEmpty(value) || float.IsNaN(float.Parse(value)))
-                    {
-                        continue;
-                    }
-
-                    float parsedValue = float.Parse(value);
-
-                    switch (key)
-                    {
-                        case "minX":
-                            minX = (i == 1 || parsedValue < minX) ? parsedValue : minX;
-                            break;
-                        case "minY":
-                            minY = (i == 1 || parsedValue < minY) ? parsedValue : minY;
-                            break;
-                        case "maxX":
-                            maxX = (i == 1 || parsedValue > maxX) ? parsedValue : maxX;
-                            break;
-                        case "maxY":
-                            maxY = (i == 1 || parsedValue > maxY) ? parsedValue : maxY;
-                            break;
-                        case "timePerCoinBottomToTop":
-                            timePerCoinBottomToTop += parsedValue;
-                            countBottomToTop++;
-                            break;
-                        case "timePerCoinTopToBottom":
-                            timePerCoinTopToBottom += parsedValue;
-                            countTopToBottom++;
-                            break;
-                        case "timePerCoinLeftToRight":
-                            timePerCoinLeftToRight += parsedValue;
-                            countLeftToRight++;
-                            break;
-                        case "timePerCoinRightToLeft":
-                            timePerCoinRightToLeft += parsedValue;
-                            countRightToLeft++;
-                            break;
-                    }
-                }
-            }
-
-            timePerCoinBottomToTop /= countBottomToTop;
-            timePerCoinTopToBottom /= countTopToBottom;
-            timePerCoinLeftToRight /= countLeftToRight;
-            timePerCoinRightToLeft /= countRightToLeft;
-            firstAutomaticMaze = false;
+            case 1:
+                WeightedAverageFromAll();
+                break;
+            case 2:
+                PerformanceFromPreviousMatchOnly();
+                break;
+            case 3:
+                PerformanceFromCalibrationOnly();
+                break;
+            default:
+                WeightedAverageFromAll();
+                break;
         }
-        else
-        {
-            minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) / 2 : minX;
-            minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) / 2 : minY;
-            maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) / 2 : maxX;
-            maxY = (!float.IsNaN(VariaveisGlobais.maxY)) ? (VariaveisGlobais.maxY > maxY) ? VariaveisGlobais.maxY : (0.7f * VariaveisGlobais.maxY + 0.3f * maxY) / 2 : maxY;
-            timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? (0.7f * VariaveisGlobais.timePerCoinBottomToTop + 0.3f * timePerCoinBottomToTop) / 2 : timePerCoinBottomToTop;
-            timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) / 2 : timePerCoinTopToBottom;
-            timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) / 2 : timePerCoinLeftToRight;
-            timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) / 2 : timePerCoinRightToLeft;
-        }
+
     }
 
     private void GenerateMaze() 
@@ -230,6 +168,110 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         return new int[] { xMaxColumnFinalIndex, yMaxCellFinalIndex, xMinColumnFinalIndex, yMinCellFinalIndex };
     }
 
+    private void WeightedAverageFromAll() 
+    {
+        // considera as médias ponderadas das partidas anteriores
+        if (firstAutomaticMaze)
+        {
+            PerformanceFromCalibrationOnly();
+            firstAutomaticMaze = false;
+        }
+        else
+        {
+            minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) / 2 : minX;
+            minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) / 2 : minY;
+            maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) / 2 : maxX;
+            maxY = (!float.IsNaN(VariaveisGlobais.maxY)) ? (VariaveisGlobais.maxY > maxY) ? VariaveisGlobais.maxY : (0.7f * VariaveisGlobais.maxY + 0.3f * maxY) / 2 : maxY;
+            timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? (0.7f * VariaveisGlobais.timePerCoinBottomToTop + 0.3f * timePerCoinBottomToTop) / 2 : timePerCoinBottomToTop;
+            timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) / 2 : timePerCoinTopToBottom;
+            timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) / 2 : timePerCoinLeftToRight;
+            timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) / 2 : timePerCoinRightToLeft;
+        }
+    }
+
+    private void PerformanceFromPreviousMatchOnly()
+    {
+        // considera a última partida
+        minX = VariaveisGlobais.minX;
+        minY = VariaveisGlobais.minY;
+        maxX = VariaveisGlobais.maxX;
+        maxY = VariaveisGlobais.maxY;
+        timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? VariaveisGlobais.timePerCoinBottomToTop / 2 : 0;
+        timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? VariaveisGlobais.timePerCoinTopToBottom / 2 : 0;
+        timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? VariaveisGlobais.timePerCoinLeftToRight / 2 : 0;
+        timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? VariaveisGlobais.timePerCoinRightToLeft / 2 : 0;
+    }
+
+    private void PerformanceFromCalibrationOnly() 
+    {
+        // considera somente as partidas de calibração
+        int countTopToBottom = 0;
+        int countBottomToTop = 0;
+        int countLeftToRight = 0;
+        int countRightToLeft = 0;
+        timePerCoinBottomToTop = 0;
+        timePerCoinTopToBottom = 0;
+        timePerCoinLeftToRight = 0;
+        timePerCoinRightToLeft = 0;
+
+        for (int i = 1; i < 8; i++)
+        {
+            string saveData = PlayerPrefs.GetString("CalibrationData" + i.ToString());
+            string[] dataParts = saveData.Split(';');
+
+            foreach (string dataPart in dataParts)
+            {
+                string[] keyValue = dataPart.Split(':');
+                string key = keyValue[0];
+                string value = keyValue[1];
+
+                if (string.IsNullOrEmpty(value) || float.IsNaN(float.Parse(value)))
+                {
+                    continue;
+                }
+
+                float parsedValue = float.Parse(value);
+
+                switch (key)
+                {
+                    case "minX":
+                        minX = (i == 1 || parsedValue < minX) ? parsedValue : minX;
+                        break;
+                    case "minY":
+                        minY = (i == 1 || parsedValue < minY) ? parsedValue : minY;
+                        break;
+                    case "maxX":
+                        maxX = (i == 1 || parsedValue > maxX) ? parsedValue : maxX;
+                        break;
+                    case "maxY":
+                        maxY = (i == 1 || parsedValue > maxY) ? parsedValue : maxY;
+                        break;
+                    case "timePerCoinBottomToTop":
+                        timePerCoinBottomToTop += parsedValue;
+                        countBottomToTop++;
+                        break;
+                    case "timePerCoinTopToBottom":
+                        timePerCoinTopToBottom += parsedValue;
+                        countTopToBottom++;
+                        break;
+                    case "timePerCoinLeftToRight":
+                        timePerCoinLeftToRight += parsedValue;
+                        countLeftToRight++;
+                        break;
+                    case "timePerCoinRightToLeft":
+                        timePerCoinRightToLeft += parsedValue;
+                        countRightToLeft++;
+                        break;
+                }
+            }
+        }
+
+        timePerCoinBottomToTop /= countBottomToTop;
+        timePerCoinTopToBottom /= countTopToBottom;
+        timePerCoinLeftToRight /= countLeftToRight;
+        timePerCoinRightToLeft /= countRightToLeft;
+    }
+
     public int IndexWithPseudoGrowthOrShrink(int index, float timePerCoinInDirection, bool shouldDecreaseToGrow, bool isColumn, int otherCoordinateExtremeIndex)
     {
         // Checa se o índice já está no limite do grid
@@ -239,7 +281,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         }
 
         int cellGrowth;
-        if (timePerCoinInDirection < 2)
+        if (timePerCoinInDirection < 2 && timePerCoinInDirection != 0)
         {
             if (timePerCoinInDirection < 1)
             {
@@ -282,8 +324,8 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         // Array.Sort(timePerCoin, (x, y) => y.CompareTo(x)); // Ordena do maior para o menor
 
         // Início aleatório, mas colado em uma das paredes
-        int xStartIndex = UnityEngine.Random.Range (xMinColumnIndex, xMaxColumnIndex + 1);
-        int yStartIndex = (xStartIndex == xMinColumnIndex || xStartIndex == xMaxColumnIndex) ? UnityEngine.Random.Range (yMaxCellIndex, yMinCellIndex + 1) : (UnityEngine.Random.Range (0, 2) == 0 ? yMinCellIndex : yMaxCellIndex);
+        int xStartIndex = UnityEngine.Random.Range(xMinColumnIndex, xMaxColumnIndex + 1);
+        int yStartIndex = (xStartIndex == xMinColumnIndex || xStartIndex == xMaxColumnIndex) ? UnityEngine.Random.Range(yMaxCellIndex, yMinCellIndex + 1) : (UnityEngine.Random.Range(0, 2) == 0 ? yMinCellIndex : yMaxCellIndex);
         gridMatrix[yStartIndex, xStartIndex] = "start";
 
         xCurrentIndexInGrid = xStartIndex;

@@ -16,7 +16,7 @@ public class ControllerLabirinto : MonoBehaviour
     public Webcam webcamInstance;
     void Awake()
     {
-        // Rotina para garantir que é o único ControllerJogo em operação (Singleton).
+        // Rotina para garantir que ï¿½ o ï¿½nico ControllerJogo em operaï¿½ï¿½o (Singleton).
         if (VariaveisGlobais.atualControllerLabirinto == null)
         {
             VariaveisGlobais.atualControllerLabirinto = this;
