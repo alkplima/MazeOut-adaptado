@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,12 +30,7 @@ public class CoinCollectionController : MonoBehaviour
         timeRightToLeft = 0.0f;
         timeTopToBottom = 0.0f;
         timeBottomToTop = 0.0f;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void CountTimePerCoin(char lado) 
@@ -81,5 +77,32 @@ public class CoinCollectionController : MonoBehaviour
         VariaveisGlobais.timePerCoinBottomToTop = timeBottomToTop / coinCountBottomToTop;
         VariaveisGlobais.timePerCoinLeftToRight = timeLeftToRight / coinCountLeftToRight;
         VariaveisGlobais.timePerCoinRightToLeft = timeRightToLeft / coinCountRightToLeft;
+    }
+
+    public void AcrescentarEntradaRelatorio()
+    {
+        ItemEventoDB itemNovo = new ItemEventoDB
+        {
+            NumReta = 0,
+            DirecaoReta = '?',
+            DateTimeInicioPartida = "2000-01-01 00:00:00",
+            NomePaciente = "TESTE",
+            TotalMoedasColetadas = 0,
+            TotalMoedasColetadasReta = 0,
+            TempoTotalPartida = 0,
+            TempoTotalReta = 0.0f,
+            CoordenadaX_InicioReta = 0.0f,
+            CoordenadaY_InicioReta = 0.0f,
+            CoordenadaX_FimReta = 0.0f,
+            CoordenadaY_FimReta = 0.0f,
+            CoordenadaX_Maxima = 0.0f,
+            CoordenadaY_Maxima = 0.0f,
+            CoordenadaX_Minima = 0.0f,
+            CoordenadaY_Minima = 0.0f
+        };
+
+        Array.Resize(ref VariaveisGlobais.itensRelatorio, VariaveisGlobais.itensRelatorio.Length + 1);
+
+        VariaveisGlobais.itensRelatorio[VariaveisGlobais.itensRelatorio.Length - 1] = itemNovo;
     }
 }

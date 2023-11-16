@@ -63,10 +63,11 @@ public class Webcam : MonoBehaviour {
 	 */
 	IEnumerator StartWebcam(){
 		crIsRunning = true;
+        PaterlandGlobal.webcamNoPonto = false;
 
         WebCamDevice[] devices = WebCamTexture.devices;
 
-		if (VariaveisGlobais.idWebcam >= WebCamTexture.devices.Length)
+        if (VariaveisGlobais.idWebcam >= WebCamTexture.devices.Length)
 			VariaveisGlobais.idWebcam = 0;
 
         webcamTexture = new WebCamTexture(devices[VariaveisGlobais.idWebcam].name, 320, 240, 15);
@@ -112,7 +113,9 @@ public class Webcam : MonoBehaviour {
 
 		initialized = true;
 		crIsRunning = false;
-	}
+
+        PaterlandGlobal.webcamNoPonto = true;
+    }
 
 
 	/*

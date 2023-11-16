@@ -10,6 +10,7 @@ public static class PaterlandGlobal
     internal static int VersaoCorrente = 1000;
     internal static Webcam currentWebcam;
     internal static bool autorizadoMovimento;
+    internal static bool webcamNoPonto = false;
 
     internal static string SomaMd5(string string_A_Encriptar)
     {

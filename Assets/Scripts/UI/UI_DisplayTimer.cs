@@ -46,7 +46,18 @@ public class UI_DisplayTimer : MonoBehaviour
 
     public void StartTimer()
     {
+        StartCoroutine(cr_StartTimer());
+    }
+
+    IEnumerator cr_StartTimer()
+    {
+        yield return new WaitForEndOfFrame();
+
         ResetTimer();
+
+        while (PaterlandGlobal.webcamNoPonto == false)
+            yield return new WaitForEndOfFrame();
+
         isTimer = true;
     }
 
@@ -63,5 +74,6 @@ public class UI_DisplayTimer : MonoBehaviour
     public void ShowFailureMessage() 
     {
         gameScreenManager.GetComponent<UI_MessageScreen>().ShowFailureModal();
+        VariaveisGlobais.conexaoBD.PostData();
     }
 }

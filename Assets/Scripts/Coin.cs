@@ -53,6 +53,11 @@ public class Coin : MonoBehaviour
             this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
             // _uiManager.Score += 1;
             AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
+
+            //TO-DO
+            //if (FinalDaLinha)
+                coinCollectionController.AcrescentarEntradaRelatorio();
+
             Destroy(this);
         }
 

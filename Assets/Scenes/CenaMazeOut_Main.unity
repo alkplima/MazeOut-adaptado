@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872683, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17476,7 +17476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.55, y: 1}
   m_AnchorMax: {x: 0.925, y: 1}
   m_AnchoredPosition: {x: -495, y: -436}
-  m_SizeDelta: {x: -175.83334, y: 150}
+  m_SizeDelta: {x: -218.6835, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274531383
 MonoBehaviour:
@@ -32233,7 +32233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.691063, y: -80.68966}
+  m_AnchoredPosition: {x: 53.69107, y: -80.68966}
   m_SizeDelta: {x: 107.382126, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499805695
@@ -44282,7 +44282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.45, y: 1}
-  m_AnchoredPosition: {x: -138, y: -309}
+  m_AnchoredPosition: {x: -137.99998, y: -309}
   m_SizeDelta: {x: -278.17, y: 36.48}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &676805564
@@ -51703,6 +51703,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811883741}
   m_CullTransparentMesh: 1
+--- !u!1 &811984823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811984825}
+  - component: {fileID: 811984824}
+  m_Layer: 0
+  m_Name: ConexaoBD_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &811984824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811984823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39f36739728a5d4c87415efcfee2f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  telasProtocolos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  addDataPOST_URL: https://rogarpon.com.br/projetos/support/addDataGamesPOST.php
+--- !u!4 &811984825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811984823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812601805
 GameObject:
   m_ObjectHideFlags: 0
@@ -78271,7 +78321,7 @@ RectTransform:
   m_Father: {fileID: 1880966226}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.25}
+  m_AnchorMin: {x: 0.5, y: 0.2}
   m_AnchorMax: {x: 0.95, y: 0.8}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -78309,11 +78359,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "This game was developed as a tool to aid motor and cognitive rehabilitation
-    processes for patients with special needs from the Research Group PATER-USP (Research
-    and Technological Application in Rehabilitation).\n\nUSP School of Arts, Sciences
-    and Humanities (Escola de Artes, Ci\xEAncias e Humanidades da Universidade de
-    S\xE3o Paulo)\n\nS\xE3o Paulo - 2023"
+  m_Text: "MazeOut Game - Version 1.0.0\n\nThis game was developed as a tool to aid
+    motor and cognitive rehabilitation processes for patients with special needs
+    from the Research Group PATER-USP (Research and Technological Application in
+    Rehabilitation).\n\nUSP School of Arts, Sciences and Humanities (Escola de Artes,
+    Ci\xEAncias e Humanidades da Universidade de S\xE3o Paulo)\n\nS\xE3o Paulo -
+    2023"
 --- !u!222 &1236571955
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -86453,13 +86504,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 32
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Data processing mode:  XX (default = Weighted average from all matches)'
+  m_Text: 'Data processing mode:'
 --- !u!222 &1392462319
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94653,7 +94704,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.48153, y: -201.08374}
+  m_AnchoredPosition: {x: 44.481537, y: -201.08374}
   m_SizeDelta: {x: 88.96306, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1548126093
