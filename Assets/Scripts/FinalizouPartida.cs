@@ -18,7 +18,7 @@ public class FinalizouPartida : MonoBehaviour
     {
         if (other.tag.StartsWith("Bola"))
         {
-            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
             {               
                 VariaveisGlobais.conexaoBD.PostData();
             }

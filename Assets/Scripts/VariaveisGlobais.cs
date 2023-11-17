@@ -29,7 +29,7 @@ public static class VariaveisGlobais
     public static int numReta = 0;
     public static char direcaoReta;
     public static string dateTimeInicioPartida;
-    public static string nomePaciente;
+    public static string nomePaciente = "";
     public static int totalMoedasColetadas;
     public static int totalMoedasColetadasReta = 0;
     public static double tempoTotalReta = 0;

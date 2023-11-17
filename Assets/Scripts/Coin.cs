@@ -52,7 +52,7 @@ public class Coin : MonoBehaviour
             // _uiManager.Score += 1;
             
             // não grava dados se for partida livre
-            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
             {               
                 VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
                 VerificaLado(other);
