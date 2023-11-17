@@ -83,22 +83,22 @@ public class CoinCollectionController : MonoBehaviour
     {
         ItemEventoDB itemNovo = new ItemEventoDB
         {
-            NumReta = 0,
-            DirecaoReta = '?',
-            DateTimeInicioPartida = "2000-01-01 00:00:00",
-            NomePaciente = "TESTE",
-            TotalMoedasColetadas = 0,
-            TotalMoedasColetadasReta = 0,
-            TempoTotalPartida = 0,
-            TempoTotalReta = 0.0f,
-            CoordenadaX_InicioReta = 0.0f,
-            CoordenadaY_InicioReta = 0.0f,
-            CoordenadaX_FimReta = 0.0f,
-            CoordenadaY_FimReta = 0.0f,
-            CoordenadaX_Maxima = 0.0f,
-            CoordenadaY_Maxima = 0.0f,
-            CoordenadaX_Minima = 0.0f,
-            CoordenadaY_Minima = 0.0f
+            NumReta = VariaveisGlobais.numReta,
+            DirecaoReta = VariaveisGlobais.direcaoReta,
+            DateTimeInicioPartida = VariaveisGlobais.dateTimeInicioPartida,
+            NomePaciente = VariaveisGlobais.nomePaciente,
+            TotalMoedasColetadas = VariaveisGlobais.totalMoedasColetadas,
+            TotalMoedasColetadasReta = VariaveisGlobais.totalMoedasColetadasReta,
+            TempoTotalPartida = PlayerPrefs.GetInt("Timer"),
+            TempoTotalReta = VariaveisGlobais.tempoTotalReta,
+            CoordenadaX_InicioReta = VariaveisGlobais.coordenadaX_InicioReta,
+            CoordenadaY_InicioReta = VariaveisGlobais.coordenadaY_InicioReta,
+            CoordenadaX_FimReta = VariaveisGlobais.coordenadaX_FimReta,
+            CoordenadaY_FimReta = VariaveisGlobais.coordenadaY_FimReta,
+            CoordenadaX_Maxima = VariaveisGlobais.coordenadaX_Maxima,
+            CoordenadaY_Maxima = VariaveisGlobais.coordenadaY_Maxima,
+            CoordenadaX_Minima = VariaveisGlobais.coordenadaX_Minima,
+            CoordenadaY_Minima = VariaveisGlobais.coordenadaY_Minima
         };
 
         Array.Resize(ref VariaveisGlobais.itensRelatorio, VariaveisGlobais.itensRelatorio.Length + 1);

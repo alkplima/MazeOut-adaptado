@@ -48,15 +48,60 @@ public class Coin : MonoBehaviour
             alturaOther = Mathf.Abs(cantosOtherSombra[0].y - cantosOtherSombra[1].y);
             larguraOther = Mathf.Abs(cantosOtherSombra[1].x - cantosOtherSombra[2].x);
 
-            VerificaLado(other);
-
             this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
             // _uiManager.Score += 1;
-            AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
+            
+            // não grava dados se for partida livre
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")
+            {               
+                VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
+                VerificaLado(other);
+                AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
 
-            //TO-DO
-            //if (FinalDaLinha)
-                coinCollectionController.AcrescentarEntradaRelatorio();
+                VariaveisGlobais.direcaoReta = VariaveisGlobais.lastCollectedCoinDirection;
+
+                // Add entrada no relatório se mudou direção/reta
+                if (MudouDirecao())
+                {                
+                    if (EhPrimeiraMoedaDoJogo())
+                    {
+                        VariaveisGlobais.coordenadaX_InicioReta = this.GetComponent<RectTransform>().position.x;
+                        VariaveisGlobais.coordenadaY_InicioReta = this.GetComponent<RectTransform>().position.y;
+                        VariaveisGlobais.totalMoedasColetadasReta++;
+                        VariaveisGlobais.tempoInicioReta = Time.time;
+                        VariaveisGlobais.dateTimeInicioPartida = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                        VariaveisGlobais.numReta = 1;
+                    }
+                    else // mudou de direção no meio do jogo
+                    {
+                        // Registra dados da reta anterior
+                        coinCollectionController.AcrescentarEntradaRelatorio();
+                        VariaveisGlobais.totalMoedasColetadasReta = 2; // incrementa 1 referente ao canto inicial
+                        VariaveisGlobais.numReta += 1;
+                        VariaveisGlobais.coordenadaX_InicioReta = VariaveisGlobais.coordenadaX_FimReta;
+                        VariaveisGlobais.coordenadaY_InicioReta = VariaveisGlobais.coordenadaY_FimReta;
+                    }
+                }
+                else
+                {
+                    float xAtual = this.GetComponent<RectTransform>().position.x;
+                    float yAtual = this.GetComponent<RectTransform>().position.y;
+
+                    VariaveisGlobais.totalMoedasColetadas++;
+                    VariaveisGlobais.totalMoedasColetadasReta++;
+                    VariaveisGlobais.coordenadaX_FimReta = xAtual;
+                    VariaveisGlobais.coordenadaY_FimReta = yAtual;
+                    if (xAtual > VariaveisGlobais.coordenadaX_Maxima)
+                        VariaveisGlobais.coordenadaX_Maxima = xAtual;
+                    if (yAtual > VariaveisGlobais.coordenadaY_Maxima)
+                        VariaveisGlobais.coordenadaY_Maxima = yAtual;
+                    if (xAtual < VariaveisGlobais.coordenadaX_Minima)
+                        VariaveisGlobais.coordenadaX_Minima = xAtual;
+                    if (yAtual < VariaveisGlobais.coordenadaY_Minima)
+                        VariaveisGlobais.coordenadaY_Minima = yAtual;
+                    VariaveisGlobais.tempoTotalReta += Time.time - VariaveisGlobais.tempoInicioReta;
+                } 
+            }
 
             Destroy(this);
         }
@@ -80,7 +125,6 @@ public class Coin : MonoBehaviour
                 float larguraHandGear = 0.7f * larguraOther;
 
                 // Verificar se o movimento vem de baixo, de cima, do lado esquerdo ou do lado direito
-
                 float distanciaParaCima = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y - (alturaOther / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
                 float distanciaParaBaixo = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x, other.GetComponent<RectTransform>().position.y + (alturaOther / 2), other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
                 float distanciaParaDireita = Vector3.Distance(new Vector3(other.GetComponent<RectTransform>().position.x + (larguraOther / 2), other.GetComponent<RectTransform>().position.y,    other.GetComponent<RectTransform>().position.z), GetComponent<RectTransform>().position);
@@ -88,21 +132,35 @@ public class Coin : MonoBehaviour
 
                 if ((distanciaParaCima <= distanciaParaBaixo) && (distanciaParaCima <= distanciaParaEsquerda) && (distanciaParaCima <= distanciaParaDireita))
                 {
-                    coinCollectionController.CountTimePerCoin('C');                                
+                    coinCollectionController.CountTimePerCoin('C');
+                    VariaveisGlobais.currentCollectedCoinDirection = 'B';
                 }
                 else if ((distanciaParaEsquerda <= distanciaParaCima) && (distanciaParaEsquerda <= distanciaParaBaixo) && (distanciaParaEsquerda <= distanciaParaDireita))
                 {
                     coinCollectionController.CountTimePerCoin('E');
+                    VariaveisGlobais.currentCollectedCoinDirection = 'D';
                 }
                 else if ((distanciaParaBaixo <= distanciaParaCima) && (distanciaParaBaixo <= distanciaParaEsquerda) && (distanciaParaBaixo <= distanciaParaDireita))
                 {
                     coinCollectionController.CountTimePerCoin('B');
+                    VariaveisGlobais.currentCollectedCoinDirection = 'C';
                 }
                 else if ((distanciaParaDireita <= distanciaParaCima) && (distanciaParaDireita <= distanciaParaEsquerda) && (distanciaParaDireita <= distanciaParaBaixo))
                 {
                     coinCollectionController.CountTimePerCoin('D');
+                    VariaveisGlobais.currentCollectedCoinDirection = 'E';
                 }
             }
 
+    }
+
+    private bool MudouDirecao()
+    {
+        return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection;
+    }
+
+    private bool EhPrimeiraMoedaDoJogo()
+    {
+        return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection && VariaveisGlobais.lastCollectedCoinDirection != ' ';
     }
 }

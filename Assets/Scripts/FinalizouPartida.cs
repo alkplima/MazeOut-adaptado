@@ -18,7 +18,10 @@ public class FinalizouPartida : MonoBehaviour
     {
         if (other.tag.StartsWith("Bola"))
         {
-            VariaveisGlobais.conexaoBD.PostData();
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")
+            {               
+                VariaveisGlobais.conexaoBD.PostData();
+            }
             gameScreenManager.GetComponent<UI_MessageScreen>().ShowSuccessModal();
         }
     }

@@ -51,7 +51,7 @@ public class UI_DisplayTimer : MonoBehaviour
 
     IEnumerator cr_StartTimer()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.2f);
 
         ResetTimer();
 

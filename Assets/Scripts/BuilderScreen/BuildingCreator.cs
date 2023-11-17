@@ -206,7 +206,6 @@ public class BuildingCreator : Singleton<BuildingCreator>
     {
         if (selectedObj != null)
         {
-
             switch(selectedObj.PlaceType)
             {
                 case PlaceType.Rectangle:
@@ -272,6 +271,10 @@ public class BuildingCreator : Singleton<BuildingCreator>
 
     private void DrawItem() {
 
+        if (selectedObj.name.StartsWith("Start"))
+        {
+            LimpaOutroInicioSeHouver();
+        }
         if (!selectedObj.name.StartsWith("Eraser")) {   
             tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite = currentCellPosition;
             tempLimiter.GetComponent<UnityEngine.UI.Image>().sprite = tempLimiter.GetComponent<CelulaInfo>().selecionadoSprite;
@@ -306,6 +309,21 @@ public class BuildingCreator : Singleton<BuildingCreator>
             foreach (Transform cel in col.transform) {
                 cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
                 cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+            }
+        }
+    }
+
+    public void LimpaOutroInicioSeHouver()
+    {
+        foreach (Transform col in builderGrid.transform)
+        {
+            foreach (Transform cel in col.transform)
+            {
+                if (cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite.name.StartsWith("start"))
+                {
+                    cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite = referenceVoid;
+                    cel.GetComponent<UnityEngine.UI.Image>().sprite = cel.gameObject.GetComponent<CelulaInfo>().selecionadoSprite;
+                }
             }
         }
     }
