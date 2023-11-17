@@ -47,11 +47,11 @@ public class ViewOptionItem : MonoBehaviour
                 break;
             case "TextoModoProcessamentoDeDados":
                 if (VariaveisGlobais.Idioma == "BR") 
-                    text.text = "Modo de processamento de dados: " + PlayerPrefs.GetInt("DataProcessingMode").ToString() + " (padrão = Média ponderada de todas as partidas)";
+                    text.text = "Modo de processamento de dados:";
                 else if (VariaveisGlobais.Idioma == "EN")
-                    text.text = "Data processing mode: " + dataProcessingModes[PlayerPrefs.GetInt("DataProcessingMode")-1] + " (default = Weighted average from all matches)";
+                    text.text = "Data processing mode:";
                 else
-                    text.text = "Modo de processamento de dados: " + PlayerPrefs.GetInt("DataProcessingMode").ToString() + " (padrão = Média ponderada de todas as partidas)";
+                    text.text = "Modo de processamento de dados:";
                 break;
             case "SliderTimerContagem":
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Timer");

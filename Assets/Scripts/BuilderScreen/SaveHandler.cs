@@ -46,7 +46,7 @@ public class SaveHandler : Singleton<SaveHandler> {
             }
         }
 
-        if (startPoints != 1 || endPoints > 0) {
+        if (startPoints != 1 || endPoints < 1) {
             constructionErrorPopup.SetActive(true);
             return;
         }
