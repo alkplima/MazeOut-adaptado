@@ -20478,6 +20478,7 @@ GameObject:
   - component: {fileID: 314385410}
   - component: {fileID: 314385409}
   - component: {fileID: 314385412}
+  - component: {fileID: 314385413}
   m_Layer: 5
   m_Name: BTNWebcamEspelharVerticalmente
   m_TagString: Untagged
@@ -20614,6 +20615,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Horizontal: 0
   Vertical: 1
+--- !u!114 &314385413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314385407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf019bb69d64e644b8c790b8651ca34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 676805564}
+  text2: {fileID: 1063650328}
 --- !u!1 &318403459
 GameObject:
   m_ObjectHideFlags: 0
@@ -44709,8 +44724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.45, y: 1}
-  m_AnchoredPosition: {x: -138, y: -309}
-  m_SizeDelta: {x: -278.17, y: 36.48}
+  m_AnchoredPosition: {x: -82.71, y: -309}
+  m_SizeDelta: {x: -167.6, y: 32.52}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &676805564
 MonoBehaviour:
@@ -53355,7 +53370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf019bb69d64e644b8c790b8651ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 931253986}
+  text: {fileID: 1392462318}
+  text2: {fileID: 931253986}
 --- !u!1 &826213740
 GameObject:
   m_ObjectHideFlags: 0
@@ -59355,7 +59371,7 @@ GameObject:
   - component: {fileID: 931253987}
   - component: {fileID: 931253986}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextPreviousMatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64287,7 +64303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf019bb69d64e644b8c790b8651ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1135676285}
+  text: {fileID: 1392462318}
+  text2: {fileID: 1135676285}
 --- !u!1 &1000384768
 GameObject:
   m_ObjectHideFlags: 0
@@ -72674,7 +72691,7 @@ GameObject:
   - component: {fileID: 1135676286}
   - component: {fileID: 1135676285}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextCalibration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75698,6 +75715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1064087350}
+  text2: {fileID: 0}
 --- !u!114 &1186346728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82377,6 +82395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 11957370}
+  text2: {fileID: 0}
 --- !u!114 &1310345502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101502,6 +101521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 828450370}
+  text2: {fileID: 0}
 --- !u!114 &1631390797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110367,6 +110387,7 @@ GameObject:
   - component: {fileID: 1759743570}
   - component: {fileID: 1759743569}
   - component: {fileID: 1759743572}
+  - component: {fileID: 1759743573}
   m_Layer: 5
   m_Name: BTNWebcamEspelharHorizontalmente
   m_TagString: Untagged
@@ -110503,6 +110524,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Horizontal: 1
   Vertical: 0
+--- !u!114 &1759743573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759743567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf019bb69d64e644b8c790b8651ca34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 676805564}
+  text2: {fileID: 670228861}
 --- !u!1 &1760021270
 GameObject:
   m_ObjectHideFlags: 0
@@ -113471,7 +113506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf019bb69d64e644b8c790b8651ca34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 2055820485}
+  text: {fileID: 1392462318}
+  text2: {fileID: 2055820485}
 --- !u!1 &1800515209
 GameObject:
   m_ObjectHideFlags: 0
@@ -128717,7 +128753,7 @@ GameObject:
   - component: {fileID: 2055820486}
   - component: {fileID: 2055820485}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextWeighted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ViewOptionItem : MonoBehaviour
 {
     public Text text;
+    public Text text2;
     private string[] dataProcessingModes = new string[] { "OptionWeightedAverage", "OptionPerformanceFromPreviousMatchOnly", "OptionPerformanceFromCalibrationOnly" }; 
 
     private void OnEnable()
@@ -65,6 +66,30 @@ public class ViewOptionItem : MonoBehaviour
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Arraste");
                 UpdateValues("TextoArraste");
                 break;
+            case "TextWeighted":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Média ponderada de todas partidas";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Weighted average of all matches";
+                else
+                    text2.text = "Média ponderada de todas partidas";
+                break;
+            case "TextPreviousMatch":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Desempenho da partida anterior";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Performance from previous match";
+                else
+                    text2.text = "Desempenho da partida anterior";
+                break;
+            case "TextCalibration":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Desempenho apenas da calibração";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Performance from calibration only";
+                else
+                    text2.text = "Desempenho apenas da calibração";
+                break;
             case "OptionWeightedAverage":
                 if (PlayerPrefs.GetInt("DataProcessingMode") == 1) 
                 {
@@ -74,7 +99,8 @@ public class ViewOptionItem : MonoBehaviour
                 {
                     GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = Color.white;
                 }
-                UpdateValues("DataProcessingMode");
+                UpdateValues("TextoModoProcessamentoDeDados");
+                UpdateValues("TextWeighted");
                 break;
             case "OptionPerformanceFromPreviousMatchOnly":
                 if (PlayerPrefs.GetInt("DataProcessingMode") == 2) 
@@ -85,7 +111,8 @@ public class ViewOptionItem : MonoBehaviour
                 {
                     GameObject.Find("OptionPerformanceFromPreviousMatchOnly").GetComponent<Image>().color = Color.white;
                 }
-                UpdateValues("DataProcessingMode");
+                UpdateValues("TextoModoProcessamentoDeDados");
+                UpdateValues("TextPreviousMatch");
                 break;
             case "OptionPerformanceFromCalibrationOnly":
                 if (PlayerPrefs.GetInt("DataProcessingMode") == 3) 
@@ -96,7 +123,34 @@ public class ViewOptionItem : MonoBehaviour
                 {
                     GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = Color.white;
                 }
-                UpdateValues("DataProcessingMode");
+                UpdateValues("TextoModoProcessamentoDeDados");
+                UpdateValues("TextCalibration");
+                break;
+            case "TextoAjustesWebcam":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text.text = "Imagem da webcam";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text.text = "Webcam image";
+                else
+                    text.text = "Imagem da webcam";
+                break;
+            case "BTNWebcamEspelharHorizontalmente":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Espelhar horizontalmente";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Mirror horizontally";
+                else
+                    text2.text = "Espelhar horizontalmente";
+                UpdateValues("TextoAjustesWebcam");
+                break;
+            case "BTNWebcamEspelharVerticalmente":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Espelhar verticalmente";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Mirror vertically";
+                else
+                    text2.text = "Espelhar verticalmente";
+                UpdateValues("TextoAjustesWebcam");
                 break;
         }
     }
@@ -148,6 +202,7 @@ public class ViewOptionItem : MonoBehaviour
     public void SetDataProcessingMode(int value)
     {
         PlayerPrefs.SetInt("DataProcessingMode", value);
+        UpdateValues("TextoModoProcessamentoDeDados");
         UpdateValues("OptionWeightedAverage");
         UpdateValues("OptionPerformanceFromPreviousMatchOnly");
         UpdateValues("OptionPerformanceFromCalibrationOnly");

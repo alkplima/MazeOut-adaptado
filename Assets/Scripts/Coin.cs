@@ -49,6 +49,7 @@ public class Coin : MonoBehaviour
             larguraOther = Mathf.Abs(cantosOtherSombra[1].x - cantosOtherSombra[2].x);
 
             this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
+            AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
             // _uiManager.Score += 1;
             
             // não grava dados se for partida livre
@@ -56,13 +57,12 @@ public class Coin : MonoBehaviour
             {               
                 VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
                 VerificaLado(other);
-                AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
 
                 VariaveisGlobais.direcaoReta = VariaveisGlobais.lastCollectedCoinDirection;
 
                 // Add entrada no relatório se mudou direção/reta
                 if (MudouDirecao())
-                {                
+                {      
                     if (EhPrimeiraMoedaDoJogo())
                     {
                         VariaveisGlobais.coordenadaX_InicioReta = this.GetComponent<RectTransform>().position.x;
