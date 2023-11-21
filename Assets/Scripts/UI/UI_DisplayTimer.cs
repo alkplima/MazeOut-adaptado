@@ -74,6 +74,9 @@ public class UI_DisplayTimer : MonoBehaviour
     public void ShowFailureMessage() 
     {
         gameScreenManager.GetComponent<UI_MessageScreen>().ShowFailureModal();
-        VariaveisGlobais.conexaoBD.PostData();
+        if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
+        {               
+            VariaveisGlobais.conexaoBD.PostData();
+        }
     }
 }

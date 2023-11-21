@@ -59,7 +59,7 @@ public static class VariaveisGlobais
 
     public static void RefreshValues()
     {
-        Idioma = PlayerPrefs.GetString("Idioma");
+        // Idioma = PlayerPrefs.GetString("Idioma");
         idWebcam = PlayerPrefs.GetInt("ID_Webcam");
         Webcam_espelhar_H = System.Convert.ToBoolean(PlayerPrefs.GetInt("Webcam_espelhar_H"));
         Webcam_espelhar_V = System.Convert.ToBoolean(PlayerPrefs.GetInt("Webcam_espelhar_V"));
