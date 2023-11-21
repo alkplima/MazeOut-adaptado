@@ -43,6 +43,7 @@ public static class VariaveisGlobais
     public static double coordenadaY_Minima;
 
     public static float tempoInicioReta;
+    public static float tempoInicioRetaAux;
     public static char lastCollectedCoinDirection;
     public static char currentCollectedCoinDirection; // C, E, B, D (cima, esq, baixo, dir)
 

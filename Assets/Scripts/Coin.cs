@@ -77,6 +77,8 @@ public class Coin : MonoBehaviour
                     {
                         // Registra dados da reta anterior
                         coinCollectionController.AcrescentarEntradaRelatorio();
+                        VariaveisGlobais.tempoInicioReta = VariaveisGlobais.tempoInicioRetaAux;
+                        VariaveisGlobais.tempoTotalReta = 0;
                         VariaveisGlobais.totalMoedasColetadasReta = 2; // incrementa 1 referente ao canto inicial
                         VariaveisGlobais.numReta += 1;
                         VariaveisGlobais.coordenadaX_InicioReta = VariaveisGlobais.coordenadaX_FimReta;
@@ -88,7 +90,6 @@ public class Coin : MonoBehaviour
                     float xAtual = this.GetComponent<RectTransform>().position.x;
                     float yAtual = this.GetComponent<RectTransform>().position.y;
 
-                    VariaveisGlobais.totalMoedasColetadas++;
                     VariaveisGlobais.totalMoedasColetadasReta++;
                     VariaveisGlobais.coordenadaX_FimReta = xAtual;
                     VariaveisGlobais.coordenadaY_FimReta = yAtual;
@@ -101,7 +102,9 @@ public class Coin : MonoBehaviour
                     if (yAtual < VariaveisGlobais.coordenadaY_Minima)
                         VariaveisGlobais.coordenadaY_Minima = yAtual;
                     VariaveisGlobais.tempoTotalReta += Time.time - VariaveisGlobais.tempoInicioReta;
+                    VariaveisGlobais.tempoInicioRetaAux = Time.time;
                 } 
+                VariaveisGlobais.totalMoedasColetadas++;
             }
 
             Destroy(this);
@@ -161,6 +164,7 @@ public class Coin : MonoBehaviour
         VariaveisGlobais.totalMoedasColetadasReta = 0;
         VariaveisGlobais.tempoTotalReta = 0;
         VariaveisGlobais.numReta = 0;
+        VariaveisGlobais.totalMoedasColetadas = 0;
     }
 
     private bool MudouDirecao()

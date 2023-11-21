@@ -49,7 +49,7 @@ public class FinalizouPartida : MonoBehaviour
             VariaveisGlobais.coordenadaX_Minima = xAtual;
         if (yAtual < VariaveisGlobais.coordenadaY_Minima)
             VariaveisGlobais.coordenadaY_Minima = yAtual;
-        VariaveisGlobais.tempoTotalReta += Time.time - VariaveisGlobais.tempoInicioReta;
+        VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
 
         // Registra dados da reta anterior
         coinCollectionController.AcrescentarEntradaRelatorio();
