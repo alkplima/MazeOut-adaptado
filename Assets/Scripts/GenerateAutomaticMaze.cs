@@ -20,7 +20,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     int yCurrentIndexInGrid;
     private Vector3[] cantosCelula = new Vector3[4];
     bool firstOrSecondCoinInMaze;
-    bool firstAutomaticMaze = true;
+    bool firstAutomaticMaze;
     int coinCount;
 
     void OnEnable()
@@ -48,6 +48,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 gridMatrix[i, j] = null;
             }
         }
+        firstAutomaticMaze = true;
         firstOrSecondCoinInMaze = true;
         coinCount = 0;
     }
@@ -159,7 +160,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 }
             }
         }
-        
+
         int xMaxColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMaxColumnIndex, timePerCoinLeftToRight, false, true, xMinColumnIndex);
         int xMinColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMinColumnIndex, timePerCoinRightToLeft, true, true, xMaxColumnIndex);
         int yMaxCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMaxCellIndex, timePerCoinBottomToTop, true, false, yMinCellIndex);

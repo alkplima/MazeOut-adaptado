@@ -24,7 +24,7 @@ public class PieceController : MonoBehaviour
             transform.position = posicaoAtualNoGrid.position;
         else Invoke("PositionHandGear", 0.5f);
 
-        SetInitialMinMaxValues();
+        Invoke("SetInitialMinMaxValues", 0.3f);
     }
 
     // Update is called once per frame

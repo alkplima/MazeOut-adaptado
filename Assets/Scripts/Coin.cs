@@ -27,6 +27,7 @@ public class Coin : MonoBehaviour
         // _uiManager = GameObject.Find("GameScreen").GetComponent<ScoreHUD>();
         coinCollectionController = GameObject.FindObjectOfType<CoinCollectionController>();
         _clip = Resources.Load<AudioClip>("Audios" + Path.DirectorySeparatorChar + "coin");
+        ResetGlobalVariables();
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class Coin : MonoBehaviour
             // _uiManager.Score += 1;
             
             // não grava dados se for partida livre
-            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" /*&& VariaveisGlobais.nomePaciente != ""*/)
             {               
                 VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
                 VerificaLado(other);
@@ -154,6 +155,14 @@ public class Coin : MonoBehaviour
 
     }
 
+    private void ResetGlobalVariables()
+    {
+        VariaveisGlobais.currentCollectedCoinDirection = ' ';
+        VariaveisGlobais.totalMoedasColetadasReta = 0;
+        VariaveisGlobais.tempoTotalReta = 0;
+        VariaveisGlobais.numReta = 0;
+    }
+
     private bool MudouDirecao()
     {
         return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection;
@@ -161,6 +170,6 @@ public class Coin : MonoBehaviour
 
     private bool EhPrimeiraMoedaDoJogo()
     {
-        return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection && VariaveisGlobais.lastCollectedCoinDirection != ' ';
+        return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection && VariaveisGlobais.lastCollectedCoinDirection == ' ';
     }
 }

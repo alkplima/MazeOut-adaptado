@@ -26,13 +26,13 @@ public static class VariaveisGlobais
     public static ItemEventoDB[] itensRelatorio = new ItemEventoDB[0];
 
     // variáveis auxiliares para cada entrada no relatório
-    public static int numReta = 0;
+    public static int numReta;
     public static char direcaoReta;
     public static string dateTimeInicioPartida;
     public static string nomePaciente = "";
     public static int totalMoedasColetadas;
-    public static int totalMoedasColetadasReta = 0;
-    public static double tempoTotalReta = 0;
+    public static int totalMoedasColetadasReta;
+    public static double tempoTotalReta;
     public static double coordenadaX_InicioReta;
     public static double coordenadaY_InicioReta;
     public static double coordenadaX_FimReta;
@@ -44,7 +44,7 @@ public static class VariaveisGlobais
 
     public static float tempoInicioReta;
     public static char lastCollectedCoinDirection;
-    public static char currentCollectedCoinDirection = ' '; // C, E, B, D (cima, esq, baixo, dir)
+    public static char currentCollectedCoinDirection; // C, E, B, D (cima, esq, baixo, dir)
 
 
     public static void LimparListaItensRelatorio()
