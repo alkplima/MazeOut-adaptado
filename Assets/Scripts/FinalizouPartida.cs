@@ -50,6 +50,7 @@ public class FinalizouPartida : MonoBehaviour
         if (yAtual < VariaveisGlobais.coordenadaY_Minima)
             VariaveisGlobais.coordenadaY_Minima = yAtual;
         VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
+        VariaveisGlobais.tempoTotalGasto = PlayerPrefs.GetInt("Timer") - coinCollectionController.displayTimer.timer;
 
         // Registra dados da reta anterior
         coinCollectionController.AcrescentarEntradaRelatorio();

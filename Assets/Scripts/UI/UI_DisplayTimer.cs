@@ -11,11 +11,13 @@ public class UI_DisplayTimer : MonoBehaviour
     private bool isTimer = false;
 
     [SerializeField] GameObject gameScreenManager;
+    private CoinCollectionController coinCollectionController;
  
     // Start is called before the first frame update
     void OnEnable()
     {
         StartTimer();
+        coinCollectionController = GameObject.FindObjectOfType<CoinCollectionController>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class UI_DisplayTimer : MonoBehaviour
         {
             if (timer <= 0.1f)
             {
+                SalvarDadosDaUltimaReta();
                 ShowFailureMessage();
                 ResetTimer();
                 StopTimer();
@@ -78,5 +81,14 @@ public class UI_DisplayTimer : MonoBehaviour
         {               
             VariaveisGlobais.conexaoBD.PostData();
         }
+    }
+
+    private void SalvarDadosDaUltimaReta()
+    {
+        VariaveisGlobais.tempoTotalGasto = PlayerPrefs.GetInt("Timer") - timer;
+        VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
+
+        // Registra dados da reta anterior
+        coinCollectionController.AcrescentarEntradaRelatorio();
     }
 }

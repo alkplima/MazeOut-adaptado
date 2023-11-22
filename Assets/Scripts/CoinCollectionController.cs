@@ -15,7 +15,7 @@ public class CoinCollectionController : MonoBehaviour
     public float timeTopToBottom;
     public float timeBottomToTop;
     public float timerTimeFromLastCoin;
-    private UI_DisplayTimer displayTimer;
+    public UI_DisplayTimer displayTimer;
 
     // Start is called before the first frame update
     void OnEnable()

@@ -41,6 +41,7 @@ public static class VariaveisGlobais
     public static double coordenadaY_Maxima;
     public static double coordenadaX_Minima;
     public static double coordenadaY_Minima;
+    public static double tempoTotalGasto;
 
     public static float tempoInicioReta;
     public static float tempoInicioRetaAux;
@@ -85,6 +86,7 @@ public class ItemEventoDB
     public double CoordenadaY_Maxima { get; set; }
     public double CoordenadaX_Minima { get; set; }
     public double CoordenadaY_Minima { get; set; }
+    public double TempoTotalGasto { get; set; }
 
 }
 
