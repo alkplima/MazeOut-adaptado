@@ -15,6 +15,8 @@ public class CoinCollectionController : MonoBehaviour
     public float timeTopToBottom;
     public float timeBottomToTop;
     public float timerTimeFromLastCoin;
+    public GameObject grid;
+    private Vector3[] cantosCelula = new Vector3[4];
     public UI_DisplayTimer displayTimer;
 
     // Start is called before the first frame update
@@ -91,18 +93,59 @@ public class CoinCollectionController : MonoBehaviour
             TotalMoedasColetadasReta = VariaveisGlobais.totalMoedasColetadasReta,
             TempoTotalPartida = PlayerPrefs.GetInt("Timer"),
             TempoTotalReta = VariaveisGlobais.tempoTotalReta,
-            CoordenadaX_InicioReta = VariaveisGlobais.coordenadaX_InicioReta,
-            CoordenadaY_InicioReta = VariaveisGlobais.coordenadaY_InicioReta,
-            CoordenadaX_FimReta = VariaveisGlobais.coordenadaX_FimReta,
-            CoordenadaY_FimReta = VariaveisGlobais.coordenadaY_FimReta,
-            CoordenadaX_Maxima = VariaveisGlobais.coordenadaX_Maxima,
-            CoordenadaY_Maxima = VariaveisGlobais.coordenadaY_Maxima,
-            CoordenadaX_Minima = VariaveisGlobais.coordenadaX_Minima,
-            CoordenadaY_Minima = VariaveisGlobais.coordenadaY_Minima
+            CoordenadaX_InicioReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_InicioReta, true),
+            CoordenadaY_InicioReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_InicioReta, false),
+            CoordenadaX_FimReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_FimReta, true),
+            CoordenadaY_FimReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_FimReta, false),
+            CoordenadaX_Maxima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_Maxima, true),
+            CoordenadaY_Maxima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_Maxima, false),
+            CoordenadaX_Minima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_Minima, true),
+            CoordenadaY_Minima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_Minima, false),
+            TempoTotalGasto = VariaveisGlobais.tempoTotalGasto
         };
 
         Array.Resize(ref VariaveisGlobais.itensRelatorio, VariaveisGlobais.itensRelatorio.Length + 1);
 
         VariaveisGlobais.itensRelatorio[VariaveisGlobais.itensRelatorio.Length - 1] = itemNovo;
+    }
+
+    public int GetCoordinateIndexInGrid(double coordinate, bool isXAxis)
+    {
+        int maxRows = grid.transform.GetChild(0).childCount;
+        int maxColumns = grid.transform.childCount;
+        int index = -1;
+        if (isXAxis)
+        {
+            for (int col = 0; col < maxColumns; col++)
+            {
+                Transform column = grid.transform.GetChild(col);
+                column.GetComponent<RectTransform>().GetWorldCorners(cantosCelula);
+                float cellWidth = Mathf.Abs(cantosCelula[1].x - cantosCelula[2].x); // largura da célula
+
+                if (coordinate >= column.transform.position.x - cellWidth / 2 && coordinate <= column.transform.position.x + cellWidth / 2)
+                {
+                    index = col;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            int reverseIndexForCells = 0;
+            for (int cel = maxRows - 1; cel >= 0; cel--)
+            {
+                Transform cell = grid.transform.GetChild(0).GetChild(cel);
+                cell.GetComponent<RectTransform>().GetWorldCorners(cantosCelula);
+                float cellHeight = Mathf.Abs(cantosCelula[0].y - cantosCelula[1].y); // altura da célula
+
+                if (coordinate >= cell.transform.position.y - cellHeight / 2 && coordinate <= cell.transform.position.y + cellHeight / 2)
+                {
+                    index = reverseIndexForCells;
+                    break;
+                }
+                reverseIndexForCells++;
+            }
+        }
+        return index;
     }
 }
