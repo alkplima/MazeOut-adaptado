@@ -24,6 +24,7 @@ public class FinalizouPartida : MonoBehaviour
             if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
             {               
                 SalvarDadosDaUltimaReta();
+                VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
                 VariaveisGlobais.conexaoBD.PostData();
             }
             gameScreenManager.GetComponent<UI_MessageScreen>().ShowSuccessModal();

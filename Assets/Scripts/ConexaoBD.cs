@@ -5,7 +5,8 @@ using System.Globalization;
 using UnityEngine;
 
 public class ConexaoBD : MonoBehaviour {
-    bool cr_PostDataCoroutine_running;
+    [HideInInspector]
+    public bool cr_PostDataCoroutine_running;
     public GameObject[] telasProtocolos = new GameObject[4];
     // Baseado no código disponível em
     // http://wiki.unity3d.com/index.php?title=Server_Side_Highscores#C.23_-_HSController.cs
@@ -48,19 +49,20 @@ public class ConexaoBD : MonoBehaviour {
                 VariaveisGlobais.itensRelatorio[i].DateTimeInicioPartida + ";" + // Horário do início da partida
                 VariaveisGlobais.itensRelatorio[i].NomePaciente + ";" + // Nome do paciente
                 VariaveisGlobais.itensRelatorio[i].NumReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadas + ";" +    //Total de moedas coletadas na partida (até o momento)
-                VariaveisGlobais.itensRelatorio[i].TempoTotalPartida + ";" + // Tempo total configurado para a partida
-                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadasReta + ";" + // Total de moedas coletadas na reta em específico
-                VariaveisGlobais.itensRelatorio[i].TempoTotalReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // Tempo total na reta
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_InicioReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_InicioReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_FimReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_FimReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
                 VariaveisGlobais.itensRelatorio[i].DirecaoReta + ";" + // Tempo total configurado para a partida
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Maxima.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Maxima.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Minima.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Minima.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" +
+                VariaveisGlobais.itensRelatorio[i].TempoTotalPartida + ";" + // Tempo total configurado (planejado) para a partida
+                VariaveisGlobais.itensRelatorio[i].TempoTotalGasto.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // NEW!
+                VariaveisGlobais.itensRelatorio[i].TempoTotalReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // Tempo total na reta
+                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadas + ";" +    //Total de moedas coletadas na partida (até o momento)
+                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadasReta + ";" + // Total de moedas coletadas na reta em específico
+                VariaveisGlobais.itensRelatorio[i].CoordenadaX_InicioReta + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaY_InicioReta + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaX_FimReta + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaY_FimReta + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Maxima + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Maxima + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Minima + ";" +
+                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Minima + ";" +
                 VariaveisGlobais.NomeDoJogo + System.Environment.NewLine;
         }
 

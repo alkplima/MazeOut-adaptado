@@ -47,7 +47,35 @@ public static class VariaveisGlobais
     public static float tempoInicioRetaAux;
     public static char lastCollectedCoinDirection;
     public static char currentCollectedCoinDirection; // C, E, B, D (cima, esq, baixo, dir)
+    
+    public static int tamanhoBufferBD = 0; // Armazena temporariamente o tamanho do vetor de buffer a ser enviado pro BD
 
+
+    public static void AtualizarAtributosBuffer(int startIndex)
+    {
+        int corX_Max = -1;
+        int corX_Min = 1000;
+        int corY_Max = -1;
+        int corY_Min = 1000;
+
+        for (int i = startIndex; i < itensRelatorio.Length; i++)
+        {
+            corX_Max = Mathf.Max(corX_Max, itensRelatorio[i].CoordenadaX_Maxima);
+            corY_Max = Mathf.Max(corY_Max, itensRelatorio[i].CoordenadaY_Maxima);
+            corX_Min = Mathf.Min(corX_Min, itensRelatorio[i].CoordenadaX_Minima);
+            corY_Min = Mathf.Min(corY_Min, itensRelatorio[i].CoordenadaY_Minima);
+        }
+        
+        for (int i = startIndex; i < itensRelatorio.Length; i++)
+        {
+            itensRelatorio[i].TotalMoedasColetadas = totalMoedasColetadas;
+            itensRelatorio[i].TempoTotalGasto = tempoTotalGasto;
+            itensRelatorio[i].CoordenadaX_Maxima = corX_Max;
+            itensRelatorio[i].CoordenadaY_Maxima = corY_Max;
+            itensRelatorio[i].CoordenadaX_Minima = corX_Min;
+            itensRelatorio[i].CoordenadaY_Minima = corY_Min;    
+        }
+    }
 
     public static void LimparListaItensRelatorio()
     {
@@ -78,14 +106,14 @@ public class ItemEventoDB
     public int TotalMoedasColetadasReta { get; set; }
     public int TempoTotalPartida { get; set; }
     public double TempoTotalReta { get; set; }
-    public double CoordenadaX_InicioReta { get; set; }
-    public double CoordenadaY_InicioReta { get; set; }
-    public double CoordenadaX_FimReta { get; set; }
-    public double CoordenadaY_FimReta { get; set; }
-    public double CoordenadaX_Maxima { get; set; }
-    public double CoordenadaY_Maxima { get; set; }
-    public double CoordenadaX_Minima { get; set; }
-    public double CoordenadaY_Minima { get; set; }
+    public int CoordenadaX_InicioReta { get; set; }
+    public int CoordenadaY_InicioReta { get; set; }
+    public int CoordenadaX_FimReta { get; set; }
+    public int CoordenadaY_FimReta { get; set; }
+    public int CoordenadaX_Maxima { get; set; }
+    public int CoordenadaY_Maxima { get; set; }
+    public int CoordenadaX_Minima { get; set; }
+    public int CoordenadaY_Minima { get; set; }
     public double TempoTotalGasto { get; set; }
 
 }

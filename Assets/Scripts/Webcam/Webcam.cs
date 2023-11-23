@@ -31,6 +31,7 @@ public class Webcam : MonoBehaviour {
 
 
 	bool initialized = false;
+	[HideInInspector]
 	public WebCamTexture webcamTexture;
 	Texture2D blendTexture, copyTexture;
 	int diffsum = 0;
@@ -48,9 +49,29 @@ public class Webcam : MonoBehaviour {
 	// Escala da webcam com relação ao display
 
 	Coroutine cr;
-	bool crIsRunning = true;
+	bool crIsRunning = false;
+	private int internalCounterFrames = 0;
 
-	IEnumerator Start() {
+	public GameObject waitText;
+	public GameObject[] blockObjects;
+
+
+    private void OnEnable()
+    {
+        if (!crIsRunning)
+		{
+            if (waitText)
+                waitText.SetActive(true);
+            foreach (GameObject obj in blockObjects)
+                obj.SetActive(false);
+
+            StartCoroutine(StarterWebcam());
+        }
+
+        PaterlandGlobal.currentWebcam = this;
+    }
+
+    private IEnumerator StarterWebcam() {
         yield return Application.RequestUserAuthorization(UserAuthorization.WebCam | UserAuthorization.Microphone);
         if( Application.HasUserAuthorization(UserAuthorization.WebCam | UserAuthorization.Microphone) ){
 			cr = StartCoroutine(StartWebcam());
@@ -63,7 +84,7 @@ public class Webcam : MonoBehaviour {
 	 */
 	IEnumerator StartWebcam(){
 		crIsRunning = true;
-        PaterlandGlobal.webcamNoPonto = false;
+        PaterlandGlobal.autorizadoMovimento = false;    
 
         WebCamDevice[] devices = WebCamTexture.devices;
 
@@ -114,7 +135,10 @@ public class Webcam : MonoBehaviour {
 		initialized = true;
 		crIsRunning = false;
 
-        PaterlandGlobal.webcamNoPonto = true;
+        if (waitText)
+			waitText.SetActive(false);
+        foreach (GameObject obj in blockObjects)
+            obj.SetActive(true);
     }
 
 
@@ -125,7 +149,11 @@ public class Webcam : MonoBehaviour {
 	void Update()
 	{
 		// Aguarda inicialização e inicializa variaveis
-		if( !initialized || webcamTexture.width == 0 ) return;
+		if (!initialized || webcamTexture.width == 0)
+		{
+            PaterlandGlobal.autorizadoMovimento = false;
+            return;
+		}
 		if( lastData == null ){
 			lastData = webcamTexture.GetPixels32();
 
@@ -180,6 +208,11 @@ public class Webcam : MonoBehaviour {
 		blendTexture.Apply();
         copyTexture.SetPixels32(lastData);
         copyTexture.Apply();
+		
+		if (internalCounterFrames < 10)
+			internalCounterFrames++;
+		else
+			PaterlandGlobal.autorizadoMovimento = true;
     }
 
 	/*
@@ -262,7 +295,7 @@ public class Webcam : MonoBehaviour {
 		initialized = false;
 		if (webcamTexture.isPlaying)
 			webcamTexture.Stop();
-		StartCoroutine(Start());
+		StartCoroutine(StarterWebcam());
     }
 
 	public void ChangeIdWebcam()
@@ -277,22 +310,18 @@ public class Webcam : MonoBehaviour {
 	public void StopWebcam()
 	{
 		initialized = false;
-		if (webcamTexture)
+        PaterlandGlobal.autorizadoMovimento = false;
+        if (webcamTexture)
+		{
             webcamTexture.Stop();
-	}
+            Destroy(webcamTexture);
+        }
+        internalCounterFrames = 0;
+    }
+
 
 	private void OnDisable()
     {
 		StopWebcam();
     }
-
-	private void OnEnable()
-   {
-		if (!crIsRunning)
-			StartCoroutine(Start());
-
-        PaterlandGlobal.currentWebcam = this;
-    }
-
-
 }

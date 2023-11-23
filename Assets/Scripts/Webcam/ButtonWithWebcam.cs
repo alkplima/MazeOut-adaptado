@@ -15,15 +15,12 @@ public class ButtonWithWebcam : MonoBehaviour{
     }
 
     void Update(){
-        // Debug.Log("Scale H:" + PaterlandGlobal.currentWebcam.scaleH);
-        // Debug.Log("Scale V:" + PaterlandGlobal.currentWebcam.scaleV);
-
         RectTransform rt = GetComponent<RectTransform>();
-        int x = (int) (Mathf.Abs(rt.anchoredPosition.x)* PaterlandGlobal.currentWebcam.scaleH),
-            y = (int) (Mathf.Abs(rt.anchoredPosition.y)* PaterlandGlobal.currentWebcam.scaleV),
-            s = (int) (100* PaterlandGlobal.currentWebcam.scaleH);
+        int x = (int)(Mathf.Abs(rt.anchoredPosition.x) * PaterlandGlobal.currentWebcam.scaleH),
+            y = (int)(Mathf.Abs(rt.anchoredPosition.y) * PaterlandGlobal.currentWebcam.scaleV),
+            s = (int)(100 * PaterlandGlobal.currentWebcam.scaleH);
 
-        if (PaterlandGlobal.currentWebcam.checkArea(x, y, (int)Mathf.Floor(rt.rect.width* PaterlandGlobal.currentWebcam.scaleH), (int)Mathf.Floor(rt.rect.height * PaterlandGlobal.currentWebcam.scaleV)))
+        if (PaterlandGlobal.currentWebcam.checkArea(x, y, (int)Mathf.Floor(rt.rect.width * PaterlandGlobal.currentWebcam.scaleH), (int)Mathf.Floor(rt.rect.height * PaterlandGlobal.currentWebcam.scaleV)))
         {
             if (changeColor)
                 img.color = colorHit;
@@ -40,7 +37,6 @@ public class ButtonWithWebcam : MonoBehaviour{
             //img.color = new Color32( 255, 106, 96, 255 );
             if (changeColor)
                 img.color = colorMiss;
-        }
+        }              
     }
-
 }

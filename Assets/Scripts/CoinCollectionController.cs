@@ -33,6 +33,8 @@ public class CoinCollectionController : MonoBehaviour
         timeTopToBottom = 0.0f;
         timeBottomToTop = 0.0f;
 
+        // Marcar na variável global tamanhoBufferBD o tamanho corrente da pilha de dados.
+        VariaveisGlobais.tamanhoBufferBD = VariaveisGlobais.itensRelatorio.Length;
     }
 
     public void CountTimePerCoin(char lado) 

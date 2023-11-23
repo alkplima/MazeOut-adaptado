@@ -16,6 +16,7 @@ public class UI_DisplayTimer : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
+        textTimer.text = "";
         StartTimer();
         coinCollectionController = GameObject.FindObjectOfType<CoinCollectionController>();
     }
@@ -23,7 +24,7 @@ public class UI_DisplayTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTimer)
+        if (isTimer && PaterlandGlobal.autorizadoMovimento)
         {
             if (timer <= 0.1f)
             {
@@ -55,12 +56,7 @@ public class UI_DisplayTimer : MonoBehaviour
     IEnumerator cr_StartTimer()
     {
         yield return new WaitForSeconds(0.2f);
-
         ResetTimer();
-
-        while (PaterlandGlobal.webcamNoPonto == false)
-            yield return new WaitForEndOfFrame();
-
         isTimer = true;
     }
 
@@ -78,7 +74,8 @@ public class UI_DisplayTimer : MonoBehaviour
     {
         gameScreenManager.GetComponent<UI_MessageScreen>().ShowFailureModal();
         if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
-        {               
+        {
+            VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
             VariaveisGlobais.conexaoBD.PostData();
         }
     }

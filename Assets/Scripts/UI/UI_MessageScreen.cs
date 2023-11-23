@@ -6,37 +6,37 @@ public class UI_MessageScreen : MonoBehaviour
 {
     public GameObject currentScreen;
     public GameObject messageScreen;
-    public GameObject successModal;
-    public GameObject failureModal;
-
-    void Star() {}
-
-    void Update() {}
+    public UI_WaitNextScreen waitModal;
 
     public void ShowSuccessModal()
     {
         messageScreen.SetActive(true);
         currentScreen.SetActive(false);
-        successModal.SetActive(true);
+        waitModal.gameObject.SetActive(true);
+        waitModal.waitSuccess();
     }
 
+    /*
     public void HideSuccessModal()
     {
         currentScreen.SetActive(true);
         successModal.SetActive(false);
         messageScreen.SetActive(false);
     }
+    */
     public void ShowFailureModal()
     {
         messageScreen.SetActive(true);
         currentScreen.SetActive(false);
-        failureModal.SetActive(true);
+        waitModal.gameObject.SetActive(true);
+        waitModal.waitFailure();
     }
-
+    /*
     public void HideFailureModal()
     {
         currentScreen.SetActive(true);
         failureModal.SetActive(false);
         messageScreen.SetActive(false);
     }
+    */
 }
