@@ -7,6 +7,7 @@ public class UI_MessageScreen : MonoBehaviour
     public GameObject currentScreen;
     public GameObject messageScreen;
     public UI_WaitNextScreen waitModal;
+    public GameObject endOfChallengeModal;
 
     public void ShowSuccessModal()
     {
@@ -39,4 +40,11 @@ public class UI_MessageScreen : MonoBehaviour
         messageScreen.SetActive(false);
     }
     */
+
+    public void ShowEndOfChallengeModal()
+    {
+        messageScreen.SetActive(true);
+        currentScreen.SetActive(false);
+        endOfChallengeModal.SetActive(true);
+    }
 }

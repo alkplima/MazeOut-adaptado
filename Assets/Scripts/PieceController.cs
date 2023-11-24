@@ -22,7 +22,7 @@ public class PieceController : MonoBehaviour
     {
         if (posicaoAtualNoGrid)
             transform.position = posicaoAtualNoGrid.position;
-        else Invoke("PositionHandGear", 0.5f);
+        // else Invoke("PositionHandGear", 0.5f);
 
         Invoke("SetInitialMinMaxValues", 0.3f);
     }

@@ -27,7 +27,14 @@ public class FinalizouPartida : MonoBehaviour
                 VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
                 VariaveisGlobais.conexaoBD.PostData();
             }
-            gameScreenManager.GetComponent<UI_MessageScreen>().ShowSuccessModal();
+            if (VariaveisGlobais.partidaCorrente == 14 && VariaveisGlobais.estiloJogoCorrente == "Trilha")
+            {
+                gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfChallengeModal();
+            }
+            else
+            {
+                gameScreenManager.GetComponent<UI_MessageScreen>().ShowSuccessModal();
+            }
         }
     }
 
