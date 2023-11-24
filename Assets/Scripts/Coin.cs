@@ -101,7 +101,7 @@ public class Coin : MonoBehaviour
                         VariaveisGlobais.coordenadaX_Minima = xAtual;
                     if (yAtual < VariaveisGlobais.coordenadaY_Minima)
                         VariaveisGlobais.coordenadaY_Minima = yAtual;
-                    VariaveisGlobais.tempoTotalReta += Time.time - VariaveisGlobais.tempoInicioReta;
+                    VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
                     VariaveisGlobais.tempoInicioRetaAux = Time.time;
                 } 
                 VariaveisGlobais.totalMoedasColetadas++;
