@@ -46,7 +46,7 @@ public static class VariaveisGlobais
     public static float tempoInicioReta;
     public static float tempoInicioRetaAux;
     public static char lastCollectedCoinDirection;
-    public static char currentCollectedCoinDirection; // C, E, B, D (cima, esq, baixo, dir)
+    public static char currentCollectedCoinDirection; // 0, 1, 2, 3 (cima, dir, baixo, esq)
     
     public static int tamanhoBufferBD = 0; // Armazena temporariamente o tamanho do vetor de buffer a ser enviado pro BD
 
