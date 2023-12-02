@@ -558,17 +558,17 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                     gridMatrix[rowIndex, colIndex] = "Tiles_0"; // preenche com parede cinza
                 }
                 // retira primeira moeda após início
-                else if (gridMatrix[rowIndex, colIndex] == "staticMoedaAmarela" &&
-                            (// checa blocos adjacentes
-                            colIndex > 0 && gridMatrix[rowIndex, colIndex - 1] == "start" ||
-                            colIndex < maxColumns - 1 && gridMatrix[rowIndex, colIndex + 1] == "start" ||
-                            rowIndex > 0 && gridMatrix[rowIndex - 1, colIndex] == "start" ||
-                            rowIndex < maxRows - 1 && gridMatrix[rowIndex + 1, colIndex] == "start"
-                            )
-                        )
-                {
-                    gridMatrix[rowIndex, colIndex] = "vazioBloco"; // preenche com bloco vazio
-                }
+                // else if (gridMatrix[rowIndex, colIndex] == "staticMoedaAmarela" &&
+                //             (// checa blocos adjacentes
+                //             colIndex > 0 && gridMatrix[rowIndex, colIndex - 1] == "start" ||
+                //             colIndex < maxColumns - 1 && gridMatrix[rowIndex, colIndex + 1] == "start" ||
+                //             rowIndex > 0 && gridMatrix[rowIndex - 1, colIndex] == "start" ||
+                //             rowIndex < maxRows - 1 && gridMatrix[rowIndex + 1, colIndex] == "start"
+                //             )
+                //         )
+                // {
+                //     gridMatrix[rowIndex, colIndex] = "vazioBloco"; // preenche com bloco vazio
+                // }
             }
         }
 

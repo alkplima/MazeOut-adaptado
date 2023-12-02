@@ -38,8 +38,8 @@ public class Coin : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag.StartsWith("Bola")) {
-
+        if (other.tag.StartsWith("Bola")) 
+        {
             gameObject.GetComponent<RectTransform>().GetWorldCorners(cantosMoeda);
             other.GetComponent<PieceController>().sombra.GetWorldCorners(cantosOtherSombra);
 
@@ -54,57 +54,66 @@ public class Coin : MonoBehaviour
             // _uiManager.Score += 1;
             
             // não grava dados se for partida livre
-            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" /*&& VariaveisGlobais.nomePaciente != ""*/)
-            {               
-                VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
-                VerificaLado(other);
-
-                VariaveisGlobais.direcaoReta = VariaveisGlobais.lastCollectedCoinDirection;
-
-                // Add entrada no relatório se mudou direção/reta
-                if (MudouDirecao())
-                {      
-                    if (EhPrimeiraMoedaDoJogo())
-                    {
-                        VariaveisGlobais.coordenadaX_InicioReta = this.GetComponent<RectTransform>().position.x;
-                        VariaveisGlobais.coordenadaY_InicioReta = this.GetComponent<RectTransform>().position.y;
-                        VariaveisGlobais.totalMoedasColetadasReta++;
-                        VariaveisGlobais.tempoInicioReta = Time.time;
-                        VariaveisGlobais.dateTimeInicioPartida = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                        VariaveisGlobais.numReta = 1;
-                    }
-                    else // mudou de direção no meio do jogo
-                    {
-                        // Registra dados da reta anterior
-                        coinCollectionController.AcrescentarEntradaRelatorio();
-                        VariaveisGlobais.tempoInicioReta = VariaveisGlobais.tempoInicioRetaAux;
-                        VariaveisGlobais.tempoTotalReta = 0;
-                        VariaveisGlobais.totalMoedasColetadasReta = 2; // incrementa 1 referente ao canto inicial
-                        VariaveisGlobais.numReta += 1;
-                        VariaveisGlobais.coordenadaX_InicioReta = VariaveisGlobais.coordenadaX_FimReta;
-                        VariaveisGlobais.coordenadaY_InicioReta = VariaveisGlobais.coordenadaY_FimReta;
-                    }
-                }
-                else
+            if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")
+            {
+                if (!VariaveisGlobais.ehPrimeiraMoedaDoJogo)
                 {
-                    float xAtual = this.GetComponent<RectTransform>().position.x;
-                    float yAtual = this.GetComponent<RectTransform>().position.y;
+                    Debug.Log("Não é a primeira moeda do jogo");
+                    VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
+                    VerificaLado(other);
 
-                    VariaveisGlobais.totalMoedasColetadasReta++;
-                    VariaveisGlobais.coordenadaX_FimReta = xAtual;
-                    VariaveisGlobais.coordenadaY_FimReta = yAtual;
-                    if (xAtual > VariaveisGlobais.coordenadaX_Maxima)
-                        VariaveisGlobais.coordenadaX_Maxima = xAtual;
-                    if (yAtual > VariaveisGlobais.coordenadaY_Maxima)
-                        VariaveisGlobais.coordenadaY_Maxima = yAtual;
-                    if (xAtual < VariaveisGlobais.coordenadaX_Minima)
-                        VariaveisGlobais.coordenadaX_Minima = xAtual;
-                    if (yAtual < VariaveisGlobais.coordenadaY_Minima)
-                        VariaveisGlobais.coordenadaY_Minima = yAtual;
-                    VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
-                    VariaveisGlobais.tempoInicioRetaAux = Time.time;
-                } 
-                VariaveisGlobais.totalMoedasColetadas++;
+                    VariaveisGlobais.direcaoReta = VariaveisGlobais.lastCollectedCoinDirection;
+
+                    // Add entrada no relatório se mudou direção/reta
+                    if (MudouDirecao())
+                    {      
+                        if (EhPrimeiraMoedaDoJogoQueConta())
+                        {
+                            VariaveisGlobais.coordenadaX_InicioReta = this.GetComponent<RectTransform>().position.x;
+                            VariaveisGlobais.coordenadaY_InicioReta = this.GetComponent<RectTransform>().position.y;
+                            VariaveisGlobais.totalMoedasColetadasReta++;
+                            VariaveisGlobais.tempoInicioReta = Time.time;
+                            VariaveisGlobais.dateTimeInicioPartida = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                            VariaveisGlobais.numReta = 1;
+                        }
+                        else // mudou de direção no meio do jogo
+                        {
+                            // Registra dados da reta anterior
+                            coinCollectionController.AcrescentarEntradaRelatorio();
+                            VariaveisGlobais.tempoInicioReta = VariaveisGlobais.tempoInicioRetaAux;
+                            VariaveisGlobais.tempoTotalReta = 0;
+                            VariaveisGlobais.totalMoedasColetadasReta = 2; // incrementa 1 referente ao canto inicial
+                            VariaveisGlobais.numReta += 1;
+                            VariaveisGlobais.coordenadaX_InicioReta = VariaveisGlobais.coordenadaX_FimReta;
+                            VariaveisGlobais.coordenadaY_InicioReta = VariaveisGlobais.coordenadaY_FimReta;
+                        }
+                    }
+                    else
+                    {
+                        float xAtual = this.GetComponent<RectTransform>().position.x;
+                        float yAtual = this.GetComponent<RectTransform>().position.y;
+
+                        VariaveisGlobais.totalMoedasColetadasReta++;
+                        VariaveisGlobais.coordenadaX_FimReta = xAtual;
+                        VariaveisGlobais.coordenadaY_FimReta = yAtual;
+                        if (xAtual > VariaveisGlobais.coordenadaX_Maxima)
+                            VariaveisGlobais.coordenadaX_Maxima = xAtual;
+                        if (yAtual > VariaveisGlobais.coordenadaY_Maxima)
+                            VariaveisGlobais.coordenadaY_Maxima = yAtual;
+                        if (xAtual < VariaveisGlobais.coordenadaX_Minima)
+                            VariaveisGlobais.coordenadaX_Minima = xAtual;
+                        if (yAtual < VariaveisGlobais.coordenadaY_Minima)
+                            VariaveisGlobais.coordenadaY_Minima = yAtual;
+                        VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
+                        VariaveisGlobais.tempoInicioRetaAux = Time.time;
+                    } 
+                    VariaveisGlobais.totalMoedasColetadas++;
+                }
+                else 
+                {
+                    VariaveisGlobais.ehPrimeiraMoedaDoJogo = false;
+                    Debug.Log("Primeira moeda do jogo");
+                }
             }
 
             Destroy(this);
@@ -165,6 +174,7 @@ public class Coin : MonoBehaviour
         VariaveisGlobais.tempoTotalReta = 0;
         VariaveisGlobais.numReta = 0;
         VariaveisGlobais.totalMoedasColetadas = 0;
+        VariaveisGlobais.ehPrimeiraMoedaDoJogo = true;
     }
 
     private bool MudouDirecao()
@@ -172,7 +182,7 @@ public class Coin : MonoBehaviour
         return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection;
     }
 
-    private bool EhPrimeiraMoedaDoJogo()
+    private bool EhPrimeiraMoedaDoJogoQueConta()
     {
         return VariaveisGlobais.currentCollectedCoinDirection != VariaveisGlobais.lastCollectedCoinDirection && VariaveisGlobais.lastCollectedCoinDirection == ' ';
     }

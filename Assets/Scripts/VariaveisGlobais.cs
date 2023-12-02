@@ -21,6 +21,7 @@ public static class VariaveisGlobais
     public static string DateTime_InicioPartida, DateTime_Full, IdentificadorNome;
     public static int DuracaoJogo;
     public static double tempoRestanteEmDouble;
+    public static bool ehPrimeiraMoedaDoJogo;
 
     public static ConexaoBD conexaoBD = null;
     public static ItemEventoDB[] itensRelatorio = new ItemEventoDB[0];
