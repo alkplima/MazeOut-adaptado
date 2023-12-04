@@ -225,14 +225,14 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         }
         else
         {
-            minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) / 2 : minX;
-            minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) / 2 : minY;
-            maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) / 2 : maxX;
-            maxY = (!float.IsNaN(VariaveisGlobais.maxY)) ? (VariaveisGlobais.maxY > maxY) ? VariaveisGlobais.maxY : (0.7f * VariaveisGlobais.maxY + 0.3f * maxY) / 2 : maxY;
-            timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? (0.7f * VariaveisGlobais.timePerCoinBottomToTop + 0.3f * timePerCoinBottomToTop) / 2 : timePerCoinBottomToTop;
-            timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) / 2 : timePerCoinTopToBottom;
-            timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) / 2 : timePerCoinLeftToRight;
-            timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) / 2 : timePerCoinRightToLeft;
+            minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) : minX;
+            minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) : minY;
+            maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) : maxX;
+            maxY = (!float.IsNaN(VariaveisGlobais.maxY)) ? (VariaveisGlobais.maxY > maxY) ? VariaveisGlobais.maxY : (0.7f * VariaveisGlobais.maxY + 0.3f * maxY) : maxY;
+            timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? (0.7f * VariaveisGlobais.timePerCoinBottomToTop + 0.3f * timePerCoinBottomToTop) : timePerCoinBottomToTop;
+            timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) : timePerCoinTopToBottom;
+            timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) : timePerCoinLeftToRight;
+            timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) : timePerCoinRightToLeft;
         }
     }
 
@@ -243,10 +243,10 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         minY = VariaveisGlobais.minY;
         maxX = VariaveisGlobais.maxX;
         maxY = VariaveisGlobais.maxY;
-        timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? VariaveisGlobais.timePerCoinBottomToTop / 2 : 0;
-        timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? VariaveisGlobais.timePerCoinTopToBottom / 2 : 0;
-        timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? VariaveisGlobais.timePerCoinLeftToRight / 2 : 0;
-        timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? VariaveisGlobais.timePerCoinRightToLeft / 2 : 0;
+        timePerCoinBottomToTop = (!float.IsNaN(VariaveisGlobais.timePerCoinBottomToTop)) ? VariaveisGlobais.timePerCoinBottomToTop : 0;
+        timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? VariaveisGlobais.timePerCoinTopToBottom : 0;
+        timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? VariaveisGlobais.timePerCoinLeftToRight : 0;
+        timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? VariaveisGlobais.timePerCoinRightToLeft : 0;
     }
 
     private void PerformanceFromCalibrationOnly() 

@@ -58,7 +58,6 @@ public class Coin : MonoBehaviour
             {
                 if (!VariaveisGlobais.ehPrimeiraMoedaDoJogo)
                 {
-                    Debug.Log("Não é a primeira moeda do jogo");
                     VariaveisGlobais.lastCollectedCoinDirection = VariaveisGlobais.currentCollectedCoinDirection;
                     VerificaLado(other);
 
@@ -112,7 +111,6 @@ public class Coin : MonoBehaviour
                 else 
                 {
                     VariaveisGlobais.ehPrimeiraMoedaDoJogo = false;
-                    Debug.Log("Primeira moeda do jogo");
                 }
             }
 
