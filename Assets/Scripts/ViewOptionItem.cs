@@ -198,17 +198,41 @@ public class ViewOptionItem : MonoBehaviour
         Debug.Log("Sincronia disco - navegador realizada.");
 #endif
     }
-
+    
     public void SetDataProcessingMode(int value)
     {
         PlayerPrefs.SetInt("DataProcessingMode", value);
-        UpdateValues("TextoModoProcessamentoDeDados");
-        UpdateValues("OptionWeightedAverage");
-        UpdateValues("OptionPerformanceFromPreviousMatchOnly");
-        UpdateValues("OptionPerformanceFromCalibrationOnly");
+        UpdateColors();
+
 #if UNITY_WEBGL
         Application.ExternalEval("FS.syncfs(false, function (err) {})");
         Debug.Log("Sincronia disco - navegador realizada.");
 #endif
+    }
+
+    public void UpdateColors()
+    {
+        int selectedMode = PlayerPrefs.GetInt("DataProcessingMode");
+
+        SetItemColor("OptionWeightedAverage", selectedMode == 1);
+        SetItemColor("OptionPerformanceFromPreviousMatchOnly", selectedMode == 2);
+        SetItemColor("OptionPerformanceFromCalibrationOnly", selectedMode == 3);
+    }
+
+    private void SetItemColor(string itemName, bool isSelected)
+    {
+        Image itemImage = GameObject.Find(itemName)?.GetComponent<Image>();
+
+        if (itemImage != null)
+        {
+            if (isSelected)
+            {
+                itemImage.color = new Color(0.85f, 0.93f, 0.74f, 1f);
+            }
+            else
+            {
+                itemImage.color = Color.white;
+            }
+        }
     }
 }
