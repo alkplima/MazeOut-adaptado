@@ -24,7 +24,7 @@ public class Coin : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        // _uiManager = GameObject.Find("GameScreen").GetComponent<ScoreHUD>();
+        _uiManager = GameObject.Find("GameScreenManager").GetComponent<ScoreHUD>();
         coinCollectionController = GameObject.FindObjectOfType<CoinCollectionController>();
         _clip = Resources.Load<AudioClip>("Audios" + Path.DirectorySeparatorChar + "coin");
         ResetGlobalVariables();
@@ -51,7 +51,7 @@ public class Coin : MonoBehaviour
 
             this.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Sprites" + Path.DirectorySeparatorChar + "vazioBloco");
             AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position, 1f);
-            // _uiManager.Score += 1;
+            _uiManager.Score += 1;
             
             // não grava dados se for partida livre
             if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")

@@ -91,6 +91,7 @@ public class LoadGame : Singleton<SaveHandler> {
 #endif
 
 
+        int totalMoedasNaPartida = 0;
         List<CelulaData> data = FileHandler.ReadListFromJSON<CelulaData>(filename);
         int i = 0; 
         foreach (Transform col in grid.transform) {
@@ -128,6 +129,7 @@ public class LoadGame : Singleton<SaveHandler> {
                     cel.gameObject.AddComponent<BoxCollider2D>();
                     cel.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                     cel.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(57, 57);
+                    totalMoedasNaPartida++;
                 }
                 else if (data[i].nomeSelecionadoSprite.StartsWith("start"))
                 {
@@ -155,6 +157,7 @@ public class LoadGame : Singleton<SaveHandler> {
                 i++;
             }
         }
+        VariaveisGlobais.totalMoedasNaPartida = totalMoedasNaPartida;
 
         yield return new WaitForEndOfFrame();
     }

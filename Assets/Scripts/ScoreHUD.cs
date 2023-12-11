@@ -17,6 +17,11 @@ public class ScoreHUD : MonoBehaviour {
 
     int score = 0;
 
+    private void OnEnable () {
+        score = 0;
+        Invoke ("UpdateHUD", 0.3f);
+    }
+
     private void Awake () {
         UpdateHUD ();
     }
@@ -66,7 +71,6 @@ public class ScoreHUD : MonoBehaviour {
     }
 
     private void UpdateHUD () {
-        scoreText.text = "Score: " + score.ToString();
-
+        scoreText.text = score.ToString() + "/" + VariaveisGlobais.totalMoedasNaPartida.ToString();
     }
 }
