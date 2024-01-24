@@ -148,7 +148,7 @@ public class Coin : MonoBehaviour
                 }
                 else if ((distanciaParaEsquerda <= distanciaParaCima) && (distanciaParaEsquerda <= distanciaParaBaixo) && (distanciaParaEsquerda <= distanciaParaDireita))
                 {
-                    coinCollectionController.CountTimePerCoin('E');
+                    coinCollectionController.CountTimePerCoin('D');
                     VariaveisGlobais.currentCollectedCoinDirection = '3';
                 }
                 else if ((distanciaParaBaixo <= distanciaParaCima) && (distanciaParaBaixo <= distanciaParaEsquerda) && (distanciaParaBaixo <= distanciaParaDireita))
@@ -158,7 +158,7 @@ public class Coin : MonoBehaviour
                 }
                 else if ((distanciaParaDireita <= distanciaParaCima) && (distanciaParaDireita <= distanciaParaEsquerda) && (distanciaParaDireita <= distanciaParaBaixo))
                 {
-                    coinCollectionController.CountTimePerCoin('D');
+                    coinCollectionController.CountTimePerCoin('E');
                     VariaveisGlobais.currentCollectedCoinDirection = '1';
                 }
             }
