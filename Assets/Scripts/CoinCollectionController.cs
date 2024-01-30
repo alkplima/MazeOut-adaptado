@@ -43,7 +43,8 @@ public class CoinCollectionController : MonoBehaviour
 
         if (firstCoin) {
             firstCoin = false;
-            if (displayTimer != null) timeWentBy = PlayerPrefs.GetInt("Timer") - displayTimer.timer;
+            // if (displayTimer != null) timeWentBy = PlayerPrefs.GetInt("Timer") - displayTimer.timer;
+            if (displayTimer != null) timeWentBy = 0;
         }
         else {
             if (displayTimer != null) timeWentBy = timerTimeFromLastCoin - displayTimer.timer;
@@ -82,10 +83,10 @@ public class CoinCollectionController : MonoBehaviour
         VariaveisGlobais.timePerCoinLeftToRight = timeLeftToRight / coinCountLeftToRight;
         VariaveisGlobais.timePerCoinRightToLeft = timeRightToLeft / coinCountRightToLeft;
 
-        // Debug.Log("Tempo médio por moeda (cima-baixo): " + VariaveisGlobais.timePerCoinTopToBottom);
-        // Debug.Log("Tempo médio por moeda (baixo-cima): " + VariaveisGlobais.timePerCoinBottomToTop);
-        // Debug.Log("Tempo médio por moeda (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
-        // Debug.Log("Tempo médio por moeda (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
+        Debug.Log("Tempo médio por moeda (cima-baixo): " + VariaveisGlobais.timePerCoinTopToBottom);
+        Debug.Log("Tempo médio por moeda (baixo-cima): " + VariaveisGlobais.timePerCoinBottomToTop);
+        Debug.Log("Tempo médio por moeda (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
+        Debug.Log("Tempo médio por moeda (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
 
     }
 

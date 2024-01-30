@@ -13,7 +13,7 @@ public class ViewOptionItem : MonoBehaviour
     private void OnEnable()
     {
         if (!PlayerPrefs.HasKey("DataProcessingMode"))
-            PlayerPrefs.SetInt("DataProcessingMode", 1);
+            PlayerPrefs.SetInt("DataProcessingMode", 2);
 
         UpdateValues(gameObject.name);
     }

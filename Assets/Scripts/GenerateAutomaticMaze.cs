@@ -42,13 +42,13 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             wantToRetry = true;
     }
 
-    void OnDisable()
-    {
-        // Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
-        // Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
-        // Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
-        // Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
-    }
+    // void OnDisable()
+    // {
+    //     Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
+    //     Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
+    //     Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
+    //     Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
+    // }
 
     private void GenerateAutomaticMazeFromCalibration()
     {
@@ -61,7 +61,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         {
             firstAutomaticMaze = false;
         }
-        PrintTimePerCoinInEachDirectionForThisMaze();
+        // PrintTimePerCoinInEachDirectionForThisMaze();
     }
 
     private void ResetGridMatrixAndValues()
@@ -342,29 +342,23 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     public int IndexWithPseudoGrowthOrShrink(int index, float timePerCoinInDirection, bool shouldDecreaseToGrow, bool isColumn, int otherCoordinateExtremeIndex)
     {
         int cellGrowth;
-        if (timePerCoinInDirection < 2 && timePerCoinInDirection != 0)
+
+        // Regra nova definida pelo Professor Carlos
+        if (timePerCoinInDirection < 0.6f && timePerCoinInDirection != 0)
         {
             // Checa se o índice já está no limite do grid
             if (index == 0 || (isColumn && index==maxColumns - 1) || (!isColumn && index==maxRows - 1)) 
             {
                 return index;
             }
-
-            if (timePerCoinInDirection < 1)
-            {
-                cellGrowth = maxCellGrowthOrShrink;
-            }
-            else
-            {
-                cellGrowth = UnityEngine.Random.Range(0, maxCellGrowthOrShrink + 1);
-            }
+            cellGrowth = maxCellGrowthOrShrink;
         }
         else {
             // Conferindo se pode diminuir
             if ((shouldDecreaseToGrow && otherCoordinateExtremeIndex - index > 3) || (!shouldDecreaseToGrow && index - otherCoordinateExtremeIndex > 3))
             {
-                if (timePerCoinInDirection < 5)
-                    cellGrowth = UnityEngine.Random.Range(-maxCellGrowthOrShrink, 0 + 1);
+                if (timePerCoinInDirection < 1)
+                    cellGrowth = 0;
                 else 
                 {
                     cellGrowth = -maxCellGrowthOrShrink;
@@ -374,6 +368,40 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 cellGrowth = 0;
             }
         }
+
+        // Regra antiga
+        // if (timePerCoinInDirection < 2 && timePerCoinInDirection != 0)
+        // {
+        //     // Checa se o índice já está no limite do grid
+        //     if (index == 0 || (isColumn && index==maxColumns - 1) || (!isColumn && index==maxRows - 1)) 
+        //     {
+        //         return index;
+        //     }
+
+        //     if (timePerCoinInDirection < 1)
+        //     {
+        //         cellGrowth = maxCellGrowthOrShrink;
+        //     }
+        //     else
+        //     {
+        //         cellGrowth = UnityEngine.Random.Range(0, maxCellGrowthOrShrink + 1);
+        //     }
+        // }
+        // else {
+        //     // Conferindo se pode diminuir
+        //     if ((shouldDecreaseToGrow && otherCoordinateExtremeIndex - index > 3) || (!shouldDecreaseToGrow && index - otherCoordinateExtremeIndex > 3))
+        //     {
+        //         if (timePerCoinInDirection < 5)
+        //             cellGrowth = UnityEngine.Random.Range(-maxCellGrowthOrShrink, 0 + 1);
+        //         else 
+        //         {
+        //             cellGrowth = -maxCellGrowthOrShrink;
+        //         }
+        //     }
+        //     else {
+        //         cellGrowth = 0;
+        //     }
+        // }
 
         if (shouldDecreaseToGrow) // Índice negativo → deve subtrair para crescer 
         {
@@ -668,11 +696,11 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         }
         VariaveisGlobais.totalMoedasNaPartida = totalMoedasNaPartida;
     }
-    private void PrintTimePerCoinInEachDirectionForThisMaze()
-    {
-        Debug.Log("1. TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
-        Debug.Log("2. TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
-        Debug.Log("3. TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
-        Debug.Log("4. TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
-    } 
+    // private void PrintTimePerCoinInEachDirectionForThisMaze()
+    // {
+    //     Debug.Log("1. TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
+    //     Debug.Log("2. TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
+    //     Debug.Log("3. TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
+    //     Debug.Log("4. TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
+    // } 
 }
