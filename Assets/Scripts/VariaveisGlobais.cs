@@ -9,6 +9,7 @@ public static class VariaveisGlobais
     public static ControllerLabirinto atualControllerLabirinto;
 
     public static int partidaCorrente = 0;
+    public static int contagemPartidasAuto = 0;
     public static float timePerCoinTopToBottom, timePerCoinBottomToTop, timePerCoinLeftToRight, timePerCoinRightToLeft;
     public static float maxX, maxY, minX, minY;
     public static string NomeDoJogo = "MazeOut";
