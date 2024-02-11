@@ -79,7 +79,16 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
 
     private void ProcessCalibrationData()
     {
-        int dataProcessingMode = PlayerPrefs.GetInt("DataProcessingMode");
+        int dataProcessingMode;
+
+        if (firstAutomaticMaze)
+        {
+            dataProcessingMode = 3;
+        }
+        else 
+        {
+            dataProcessingMode = PlayerPrefs.GetInt("DataProcessingMode");
+        }
         
         switch (dataProcessingMode)
         {
