@@ -8,13 +8,23 @@ public class UI_MessageScreen : MonoBehaviour
     public GameObject messageScreen;
     public UI_WaitNextScreen waitModal;
     public GameObject endOfChallengeModal;
+    public GameObject endOfCustomMatchModal;
 
     public void ShowSuccessModal()
     {
-        messageScreen.SetActive(true);
-        currentScreen.SetActive(false);
-        waitModal.gameObject.SetActive(true);
-        waitModal.waitSuccess();
+        if (VariaveisGlobais.partidaCorrente != 0)
+        {
+            messageScreen.SetActive(true);
+            currentScreen.SetActive(false);
+            waitModal.gameObject.SetActive(true);
+            waitModal.waitSuccess();
+        }
+        else
+        {
+            messageScreen.SetActive(true);
+            currentScreen.SetActive(false);
+            endOfCustomMatchModal.SetActive(true);
+        }
     }
 
     /*
