@@ -9,6 +9,7 @@ TagManager:
   - CameraTwo
   - Bola
   - Start
+  - Helper
   layers:
   - Default
   - TransparentFX

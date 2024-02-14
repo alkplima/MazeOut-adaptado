@@ -45,16 +45,20 @@ public class GrudaDetector : MonoBehaviour
         switch (ladoStr)
         {
             case "L":
-                transform.position = new Vector3(bola.position.x - (larguraBola * 0.5f) - (larguraBotaoSensor/2), bola.position.y + (alturaBotaoSensor/2), bola.position.z);
+                transform.position = new Vector3(bola.position.x - (larguraBola * 0.5f) - (larguraBotaoSensor / 2), bola.position.y + (alturaBotaoSensor / 2), bola.position.z);
+                transform.localScale = new Vector3(transform.localScale.x, alturaBola, transform.localScale.z);
                 break;
             case "R":
                 transform.position = new Vector3(bola.position.x + (larguraBola * 0.5f) - (larguraBotaoSensor / 2), bola.position.y + (alturaBotaoSensor / 2), bola.position.z);
+                transform.localScale = new Vector3(transform.localScale.x, alturaBola, transform.localScale.z);
                 break;
             case "T":
-                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor/2), bola.position.y + (alturaBola * 0.5f) + (alturaBotaoSensor/2), bola.position.z);
+                transform.position = new Vector3(bola.position.x - (larguraBotaoSensor / 2), bola.position.y + (alturaBola * 0.5f) + (alturaBotaoSensor / 2), bola.position.z);
+                transform.localScale = new Vector3(larguraBola, transform.localScale.y, transform.localScale.z);
                 break;
             case "B":
                 transform.position = new Vector3(bola.position.x - (larguraBotaoSensor / 2), bola.position.y - (alturaBola * 0.5f) + (alturaBotaoSensor / 2), bola.position.z);
+                transform.localScale = new Vector3(larguraBola, transform.localScale.y, transform.localScale.z);
                 break;
             case "!":
                 transform.position = bola.position;
