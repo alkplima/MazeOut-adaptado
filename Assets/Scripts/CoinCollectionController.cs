@@ -47,7 +47,7 @@ public class CoinCollectionController : MonoBehaviour
             if (displayTimer != null) timeWentBy = 0;
         }
         else {
-            if (displayTimer != null) timeWentBy = timerTimeFromLastCoin - displayTimer.timer;
+            if (displayTimer != null) timeWentBy = displayTimer.timer - timerTimeFromLastCoin;
         }
 
         if (displayTimer != null) timerTimeFromLastCoin = displayTimer.timer;

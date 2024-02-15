@@ -26,19 +26,25 @@ public class UI_DisplayTimer : MonoBehaviour
     {
         if (isTimer && PaterlandGlobal.autorizadoMovimento)
         {
-            if (timer <= 0.1f)
-            {
-                SalvarDadosDaUltimaReta();
-                ShowFailureMessage();
-                ResetTimer();
-                StopTimer();
-            }
-            else
-            {
-                timer -= Time.deltaTime;
+            // if (timer <= 0.1f)
+            // {
+            //     // SalvarDadosDaUltimaReta();
+            //     // ShowFailureMessage();
+            //     ResetTimer();
+            //     StopTimer();
+            // }
+            // else
+            // {
+                timer += Time.deltaTime;
                 DisplayTime();
-            }
+            // }
         }
+    }
+
+    void OnDisable()
+    {
+        ResetTimer();
+        StopTimer();
     }
 
     void DisplayTime()
@@ -67,25 +73,25 @@ public class UI_DisplayTimer : MonoBehaviour
 
     public void ResetTimer()
     {
-        timer = PlayerPrefs.GetInt("Timer");
+        timer = 0;
     }
 
-    public void ShowFailureMessage() 
-    {
-        gameScreenManager.GetComponent<UI_MessageScreen>().ShowFailureModal();
-        if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
-        {
-            VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
-            VariaveisGlobais.conexaoBD.PostData();
-        }
-    }
+    // public void ShowFailureMessage() 
+    // {
+    //     gameScreenManager.GetComponent<UI_MessageScreen>().ShowFailureModal();
+    //     if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
+    //     {
+    //         VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
+    //         VariaveisGlobais.conexaoBD.PostData();
+    //     }
+    // }
 
-    private void SalvarDadosDaUltimaReta()
-    {
-        VariaveisGlobais.tempoTotalGasto = PlayerPrefs.GetInt("Timer") - timer;
-        VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
+    // private void SalvarDadosDaUltimaReta()
+    // {
+    //     VariaveisGlobais.tempoTotalGasto = PlayerPrefs.GetInt("Timer") - timer;
+    //     VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
 
-        // Registra dados da reta anterior
-        coinCollectionController.AcrescentarEntradaRelatorio();
-    }
+    //     // Registra dados da reta anterior
+    //     coinCollectionController.AcrescentarEntradaRelatorio();
+    // }
 }
