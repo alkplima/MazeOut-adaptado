@@ -11,11 +11,12 @@ public class Helper : MonoBehaviour
 
     private Vector3 originalScale; // Escala original do objeto
     private Vector3 targetScale; // Escala alvo que queremos alcançar
-    private bool isIdle = true; // Flag para verificar se o objeto está parado
+    private bool isIdle = false; // Flag para verificar se o objeto está parado
     private Vector3 lastPosition; // Última posição registrada do objeto
 
-    private void Start()
+    private void OnEnable()
     {
+        transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         originalScale = transform.localScale;
         targetScale = originalScale;
         lastPosition = transform.position;
