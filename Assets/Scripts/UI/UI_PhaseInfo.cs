@@ -23,7 +23,14 @@ public class UI_PhaseInfo : MonoBehaviour
         }
         else if (VariaveisGlobais.partidaCorrente < 0) // Calibração
         {
-            text.text = "Calibration " + (-VariaveisGlobais.partidaCorrente).ToString() + "/7";
+            if (VariaveisGlobais.partidaCorrente == -8)
+            {
+                text.text = "Calibration";
+            }
+            else
+            {
+                text.text = "Tutorial&Calibration " + (-VariaveisGlobais.partidaCorrente).ToString() + "/7";
+            }
         }
         else // Partida avulsa
         {
