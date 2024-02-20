@@ -7,8 +7,8 @@ using UnityEngine;
 public static class VariaveisGlobais
 {
     public static ControllerLabirinto atualControllerLabirinto;
-
     public static int partidaCorrente = 0;
+    public static char tipoPartida = ' '; // P - Personalizado, T - Calibração, A - Automático, D - Desafio
     public static int contagemPartidasAuto = 0;
     public static float timePerCoinTopToBottom, timePerCoinBottomToTop, timePerCoinLeftToRight, timePerCoinRightToLeft;
     public static float maxX, maxY, minX, minY;
@@ -101,6 +101,7 @@ public static class VariaveisGlobais
 
 public class ItemEventoDB
 {
+    public int TipoPartida { get; set; }
     public int NumReta { get; set; }
     public char DirecaoReta { get; set; }
     public string DateTimeInicioPartida { get; set; }

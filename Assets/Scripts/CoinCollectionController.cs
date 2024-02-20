@@ -94,6 +94,7 @@ public class CoinCollectionController : MonoBehaviour
     {
         ItemEventoDB itemNovo = new ItemEventoDB
         {
+            TipoPartida = VariaveisGlobais.tipoPartida,
             NumReta = VariaveisGlobais.numReta,
             DirecaoReta = VariaveisGlobais.direcaoReta,
             DateTimeInicioPartida = VariaveisGlobais.dateTimeInicioPartida,

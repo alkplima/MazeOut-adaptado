@@ -26,7 +26,7 @@ public class BlocoImpeditivo : MonoBehaviour
             float alturaOther = Mathf.Abs(cantosOtherSombra[0].y - cantosOtherSombra[1].y);
             float larguraOther = Mathf.Abs(cantosOtherSombra[1].x - cantosOtherSombra[2].x);
 
-            char sentido = ' ';
+            // char sentido = ' ';
 
             if (other.GetComponent<PieceController>().enabled)
                 if (Vector2.Distance(other.GetComponent<RectTransform>().position, GetComponent<RectTransform>().position) <= (0.8f * larguraOther / 2 + larguraBloco / 2))

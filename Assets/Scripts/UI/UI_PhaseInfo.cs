@@ -25,7 +25,7 @@ public class UI_PhaseInfo : MonoBehaviour
         {
             if (VariaveisGlobais.partidaCorrente == -8)
             {
-                text.text = "Calibration";
+                text.text = "Fast calibration";
             }
             else
             {
@@ -36,5 +36,28 @@ public class UI_PhaseInfo : MonoBehaviour
         {
             text.text = "Custom match";
         }
+
+        UpdateCurrentMatchType();
     }
+
+    private void UpdateCurrentMatchType()
+    {
+        if (VariaveisGlobais.partidaCorrente == 0) // Personalizar
+        {
+            VariaveisGlobais.tipoPartida = 'P';
+        }
+        else if (VariaveisGlobais.partidaCorrente < 0 && VariaveisGlobais.partidaCorrente != -8) // Calibração (tutorial)
+        {
+            VariaveisGlobais.tipoPartida = 'T';
+        }
+        else if (VariaveisGlobais.partidaCorrente == -8 || VariaveisGlobais.partidaCorrente == 2001) // Automático / Adaptativo
+        {
+            VariaveisGlobais.tipoPartida = 'A';
+        }
+        else // Desafio
+        {
+            VariaveisGlobais.tipoPartida = 'D';
+        }
+    }
+        
 }
