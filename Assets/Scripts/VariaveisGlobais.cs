@@ -8,7 +8,6 @@ public static class VariaveisGlobais
 {
     public static ControllerLabirinto atualControllerLabirinto;
     public static int partidaCorrente = 0;
-    public static char tipoPartida = ' '; // P - Personalizado, T - Calibração, A - Automático, D - Desafio
     public static int contagemPartidasAuto = 0;
     public static float timePerCoinTopToBottom, timePerCoinBottomToTop, timePerCoinLeftToRight, timePerCoinRightToLeft;
     public static float maxX, maxY, minX, minY;
@@ -29,6 +28,7 @@ public static class VariaveisGlobais
     public static ItemEventoDB[] itensRelatorio = new ItemEventoDB[0];
 
     // variáveis auxiliares para cada entrada no relatório
+    public static char tipoPartida = ' '; // P - Personalizado, T - Calibração, A - Automático, D - Desafio
     public static int numReta;
     public static char direcaoReta;
     public static string dateTimeInicioPartida;
@@ -45,7 +45,8 @@ public static class VariaveisGlobais
     public static double coordenadaX_Minima;
     public static double coordenadaY_Minima;
     public static double tempoTotalGasto;
-
+    public static char usouAjudaNaReta;
+    public static float escalaMaxDaAjuda;
     public static float tempoInicioReta;
     public static float tempoInicioRetaAux;
     public static char lastCollectedCoinDirection;
@@ -101,15 +102,17 @@ public static class VariaveisGlobais
 
 public class ItemEventoDB
 {
-    public int TipoPartida { get; set; }
+    public char TipoPartida { get; set; }
     public int NumReta { get; set; }
     public char DirecaoReta { get; set; }
     public string DateTimeInicioPartida { get; set; }
     public string NomePaciente { get; set; }
     public int TotalMoedasColetadas { get; set; }
     public int TotalMoedasColetadasReta { get; set; }
-    public int TempoTotalPartida { get; set; }
+    // public int TempoTotalPartida { get; set; }
     public double TempoTotalReta { get; set; }
+    public char UsouAjudaNaReta { get; set; }
+    public float EscalaMaxDaAjuda { get; set; }
     public int CoordenadaX_InicioReta { get; set; }
     public int CoordenadaY_InicioReta { get; set; }
     public int CoordenadaX_FimReta { get; set; }

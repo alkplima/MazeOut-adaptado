@@ -101,8 +101,10 @@ public class CoinCollectionController : MonoBehaviour
             NomePaciente = VariaveisGlobais.nomePaciente,
             TotalMoedasColetadas = VariaveisGlobais.totalMoedasColetadas,
             TotalMoedasColetadasReta = VariaveisGlobais.totalMoedasColetadasReta,
-            TempoTotalPartida = PlayerPrefs.GetInt("Timer"),
+            // TempoTotalPartida = PlayerPrefs.GetInt("Timer"),
             TempoTotalReta = VariaveisGlobais.tempoTotalReta,
+            UsouAjudaNaReta = VariaveisGlobais.usouAjudaNaReta,
+            EscalaMaxDaAjuda = VariaveisGlobais.escalaMaxDaAjuda,
             CoordenadaX_InicioReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_InicioReta, true),
             CoordenadaY_InicioReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_InicioReta, false),
             CoordenadaX_FimReta = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_FimReta, true),
@@ -117,6 +119,24 @@ public class CoinCollectionController : MonoBehaviour
         Array.Resize(ref VariaveisGlobais.itensRelatorio, VariaveisGlobais.itensRelatorio.Length + 1);
 
         VariaveisGlobais.itensRelatorio[VariaveisGlobais.itensRelatorio.Length - 1] = itemNovo;
+
+        // APAGAR DEPOIS DE TESTAR E VALIDAR COM RODRIGO E PROF CARLOS - NÃO VAI REGISTRAR A ESCALA NA PRÓXIMA RETA SE FOR RESQUÍCIO DA RETA ANTERIOR...
+        // VariaveisGlobais.usouAjudaNaReta = 'N';
+        // VariaveisGlobais.escalaMaxDaAjuda = 1;
+
+        // Debug.Log(VariaveisGlobais.itensRelatorio.Length + " itens adicionados ao relatório.");
+        // Debug.Log("Dados gravados:");
+        // Debug.Log("Tipo da partida: "+itemNovo.TipoPartida);
+        // Debug.Log("NumReta: "+itemNovo.NumReta);
+        // Debug.Log("DirecaoReta: "+itemNovo.DirecaoReta);
+        // Debug.Log("DateTimeInicioPartida: "+itemNovo.DateTimeInicioPartida);
+        // Debug.Log("NomePaciente: "+itemNovo.NomePaciente);
+        // Debug.Log("TotalMoedasColetadas: "+itemNovo.TotalMoedasColetadas);
+        // Debug.Log("TotalMoedasColetadasReta: "+itemNovo.TotalMoedasColetadasReta);
+        // Debug.Log("TempoTotalReta: "+itemNovo.TempoTotalReta);
+        // Debug.Log("UsouAjudaNaReta: "+itemNovo.UsouAjudaNaReta);
+        // Debug.Log("EscalaMaxDaAjuda: "+itemNovo.EscalaMaxDaAjuda);
+
     }
 
     public int GetCoordinateIndexInGrid(double coordinate, bool isXAxis)

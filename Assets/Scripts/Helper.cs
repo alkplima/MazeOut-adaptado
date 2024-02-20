@@ -16,6 +16,8 @@ public class Helper : MonoBehaviour
 
     private void OnEnable()
     {
+        VariaveisGlobais.usouAjudaNaReta = 'N';
+        VariaveisGlobais.escalaMaxDaAjuda = 1;
         transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
         originalScale = transform.localScale;
         targetScale = originalScale;
@@ -27,6 +29,11 @@ public class Helper : MonoBehaviour
     {
         if (isIdle)
         {
+            if (transform.localScale.x > VariaveisGlobais.escalaMaxDaAjuda) 
+            {
+                VariaveisGlobais.escalaMaxDaAjuda = transform.localScale.x;
+            }
+
             if (transform.localScale.x < maxScale) // Aumenta gradualmente a escala até o valor máximo
             {
                 transform.localScale += Vector3.one * scaleSpeed * Time.deltaTime;
@@ -61,6 +68,7 @@ public class Helper : MonoBehaviour
     private void StartScaling()
     {
         isIdle = true;
+        VariaveisGlobais.usouAjudaNaReta = 'S';
     }
 
     private void StartScaleReduction()

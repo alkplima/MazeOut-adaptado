@@ -79,6 +79,8 @@ public class Coin : MonoBehaviour
                         {
                             // Registra dados da reta anterior
                             coinCollectionController.AcrescentarEntradaRelatorio();
+                            VariaveisGlobais.usouAjudaNaReta = 'N';
+                            VariaveisGlobais.escalaMaxDaAjuda = 1;
                             VariaveisGlobais.tempoInicioReta = VariaveisGlobais.tempoInicioRetaAux;
                             VariaveisGlobais.tempoTotalReta = 0;
                             VariaveisGlobais.totalMoedasColetadasReta = 2; // incrementa 1 referente ao canto inicial
