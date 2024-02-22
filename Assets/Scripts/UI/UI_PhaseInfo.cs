@@ -21,15 +21,15 @@ public class UI_PhaseInfo : MonoBehaviour
                 text.text = "Challenge " + VariaveisGlobais.partidaCorrente.ToString() + "/14";
             }
         }
-        else if (VariaveisGlobais.partidaCorrente < 0) // Calibração
+        else if (VariaveisGlobais.partidaCorrente < 0)
         {
-            if (VariaveisGlobais.partidaCorrente == -8)
+            if (VariaveisGlobais.partidaCorrente == -8) // Calibração
             {
                 text.text = "Fast calibration";
             }
-            else
+            else // Tutorial
             {
-                text.text = "Tutorial&Calibration " + (-VariaveisGlobais.partidaCorrente).ToString() + "/7";
+                text.text = "Tutorial " + (-VariaveisGlobais.partidaCorrente).ToString() + "/7";
             }
         }
         else // Partida avulsa

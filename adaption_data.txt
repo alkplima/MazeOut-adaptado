@@ -8224,3 +8224,12 @@ timePerCoinBottomToTop: 0
 timePerCoinTopToBottom: 5.861388
 timePerCoinLeftToRight: 0.3162942
 timePerCoinRightToLeft: 0.2552718
+Partida: -1
+minX: -0.7334791
+minY: -2.426183
+maxX: 2.912937
+maxY: -2.299383
+timePerCoinBottomToTop: NaN
+timePerCoinTopToBottom: NaN
+timePerCoinLeftToRight: NaN
+timePerCoinRightToLeft: 0.2424097
