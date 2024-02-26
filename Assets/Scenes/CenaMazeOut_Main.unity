@@ -13995,7 +13995,7 @@ PrefabInstance:
     - target: {fileID: 5143091023156264882, guid: 45cc13457a2bf1f948fb1af7aeff8196,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 250
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5143091023156264882, guid: 45cc13457a2bf1f948fb1af7aeff8196,
         type: 3}
@@ -14021,6 +14021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MoedaAzul
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143091023156264883, guid: 45cc13457a2bf1f948fb1af7aeff8196,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5143091023156264887, guid: 45cc13457a2bf1f948fb1af7aeff8196,
         type: 3}
@@ -40229,8 +40234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.81094, y: -39.752663}
-  m_SizeDelta: {x: 157.6219, y: 79.5064}
+  m_AnchoredPosition: {x: 79.23496, y: -35.84}
+  m_SizeDelta: {x: 158.47, y: 71.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594883058
 MonoBehaviour:
@@ -47198,10 +47203,10 @@ RectTransform:
   m_Father: {fileID: 594883057}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -2.0825}
+  m_SizeDelta: {x: 158, y: 75.835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692066848
 MonoBehaviour:
@@ -47231,7 +47236,7 @@ MonoBehaviour:
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -63800,10 +63805,10 @@ RectTransform:
   m_Father: {fileID: 1285722630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024871826, y: 0.0000076293945}
-  m_SizeDelta: {x: 0.01, y: -0.000015259}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 79.23, y: -36.61}
+  m_SizeDelta: {x: 158.47, y: 73.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950885665
 MonoBehaviour:
@@ -84494,8 +84499,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 112.56, y: -57.58441}
-  m_SizeDelta: {x: 225.13, y: 115.1687}
+  m_AnchoredPosition: {x: 79.795, y: -36.7}
+  m_SizeDelta: {x: 158.59, y: 73.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1290361588
 GameObject:
@@ -96731,6 +96736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MoedaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143091023156264883, guid: 45cc13457a2bf1f948fb1af7aeff8196,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5143091023156264887, guid: 45cc13457a2bf1f948fb1af7aeff8196,
         type: 3}
