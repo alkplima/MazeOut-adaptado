@@ -59,8 +59,6 @@ public class LoadGame : Singleton<SaveHandler> {
                 }
             }
         }
-
-        Invoke("DelayedSaveData", 0.3f);
     }
 
     public IEnumerator onLoad() {
@@ -160,10 +158,5 @@ public class LoadGame : Singleton<SaveHandler> {
         VariaveisGlobais.totalMoedasNaPartida = totalMoedasNaPartida;
 
         yield return new WaitForEndOfFrame();
-    }
-
-    private void DelayedSaveData()
-    {
-        AdaptationDataManager.SaveData();
     }
 }
