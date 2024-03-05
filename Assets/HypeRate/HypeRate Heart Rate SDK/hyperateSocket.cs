@@ -16,11 +16,30 @@ public class hyperateSocket : MonoBehaviour
     Text textBox;
 	// Websocket for connection with Hyperate
     WebSocket websocket;
-    async void Start()
+    
+    void OnEnable()
     {
-        GetHypeRateID();
         textBox = GetComponent<Text>();
+        textBox.text = "-";
 
+        if (GotHypeRateID())
+        {
+            Connect();
+        }
+    }
+
+    bool GotHypeRateID()
+    {
+        if (PlayerPrefs.HasKey("HypeRateID"))
+        {
+            hyperateID = PlayerPrefs.GetString("HypeRateID");
+            return true;
+        }
+        return false;
+    }
+
+    async void Connect()
+    {
         websocket = new WebSocket("wss://app.hyperate.io/socket/websocket?token=" + websocketToken);
         Debug.Log("Connect!");
 
@@ -58,19 +77,6 @@ public class hyperateSocket : MonoBehaviour
 
         // waiting for messages
         await websocket.Connect();
-    }
-
-    void OnEnable()
-    {
-        GetHypeRateID();
-    }
-
-    void GetHypeRateID()
-    {
-        if (PlayerPrefs.HasKey("HypeRateID"))
-        {
-            hyperateID = PlayerPrefs.GetString("HypeRateID");
-        }
     }
 
     void Update()
