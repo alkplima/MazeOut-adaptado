@@ -42,13 +42,16 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             wantToRetry = true;
     }
 
-    // void OnDisable()
-    // {
-    //     Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
-    //     Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
-    //     Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
-    //     Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
-    // }
+    void OnDisable()
+    {
+        Debug.Log("--------------------------------------------------");
+        Debug.Log("OnDisable: Qual tempo usou pra adaptar essa fase que acabou");
+        Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
+        Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
+        Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
+        Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
+        Debug.Log("--------------------------------------------------");
+    }
 
     private void GenerateAutomaticMazeFromCalibration()
     {
@@ -254,6 +257,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         }
         else
         {
+            Debug.Log("Usou média ponderada");
             minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) : minX;
             minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) : minY;
             maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) : maxX;
@@ -267,6 +271,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
 
     private void PerformanceFromPreviousMatchOnly()
     {
+        Debug.Log("Usou desempenho da partida anterior somente");
         // considera a última partida
         minX = VariaveisGlobais.minX;
         minY = VariaveisGlobais.minY;
@@ -280,6 +285,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
 
     private void PerformanceFromCalibrationOnly() 
     {
+        Debug.Log("Usou desempenho na calibração somente");
         // considera somente as partidas de calibração
         int countTopToBottom = 0;
         int countBottomToTop = 0;

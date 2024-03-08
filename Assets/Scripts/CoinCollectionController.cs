@@ -83,11 +83,12 @@ public class CoinCollectionController : MonoBehaviour
         VariaveisGlobais.timePerCoinLeftToRight = timeLeftToRight / coinCountLeftToRight;
         VariaveisGlobais.timePerCoinRightToLeft = timeRightToLeft / coinCountRightToLeft;
 
-        Debug.Log("Tempo médio por moeda (cima-baixo): " + VariaveisGlobais.timePerCoinTopToBottom);
-        Debug.Log("Tempo médio por moeda (baixo-cima): " + VariaveisGlobais.timePerCoinBottomToTop);
-        Debug.Log("Tempo médio por moeda (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
-        Debug.Log("Tempo médio por moeda (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
-
+        Debug.Log("--------------------------------------------------");
+        Debug.Log("Tempo médio por moeda da partida que finalizou (cima-baixo): " + VariaveisGlobais.timePerCoinTopToBottom);
+        Debug.Log("Tempo médio por moeda da partida que finalizou (baixo-cima): " + VariaveisGlobais.timePerCoinBottomToTop);
+        Debug.Log("Tempo médio por moeda da partida que finalizou (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
+        Debug.Log("Tempo médio por moeda da partida que finalizou (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
+        Debug.Log("--------------------------------------------------");
     }
 
     public void AcrescentarEntradaRelatorio()
