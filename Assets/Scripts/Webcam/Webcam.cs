@@ -19,7 +19,6 @@ public class Webcam : MonoBehaviour {
 		blendColor - cor de exibição da detecção
 	 */
 
-
 	public RawImage Display, Display2;
 
 	[Range(0, 255)]
@@ -119,16 +118,7 @@ public class Webcam : MonoBehaviour {
         blendTexture = new Texture2D( webcamTexture.width, webcamTexture.height );
         copyTexture = new Texture2D(webcamTexture.width, webcamTexture.height);
 
-        if ( Display ){
-			Display.texture = blendTexture;
-			scaleH = webcamTexture.width / Display.rectTransform.rect.width;
-			scaleV = webcamTexture.height / Display.rectTransform.rect.height;
-		}
-
-        if (Display2)
-        {
-            Display2.texture = copyTexture;
-        }
+		AcionarDisplays();
 
 			lastAspectRatio = Camera.main.aspect;
 
@@ -139,6 +129,21 @@ public class Webcam : MonoBehaviour {
 			waitText.SetActive(false);
         foreach (GameObject obj in blockObjects)
             obj.SetActive(true);
+    }
+
+	public void AcionarDisplays()
+	{
+        if (Display)
+        {
+            Display.texture = blendTexture;
+            scaleH = webcamTexture.width / Display.rectTransform.rect.width;
+            scaleV = webcamTexture.height / Display.rectTransform.rect.height;
+        }
+
+        if (Display2)
+        {
+            Display2.texture = copyTexture;
+        }
     }
 
 

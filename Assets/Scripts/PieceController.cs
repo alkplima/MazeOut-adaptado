@@ -129,7 +129,7 @@ public class PieceController : MonoBehaviour
                         }                            
                         else
                         {
-                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z);
+                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / PaterlandGlobal.currentWebcam.webcamTexture.requestedFPS)), transform.position.y, transform.position.z);
                             valorDecrescido = valorDecrescido - decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -144,7 +144,7 @@ public class PieceController : MonoBehaviour
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.y, transform.position.z); ;
+                            transform.position = new Vector3(transform.position.x + ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / PaterlandGlobal.currentWebcam.webcamTexture.requestedFPS)), transform.position.y, transform.position.z); ;
                             valorDecrescido = valorDecrescido + decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -162,7 +162,7 @@ public class PieceController : MonoBehaviour
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
+                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / PaterlandGlobal.currentWebcam.webcamTexture.requestedFPS)), transform.position.z);
                             valorDecrescido = valorDecrescido - decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();
@@ -177,7 +177,7 @@ public class PieceController : MonoBehaviour
                             valorDecrescido = 0;
                         else
                         {
-                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / VariaveisGlobais.atualControllerLabirinto.webcamInstance.webcamTexture.requestedFPS)), transform.position.z);
+                            transform.position = new Vector3(transform.position.x, transform.position.y - ((((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2) - ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x) / 2)) * valorDecrescido * (1 / PaterlandGlobal.currentWebcam.webcamTexture.requestedFPS)), transform.position.z);
                             valorDecrescido = valorDecrescido + decrescimo * (60 / VariaveisGlobais.CurrentFPS());
                             //controller.VerificarPecaIndividual(this);
                             yield return new WaitForEndOfFrame();                            

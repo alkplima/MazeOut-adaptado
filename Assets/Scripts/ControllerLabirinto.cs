@@ -12,7 +12,6 @@ public class ControllerLabirinto : MonoBehaviour
 
     Vector2 ScreenDimensions;
     public RectTransform primeiraPosGrid, ultimaPosGrid;
-    public Webcam webcamInstance;
     void Awake()
     {
         // Rotina para garantir que � o �nico ControllerJogo em opera��o (Singleton).
