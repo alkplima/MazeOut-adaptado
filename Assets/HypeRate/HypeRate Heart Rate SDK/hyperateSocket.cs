@@ -79,12 +79,12 @@ public class hyperateSocket : MonoBehaviour
         await websocket.Connect();
     }
 
-    void Update()
-    {
-#if !UNITY_WEBGL || UNITY_EDITOR
-        websocket.DispatchMessageQueue();
-#endif
-    }
+//     void Update()
+//     {
+// #if !UNITY_WEBGL || UNITY_EDITOR
+//         websocket.DispatchMessageQueue();
+// #endif
+//     }
 
     async void SendWebSocketMessage()
     {

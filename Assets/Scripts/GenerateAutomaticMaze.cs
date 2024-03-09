@@ -84,14 +84,14 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     {
         int dataProcessingMode;
 
-        if (firstAutomaticMaze)
-        {
-            dataProcessingMode = 3;
-        }
-        else 
-        {
+        // if (firstAutomaticMaze)
+        // {
+        //     dataProcessingMode = 3;
+        // }
+        // else 
+        // {
             dataProcessingMode = PlayerPrefs.GetInt("DataProcessingMode");
-        }
+        // }
         
         switch (dataProcessingMode)
         {
@@ -101,11 +101,11 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             case 2:
                 PerformanceFromPreviousMatchOnly();
                 break;
-            case 3:
-                PerformanceFromCalibrationOnly();
-                break;
+            // case 3:
+            //     PerformanceFromCalibrationOnly();
+            //     break;
             default:
-                WeightedAverageFromAll();
+                PerformanceFromPreviousMatchOnly();
                 break;
         }
 
@@ -251,12 +251,12 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     private void WeightedAverageFromAll() 
     {
         // considera as médias ponderadas das partidas anteriores
-        if (firstAutomaticMaze)
-        {
-            PerformanceFromCalibrationOnly();
-        }
-        else
-        {
+        // if (firstAutomaticMaze)
+        // {
+        //     PerformanceFromCalibrationOnly();
+        // }
+        // else
+        // {
             Debug.Log("Usou média ponderada");
             minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) : minX;
             minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) : minY;
@@ -266,7 +266,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             timePerCoinTopToBottom = (!float.IsNaN(VariaveisGlobais.timePerCoinTopToBottom)) ? (0.7f * VariaveisGlobais.timePerCoinTopToBottom + 0.3f * timePerCoinTopToBottom) : timePerCoinTopToBottom;
             timePerCoinLeftToRight = (!float.IsNaN(VariaveisGlobais.timePerCoinLeftToRight)) ? (0.7f * VariaveisGlobais.timePerCoinLeftToRight + 0.3f * timePerCoinLeftToRight) : timePerCoinLeftToRight;
             timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? (0.7f * VariaveisGlobais.timePerCoinRightToLeft + 0.3f * timePerCoinRightToLeft) : timePerCoinRightToLeft;
-        }
+        // }
     }
 
     private void PerformanceFromPreviousMatchOnly()
@@ -283,76 +283,77 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         timePerCoinRightToLeft = (!float.IsNaN(VariaveisGlobais.timePerCoinRightToLeft)) ? VariaveisGlobais.timePerCoinRightToLeft : 0;
     }
 
-    private void PerformanceFromCalibrationOnly() 
-    {
-        Debug.Log("Usou desempenho na calibração somente");
-        // considera somente as partidas de calibração
-        int countTopToBottom = 0;
-        int countBottomToTop = 0;
-        int countLeftToRight = 0;
-        int countRightToLeft = 0;
-        timePerCoinBottomToTop = 0;
-        timePerCoinTopToBottom = 0;
-        timePerCoinLeftToRight = 0;
-        timePerCoinRightToLeft = 0;
+    // Essa função ficou inútil 
+    // private void PerformanceFromCalibrationOnly() 
+    // {
+    //     Debug.Log("Usou desempenho na calibração somente");
+    //     // considera somente as partidas de calibração
+    //     int countTopToBottom = 0;
+    //     int countBottomToTop = 0;
+    //     int countLeftToRight = 0;
+    //     int countRightToLeft = 0;
+    //     timePerCoinBottomToTop = 0;
+    //     timePerCoinTopToBottom = 0;
+    //     timePerCoinLeftToRight = 0;
+    //     timePerCoinRightToLeft = 0;
 
-        for (int i = 1; i < 8; i++)
-        {
-            string saveData = PlayerPrefs.GetString("CalibrationData" + i.ToString());
-            string[] dataParts = saveData.Split(';');
+    //     for (int i = 1; i < 8; i++)
+    //     {
+    //         string saveData = PlayerPrefs.GetString("CalibrationData" + i.ToString());
+    //         string[] dataParts = saveData.Split(';');
 
-            foreach (string dataPart in dataParts)
-            {
-                string[] keyValue = dataPart.Split(':');
-                string key = keyValue[0];
-                string value = keyValue[1];
+    //         foreach (string dataPart in dataParts)
+    //         {
+    //             string[] keyValue = dataPart.Split(':');
+    //             string key = keyValue[0];
+    //             string value = keyValue[1];
 
-                if (string.IsNullOrEmpty(value) || float.IsNaN(float.Parse(value)))
-                {
-                    continue;
-                }
+    //             if (string.IsNullOrEmpty(value) || float.IsNaN(float.Parse(value)))
+    //             {
+    //                 continue;
+    //             }
 
-                float parsedValue = float.Parse(value);
+    //             float parsedValue = float.Parse(value);
 
-                switch (key)
-                {
-                    case "minX":
-                        minX = (i == 1 || parsedValue < minX) ? parsedValue : minX;
-                        break;
-                    case "minY":
-                        minY = (i == 1 || parsedValue < minY) ? parsedValue : minY;
-                        break;
-                    case "maxX":
-                        maxX = (i == 1 || parsedValue > maxX) ? parsedValue : maxX;
-                        break;
-                    case "maxY":
-                        maxY = (i == 1 || parsedValue > maxY) ? parsedValue : maxY;
-                        break;
-                    case "timePerCoinBottomToTop":
-                        timePerCoinBottomToTop += parsedValue;
-                        countBottomToTop++;
-                        break;
-                    case "timePerCoinTopToBottom":
-                        timePerCoinTopToBottom += parsedValue;
-                        countTopToBottom++;
-                        break;
-                    case "timePerCoinLeftToRight":
-                        timePerCoinLeftToRight += parsedValue;
-                        countLeftToRight++;
-                        break;
-                    case "timePerCoinRightToLeft":
-                        timePerCoinRightToLeft += parsedValue;
-                        countRightToLeft++;
-                        break;
-                }
-            }
-        }
+    //             switch (key)
+    //             {
+    //                 case "minX":
+    //                     minX = (i == 1 || parsedValue < minX) ? parsedValue : minX;
+    //                     break;
+    //                 case "minY":
+    //                     minY = (i == 1 || parsedValue < minY) ? parsedValue : minY;
+    //                     break;
+    //                 case "maxX":
+    //                     maxX = (i == 1 || parsedValue > maxX) ? parsedValue : maxX;
+    //                     break;
+    //                 case "maxY":
+    //                     maxY = (i == 1 || parsedValue > maxY) ? parsedValue : maxY;
+    //                     break;
+    //                 case "timePerCoinBottomToTop":
+    //                     timePerCoinBottomToTop += parsedValue;
+    //                     countBottomToTop++;
+    //                     break;
+    //                 case "timePerCoinTopToBottom":
+    //                     timePerCoinTopToBottom += parsedValue;
+    //                     countTopToBottom++;
+    //                     break;
+    //                 case "timePerCoinLeftToRight":
+    //                     timePerCoinLeftToRight += parsedValue;
+    //                     countLeftToRight++;
+    //                     break;
+    //                 case "timePerCoinRightToLeft":
+    //                     timePerCoinRightToLeft += parsedValue;
+    //                     countRightToLeft++;
+    //                     break;
+    //             }
+    //         }
+    //     }
 
-        timePerCoinBottomToTop /= countBottomToTop;
-        timePerCoinTopToBottom /= countTopToBottom;
-        timePerCoinLeftToRight /= countLeftToRight;
-        timePerCoinRightToLeft /= countRightToLeft;
-    }
+    //     timePerCoinBottomToTop /= countBottomToTop;
+    //     timePerCoinTopToBottom /= countTopToBottom;
+    //     timePerCoinLeftToRight /= countLeftToRight;
+    //     timePerCoinRightToLeft /= countRightToLeft;
+    // }
 
     public int IndexWithPseudoGrowthOrShrink(int index, float timePerCoinInDirection, bool shouldDecreaseToGrow, bool isColumn, int otherCoordinateExtremeIndex)
     {

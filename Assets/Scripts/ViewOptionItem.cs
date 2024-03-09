@@ -114,18 +114,18 @@ public class ViewOptionItem : MonoBehaviour
                 UpdateValues("TextoModoProcessamentoDeDados");
                 UpdateValues("TextPreviousMatch");
                 break;
-            case "OptionPerformanceFromCalibrationOnly":
-                if (PlayerPrefs.GetInt("DataProcessingMode") == 3) 
-                {
-                    GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
-                }
-                else
-                {
-                    GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = Color.white;
-                }
-                UpdateValues("TextoModoProcessamentoDeDados");
-                UpdateValues("TextCalibration");
-                break;
+            // case "OptionPerformanceFromCalibrationOnly":
+            //     if (PlayerPrefs.GetInt("DataProcessingMode") == 3) 
+            //     {
+            //         GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+            //     }
+            //     else
+            //     {
+            //         GameObject.Find("OptionPerformanceFromCalibrationOnly").GetComponent<Image>().color = Color.white;
+            //     }
+            //     UpdateValues("TextoModoProcessamentoDeDados");
+            //     UpdateValues("TextCalibration");
+            //     break;
             case "TextoAjustesWebcam":
                 if (VariaveisGlobais.Idioma == "BR") 
                     text.text = "Imagem da webcam";
@@ -216,7 +216,7 @@ public class ViewOptionItem : MonoBehaviour
 
         SetItemColor("OptionWeightedAverage", selectedMode == 1);
         SetItemColor("OptionPerformanceFromPreviousMatchOnly", selectedMode == 2);
-        SetItemColor("OptionPerformanceFromCalibrationOnly", selectedMode == 3);
+        // SetItemColor("OptionPerformanceFromCalibrationOnly", selectedMode == 3);
     }
 
     private void SetItemColor(string itemName, bool isSelected)
