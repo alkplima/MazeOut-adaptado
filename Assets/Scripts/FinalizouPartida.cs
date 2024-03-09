@@ -7,22 +7,28 @@ public class FinalizouPartida : MonoBehaviour
     GameObject gameScreenManager;
     private CoinCollectionController coinCollectionController;
     private float alturaFim, larguraFim, alturaOther, larguraOther;
+
     void OnEnable()
     {
         gameScreenManager = GameObject.Find("GameScreenManager");
         coinCollectionController = GameObject.FindObjectOfType<CoinCollectionController>();
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         NovaDeteccao(other);
     }
-    
+
     private void NovaDeteccao(Collider2D other)
     {
+        if (VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)
+            return;
+
         if (other.tag.StartsWith("Bola"))
         {
             if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa" && VariaveisGlobais.nomePaciente != "")
-            {               
+            {
                 SalvarDadosDaUltimaReta();
                 VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
                 VariaveisGlobais.conexaoBD.PostData();

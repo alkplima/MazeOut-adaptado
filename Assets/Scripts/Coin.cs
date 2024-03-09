@@ -34,10 +34,14 @@ public class Coin : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, _rotationSpeed * Time.deltaTime, 0, 0);
-    }    
-    
-    private void OnTriggerEnter2D(Collider2D other) 
+    }
+
+    //private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerStay2D(Collider2D other)
     {
+        if (VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)
+            return;
+
         if (other.tag.StartsWith("Bola")) 
         {
             gameObject.GetComponent<RectTransform>().GetWorldCorners(cantosMoeda);

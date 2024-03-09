@@ -106,7 +106,9 @@ public class hyperateSocket : MonoBehaviour
 
     private async void OnApplicationQuit()
     {
-        await websocket.Close();
+        if (websocket != null)
+            if (websocket.State == WebSocketState.Open)
+                await websocket.Close();
     }
 
 }

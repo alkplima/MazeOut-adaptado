@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872683, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -345,6 +345,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &4041747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +626,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &7691874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,8 +882,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 474.801, y: -78.76847}
-  m_SizeDelta: {x: 119.0141, y: 157.53694}
+  m_AnchoredPosition: {x: 474.64587, y: -78.76847}
+  m_SizeDelta: {x: 118.97386, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11956349
 MonoBehaviour:
@@ -1137,7 +1139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -282.04004, y: -75}
+  m_AnchoredPosition: {x: -282.0401, y: -75}
   m_SizeDelta: {x: -564.08, y: 30.11}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &13712157
@@ -1201,6 +1203,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &13712160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,6 +1317,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &14534927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,6 +1431,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &14876264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +1807,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &22099896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,6 +1959,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &33311460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2066,6 +2073,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &33314507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2441,6 +2449,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &36750115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,6 +2563,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &37512226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2667,6 +2677,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &37965100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2780,6 +2791,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &39404526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2965,6 +2977,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &41098378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3310,8 +3323,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 142.61249, y: -80.68966}
-  m_SizeDelta: {x: 70.46072, y: 161.37932}
+  m_AnchoredPosition: {x: 142.56592, y: -80.68966}
+  m_SizeDelta: {x: 70.43771, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49497590
 MonoBehaviour:
@@ -3412,6 +3425,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &49743589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,6 +3630,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &51944036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3892,6 +3907,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &56653651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4005,6 +4021,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &58015954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,6 +4465,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &68080047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4561,6 +4579,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &70657204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5503,6 +5522,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &84677281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5616,6 +5636,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &85143447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5729,6 +5750,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &85725874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5933,6 +5955,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &88376712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6137,6 +6160,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &91543572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6514,6 +6538,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &97598896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6627,6 +6652,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &98036921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7032,6 +7058,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &111217027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7236,6 +7263,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &113511737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7349,6 +7377,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &114744977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7997,6 +8026,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &125430434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8110,6 +8140,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &125860109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8223,6 +8254,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &131127156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8336,6 +8368,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &131433029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8449,6 +8482,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &131851732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9041,7 +9075,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 866.6667, y: -28.888916}
+  m_AnchoredPosition: {x: 866.6667, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &150552052
@@ -9065,6 +9099,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &150552053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9178,6 +9213,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &152875002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9454,6 +9490,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &160931694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9567,6 +9604,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &161257740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9771,6 +9809,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &165236328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9884,6 +9923,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &166192569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9997,6 +10037,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &166530936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10110,6 +10151,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &166772389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10393,6 +10435,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &170036584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10506,6 +10549,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &172841124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10710,6 +10754,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &175126816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10994,6 +11039,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &176773116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11654,6 +11700,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &186474438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11804,6 +11851,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &192922405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12080,6 +12128,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &196442218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12193,6 +12242,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &196902722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12282,7 +12332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.44446, y: -28.888916}
+  m_AnchoredPosition: {x: 404.44446, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &196993517
@@ -12306,6 +12356,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &196993518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13047,6 +13098,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &204642382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13199,6 +13251,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 6318847
+  colorAlphaFactor_forChange: 128
 --- !u!114 &210236914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13264,7 +13317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 202.22223, y: -28.888916}
+  m_AnchoredPosition: {x: 202.22223, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &210770318
@@ -13288,6 +13341,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &210770319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13401,6 +13455,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &214252733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13514,6 +13569,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &215450894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13946,6 +14002,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &222286825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14216,6 +14273,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &225628932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14492,6 +14550,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &236879045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14747,8 +14806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 688.4618, y: -100.54187}
-  m_SizeDelta: {x: 112.44931, y: 201.08374}
+  m_AnchoredPosition: {x: 688.2374, y: -100.54187}
+  m_SizeDelta: {x: 112.41111, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &243460653
 MonoBehaviour:
@@ -15274,6 +15333,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &245790636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15569,6 +15629,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &249626170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15773,6 +15834,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &251571517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15886,6 +15948,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &252641243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16090,6 +16153,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &253994039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16385,6 +16449,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &255673274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16931,6 +16996,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &265368628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17044,6 +17110,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &267885120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17157,6 +17224,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &268026895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17361,6 +17429,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &269697851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17474,6 +17543,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &270355215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17587,6 +17657,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &272788393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17791,6 +17862,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &273955137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17881,8 +17953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.55, y: 1}
   m_AnchorMax: {x: 0.925, y: 1}
-  m_AnchoredPosition: {x: -590, y: -439.27}
-  m_SizeDelta: {x: -68.18887, y: 210.55}
+  m_AnchoredPosition: {x: -590, y: -395}
+  m_SizeDelta: {x: -68.075714, y: 210.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274531383
 MonoBehaviour:
@@ -18123,6 +18195,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &283702911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18491,6 +18564,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &287661006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18738,6 +18812,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &288711775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18851,6 +18926,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &289100001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19392,8 +19468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163.33054, y: -78.76847}
-  m_SizeDelta: {x: 80.632866, y: 157.53694}
+  m_AnchoredPosition: {x: 163.27667, y: -78.76847}
+  m_SizeDelta: {x: 80.6056, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &295680373
 MonoBehaviour:
@@ -19566,6 +19642,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &299609343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19861,6 +19938,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &300788045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20324,6 +20402,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &307216067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20514,6 +20593,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &309729442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20627,6 +20707,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &310822328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20740,6 +20821,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &312931890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20831,8 +20913,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 1}
   m_AnchorMax: {x: 0.425, y: 1}
-  m_AnchoredPosition: {x: -3.1843872, y: -283}
-  m_SizeDelta: {x: -61.82, y: 60}
+  m_AnchoredPosition: {x: -3.1843872, y: -260}
+  m_SizeDelta: {x: -61.82, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314385409
 MonoBehaviour:
@@ -21017,6 +21099,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &318403462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21312,6 +21395,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &320602696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21533,6 +21617,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &328510270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21646,6 +21731,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &328812049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21930,6 +22016,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &336349909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22043,6 +22130,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &338016234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22156,6 +22244,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &341694202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22245,7 +22334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -28.888916}
+  m_AnchoredPosition: {x: 0, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &344786088
@@ -22269,6 +22358,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &344786089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22460,6 +22550,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &347638265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22809,8 +22900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 498.29816, y: -80.68966}
-  m_SizeDelta: {x: 70.46072, y: 161.37932}
+  m_AnchoredPosition: {x: 498.1355, y: -80.68966}
+  m_SizeDelta: {x: 70.43771, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &350561625
 MonoBehaviour:
@@ -23160,7 +23251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 635.55554, y: -28.888916}
+  m_AnchoredPosition: {x: 635.55554, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &354545416
@@ -23184,6 +23275,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &354545417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23297,6 +23389,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &356754889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23501,6 +23594,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &357286332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23694,6 +23788,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &362941330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24037,6 +24132,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &373752741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24302,6 +24398,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &377725914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24415,6 +24512,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &381001854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24528,6 +24626,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &381183274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24641,6 +24740,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &383513392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24901,6 +25001,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &389937793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25014,6 +25115,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &390213158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25218,6 +25320,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &394597942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25422,6 +25525,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &397856436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25626,6 +25730,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &399156376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25830,6 +25935,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &406239329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26034,6 +26140,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &415674552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26238,6 +26345,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &421549972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26351,6 +26459,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &422973345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26464,6 +26573,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &425158897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26668,6 +26778,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &429512252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26781,6 +26892,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &431991590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26894,6 +27006,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &436271158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27074,7 +27187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 462.22223, y: -28.888916}
+  m_AnchoredPosition: {x: 462.22223, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &437392010
@@ -27098,6 +27211,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &437392011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27302,6 +27416,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &439224527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27497,6 +27612,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &439684270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27649,6 +27765,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 6318847
+  colorAlphaFactor_forChange: 128
 --- !u!114 &440249415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27808,8 +27925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.5339, y: -80.68966}
-  m_SizeDelta: {x: 107.382126, y: 161.37932}
+  m_AnchoredPosition: {x: 231.45833, y: -80.68966}
+  m_SizeDelta: {x: 107.34707, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440657203
 MonoBehaviour:
@@ -28322,6 +28439,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &444710236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28648,7 +28766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.11111, y: -28.888916}
+  m_AnchoredPosition: {x: 231.11111, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &446995723
@@ -28672,6 +28790,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &446995724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28785,6 +28904,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &447833599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29069,6 +29189,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &453407670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29273,6 +29394,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &454478920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29386,6 +29508,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &455613709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30286,6 +30409,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &464084874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30555,6 +30679,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &468626843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30759,6 +30884,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &469870884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31054,6 +31180,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &472592649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31167,6 +31294,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &474550987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31280,6 +31408,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &475467575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31484,6 +31613,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &477574051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31760,6 +31890,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &484299109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31873,6 +32004,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &484831715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32138,6 +32270,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &485262644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32251,6 +32384,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &487842156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32492,6 +32626,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &488380491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32605,6 +32740,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &490368278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32900,6 +33036,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &493775256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33013,6 +33150,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &494526555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33217,6 +33355,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &495226854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33421,6 +33560,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &496904907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33625,6 +33765,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &499394281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33887,8 +34028,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.69101, y: -80.6897}
-  m_SizeDelta: {x: 107.382126, y: 161.37932}
+  m_AnchoredPosition: {x: 53.673523, y: -80.6897}
+  m_SizeDelta: {x: 107.34707, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &499805695
 MonoBehaviour:
@@ -34128,6 +34269,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &501175677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34361,8 +34503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 676.141, y: -80.68966}
-  m_SizeDelta: {x: 70.46072, y: 161.37932}
+  m_AnchoredPosition: {x: 675.9203, y: -80.68966}
+  m_SizeDelta: {x: 70.43771, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501633756
 MonoBehaviour:
@@ -34559,6 +34701,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &501993465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34672,6 +34815,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &503009265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34761,7 +34905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 375.55557, y: -28.888916}
+  m_AnchoredPosition: {x: 375.55557, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &503322459
@@ -34785,6 +34929,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &503322460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35080,6 +35225,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &506955460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35284,6 +35430,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &509452231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35436,6 +35583,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &514917408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36011,7 +36159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 433.33334, y: -28.888916}
+  m_AnchoredPosition: {x: 433.33334, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &524532516
@@ -36035,6 +36183,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &524532517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36239,6 +36388,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &525724857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36530,6 +36680,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &530007455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36643,6 +36794,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &530156397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36756,6 +36908,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &530288721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36869,6 +37022,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &530706052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37164,6 +37318,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &537264025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37440,6 +37595,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &545721667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37710,7 +37866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 491.1111, y: -28.888916}
+  m_AnchoredPosition: {x: 491.1111, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &549101669
@@ -37734,6 +37890,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &549101670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37847,6 +38004,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &549261422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38209,6 +38367,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &552955752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38485,6 +38644,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &559578594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38653,6 +38813,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &561463285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39172,6 +39333,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &572066436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39507,6 +39669,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &579512000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39599,8 +39762,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 267.15402, y: -78.76847}
-  m_SizeDelta: {x: 119.0141, y: 157.53694}
+  m_AnchoredPosition: {x: 267.0664, y: -78.76847}
+  m_SizeDelta: {x: 118.97386, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &580460789
 MonoBehaviour:
@@ -39931,6 +40094,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &581986251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40044,6 +40208,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &584725857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40157,6 +40322,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &584841315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40628,6 +40794,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &596482502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40741,6 +40908,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &600131246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40854,6 +41022,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &600447724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40967,6 +41136,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &601915376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41080,6 +41250,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &602642265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41249,7 +41420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 837.7778, y: -28.888916}
+  m_AnchoredPosition: {x: 837.7778, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &602698293
@@ -41273,6 +41444,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &602698294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41659,6 +41831,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &608063833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41772,6 +41945,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &609443407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41885,6 +42059,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &609574298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41998,6 +42173,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &610430695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42111,6 +42287,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &614266955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42394,6 +42571,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &618306298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42507,6 +42685,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &618671217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42711,6 +42890,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &620009301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42824,6 +43004,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &622251029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42937,6 +43118,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &625109865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43250,6 +43432,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &632032342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43593,7 +43776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 606.6667, y: -28.888916}
+  m_AnchoredPosition: {x: 606.6667, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &638692910
@@ -43617,6 +43800,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &638692911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43797,7 +43981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 57.77778, y: -28.888916}
+  m_AnchoredPosition: {x: 57.77778, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &639513496
@@ -43821,6 +44005,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &639513497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43934,6 +44119,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &639642239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44229,6 +44415,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &643034118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44500,7 +44687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 577.7778, y: -28.888916}
+  m_AnchoredPosition: {x: 577.7778, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &646251944
@@ -44524,6 +44711,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &646251945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44637,6 +44825,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &647492793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44817,7 +45006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 664.44446, y: -28.888916}
+  m_AnchoredPosition: {x: 664.44446, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &651043773
@@ -44841,6 +45030,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &651043774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45005,6 +45195,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &656556165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45118,6 +45309,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &659268250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45231,6 +45423,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &660436540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45344,6 +45537,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &662248521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45548,6 +45742,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &666263409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45915,7 +46110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mirror \nhorizontally"
+  m_Text: Mirror horiz.
 --- !u!222 &670228862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46044,8 +46239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 149.18771, y: -100.54187}
-  m_SizeDelta: {x: 112.44931, y: 201.08374}
+  m_AnchoredPosition: {x: 149.1384, y: -100.54187}
+  m_SizeDelta: {x: 112.41111, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672539794
 MonoBehaviour:
@@ -46285,6 +46480,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &673940436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46398,6 +46594,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &676476981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46511,6 +46708,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &676503217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46598,8 +46796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.45, y: 1}
-  m_AnchoredPosition: {x: 0, y: -191}
-  m_SizeDelta: {x: -263.73, y: 35.52}
+  m_AnchoredPosition: {x: -65.932434, y: -191}
+  m_SizeDelta: {x: -131.865, y: 35.52}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &676805564
 MonoBehaviour:
@@ -46781,6 +46979,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &684206782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46985,6 +47184,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &686520626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47098,6 +47298,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &690504980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47302,6 +47503,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &691728127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47497,6 +47699,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &694186452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47610,6 +47813,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &695009845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47723,6 +47927,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &695880832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47836,6 +48041,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &696705392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48525,6 +48731,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &709261870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48806,6 +49013,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &719509635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48919,6 +49127,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &720972222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49032,6 +49241,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &723456897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49145,6 +49355,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &723886338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49492,6 +49703,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &732782885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49685,6 +49897,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &734816134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49798,6 +50011,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &735670105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50002,6 +50216,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &739109069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50407,6 +50622,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &752789786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50611,6 +50827,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &754124541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50724,6 +50941,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &756243730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51444,6 +51662,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &766148924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51688,6 +51907,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &769339061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51868,7 +52088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 780, y: -28.888916}
+  m_AnchoredPosition: {x: 780, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &773560204
@@ -51892,6 +52112,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &773560205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52005,6 +52226,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &773769141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52288,6 +52510,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &775712352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52529,6 +52752,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &783746236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52642,6 +52866,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &784120482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53081,6 +53306,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &799012980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53194,6 +53420,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &801264111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53286,8 +53513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 508.70374, y: -100.54187}
-  m_SizeDelta: {x: 112.44931, y: 201.08374}
+  m_AnchoredPosition: {x: 508.53775, y: -100.54187}
+  m_SizeDelta: {x: 112.41111, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802629613
 MonoBehaviour:
@@ -53527,6 +53754,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &802928017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53731,6 +53959,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &806292627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53916,6 +54145,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &806700540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54029,6 +54259,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &809788276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54324,6 +54555,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &811446922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54579,6 +54811,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &812601808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54783,6 +55016,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &813700929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54968,6 +55202,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &817279099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55290,6 +55525,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &822939395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55403,6 +55639,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &823464597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55584,7 +55821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 1}
   m_AnchorMax: {x: 0.425, y: 1}
-  m_AnchoredPosition: {x: 469.64, y: -364}
+  m_AnchoredPosition: {x: 469.64008, y: -364}
   m_SizeDelta: {x: 291.09, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824736593
@@ -55756,6 +55993,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &826213743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55957,7 +56195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -284.01, y: -77}
+  m_AnchoredPosition: {x: -284.01007, y: -77}
   m_SizeDelta: {x: -564.65, y: 32.99}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &830468007
@@ -56112,6 +56350,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &831216914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56201,7 +56440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 317.77777, y: -28.888916}
+  m_AnchoredPosition: {x: 317.77777, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &831318088
@@ -56225,6 +56464,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &831318089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56787,6 +57027,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &840062352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56900,6 +57141,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &843363843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57582,6 +57824,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &858897117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58082,6 +58325,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &867673841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58195,6 +58439,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &867850622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58689,6 +58934,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &873221918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58802,6 +59048,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &873650021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58915,6 +59162,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &877065651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59227,6 +59475,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &884264612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59431,6 +59680,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &885893795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59544,6 +59794,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &886388279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59785,8 +60036,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 598.58276, y: -100.54187}
-  m_SizeDelta: {x: 59.30871, y: 201.08374}
+  m_AnchoredPosition: {x: 598.3876, y: -100.54187}
+  m_SizeDelta: {x: 59.288563, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898115950
 MonoBehaviour:
@@ -59887,6 +60138,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &898249585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60330,6 +60582,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &904436563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60534,6 +60787,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &904950202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60647,6 +60901,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &908147317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60760,6 +61015,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &909255956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61055,6 +61311,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &914570753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61222,8 +61479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 418.82474, y: -100.54187}
-  m_SizeDelta: {x: 59.30871, y: 201.08374}
+  m_AnchoredPosition: {x: 418.6879, y: -100.54187}
+  m_SizeDelta: {x: 59.288563, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916276106
 MonoBehaviour:
@@ -61324,6 +61581,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &918300163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61509,6 +61767,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &919939959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61597,8 +61856,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 877.51624, y: -78.76847}
-  m_SizeDelta: {x: 93.85665, y: 157.53694}
+  m_AnchoredPosition: {x: 877.23035, y: -78.76847}
+  m_SizeDelta: {x: 93.82491, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922915645
 MonoBehaviour:
@@ -61719,6 +61978,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &923017358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61959,6 +62219,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &928334419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62243,6 +62504,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &932060919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62356,6 +62618,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &934853473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62560,6 +62823,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &936496297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62764,6 +63028,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &937466748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62877,6 +63142,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &937520929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63318,6 +63584,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &938445881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63431,6 +63698,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &940785646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64120,6 +64388,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &954763772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64270,6 +64539,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &956281281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64383,6 +64653,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &958363618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64496,6 +64767,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &961991596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64609,6 +64881,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &963228966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64722,6 +64995,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &963710950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64835,6 +65109,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &964784970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64948,6 +65223,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &965487030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65061,6 +65337,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &971043156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65174,6 +65451,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &971615391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65287,6 +65565,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &971622346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65400,6 +65679,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &974241503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65604,6 +65884,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &974941266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65789,6 +66070,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &975554645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65902,6 +66184,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &980376725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66106,6 +66389,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &981580487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66446,6 +66730,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &988571346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66588,6 +66873,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988604008}
+  m_CullTransparentMesh: 1
+--- !u!1 &993734257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993734258}
+  - component: {fileID: 993734260}
+  - component: {fileID: 993734259}
+  m_Layer: 5
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &993734258
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993734257}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1492248212}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 9, y: -0.4999981}
+  m_SizeDelta: {x: -28, y: -3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &993734259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993734257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Show movement detect sensors
+--- !u!222 &993734260
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993734257}
   m_CullTransparentMesh: 1
 --- !u!1 &993852558
 GameObject:
@@ -66741,6 +67106,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &995907576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66854,6 +67220,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &997946862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67035,7 +67402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 1}
   m_AnchorMax: {x: 0.425, y: 1}
-  m_AnchoredPosition: {x: 469.64, y: -477}
+  m_AnchoredPosition: {x: 469.64008, y: -477}
   m_SizeDelta: {x: 291.09, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999638972
@@ -67298,6 +67665,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1000648918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68224,6 +68592,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1013761412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68792,6 +69161,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1028870237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68881,7 +69251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.88889, y: -28.888916}
+  m_AnchoredPosition: {x: 28.88889, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1030389790
@@ -68905,6 +69275,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1030389791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69109,6 +69480,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1031329430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69357,6 +69729,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1034305285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69535,6 +69908,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1036703519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69830,6 +70204,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1038895248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70034,6 +70409,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1042757081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70383,6 +70759,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1045083368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70496,6 +70873,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1045674482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70700,6 +71078,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1052359216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70904,6 +71283,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1058271029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71017,6 +71397,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1058461064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71444,9 +71825,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mirror
-
-    vertically'
+  m_Text: Mirror vert.
 --- !u!222 &1063650329
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -71676,6 +72055,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1064101970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71862,8 +72242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 462.22223, y: -441.23154}
-  m_SizeDelta: {x: 924.44446, y: 157.53694}
+  m_AnchoredPosition: {x: 462.07135, y: -441.23154}
+  m_SizeDelta: {x: 924.1427, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066846669
 MonoBehaviour:
@@ -71952,6 +72332,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1068483054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72065,6 +72446,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1071648809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72178,6 +72560,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1074673015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72291,6 +72674,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1076061583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72495,6 +72879,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1078129678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72776,6 +73161,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1082918917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72889,6 +73275,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1084545355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73184,6 +73571,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1089289657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73388,6 +73776,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1089850235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73684,6 +74073,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1093848737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73797,6 +74187,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1095034674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73990,6 +74381,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1097935155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74103,6 +74495,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1104390576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74216,6 +74609,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1104712441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74420,6 +74814,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1105512649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74533,6 +74928,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1107628069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74646,6 +75042,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1110237731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74733,8 +75130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 786.2714, y: -78.76847}
-  m_SizeDelta: {x: 80.632866, y: 157.53694}
+  m_AnchoredPosition: {x: 786.0151, y: -78.76847}
+  m_SizeDelta: {x: 80.6056, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114792610
 MonoBehaviour:
@@ -74987,6 +75384,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1122256769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75208,6 +75606,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1127179152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75295,8 +75694,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 370.9775, y: -78.76847}
-  m_SizeDelta: {x: 80.632866, y: 157.53694}
+  m_AnchoredPosition: {x: 370.85614, y: -78.76847}
+  m_SizeDelta: {x: 80.6056, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1128150141
 MonoBehaviour:
@@ -75543,6 +75942,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1131960133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75656,6 +76056,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1132883907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75942,6 +76343,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1139399352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76055,6 +76457,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1141165558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76168,6 +76571,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1142119617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76281,6 +76685,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1142872190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76531,6 +76936,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1146608410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76644,6 +77050,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1149128857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76903,6 +77310,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1152689875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77107,6 +77515,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1154811330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77311,6 +77720,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1157258594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77500,6 +77910,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1159480604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77977,6 +78388,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1165679029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78346,8 +78758,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 587.21954, y: -80.68966}
-  m_SizeDelta: {x: 107.382126, y: 161.37932}
+  m_AnchoredPosition: {x: 587.0279, y: -80.68966}
+  m_SizeDelta: {x: 107.34707, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1175087585
 MonoBehaviour:
@@ -79057,6 +79469,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1187053947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79395,6 +79808,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1191891781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79599,6 +80013,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1195235093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79712,6 +80127,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1196146424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79916,6 +80332,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1197523402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80393,6 +80810,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1202250159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80597,6 +81015,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1204425656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80893,6 +81312,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1209572965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81083,6 +81503,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1214705126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81483,6 +81904,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1220534954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81596,6 +82018,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1222285339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81800,6 +82223,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1224236255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82004,6 +82428,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1235223235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82506,6 +82931,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1240941910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82593,8 +83019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 871.599, y: -161.37932}
-  m_SizeDelta: {x: 105.69107, y: 161.37932}
+  m_AnchoredPosition: {x: 871.3145, y: -161.37932}
+  m_SizeDelta: {x: 105.65656, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1245759371
 MonoBehaviour:
@@ -82775,6 +83201,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1250594179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82888,6 +83315,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1254203965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83047,8 +83475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 320.45532, y: -80.68966}
-  m_SizeDelta: {x: 70.46072, y: 161.37932}
+  m_AnchoredPosition: {x: 320.3507, y: -80.68966}
+  m_SizeDelta: {x: 70.43771, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254779805
 MonoBehaviour:
@@ -83317,6 +83745,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1260108762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83430,6 +83859,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1262991458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83816,6 +84246,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1274872143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84020,6 +84451,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1276665957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84224,6 +84656,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1277118810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84337,6 +84770,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1277217944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84450,6 +84884,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1283264440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84563,6 +84998,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1284046684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84855,8 +85291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 778.34076, y: -100.54187}
-  m_SizeDelta: {x: 59.30871, y: 201.08374}
+  m_AnchoredPosition: {x: 778.0873, y: -100.54187}
+  m_SizeDelta: {x: 59.288563, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1290361590
 MonoBehaviour:
@@ -84957,6 +85393,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1291555147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85053,8 +85490,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 462.22223, y: -80.68966}
-  m_SizeDelta: {x: 924.44446, y: 161.37932}
+  m_AnchoredPosition: {x: 462.07135, y: -80.68966}
+  m_SizeDelta: {x: 924.1427, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293082437
 MonoBehaviour:
@@ -85143,6 +85580,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1296297949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85496,6 +85934,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1308229795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85609,6 +86048,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1308273902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85699,7 +86139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -282.04004, y: -125}
+  m_AnchoredPosition: {x: -282.0401, y: -125}
   m_SizeDelta: {x: -564.08, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1310345501
@@ -85823,8 +86263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 462.22223, y: -261.9212}
-  m_SizeDelta: {x: 924.44446, y: 201.08374}
+  m_AnchoredPosition: {x: 462.07135, y: -261.9212}
+  m_SizeDelta: {x: 924.1427, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1312088254
 MonoBehaviour:
@@ -86004,6 +86444,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1313990461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86117,6 +86558,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1314270592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86230,6 +86672,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1315641157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86343,6 +86786,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1316738694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86715,6 +87159,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1324425048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86919,6 +87364,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1325144105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87032,6 +87478,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1325370672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87145,6 +87592,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1325631793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87258,6 +87706,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1328485739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87447,6 +87896,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1331626353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87747,6 +88197,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1337258187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87860,6 +88311,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1338513487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88064,6 +88516,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1342483598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88225,7 +88678,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 548.8889, y: -28.888916}
+  m_AnchoredPosition: {x: 548.8889, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1346641733
@@ -88249,6 +88702,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1346641734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88535,6 +88989,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1357580731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88740,6 +89195,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1360509657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89291,6 +89747,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1375823025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89744,7 +90201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 751.11115, y: -28.888916}
+  m_AnchoredPosition: {x: 751.11115, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1388871075
@@ -89768,6 +90225,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1388871076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90154,6 +90612,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1390465316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90358,6 +90817,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1391311735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90471,6 +90931,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1391601363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90846,6 +91307,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1399745814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90935,7 +91397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 895.55554, y: -28.888916}
+  m_AnchoredPosition: {x: 895.55554, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1400529526
@@ -90959,6 +91421,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1400529527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91239,6 +91702,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1407919395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91798,6 +92262,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1416914446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92093,6 +92558,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1421857207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92206,6 +92672,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1422179682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92319,6 +92786,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1423676017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92523,6 +92991,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1426154342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92575,6 +93044,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426154339}
   m_CullTransparentMesh: 0
+--- !u!1 &1429126638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429126639}
+  - component: {fileID: 1429126641}
+  - component: {fileID: 1429126640}
+  m_Layer: 5
+  m_Name: Checkmark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1429126639
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429126638}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1849216345}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 25, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1429126640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429126638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1429126641
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429126638}
+  m_CullTransparentMesh: 1
 --- !u!1 &1429889900
 GameObject:
   m_ObjectHideFlags: 0
@@ -92727,6 +93272,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1434288117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93011,6 +93557,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1442465037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93124,6 +93671,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1446730129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93237,6 +93785,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1446779033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93563,7 +94112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 520, y: -28.888916}
+  m_AnchoredPosition: {x: 520, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1451974280
@@ -93587,6 +94136,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1451974281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93960,6 +94510,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1455637306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94295,6 +94846,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1464572401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94408,6 +94960,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1465272619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94521,6 +95074,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1465761550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94634,6 +95188,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1469176060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94788,7 +95343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.44444, y: -28.888916}
+  m_AnchoredPosition: {x: 144.44444, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1475342398
@@ -94812,6 +95367,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1475342399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94925,6 +95481,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1478226341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95038,6 +95595,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1481054164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95127,7 +95685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 260, y: -28.888916}
+  m_AnchoredPosition: {x: 260, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1482209895
@@ -95151,6 +95709,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1482209896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95264,6 +95823,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1483249686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95377,6 +95937,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1483408467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95475,6 +96036,7 @@ RectTransform:
   - {fileID: 274531382}
   - {fileID: 288006569}
   - {fileID: 30823006}
+  - {fileID: 1492248212}
   m_Father: {fileID: 465540348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95582,6 +96144,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1490178742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95682,6 +96245,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490625709}
   m_CullTransparentMesh: 0
+--- !u!1 &1492248211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492248212}
+  - component: {fileID: 1492248213}
+  m_Layer: 5
+  m_Name: OptionMostrarColisores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1492248212
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492248211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1849216345}
+  - {fileID: 993734258}
+  m_Father: {fileID: 1483918609}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 70, y: -235}
+  m_SizeDelta: {x: 350, y: 30}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1492248213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492248211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1849216346}
+  toggleTransition: 1
+  graphic: {fileID: 1429126640}
+  m_Group: {fileID: 0}
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 440249414}
+        m_TargetAssemblyTypeName: ButtonWithWebcam, Assembly-CSharp
+        m_MethodName: ChangeOpacityColorsHitMiss
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 210236913}
+        m_TargetAssemblyTypeName: ButtonWithWebcam, Assembly-CSharp
+        m_MethodName: ChangeOpacityColorsHitMiss
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1503870253}
+        m_TargetAssemblyTypeName: ButtonWithWebcam, Assembly-CSharp
+        m_MethodName: ChangeOpacityColorsHitMiss
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1937168450}
+        m_TargetAssemblyTypeName: ButtonWithWebcam, Assembly-CSharp
+        m_MethodName: ChangeOpacityColorsHitMiss
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!1 &1492382757
 GameObject:
   m_ObjectHideFlags: 0
@@ -96095,6 +96793,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1499052644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96208,6 +96907,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1500448336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96321,6 +97021,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1500496564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96564,6 +97265,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 6318847
+  colorAlphaFactor_forChange: 128
 --- !u!114 &1503870254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96926,6 +97628,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1510633379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97039,6 +97742,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1512340795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97386,6 +98090,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1517002919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97681,6 +98386,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1523130039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98084,6 +98790,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1526153338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98275,6 +98982,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1527504836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98626,6 +99334,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1530877980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99053,6 +99762,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1541170781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99257,6 +99967,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1544164637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99490,8 +100201,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44.481537, y: -201.08374}
-  m_SizeDelta: {x: 88.96306, y: 201.08374}
+  m_AnchoredPosition: {x: 44.46643, y: -201.08374}
+  m_SizeDelta: {x: 88.93284, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1548126093
 MonoBehaviour:
@@ -99930,6 +100641,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1558544995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100134,6 +100846,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1564342461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100702,6 +101415,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1577629566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100829,6 +101543,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1577909843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100988,6 +101703,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1578514625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101246,8 +101962,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 578.62445, y: -78.76847}
-  m_SizeDelta: {x: 80.632866, y: 157.53694}
+  m_AnchoredPosition: {x: 578.4356, y: -78.76847}
+  m_SizeDelta: {x: 80.6056, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582241881
 MonoBehaviour:
@@ -101486,6 +102202,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1588017572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101599,6 +102316,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1590613789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101712,6 +102430,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1595252916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101916,6 +102635,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1600213769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102029,6 +102749,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1600490521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102233,6 +102954,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1601801843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102346,6 +103068,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1602008718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102510,8 +103233,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 409.37677, y: -80.68966}
-  m_SizeDelta: {x: 107.382126, y: 161.37932}
+  m_AnchoredPosition: {x: 409.2431, y: -80.68966}
+  m_SizeDelta: {x: 107.34707, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604039976
 MonoBehaviour:
@@ -102751,6 +103474,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1604271453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103035,6 +103759,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1605851653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103304,6 +104029,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1607562544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103588,6 +104314,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1609011169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103701,6 +104428,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1609139940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103886,6 +104614,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1610541906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104036,6 +104765,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1614115888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104149,6 +104879,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1617566095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104262,6 +104993,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1618345657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104466,6 +105198,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1619204419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104553,8 +105286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 239.06673, y: -100.54187}
-  m_SizeDelta: {x: 59.30871, y: 201.08374}
+  m_AnchoredPosition: {x: 238.98824, y: -100.54187}
+  m_SizeDelta: {x: 59.288563, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619973075
 MonoBehaviour:
@@ -104655,6 +105388,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1620711861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104821,6 +105555,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1622158908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104934,6 +105669,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1623354687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105647,6 +106383,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1631274666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105737,7 +106474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -284, y: -129}
+  m_AnchoredPosition: {x: -284.00006, y: -129}
   m_SizeDelta: {x: -564.65, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1631390796
@@ -106178,6 +106915,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1638301170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106291,6 +107029,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1639674293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106450,6 +107189,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1639863069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106654,6 +107394,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1640728487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106858,6 +107599,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1642925059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106971,6 +107713,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1644465213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107175,6 +107918,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1649118508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107288,6 +108032,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1650277074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107492,6 +108237,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1653835738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107638,6 +108384,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1656071646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108193,6 +108940,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1661236191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108568,6 +109316,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1665226106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108681,6 +109430,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1667349117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109141,7 +109891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 808.8889, y: -28.888916}
+  m_AnchoredPosition: {x: 808.8889, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1673633393
@@ -109165,6 +109915,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1673633394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109435,6 +110186,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1677738266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109912,6 +110664,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1682486504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110474,6 +111227,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1686979240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110663,6 +111417,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1689479260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111030,6 +111785,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1695858033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111301,6 +112057,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1699254456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111921,6 +112678,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1706886613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112010,7 +112768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 288.8889, y: -28.888916}
+  m_AnchoredPosition: {x: 288.8889, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1707239584
@@ -112034,6 +112792,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1707239585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112238,6 +112997,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1711560919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112351,6 +113111,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1715555569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112464,6 +113225,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1715963892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112577,6 +113339,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1716726119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112781,6 +113544,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1722844097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113360,6 +114124,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1732419784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113473,6 +114238,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1732710991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113694,6 +114460,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1735532109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114030,6 +114797,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!1001 &1746312625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114319,6 +115087,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1754367199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114432,6 +115201,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1754402298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114713,6 +115483,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1758576349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114826,6 +115597,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1759667036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114917,8 +115689,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.225, y: 1}
-  m_AnchoredPosition: {x: 3.1845093, y: -283}
-  m_SizeDelta: {x: -61.82, y: 60}
+  m_AnchoredPosition: {x: 3.1845703, y: -260}
+  m_SizeDelta: {x: -61.82, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759743569
 MonoBehaviour:
@@ -115103,6 +115875,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1760021273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115216,6 +115989,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1761593265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115399,8 +116173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 868.2198, y: -100.54187}
-  m_SizeDelta: {x: 112.44931, y: 201.08374}
+  m_AnchoredPosition: {x: 867.93713, y: -100.54187}
+  m_SizeDelta: {x: 112.41111, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764377462
 MonoBehaviour:
@@ -115993,6 +116767,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1769917035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116106,6 +116881,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1771418657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116301,6 +117077,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1776008858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116505,6 +117282,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1777311611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116709,6 +117487,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1786194215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117007,6 +117786,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1790324882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117196,6 +117976,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1792449675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117473,7 +118254,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -402.23474, y: 0}
+  m_SizeDelta: {x: -205.25378, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1794540824
 MonoBehaviour:
@@ -117585,6 +118366,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1796404444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117698,6 +118480,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1796653815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117811,6 +118594,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1797180977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117978,7 +118762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 1}
   m_AnchorMax: {x: 0.425, y: 1}
-  m_AnchoredPosition: {x: 469.64032, y: -283}
+  m_AnchoredPosition: {x: 469.64038, y: -283}
   m_SizeDelta: {x: 291.09, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798335655
@@ -118241,6 +119025,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1801844904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118391,6 +119176,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1802834853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119083,6 +119869,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1818545347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119378,6 +120165,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1820405627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119491,6 +120279,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1823218583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120023,6 +120812,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1832111721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120227,6 +121017,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1832524966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120340,6 +121131,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1834110655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120635,6 +121427,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1836885447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120911,6 +121704,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1842147328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121072,6 +121866,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1843891498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121261,6 +122056,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1845837288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121374,6 +122170,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1845959920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121426,6 +122223,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845959917}
   m_CullTransparentMesh: 0
+--- !u!1 &1849216344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849216345}
+  - component: {fileID: 1849216347}
+  - component: {fileID: 1849216346}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1849216345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849216344}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1429126639}
+  m_Father: {fileID: 1492248212}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -15}
+  m_SizeDelta: {x: 25, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1849216346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849216344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1849216347
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849216344}
+  m_CullTransparentMesh: 1
 --- !u!1 &1855043355
 GameObject:
   m_ObjectHideFlags: 0
@@ -121469,7 +122343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.888855, y: -260}
+  m_AnchoredPosition: {x: 28.888916, y: -260}
   m_SizeDelta: {x: 57.77778, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855043357
@@ -121559,6 +122433,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1855926852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121807,8 +122682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 59.50705, y: -78.76847}
-  m_SizeDelta: {x: 119.0141, y: 157.53694}
+  m_AnchoredPosition: {x: 59.48694, y: -78.76847}
+  m_SizeDelta: {x: 118.97386, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860635909
 MonoBehaviour:
@@ -122048,6 +122923,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1860668429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122682,6 +123558,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1870789152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122977,6 +123854,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1873269876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123090,6 +123968,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1873889973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123807,6 +124686,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1888594610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123987,7 +124867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 86.66667, y: -28.888916}
+  m_AnchoredPosition: {x: 86.66667, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1888788456
@@ -124011,6 +124891,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1888788457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124971,6 +125852,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1893870382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125084,6 +125966,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1895274909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125346,6 +126229,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1902293945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125823,6 +126707,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1912467227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125989,7 +126874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 346.6667, y: -28.888916}
+  m_AnchoredPosition: {x: 346.6667, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1917262229
@@ -126013,6 +126898,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1917262230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126439,6 +127325,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1929107631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126552,6 +127439,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1929944872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126828,6 +127716,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1931925800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126980,6 +127869,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 6318847
+  colorAlphaFactor_forChange: 128
 --- !u!114 &1937168451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127069,6 +127959,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1946323649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127182,6 +128073,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1946787453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127477,6 +128369,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1948758700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127590,6 +128483,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1950914135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127794,6 +128688,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1952474235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127907,6 +128802,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1952928293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128348,6 +129244,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1958074763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128552,6 +129449,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1963111587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128833,6 +129731,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1968262731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128946,6 +129845,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1970207907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129211,6 +130111,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1978302626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129324,6 +130225,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1978312167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129416,8 +130318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 765.0624, y: -80.68966}
-  m_SizeDelta: {x: 107.382126, y: 161.37932}
+  m_AnchoredPosition: {x: 764.8127, y: -80.68966}
+  m_SizeDelta: {x: 107.34707, y: 161.37932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978988850
 MonoBehaviour:
@@ -129748,6 +130650,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1984625475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129861,6 +130764,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1986103723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129974,6 +130878,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1987063838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130087,6 +130992,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1988816410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130200,6 +131106,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1989734233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130404,6 +131311,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1994256468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130517,6 +131425,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1995440072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130609,8 +131518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 328.94574, y: -100.54187}
-  m_SizeDelta: {x: 112.44931, y: 201.08374}
+  m_AnchoredPosition: {x: 328.83807, y: -100.54187}
+  m_SizeDelta: {x: 112.41111, y: 201.08374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995463325
 MonoBehaviour:
@@ -130850,6 +131759,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1995792200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131043,6 +131953,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1997044166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131156,6 +132067,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &1999785755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131519,6 +132431,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2008745215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131705,6 +132618,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2024168574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131818,6 +132732,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2027429575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132022,6 +132937,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2036160621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132226,6 +133142,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2038555613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132419,6 +133336,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2044768372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132628,6 +133546,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2047005318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132795,7 +133714,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 173.33334, y: -28.888916}
+  m_AnchoredPosition: {x: 173.33334, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2047483888
@@ -132819,6 +133738,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2047483889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132932,6 +133852,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2049365114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133027,7 +133948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 837.7778, y: -260}
+  m_AnchoredPosition: {x: 837.77783, y: -260}
   m_SizeDelta: {x: 57.77778, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049806451
@@ -133299,6 +134220,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2051844248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133412,6 +134334,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2052188446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133616,6 +134539,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2054935110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134069,6 +134993,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2063273867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134455,6 +135380,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2074396731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134750,6 +135676,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2082255968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134954,6 +135881,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2085027860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135410,6 +136338,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2094803016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135595,6 +136524,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2095828660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136372,6 +137302,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2103199585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136601,8 +137532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 682.448, y: -78.76847}
-  m_SizeDelta: {x: 119.0141, y: 157.53694}
+  m_AnchoredPosition: {x: 682.22534, y: -78.76847}
+  m_SizeDelta: {x: 118.97386, y: 157.53694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105005963
 MonoBehaviour:
@@ -136914,6 +137845,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2108743772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137003,7 +137935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 115.55556, y: -28.888916}
+  m_AnchoredPosition: {x: 115.55556, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2109542905
@@ -137027,6 +137959,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2109542906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137231,6 +138164,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2113131411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137424,6 +138358,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2114115037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137604,7 +138539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 722.2222, y: -28.888916}
+  m_AnchoredPosition: {x: 722.2222, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2114546078
@@ -137628,6 +138563,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2114546079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137741,6 +138677,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2115096812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138153,6 +139090,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2123736543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138266,6 +139204,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2126116783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138379,6 +139318,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2128263701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138675,6 +139615,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2129417055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138970,6 +139911,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2135368820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139059,7 +140001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 693.3334, y: -28.888916}
+  m_AnchoredPosition: {x: 693.3334, y: -28.888885}
   m_SizeDelta: {x: 28.88889, y: 28.88889}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2135733412
@@ -139083,6 +140025,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2135733413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139196,6 +140139,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2136962150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139400,6 +140344,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2139220546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139513,6 +140458,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2139267496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139722,6 +140668,7 @@ MonoBehaviour:
   colorMiss:
     serializedVersion: 2
     rgba: 1080060671
+  colorAlphaFactor_forChange: 0
 --- !u!114 &2146669868
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,11 +10,15 @@ public class ControllerLabirinto : MonoBehaviour
     public RectTransform[] pecas;
     public AudioSource audioPegouItem, audioVoceGanhou, audioFundo;
 
-    Vector2 ScreenDimensions;
+    Vector2 ScreenDimensions = new Vector2(10,10);
     public RectTransform primeiraPosGrid, ultimaPosGrid;
+    public float secsAdjustingScreen = 0.6f;
+    internal bool adjustingDimensions = false;
+    Coroutine cr_adjustScreen_ref;
+    private bool cr_adjust_isRunning = false;
     void Awake()
     {
-        // Rotina para garantir que � o �nico ControllerJogo em opera��o (Singleton).
+        // Rotina para garantir que eh o unico ControllerJogo em operacao (Singleton).
         if (VariaveisGlobais.atualControllerLabirinto == null)
         {
             VariaveisGlobais.atualControllerLabirinto = this;
@@ -28,12 +32,11 @@ public class ControllerLabirinto : MonoBehaviour
         StartCoroutine(cr_PreparoInicial());
     }
 
-
     IEnumerator cr_PreparoInicial()
     {
         yield return new WaitForEndOfFrame();
 
-        ScreenDimensions = new Vector2(Screen.width, Screen.height);
+        //ScreenDimensions = new Vector2(Screen.width, Screen.height);
 
         if (!PlayerPrefs.HasKey("Velocidade"))
             PlayerPrefs.SetInt("Velocidade", 75);
@@ -55,10 +58,18 @@ public class ControllerLabirinto : MonoBehaviour
     void Update()
     {
         Vector2 newScreenDimensions = new Vector2(Screen.width, Screen.height);
-        if (newScreenDimensions != ScreenDimensions)
-            ScreenDimensions = newScreenDimensions;
-    }
 
+        if (newScreenDimensions != ScreenDimensions)
+        {
+            if (cr_adjustScreen_ref != null)
+                StopCoroutine(cr_adjustScreen_ref);
+            adjustingDimensions = true;
+            ScreenDimensions = newScreenDimensions;
+            cr_adjustScreen_ref = StartCoroutine(cr_AguardaEstabilizarDimensoesTela(secsAdjustingScreen));
+        }  
+        else if (cr_adjust_isRunning == false)
+            adjustingDimensions = false;
+    }
     public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -76,5 +87,18 @@ public class ControllerLabirinto : MonoBehaviour
         Application.ExternalEval("FS.syncfs(false, function (err) {})");
 #endif
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator cr_AguardaEstabilizarDimensoesTela(float secs)
+    {
+        cr_adjust_isRunning = true;
+        yield return new WaitForSeconds(secs);
+        cr_adjust_isRunning = false;
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        adjustingDimensions = false;
     }
 }

@@ -75,10 +75,11 @@ public class PieceController : MonoBehaviour
     public void MovimentarPeca(char direcao, float intensidade)
     {
         MovimentarPeca(direcao,  intensidade, 0.5f);
-    }
+     }
 
     public void MovimentarPeca(char direcao, float intensidade, float multArraste)
     {
+
         VariaveisGlobais.atualControllerLabirinto.primeiraPosGrid.GetWorldCorners(cantosPrimeiraPosGrid);
         VariaveisGlobais.atualControllerLabirinto.ultimaPosGrid.GetWorldCorners(cantosUltimaPosGrid);        
 
@@ -121,7 +122,7 @@ public class PieceController : MonoBehaviour
             case "X":
                 if (valorInicial > 0)
                 {
-                    while (valorDecrescido > 0)
+                    while (valorDecrescido > 0 && (!(VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)))
                     {
                         if (transform.position.x + 0.5f * (larguraPiece / 2) > ((cantosUltimaPosGrid[2].x + cantosUltimaPosGrid[1].x) / 2))
                         {
@@ -138,7 +139,7 @@ public class PieceController : MonoBehaviour
                 }
                 else
                 {
-                    while (valorDecrescido < 0)
+                    while (valorDecrescido < 0 && (!(VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)))
                     {
                         if (transform.position.x - 0.5f * (larguraPiece / 2) < ((cantosPrimeiraPosGrid[2].x + cantosPrimeiraPosGrid[1].x)/2))
                             valorDecrescido = 0;
@@ -156,7 +157,7 @@ public class PieceController : MonoBehaviour
             case "Y":
                 if (valorInicial > 0)
                 {                
-                    while (valorDecrescido > 0)
+                    while (valorDecrescido > 0 && (!(VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)))
                     {
                         if (transform.position.y - 0.5f * (alturaPiece / 2) < ((cantosUltimaPosGrid[1].y + cantosUltimaPosGrid[0].y)/2))
                             valorDecrescido = 0;
@@ -171,7 +172,7 @@ public class PieceController : MonoBehaviour
                 }
                 else
                 {
-                    while (valorDecrescido < 0)
+                    while (valorDecrescido < 0 && (!(VariaveisGlobais.atualControllerLabirinto.adjustingDimensions)))
                     {
                         if (transform.position.y + 0.5f * (alturaPiece / 2) > ((cantosPrimeiraPosGrid[1].y + cantosPrimeiraPosGrid[0].y)/2))
                             valorDecrescido = 0;

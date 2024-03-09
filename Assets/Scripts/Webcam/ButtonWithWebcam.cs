@@ -9,7 +9,7 @@ public class ButtonWithWebcam : MonoBehaviour{
     Image img;
     public Color32 colorHit = new Color32(163, 255, 96, 255);
     public Color32 colorMiss = new Color32(255, 106, 96, 255);
-
+    
     void Start(){
         img = GetComponent<Image>();
     }
@@ -24,19 +24,35 @@ public class ButtonWithWebcam : MonoBehaviour{
         {
             if (changeColor)
                 img.color = colorHit;
+
             if (changeToggle)
                 transform.GetComponent<Toggle>().isOn = true;
             if (activateButton)
                 transform.GetComponent<Button>().onClick.Invoke();
             if (gameObject.GetComponent<CaminhoWebcamItemController>())
-                if (PaterlandGlobal.autorizadoMovimento && gameObject.GetComponent<CaminhoWebcamItemController>().isActiveAndEnabled)
-                    gameObject.GetComponent<CaminhoWebcamItemController>().Verificar();
+                if (PaterlandGlobal.autorizadoMovimento)
+                    if (gameObject.GetComponent<CaminhoWebcamItemController>().isActiveAndEnabled)
+                        if (VariaveisGlobais.atualControllerLabirinto.adjustingDimensions == false)
+                            gameObject.GetComponent<CaminhoWebcamItemController>().Verificar();
         }
         else
         {
-            //img.color = new Color32( 255, 106, 96, 255 );
             if (changeColor)
                 img.color = colorMiss;
         }              
+    }
+
+    public void ChangeOpacityColorsHitMiss(bool changeColor)
+    {
+        if (changeColor)
+        {
+            colorHit = new Color32(colorHit.r, colorHit.g, colorHit.b, 128);
+            colorMiss = new Color32(colorMiss.r, colorMiss.g, colorMiss.b, 128);
+        }
+        else
+        {
+            colorHit = new Color32(colorHit.r, colorHit.g, colorHit.b, 0);
+            colorMiss = new Color32(colorMiss.r, colorMiss.g, colorMiss.b, 0);
+        }
     }
 }

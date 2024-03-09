@@ -6,6 +6,7 @@ public class GrudaDetector : MonoBehaviour
 {
     public char lado;
     public Transform bola;
+
     void Update()
     {
         switch (lado.ToString().ToUpper())

@@ -136,8 +136,7 @@ public class Webcam : MonoBehaviour {
         if (Display)
         {
             Display.texture = blendTexture;
-            scaleH = webcamTexture.width / Display.rectTransform.rect.width;
-            scaleV = webcamTexture.height / Display.rectTransform.rect.height;
+			AtualizarEscala();
         }
 
         if (Display2)
@@ -146,12 +145,17 @@ public class Webcam : MonoBehaviour {
         }
     }
 
+	public void AtualizarEscala()
+	{
+        scaleH = webcamTexture.width / Display.rectTransform.rect.width;
+        scaleV = webcamTexture.height / Display.rectTransform.rect.height;
+    }
 
-	/*
+    /*
 		UPDATE
 		Todo frame calcula a diferença de frames e atualiza a textura
 	 */
-	void Update()
+    void Update()
 	{
 		// Aguarda inicialização e inicializa variaveis
 		if (!initialized || webcamTexture.width == 0)
@@ -218,6 +222,9 @@ public class Webcam : MonoBehaviour {
 			internalCounterFrames++;
 		else
 			PaterlandGlobal.autorizadoMovimento = true;
+
+		if (Display || Display2)
+			AtualizarEscala();
     }
 
 	/*
