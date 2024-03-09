@@ -202,48 +202,49 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         int yMaxCellFinalIndex;
         int yMinCellFinalIndex;
 
-        if (firstAutomaticMaze)
-        {
-            // reduz o tamanho do grid para que não fique muito grande na primeira partida
-            if ((xMaxColumnIndex-2) - (xMinColumnIndex+2) > 2)
-            {
-                xMaxColumnFinalIndex = xMaxColumnIndex - 2;
-                xMinColumnFinalIndex = xMinColumnIndex + 2;
-            }
-            else if ((xMaxColumnIndex-1) - (xMinColumnIndex+1) > 2)
-            {
-                xMaxColumnFinalIndex = xMaxColumnIndex - 1;
-                xMinColumnFinalIndex = xMinColumnIndex + 1;
-            }
-            else
-            {
-                xMaxColumnFinalIndex = xMaxColumnIndex;
-                xMinColumnFinalIndex = xMinColumnIndex;
-            }
+        // Como só tem uma calibração agora, isso não é necessário
+        // if (firstAutomaticMaze)
+        // {
+        //     // reduz o tamanho do grid para que não fique muito grande na primeira partida
+        //     if ((xMaxColumnIndex-2) - (xMinColumnIndex+2) > 2)
+        //     {
+        //         xMaxColumnFinalIndex = xMaxColumnIndex - 2;
+        //         xMinColumnFinalIndex = xMinColumnIndex + 2;
+        //     }
+        //     else if ((xMaxColumnIndex-1) - (xMinColumnIndex+1) > 2)
+        //     {
+        //         xMaxColumnFinalIndex = xMaxColumnIndex - 1;
+        //         xMinColumnFinalIndex = xMinColumnIndex + 1;
+        //     }
+        //     else
+        //     {
+        //         xMaxColumnFinalIndex = xMaxColumnIndex;
+        //         xMinColumnFinalIndex = xMinColumnIndex;
+        //     }
 
-            if ((yMinCellIndex-2) - (yMaxCellIndex+2) > 2)
-            {
-                yMaxCellFinalIndex = yMaxCellIndex + 2;
-                yMinCellFinalIndex = yMinCellIndex - 2;
-            }
-            else if ((yMinCellIndex-1) - (yMaxCellIndex+1) > 2)
-            {
-                yMaxCellFinalIndex = yMaxCellIndex + 1;
-                yMinCellFinalIndex = yMinCellIndex - 1;
-            }
-            else
-            {
-                yMaxCellFinalIndex = yMaxCellIndex;
-                yMinCellFinalIndex = yMinCellIndex;
-            }
-        }
-        else
-        {
+        //     if ((yMinCellIndex-2) - (yMaxCellIndex+2) > 2)
+        //     {
+        //         yMaxCellFinalIndex = yMaxCellIndex + 2;
+        //         yMinCellFinalIndex = yMinCellIndex - 2;
+        //     }
+        //     else if ((yMinCellIndex-1) - (yMaxCellIndex+1) > 2)
+        //     {
+        //         yMaxCellFinalIndex = yMaxCellIndex + 1;
+        //         yMinCellFinalIndex = yMinCellIndex - 1;
+        //     }
+        //     else
+        //     {
+        //         yMaxCellFinalIndex = yMaxCellIndex;
+        //         yMinCellFinalIndex = yMinCellIndex;
+        //     }
+        // }
+        // else
+        // {
             xMaxColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMaxColumnIndex, timePerCoinLeftToRight, false, true, xMinColumnIndex); // canto direito - usa leftToRight
             xMinColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMinColumnIndex, timePerCoinRightToLeft, true, true, xMaxColumnIndex); // canto esquerdo - usa rightToLeft
             yMaxCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMaxCellIndex, timePerCoinBottomToTop, true, false, yMinCellIndex); // canto superior - usa bottomToTop
             yMinCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMinCellIndex, timePerCoinTopToBottom, false, false, yMaxCellIndex); // canto inferior - usa topToBottom
-        }
+        // }
 
         return new int[] { xMaxColumnFinalIndex, yMaxCellFinalIndex, xMinColumnFinalIndex, yMinCellFinalIndex };
     }
