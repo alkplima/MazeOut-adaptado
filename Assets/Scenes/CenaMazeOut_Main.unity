@@ -78196,6 +78196,7 @@ GameObject:
   - component: {fileID: 1172177729}
   - component: {fileID: 1172177728}
   - component: {fileID: 1172177727}
+  - component: {fileID: 1172177730}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -78230,13 +78231,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172177725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1da35206656ff461f9ea567f58b84144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   websocketToken: dNivBCD3rciwSBuPTVL45uDhrx64TE8g2fZ4e6981AJhVPYS1neGuVxWNtuQYWVt
-  hyperateID: 
+  hyperateID: internal-testing
 --- !u!114 &1172177728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78279,6 +78280,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172177725}
   m_CullTransparentMesh: 1
+--- !u!114 &1172177730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172177725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ebc3fe146cb5c42979c733c3dc88b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  websocketToken: dNivBCD3rciwSBuPTVL45uDhrx64TE8g2fZ4e6981AJhVPYS1neGuVxWNtuQYWVt
+  hyperateID: internal-testing
 --- !u!1 &1172179759
 GameObject:
   m_ObjectHideFlags: 0
