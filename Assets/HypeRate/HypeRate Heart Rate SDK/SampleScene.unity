@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   websocketToken: dNivBCD3rciwSBuPTVL45uDhrx64TE8g2fZ4e6981AJhVPYS1neGuVxWNtuQYWVt
-  hyperateID: 70193
+  hyperateID: internal-testing
 --- !u!114 &256325958
 MonoBehaviour:
   m_ObjectHideFlags: 0
