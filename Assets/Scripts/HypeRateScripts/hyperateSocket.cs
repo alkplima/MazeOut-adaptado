@@ -30,7 +30,7 @@ public class hyperateSocket : MonoBehaviour
 
     bool GotHypeRateID()
     {
-        if (PlayerPrefs.HasKey("HypeRateID"))
+        if (PlayerPrefs.HasKey("HypeRateID") && PlayerPrefs.GetString("HypeRateID") != "")
         {
             hyperateID = PlayerPrefs.GetString("HypeRateID");
             Debug.Log("Achou o HypeRateID: " + hyperateID);
@@ -83,7 +83,10 @@ public class hyperateSocket : MonoBehaviour
     void Update()
     {
 #if !UNITY_WEBGL || UNITY_EDITOR
-        websocket.DispatchMessageQueue();
+    	if (websocket != null && PlayerPrefs.HasKey("HypeRateID") && PlayerPrefs.GetString("HypeRateID") != "")
+        {
+            websocket.DispatchMessageQueue();
+        }
 #endif
     }
 
