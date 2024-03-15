@@ -53,6 +53,8 @@ public static class VariaveisGlobais
     public static char currentCollectedCoinDirection; // 0, 1, 2, 3 (cima, dir, baixo, esq)
     
     public static int tamanhoBufferBD = 0; // Armazena temporariamente o tamanho do vetor de buffer a ser enviado pro BD
+    public static int maxHRPartidaAtual;
+    public static int maxHRPartidaAnterior;
 
 
     public static void AtualizarAtributosBuffer(int startIndex)
@@ -77,7 +79,8 @@ public static class VariaveisGlobais
             itensRelatorio[i].CoordenadaX_Maxima = corX_Max;
             itensRelatorio[i].CoordenadaY_Maxima = corY_Max;
             itensRelatorio[i].CoordenadaX_Minima = corX_Min;
-            itensRelatorio[i].CoordenadaY_Minima = corY_Min;    
+            itensRelatorio[i].CoordenadaY_Minima = corY_Min;   
+            itensRelatorio[i].FrequenciaCardiacaMaxima = maxHRPartidaAtual; 
         }
     }
 
@@ -122,6 +125,7 @@ public class ItemEventoDB
     public int CoordenadaX_Minima { get; set; }
     public int CoordenadaY_Minima { get; set; }
     public double TempoTotalGasto { get; set; }
+    public int FrequenciaCardiacaMaxima { get; set; }
 
 }
 

@@ -114,7 +114,8 @@ public class CoinCollectionController : MonoBehaviour
             CoordenadaY_Maxima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_Maxima, false),
             CoordenadaX_Minima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaX_Minima, true),
             CoordenadaY_Minima = GetCoordinateIndexInGrid(VariaveisGlobais.coordenadaY_Minima, false),
-            TempoTotalGasto = VariaveisGlobais.tempoTotalGasto
+            TempoTotalGasto = VariaveisGlobais.tempoTotalGasto,
+            FrequenciaCardiacaMaxima = VariaveisGlobais.maxHRPartidaAtual
         };
 
         Array.Resize(ref VariaveisGlobais.itensRelatorio, VariaveisGlobais.itensRelatorio.Length + 1);

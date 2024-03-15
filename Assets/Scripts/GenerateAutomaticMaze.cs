@@ -374,8 +374,15 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             // Conferindo se pode diminuir
             if ((shouldDecreaseToGrow && otherCoordinateExtremeIndex - index > 3) || (!shouldDecreaseToGrow && index - otherCoordinateExtremeIndex > 3))
             {
-                if (timePerCoinInDirection < 1)
+                // Se foi +- devagar ou se HR diminuiu (ficou mais calmo) -> não facilita, só mantém
+                if (timePerCoinInDirection < 1 || VariaveisGlobais.maxHRPartidaAtual < VariaveisGlobais.maxHRPartidaAnterior)
+                {
+                    if (VariaveisGlobais.maxHRPartidaAtual < VariaveisGlobais.maxHRPartidaAnterior)
+                    {
+                        Debug.Log("HR diminuiu, não facilita");
+                    }
                     cellGrowth = 0;
+                }
                 else 
                 {
                     cellGrowth = -maxCellGrowthOrShrink;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UI_WaitNextScreen : MonoBehaviour
 {
-    public GameObject successModal, failureModal;
+    public GameObject successModal, successModalWithHR, failureModal;
 
     public void waitSuccess()
     {
@@ -26,7 +26,10 @@ public class UI_WaitNextScreen : MonoBehaviour
         switch (whatModal)
         {
             case ("success"):
-                successModal.SetActive(true);
+                if (VariaveisGlobais.maxHRPartidaAtual != -1)
+                    successModalWithHR.SetActive(true);
+                else
+                    successModal.SetActive(true);
                 break;
 
             case ("failure"):

@@ -14,6 +14,7 @@ public class hyperateSocket : MonoBehaviour
     public string hyperateID = "internal-testing";
 	// Textbox to display your heart rate in
     Text textBox;
+    int currentHR;
 	// Websocket for connection with Hyperate
     WebSocket websocket;
     
@@ -21,6 +22,9 @@ public class hyperateSocket : MonoBehaviour
     {
         textBox = GetComponent<Text>();
         textBox.text = "-";
+        currentHR = 0;
+        VariaveisGlobais.maxHRPartidaAnterior = VariaveisGlobais.maxHRPartidaAtual;
+        VariaveisGlobais.maxHRPartidaAtual = -1;
 
         if (GotHypeRateID())
         {
@@ -69,6 +73,7 @@ public class hyperateSocket : MonoBehaviour
             if (msg["event"].ToString() == "hr_update")
             {
                 // Change textbox text into the newly received Heart Rate (integer like "86" which represents beats per minute)
+                currentHR = (int) msg["payload"]["hr"];
                 textBox.text = (string) msg["payload"]["hr"];
             }
         };
@@ -85,6 +90,10 @@ public class hyperateSocket : MonoBehaviour
 #if !UNITY_WEBGL || UNITY_EDITOR
     	if (websocket != null && PlayerPrefs.HasKey("HypeRateID") && PlayerPrefs.GetString("HypeRateID") != "")
         {
+            if (currentHR > VariaveisGlobais.maxHRPartidaAtual)
+            {
+                VariaveisGlobais.maxHRPartidaAtual = currentHR;
+            }
             websocket.DispatchMessageQueue();
         }
 #endif
