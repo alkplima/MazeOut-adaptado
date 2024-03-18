@@ -53,6 +53,9 @@ public static class VariaveisGlobais
     public static char currentCollectedCoinDirection; // 0, 1, 2, 3 (cima, dir, baixo, esq)
     
     public static int tamanhoBufferBD = 0; // Armazena temporariamente o tamanho do vetor de buffer a ser enviado pro BD
+    public static int avgHRBottomToTop, avgHRTopToBottom, avgHRLeftToRight, avgHRRightToLeft;
+    public static int avgHRRetaAtual;
+    public static int avgHRPartidaAnterior;
     public static int minHRPartidaAtual;
     public static int avgHRPartidaAtual;
     public static int maxHRPartidaAtual;
@@ -81,10 +84,10 @@ public static class VariaveisGlobais
             itensRelatorio[i].CoordenadaX_Maxima = corX_Max;
             itensRelatorio[i].CoordenadaY_Maxima = corY_Max;
             itensRelatorio[i].CoordenadaX_Minima = corX_Min;
-            itensRelatorio[i].CoordenadaY_Minima = corY_Min;   
-            itensRelatorio[i].FrequenciaCardiacaMinima = minHRPartidaAtual; 
-            itensRelatorio[i].FrequenciaCardiacaMedia = avgHRPartidaAtual; 
-            itensRelatorio[i].FrequenciaCardiacaMaxima = maxHRPartidaAtual; 
+            itensRelatorio[i].CoordenadaY_Minima = corY_Min;
+            itensRelatorio[i].FrequenciaCardiacaMinimaPartida = minHRPartidaAtual; 
+            itensRelatorio[i].FrequenciaCardiacaMediaPartida = avgHRPartidaAtual; 
+            itensRelatorio[i].FrequenciaCardiacaMaximaPartida = maxHRPartidaAtual; 
         }
     }
 
@@ -129,9 +132,10 @@ public class ItemEventoDB
     public int CoordenadaX_Minima { get; set; }
     public int CoordenadaY_Minima { get; set; }
     public double TempoTotalGasto { get; set; }
-    public int FrequenciaCardiacaMinima { get; set; }
-    public int FrequenciaCardiacaMedia { get; set; }
-    public int FrequenciaCardiacaMaxima { get; set; }
+    public int FrequenciaCardiacaMediaReta { get; set; }
+    public int FrequenciaCardiacaMinimaPartida { get; set; }
+    public int FrequenciaCardiacaMediaPartida { get; set; }
+    public int FrequenciaCardiacaMaximaPartida { get; set; }
 
 }
 

@@ -69,7 +69,7 @@ public class Coin : MonoBehaviour
 
                     // Add entrada no relatório se mudou direção/reta
                     if (MudouDirecao())
-                    {      
+                    {
                         if (EhPrimeiraMoedaDoJogoQueConta())
                         {
                             VariaveisGlobais.coordenadaX_InicioReta = this.GetComponent<RectTransform>().position.x;

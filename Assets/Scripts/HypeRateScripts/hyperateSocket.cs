@@ -15,9 +15,14 @@ public class hyperateSocket : MonoBehaviour
 	// Textbox to display your heart rate in
     Text textBox;
     int currentHR;
-	// Websocket for connection with Hyperate    
-    int framesCount;
-    float totalHR;
+	// Websocket for connection with Hyperate
+    int framesCountOnMatch;
+    float totalMatchHR;
+    int currentLine;
+    int framesCountOnLine;
+    float totalLineHR;
+    int frameCountTopToBottom, frameCountBottomToTop, frameCountLeftToRight, frameCountRightToLeft;
+    int totalHRTopToBottom, totalHRBottomToTop, totalHRLeftToRight, totalHRRightToLeft;
     WebSocket websocket;
     
     void OnEnable()
@@ -35,8 +40,11 @@ public class hyperateSocket : MonoBehaviour
     {
         textBox.text = "-";
         currentHR = 0;
-        framesCount = 0;
-        totalHR = 0f;
+        framesCountOnMatch = 0;
+        totalMatchHR = 0f;
+        currentLine = VariaveisGlobais.numReta;
+        framesCountOnLine = 0;
+        totalLineHR = 0f;
         VariaveisGlobais.maxHRPartidaAnterior = VariaveisGlobais.maxHRPartidaAtual;
         VariaveisGlobais.maxHRPartidaAtual = -1;
         VariaveisGlobais.minHRPartidaAtual = -1;
@@ -116,9 +124,12 @@ public class hyperateSocket : MonoBehaviour
                 }
 
                 // Atualiza o HR médio da partida
-                totalHR += currentHR;
-                framesCount++;
-                VariaveisGlobais.avgHRPartidaAtual = (int) totalHR / framesCount;
+                totalMatchHR += currentHR;
+                framesCountOnMatch++;
+                VariaveisGlobais.avgHRPartidaAtual = (int) totalMatchHR / framesCountOnMatch;
+
+                // Atualiza o HR médio da reta
+                UpdateAvgHRInCurrentLine();
             }
 
             websocket.DispatchMessageQueue();
@@ -140,8 +151,49 @@ public class hyperateSocket : MonoBehaviour
         {
             // Send heartbeat message in order to not be suspended from the connection
             await websocket.SendText("{\"topic\": \"phoenix\",\"event\": \"heartbeat\",\"payload\": {},\"ref\": 0}");
-
         }
+    }
+
+    private void UpdateAvgHRInCurrentLine()
+    {
+        // Acabou de mudar de reta
+        if (currentLine != VariaveisGlobais.numReta) 
+        {
+            currentLine = VariaveisGlobais.numReta;
+            framesCountOnLine = 0;
+            totalLineHR = 0f;
+        }
+
+        // Atualiza o HR da reta
+        switch (VariaveisGlobais.currentCollectedCoinDirection)
+        {
+            case '0':
+                totalHRBottomToTop += currentHR;
+                frameCountBottomToTop++;
+                VariaveisGlobais.avgHRBottomToTop = (int) totalHRBottomToTop / frameCountBottomToTop;
+                break;
+            case '1':
+                totalHRLeftToRight += currentHR;
+                frameCountLeftToRight++;
+                VariaveisGlobais.avgHRLeftToRight = (int) totalHRLeftToRight / frameCountLeftToRight;
+                break;
+            case '2':
+                totalHRTopToBottom += currentHR;
+                frameCountTopToBottom++;
+                VariaveisGlobais.avgHRTopToBottom = (int) totalHRTopToBottom / frameCountTopToBottom;
+                break;
+            case '3':
+                totalHRRightToLeft += currentHR;
+                frameCountRightToLeft++;
+                VariaveisGlobais.avgHRRightToLeft = (int) totalHRRightToLeft / frameCountRightToLeft;
+                break;
+            default:
+                break;
+        }
+
+        totalLineHR += currentHR;
+        framesCountOnLine++;
+        VariaveisGlobais.avgHRRetaAtual = (int) totalLineHR / framesCountOnLine;
     }
 
     private async void OnApplicationQuit()
@@ -149,6 +201,11 @@ public class hyperateSocket : MonoBehaviour
         if (websocket != null)
             if (websocket.State == WebSocketState.Open)
                 await websocket.Close();
+    }
+
+    void OnDisable()
+    {
+        VariaveisGlobais.avgHRPartidaAnterior = VariaveisGlobais.avgHRPartidaAtual;
     }
 
 }

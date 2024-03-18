@@ -66,6 +66,14 @@ public class ViewOptionItem : MonoBehaviour
                 gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("Arraste");
                 UpdateValues("TextoArraste");
                 break;
+            case "TextHROnly":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text2.text = "Frequência cardíaca média da partida anterior";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text2.text = "Average heart rate from previous match";
+                else
+                    text2.text = "Frequência cardíaca média da partida anterior";
+                break;
             case "TextWeighted":
                 if (VariaveisGlobais.Idioma == "BR") 
                     text2.text = "Média ponderada de todas partidas";
@@ -90,17 +98,21 @@ public class ViewOptionItem : MonoBehaviour
                 else
                     text2.text = "Desempenho apenas da calibração";
                 break;
-            case "OptionWeightedAverage":
+            // case "OptionWeightedAverage":
+            case "OptionHeartRateOnly":
                 if (PlayerPrefs.GetInt("DataProcessingMode") == 1) 
                 {
-                    GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+                    // GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
+                    GameObject.Find("OptionHeartRateOnly").GetComponent<Image>().color = new Color(0.85f, 0.93f, 0.74f, 1f);
                 }
                 else
                 {
-                    GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = Color.white;
+                    // GameObject.Find("OptionWeightedAverage").GetComponent<Image>().color = Color.white;
+                    GameObject.Find("OptionHeartRateOnly").GetComponent<Image>().color = Color.white;
                 }
                 UpdateValues("TextoModoProcessamentoDeDados");
-                UpdateValues("TextWeighted");
+                // UpdateValues("TextWeighted");
+                UpdateValues("TextHROnly");
                 break;
             case "OptionPerformanceFromPreviousMatchOnly":
                 if (PlayerPrefs.GetInt("DataProcessingMode") == 2) 
@@ -214,7 +226,8 @@ public class ViewOptionItem : MonoBehaviour
     {
         int selectedMode = PlayerPrefs.GetInt("DataProcessingMode");
 
-        SetItemColor("OptionWeightedAverage", selectedMode == 1);
+        // SetItemColor("OptionWeightedAverage", selectedMode == 1);
+        SetItemColor("OptionHeartRateOnly", selectedMode == 1);
         SetItemColor("OptionPerformanceFromPreviousMatchOnly", selectedMode == 2);
         // SetItemColor("OptionPerformanceFromCalibrationOnly", selectedMode == 3);
     }
