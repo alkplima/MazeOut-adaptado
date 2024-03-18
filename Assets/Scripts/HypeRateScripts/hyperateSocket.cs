@@ -15,21 +15,32 @@ public class hyperateSocket : MonoBehaviour
 	// Textbox to display your heart rate in
     Text textBox;
     int currentHR;
-	// Websocket for connection with Hyperate
+	// Websocket for connection with Hyperate    
+    int framesCount;
+    float totalHR;
     WebSocket websocket;
     
     void OnEnable()
     {
         textBox = GetComponent<Text>();
-        textBox.text = "-";
-        currentHR = 0;
-        VariaveisGlobais.maxHRPartidaAnterior = VariaveisGlobais.maxHRPartidaAtual;
-        VariaveisGlobais.maxHRPartidaAtual = -1;
+        SetInitialValues();
 
         if (GotHypeRateID())
         {
             Connect();
         }
+    }
+
+    void SetInitialValues()
+    {
+        textBox.text = "-";
+        currentHR = 0;
+        framesCount = 0;
+        totalHR = 0f;
+        VariaveisGlobais.maxHRPartidaAnterior = VariaveisGlobais.maxHRPartidaAtual;
+        VariaveisGlobais.maxHRPartidaAtual = -1;
+        VariaveisGlobais.minHRPartidaAtual = -1;
+        VariaveisGlobais.avgHRPartidaAtual = -1;
     }
 
     bool GotHypeRateID()
@@ -90,10 +101,26 @@ public class hyperateSocket : MonoBehaviour
 #if !UNITY_WEBGL || UNITY_EDITOR
     	if (websocket != null && PlayerPrefs.HasKey("HypeRateID") && PlayerPrefs.GetString("HypeRateID") != "")
         {
+            // Atualiza o HR máximo da partida
             if (currentHR > VariaveisGlobais.maxHRPartidaAtual)
             {
                 VariaveisGlobais.maxHRPartidaAtual = currentHR;
             }
+
+            if ( currentHR != 0) 
+            {
+                // Atualiza o HR mínimo da partida
+                if ((VariaveisGlobais.minHRPartidaAtual == -1 || currentHR < VariaveisGlobais.minHRPartidaAtual))
+                {
+                    VariaveisGlobais.minHRPartidaAtual = currentHR;
+                }
+
+                // Atualiza o HR médio da partida
+                totalHR += currentHR;
+                framesCount++;
+                VariaveisGlobais.avgHRPartidaAtual = (int) totalHR / framesCount;
+            }
+
             websocket.DispatchMessageQueue();
         }
 #endif

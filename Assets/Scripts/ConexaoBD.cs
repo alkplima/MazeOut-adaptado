@@ -66,6 +66,8 @@ public class ConexaoBD : MonoBehaviour {
                 VariaveisGlobais.itensRelatorio[i].CoordenadaY_Maxima + ";" +
                 VariaveisGlobais.itensRelatorio[i].CoordenadaX_Minima + ";" +
                 VariaveisGlobais.itensRelatorio[i].CoordenadaY_Minima + ";" +
+                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMinima + ";" +
+                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMedia + ";" +
                 VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMaxima + ";" +
                 VariaveisGlobais.NomeDoJogo + System.Environment.NewLine;
         }
