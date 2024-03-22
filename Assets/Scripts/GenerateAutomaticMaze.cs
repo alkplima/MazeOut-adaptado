@@ -43,16 +43,16 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             wantToRetry = true;
     }
 
-    void OnDisable()
-    {
-        Debug.Log("--------------------------------------------------");
-        Debug.Log("OnDisable: Qual tempo usou pra adaptar essa fase que acabou");
-        Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
-        Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
-        Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
-        Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
-        Debug.Log("--------------------------------------------------");
-    }
+    // void OnDisable()
+    // {
+    //     Debug.Log("--------------------------------------------------");
+    //     Debug.Log("OnDisable: Qual tempo usou pra adaptar essa fase que acabou");
+    //     Debug.Log("TimePerCoinBottomToTop: " + timePerCoinBottomToTop);
+    //     Debug.Log("TimePerCoinTopToBottom: " + timePerCoinTopToBottom);
+    //     Debug.Log("TimePerCoinLeftToRight: " + timePerCoinLeftToRight);
+    //     Debug.Log("TimePerCoinRightToLeft: " + timePerCoinRightToLeft);
+    //     Debug.Log("--------------------------------------------------");
+    // }
 
     private void GenerateAutomaticMazeFromData()
     {
@@ -244,11 +244,11 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         // {
         if (PlayerPrefs.GetInt("DataProcessingMode") == 1) // Deve usar HR
         {
-            Debug.Log("Só está usando o batimento cardíaco");
-            Debug.Log("Vai aumentar pra direita: " + (avgHRLeftToRight < VariaveisGlobais.avgHRPartidaAnterior));
-            Debug.Log("Vai aumentar pra esquerda: " + (avgHRRightToLeft < VariaveisGlobais.avgHRPartidaAnterior));
-            Debug.Log("Vai aumentar pra baixo: " + (avgHRBottomToTop < VariaveisGlobais.avgHRPartidaAnterior));
-            Debug.Log("Vai aumentar pra cima: " + (avgHRTopToBottom < VariaveisGlobais.avgHRPartidaAnterior));
+            // Debug.Log("Só está usando o batimento cardíaco");
+            // Debug.Log("Vai aumentar pra direita: " + (avgHRLeftToRight < VariaveisGlobais.avgHRPartidaAnterior));
+            // Debug.Log("Vai aumentar pra esquerda: " + (avgHRRightToLeft < VariaveisGlobais.avgHRPartidaAnterior));
+            // Debug.Log("Vai aumentar pra baixo: " + (avgHRBottomToTop < VariaveisGlobais.avgHRPartidaAnterior));
+            // Debug.Log("Vai aumentar pra cima: " + (avgHRTopToBottom < VariaveisGlobais.avgHRPartidaAnterior));
 
             xMaxColumnFinalIndex = IndexWithPseudoGrowthOrShrinkFromHR(xMaxColumnIndex, avgHRLeftToRight, false, true, xMinColumnIndex); // canto direito - usa leftToRight
             xMinColumnFinalIndex = IndexWithPseudoGrowthOrShrinkFromHR(xMinColumnIndex, avgHRRightToLeft, true, true, xMaxColumnIndex); // canto esquerdo - usa rightToLeft
@@ -256,7 +256,6 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
             yMinCellFinalIndex = IndexWithPseudoGrowthOrShrinkFromHR(yMinCellIndex, avgHRTopToBottom, false, false, yMaxCellIndex); // canto inferior - usa topToBottom
         } else
         {
-            Debug.Log("Só está usando o desempenho");
             xMaxColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMaxColumnIndex, timePerCoinLeftToRight, false, true, xMinColumnIndex); // canto direito - usa leftToRight
             xMinColumnFinalIndex = IndexWithPseudoGrowthOrShrink(xMinColumnIndex, timePerCoinRightToLeft, true, true, xMaxColumnIndex); // canto esquerdo - usa rightToLeft
             yMaxCellFinalIndex = IndexWithPseudoGrowthOrShrink(yMaxCellIndex, timePerCoinBottomToTop, true, false, yMinCellIndex); // canto superior - usa bottomToTop
@@ -276,7 +275,6 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
         // }
         // else
         // {
-            Debug.Log("Usou média ponderada");
             minX = (!float.IsNaN(VariaveisGlobais.minX)) ? (VariaveisGlobais.minX < minX) ? VariaveisGlobais.minX : (0.7f * VariaveisGlobais.minX + 0.3f * minX) : minX;
             minY = (!float.IsNaN(VariaveisGlobais.minY)) ? (VariaveisGlobais.minY < minY) ? VariaveisGlobais.minY : (0.7f * VariaveisGlobais.minY + 0.3f * minY) : minY;
             maxX = (!float.IsNaN(VariaveisGlobais.maxX)) ? (VariaveisGlobais.maxX > maxX) ? VariaveisGlobais.maxX : (0.7f * VariaveisGlobais.maxX + 0.3f * maxX) : maxX;
@@ -290,7 +288,6 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
 
     private void PerformanceFromPreviousMatchOnly()
     {
-        Debug.Log("Usou desempenho da partida anterior somente");
         // considera a última partida
         minX = VariaveisGlobais.minX;
         minY = VariaveisGlobais.minY;
@@ -303,9 +300,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
     }
 
     private void HeartRateFromPreviousMatchOnly()
-    {
-        Debug.Log("Usou HR da partida anterior somente");
-        
+    {        
         minX = VariaveisGlobais.minX;
         minY = VariaveisGlobais.minY;
         maxX = VariaveisGlobais.maxX;
@@ -622,7 +617,7 @@ public class GenerateAutomaticMaze : Singleton<SaveHandler>
                 (xCurrentIndexInGrid == xMinColumnIndex && xStep < 0) ||
                 (xCurrentIndexInGrid == xMaxColumnIndex && xStep > 0))
             {
-                Debug.Log("Cheguei em algum limite: "+gridMatrix);
+                // Debug.Log("Cheguei em algum limite: "+gridMatrix);
                 return;
             }
 

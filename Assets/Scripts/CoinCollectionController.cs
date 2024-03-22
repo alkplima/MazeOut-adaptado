@@ -51,8 +51,7 @@ public class CoinCollectionController : MonoBehaviour
         // else {
             if (displayTimer != null) timeWentBy = displayTimer.timer - timerTimeFromLastCoin;
         // }
-        Debug.Log("Tempo desde a última moeda: " + timeWentBy + " segundos.");
-        Debug.Log("Score dessa moeda: " + CalcularScore(timeWentBy) + " pontos.");
+        CalcularScore(timeWentBy);
 
         if (displayTimer != null) timerTimeFromLastCoin = displayTimer.timer;
 
@@ -79,7 +78,7 @@ public class CoinCollectionController : MonoBehaviour
         }
     }
 
-    int CalcularScore(double tempo)
+    void CalcularScore(double tempo)
     {
         if (tempo == 0)
         {
@@ -104,7 +103,7 @@ public class CoinCollectionController : MonoBehaviour
         // else
         // {
             // Score lento
-            return (int)(10 / tempo);
+            // return (int)(10 / tempo);
         // }
     }
 
@@ -114,14 +113,6 @@ public class CoinCollectionController : MonoBehaviour
         VariaveisGlobais.timePerCoinBottomToTop = timeBottomToTop / coinCountBottomToTop;
         VariaveisGlobais.timePerCoinLeftToRight = timeLeftToRight / coinCountLeftToRight;
         VariaveisGlobais.timePerCoinRightToLeft = timeRightToLeft / coinCountRightToLeft;
-
-        Debug.Log("--------------------------------------------------");
-        Debug.Log("Tempo médio por moeda da partida que finalizou (cima-baixo): " + VariaveisGlobais.timePerCoinTopToBottom);
-        Debug.Log("Tempo médio por moeda da partida que finalizou (baixo-cima): " + VariaveisGlobais.timePerCoinBottomToTop);
-        Debug.Log("Tempo médio por moeda da partida que finalizou (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
-        Debug.Log("Tempo médio por moeda da partida que finalizou (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
-        Debug.Log("--------------------------------------------------");
-        Debug.Log("Score final: " + VariaveisGlobais.scoreFinal);
     }
 
     public void AcrescentarEntradaRelatorio()
