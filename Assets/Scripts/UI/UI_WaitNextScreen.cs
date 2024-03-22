@@ -26,7 +26,10 @@ public class UI_WaitNextScreen : MonoBehaviour
         switch (whatModal)
         {
             case ("success"):
-                if (VariaveisGlobais.maxHRPartidaAtual != -1)
+                if (VariaveisGlobais.minHRPartidaAtual != -1 &&
+                    VariaveisGlobais.avgHRPartidaAtual != -1 &&
+                    VariaveisGlobais.maxHRPartidaAtual != -1
+                    )
                     successModalWithHR.SetActive(true);
                 else
                     successModal.SetActive(true);

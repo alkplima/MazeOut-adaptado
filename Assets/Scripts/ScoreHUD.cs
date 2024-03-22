@@ -6,6 +6,7 @@ using TMPro;
 
 public class ScoreHUD : MonoBehaviour {
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] TMP_Text bestScoreText;
     [SerializeField] GameObject scoreChangePrefab;
     [SerializeField] Transform scoreParent;
     [SerializeField] RectTransform endPoint;
@@ -19,6 +20,8 @@ public class ScoreHUD : MonoBehaviour {
 
     private void OnEnable () {
         score = 0;
+        VariaveisGlobais.scoreFinal = 0;
+        VariaveisGlobais.scoreRecorde = PlayerPrefs.HasKey("ScoreRecorde") ? PlayerPrefs.GetInt("ScoreRecorde") : 0;
         Invoke ("UpdateHUD", 0.3f);
     }
 
@@ -33,6 +36,7 @@ public class ScoreHUD : MonoBehaviour {
 
         set {
             ShowScoreChange (value - score);
+            VariaveisGlobais.scoreFinal = value;
             score = value;
             UpdateHUD ();
         }
@@ -49,13 +53,14 @@ public class ScoreHUD : MonoBehaviour {
         text.text = (change > 0 ? "+ " : "") + change.ToString ();
 
         switch (change) {
-            case <0:
-                text.color = colorRed;
-                break;
-            case 1:
+            case <10:
+                // text.color = colorRed;
                 text.color = colorGreen;
                 break;
-            case 50:
+            case <50:
+                text.color = colorBlue;
+                break;
+            case >100:
                 text.color = colorPurple;
                 break;
             default:
@@ -71,6 +76,14 @@ public class ScoreHUD : MonoBehaviour {
     }
 
     private void UpdateHUD () {
-        scoreText.text = score.ToString() + "/" + VariaveisGlobais.totalMoedasNaPartida.ToString();
+        scoreText.text = score.ToString();
+
+        if (score > VariaveisGlobais.scoreRecorde)
+        {
+            VariaveisGlobais.scoreRecorde = score;
+            PlayerPrefs.SetInt("ScoreRecorde", VariaveisGlobais.scoreRecorde);
+        }
+
+        bestScoreText.text = "Best: " + VariaveisGlobais.scoreRecorde.ToString();
     }
 }

@@ -70,6 +70,7 @@ public class ConexaoBD : MonoBehaviour {
                 VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMinimaPartida + ";" +
                 VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMediaPartida + ";" +
                 VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMaximaPartida + ";" +
+                VariaveisGlobais.itensRelatorio[i].ScoreFinal + ";" +
                 VariaveisGlobais.NomeDoJogo + System.Environment.NewLine;
         }
 

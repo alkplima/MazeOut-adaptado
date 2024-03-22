@@ -43,8 +43,8 @@ public class UI_DisplayTimer : MonoBehaviour
 
     void OnDisable()
     {
-        ResetTimer();
         StopTimer();
+        ResetTimer();
     }
 
     void DisplayTime()
@@ -69,6 +69,9 @@ public class UI_DisplayTimer : MonoBehaviour
     public void StopTimer()
     {
         isTimer = false;
+        
+        VariaveisGlobais.tempoTotalGasto = timer;
+        VariaveisGlobais.tempoTotalReta = Time.time - VariaveisGlobais.tempoInicioReta;
     }
 
     public void ResetTimer()

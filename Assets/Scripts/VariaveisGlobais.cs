@@ -23,6 +23,8 @@ public static class VariaveisGlobais
     public static double tempoRestanteEmDouble;
     public static bool ehPrimeiraMoedaDoJogo;
     public static int totalMoedasNaPartida;
+    public static int scoreFinal;
+    public static int scoreRecorde;
 
     public static ConexaoBD conexaoBD = null;
     public static ItemEventoDB[] itensRelatorio = new ItemEventoDB[0];
@@ -88,6 +90,7 @@ public static class VariaveisGlobais
             itensRelatorio[i].FrequenciaCardiacaMinimaPartida = minHRPartidaAtual; 
             itensRelatorio[i].FrequenciaCardiacaMediaPartida = avgHRPartidaAtual; 
             itensRelatorio[i].FrequenciaCardiacaMaximaPartida = maxHRPartidaAtual; 
+            itensRelatorio[i].ScoreFinal = scoreFinal;
         }
     }
 
@@ -136,6 +139,7 @@ public class ItemEventoDB
     public int FrequenciaCardiacaMinimaPartida { get; set; }
     public int FrequenciaCardiacaMediaPartida { get; set; }
     public int FrequenciaCardiacaMaximaPartida { get; set; }
+    public int ScoreFinal { get; set; }
 
 }
 

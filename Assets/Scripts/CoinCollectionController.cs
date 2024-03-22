@@ -18,10 +18,12 @@ public class CoinCollectionController : MonoBehaviour
     public GameObject grid;
     private Vector3[] cantosCelula = new Vector3[4];
     public UI_DisplayTimer displayTimer;
+    ScoreHUD _uiManager;
 
     // Start is called before the first frame update
     void OnEnable()
     {
+        _uiManager = GameObject.Find("GameScreenManager").GetComponent<ScoreHUD>();
         displayTimer = GameObject.FindObjectOfType<UI_DisplayTimer>();
         firstCoin = true;
         coinCountTopToBottom = 0;
@@ -41,14 +43,16 @@ public class CoinCollectionController : MonoBehaviour
     {
         float timeWentBy = 0.0f;
 
-        if (firstCoin) {
-            firstCoin = false;
-            // if (displayTimer != null) timeWentBy = PlayerPrefs.GetInt("Timer") - displayTimer.timer;
-            if (displayTimer != null) timeWentBy = 0;
-        }
-        else {
+        // if (firstCoin) {
+        //     firstCoin = false;
+        //     // if (displayTimer != null) timeWentBy = PlayerPrefs.GetInt("Timer") - displayTimer.timer;
+        //     if (displayTimer != null) timeWentBy = 0;
+        // }
+        // else {
             if (displayTimer != null) timeWentBy = displayTimer.timer - timerTimeFromLastCoin;
-        }
+        // }
+        Debug.Log("Tempo desde a última moeda: " + timeWentBy + " segundos.");
+        Debug.Log("Score dessa moeda: " + CalcularScore(timeWentBy) + " pontos.");
 
         if (displayTimer != null) timerTimeFromLastCoin = displayTimer.timer;
 
@@ -73,7 +77,35 @@ public class CoinCollectionController : MonoBehaviour
             default:
                 break;
         }
+    }
 
+    int CalcularScore(double tempo)
+    {
+        if (tempo == 0)
+        {
+            tempo = 0.1;
+        }
+
+        _uiManager.Score += (int) (10 / tempo);
+
+        // double limiteRapido = 0.6;
+        // double limiteModerado = 1.0;
+
+        // if (tempo < limiteRapido)
+        // {
+        //     // Score rápido
+        //     return (int)(100 / tempo);
+        // }
+        // else if (tempo < limiteModerado)
+        // {
+        //     // Score moderado
+        //     return (int)(50 / tempo);
+        // }
+        // else
+        // {
+            // Score lento
+            return (int)(10 / tempo);
+        // }
     }
 
     void OnDisable() 
@@ -89,6 +121,7 @@ public class CoinCollectionController : MonoBehaviour
         Debug.Log("Tempo médio por moeda da partida que finalizou (esq-dir): " + VariaveisGlobais.timePerCoinLeftToRight);
         Debug.Log("Tempo médio por moeda da partida que finalizou (dir-esq): " + VariaveisGlobais.timePerCoinRightToLeft);
         Debug.Log("--------------------------------------------------");
+        Debug.Log("Score final: " + VariaveisGlobais.scoreFinal);
     }
 
     public void AcrescentarEntradaRelatorio()
