@@ -50,6 +50,12 @@ public class ControllerLabirinto : MonoBehaviour
         if (!PlayerPrefs.HasKey("Timer"))
             PlayerPrefs.SetInt("Timer", 60);
 
+        if (!PlayerPrefs.HasKey("DataProcessingMode"))
+        {
+            PlayerPrefs.SetInt("DataProcessingMode", 2);
+            VariaveisGlobais.dataProcessingMode = 'D';
+        }
+
         if (PlayerPrefs.GetInt("Som")==1)
             audioFundo.Play();
     }

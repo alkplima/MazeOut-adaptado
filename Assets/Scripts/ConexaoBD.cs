@@ -49,6 +49,7 @@ public class ConexaoBD : MonoBehaviour {
                 VariaveisGlobais.itensRelatorio[i].DateTimeInicioPartida + ";" + // Horário do início da partida
                 VariaveisGlobais.itensRelatorio[i].NomePaciente + ";" + // Nome do paciente
                 VariaveisGlobais.itensRelatorio[i].TipoPartida + ";" + // Tipo de partida
+                VariaveisGlobais.itensRelatorio[i].TipoAdaptacao + ";" + // Tipo de adaptacao
                 VariaveisGlobais.itensRelatorio[i].NumReta + ";" +
                 VariaveisGlobais.itensRelatorio[i].DirecaoReta + ";" + // Tempo total configurado para a partida
                 // VariaveisGlobais.itensRelatorio[i].TempoTotalPartida + ";" + // Tempo total configurado (planejado) para a partida

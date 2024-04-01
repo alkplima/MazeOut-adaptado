@@ -12,9 +12,6 @@ public class ViewOptionItem : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!PlayerPrefs.HasKey("DataProcessingMode"))
-            PlayerPrefs.SetInt("DataProcessingMode", 2);
-
         UpdateValues(gameObject.name);
     }
 
@@ -214,6 +211,14 @@ public class ViewOptionItem : MonoBehaviour
     public void SetDataProcessingMode(int value)
     {
         PlayerPrefs.SetInt("DataProcessingMode", value);
+        if (value == 1) 
+        {
+            VariaveisGlobais.dataProcessingMode = 'F';
+        }
+        else
+        {
+            VariaveisGlobais.dataProcessingMode = 'D';
+        }
         UpdateColors();
 
 #if UNITY_WEBGL

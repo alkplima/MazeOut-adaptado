@@ -8,7 +8,6 @@ public class UI_ScoreSetActive : MonoBehaviour
 {
     [SerializeField] private GameObject scoreWrapper;
 
-
     public void OnEnable()
     {
         if (VariaveisGlobais.estiloJogoCorrente != "PartidaAvulsa")

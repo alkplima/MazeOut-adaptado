@@ -55,6 +55,7 @@ public static class VariaveisGlobais
     public static char currentCollectedCoinDirection; // 0, 1, 2, 3 (cima, dir, baixo, esq)
     
     public static int tamanhoBufferBD = 0; // Armazena temporariamente o tamanho do vetor de buffer a ser enviado pro BD
+    public static char dataProcessingMode = 'D';
     public static int avgHRBottomToTop, avgHRTopToBottom, avgHRLeftToRight, avgHRRightToLeft;
     public static int avgHRRetaAtual;
     public static int avgHRPartidaAnterior;
@@ -116,6 +117,7 @@ public static class VariaveisGlobais
 public class ItemEventoDB
 {
     public char TipoPartida { get; set; }
+    public char TipoAdaptacao { get; set; }
     public int NumReta { get; set; }
     public char DirecaoReta { get; set; }
     public string DateTimeInicioPartida { get; set; }
