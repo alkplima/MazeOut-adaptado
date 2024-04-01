@@ -35,6 +35,7 @@ public class ScoreHUD : MonoBehaviour {
         }
 
         set {
+            if (value < 1) value = 1;
             ShowScoreChange (value - score);
             VariaveisGlobais.scoreFinal = value;
             score = value;
@@ -84,6 +85,6 @@ public class ScoreHUD : MonoBehaviour {
             PlayerPrefs.SetInt("ScoreRecorde", VariaveisGlobais.scoreRecorde);
         }
 
-        bestScoreText.text = "Best: " + VariaveisGlobais.scoreRecorde.ToString();
+        bestScoreText.text = "Your best: " + VariaveisGlobais.scoreRecorde.ToString();
     }
 }

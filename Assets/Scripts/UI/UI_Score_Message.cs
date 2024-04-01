@@ -11,6 +11,6 @@ public class UI_Score_Message : MonoBehaviour
     {
         textBox = GetComponent<Text>();
         textBox.text = "Score: " + VariaveisGlobais.scoreFinal.ToString() + "\n" +
-                       "Best: " + VariaveisGlobais.scoreRecorde.ToString();
+                       "Your best: " + VariaveisGlobais.scoreRecorde.ToString();
     }
 }
