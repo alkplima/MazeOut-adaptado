@@ -56,12 +56,12 @@ public class ScoreHUD : MonoBehaviour {
         switch (change) {
             case <10:
                 // text.color = colorRed;
-                text.color = colorGreen;
+                text.color = colorRed;
                 break;
             case <50:
-                text.color = colorBlue;
+                text.color = colorGreen;
                 break;
-            case >100:
+            case >80:
                 text.color = colorPurple;
                 break;
             default:
