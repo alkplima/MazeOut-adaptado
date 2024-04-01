@@ -36,7 +36,7 @@ public class ScoreHUD : MonoBehaviour {
         }
 
         set {
-            if (value == -1) value = 0;
+            if (value < 1) value = 1;
             ShowScoreChange (value - score);
             VariaveisGlobais.scoreFinal = value;
             score = value;
