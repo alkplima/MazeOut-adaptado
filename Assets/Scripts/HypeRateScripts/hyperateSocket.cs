@@ -113,6 +113,7 @@ public class hyperateSocket : MonoBehaviour
             if (currentHR > VariaveisGlobais.maxHRPartidaAtual)
             {
                 VariaveisGlobais.maxHRPartidaAtual = currentHR;
+                Debug.Log("Current HR: " + currentHR + " Max HR: " + VariaveisGlobais.maxHRPartidaAtual);
             }
 
             if ( currentHR != 0) 
