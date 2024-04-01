@@ -7,13 +7,11 @@ using UnityEngine.UI;
 using Newtonsoft.Json.Linq;
 using NativeWebSocket;
 
-public class hyperateSocket : MonoBehaviour
+public class hyperateSocketInvisible : MonoBehaviour
 {
 	// Put your websocket Token ID here
     public string websocketToken = "dNivBCD3rciwSBuPTVL45uDhrx64TE8g2fZ4e6981AJhVPYS1neGuVxWNtuQYWVt"; //You don't have one, get it here https://www.hyperate.io/api
     public string hyperateID = "internal-testing";
-	// Textbox to display your heart rate in
-    Text textBox;
     int currentHR;
 	// Websocket for connection with Hyperate
     int framesCountOnMatch;
@@ -27,7 +25,6 @@ public class hyperateSocket : MonoBehaviour
     
     void OnEnable()
     {
-        textBox = GetComponent<Text>();
         SetInitialValues();
 
         if (GotHypeRateID())
@@ -38,7 +35,6 @@ public class hyperateSocket : MonoBehaviour
 
     void SetInitialValues()
     {
-        textBox.text = "-";
         currentHR = 0;
         framesCountOnMatch = 0;
         totalMatchHR = 0f;
@@ -93,7 +89,6 @@ public class hyperateSocket : MonoBehaviour
             {
                 // Change textbox text into the newly received Heart Rate (integer like "86" which represents beats per minute)
                 currentHR = (int) msg["payload"]["hr"];
-                textBox.text = (string) msg["payload"]["hr"];
             }
         };
 
@@ -208,12 +203,4 @@ public class hyperateSocket : MonoBehaviour
         VariaveisGlobais.avgHRPartidaAnterior = VariaveisGlobais.avgHRPartidaAtual;
     }
 
-}
-
-public class HyperateResponse
-{
-    public string Event { get; set; }
-    public string Payload { get; set; }
-    public string Ref { get; set; }
-    public string Topic { get; set; }
 }
