@@ -161,6 +161,22 @@ public class ViewOptionItem : MonoBehaviour
                     text2.text = "Espelhar verticalmente";
                 UpdateValues("TextoAjustesWebcam");
                 break;
+            case "OptionMostrarHR":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text.text = "Mostrar frequência cardíaca no jogo";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text.text = "Display heart rate in the game";
+                else
+                    text.text = "Mostrar frequência cardíaca no jogo";
+                if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+                {
+                    this.GetComponent<Toggle>().isOn = false;
+                }
+                else
+                {
+                    this.GetComponent<Toggle>().isOn = true;
+                }
+                break;
         }
     }
 
@@ -251,6 +267,18 @@ public class ViewOptionItem : MonoBehaviour
             {
                 itemImage.color = Color.white;
             }
+        }
+    }
+
+    public void ShowHeartRateInGame()
+    {
+        if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+        {
+            PlayerPrefs.SetInt("ShowHeartRate", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ShowHeartRate", 0);
         }
     }
 }

@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UI_ScoreSetActive : MonoBehaviour
+public class UI_ChildElementsSetActive : MonoBehaviour
 {
     [SerializeField] private GameObject scoreWrapper;
+    [SerializeField] private GameObject hrWrapper;
 
     public void OnEnable()
     {
@@ -17,6 +18,15 @@ public class UI_ScoreSetActive : MonoBehaviour
         else
         {
             scoreWrapper.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+        {
+            hrWrapper.SetActive(false);
+        }
+        else
+        {
+            hrWrapper.SetActive(true);
         }
     }
 }
