@@ -33,7 +33,7 @@ public class CoinCountHUD : MonoBehaviour {
         }
 
         set {
-            ShowCoinCountChange (value - coinCount);
+            // ShowCoinCountChange (value - coinCount);
             coinCount = value;
             UpdateHUD ();
         }

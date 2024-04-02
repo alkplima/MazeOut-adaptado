@@ -56,6 +56,9 @@ public class ControllerLabirinto : MonoBehaviour
             VariaveisGlobais.dataProcessingMode = 'D';
         }
 
+        if (!PlayerPrefs.HasKey("ShowHeartRate"))
+            PlayerPrefs.SetInt("ShowHeartRate", 0);
+
         if (PlayerPrefs.GetInt("Som")==1)
             audioFundo.Play();
     }

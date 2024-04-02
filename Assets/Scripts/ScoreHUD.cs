@@ -67,7 +67,7 @@ public class ScoreHUD : MonoBehaviour {
         switch (change) {
             case <10:
                 // text.color = colorRed;
-                rawImage.color = colorRed;
+                rawImage.color = colorBlue;
                 break;
             case <50:
                 rawImage.color = colorGreen;

@@ -253,4 +253,16 @@ public class ViewOptionItem : MonoBehaviour
             }
         }
     }
+
+    public void ShowHeartRateInGame() 
+    {
+        if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+        {
+            PlayerPrefs.SetInt("ShowHeartRate", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ShowHeartRate", 0);
+        }
+    }
 }
