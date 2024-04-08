@@ -62,23 +62,23 @@ public class ScoreHUD : MonoBehaviour {
         text.text = /*(change > 0 ? "+ " : "") +*/ change.ToString ();
         text.color = Color.white;
 
-        RawImage rawImage = handGear.GetComponent<RawImage>();
+        // RawImage rawImage = handGear.GetComponent<RawImage>();
 
-        switch (change) {
-            case <10:
-                // text.color = colorRed;
-                rawImage.color = colorBlue;
-                break;
-            case <50:
-                rawImage.color = colorGreen;
-                break;
-            case >80:
-                rawImage.color = colorPurple;
-                break;
-            default:
-                rawImage.color = colorGreen;
-                break;
-        }
+        // switch (change) {
+        //     case <10:
+        //         // text.color = colorRed;
+        //         rawImage.color = colorBlue;
+        //         break;
+        //     case <50:
+        //         rawImage.color = colorGreen;
+        //         break;
+        //     case >80:
+        //         rawImage.color = colorPurple;
+        //         break;
+        //     default:
+        //         rawImage.color = colorGreen;
+        //         break;
+        // }
         // text.color = change > 0 ? colorGreen : colorRed;
 
         LeanTween.moveZ (rect, handGear.transform.position.z, 1.5f).setOnComplete (() => {

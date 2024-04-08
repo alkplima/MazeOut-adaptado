@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -161,6 +161,22 @@ public class ViewOptionItem : MonoBehaviour
                     text2.text = "Espelhar verticalmente";
                 UpdateValues("TextoAjustesWebcam");
                 break;
+            case "OptionMostrarHR":
+                if (VariaveisGlobais.Idioma == "BR") 
+                    text.text = "Mostrar frequência cardíaca no jogo";
+                else if (VariaveisGlobais.Idioma == "EN")
+                    text.text = "Display heart rate in the game";
+                else
+                    text.text = "Mostrar frequência cardíaca no jogo";
+                if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+                {
+                    this.GetComponent<Toggle>().isOn = false;
+                }
+                else
+                {
+                    this.GetComponent<Toggle>().isOn = true;
+                }
+                break;
         }
     }
 
@@ -254,7 +270,7 @@ public class ViewOptionItem : MonoBehaviour
         }
     }
 
-    public void ShowHeartRateInGame() 
+    public void ShowHeartRateInGame()
     {
         if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
         {
