@@ -15,6 +15,7 @@ public class ScoreHUD : MonoBehaviour {
     [SerializeField] Color colorRed;
     [SerializeField] Color colorPurple;
     [SerializeField] Color colorBlue;
+    [SerializeField] Color colorPadronized;
 
     int score = 0;
 
@@ -53,21 +54,23 @@ public class ScoreHUD : MonoBehaviour {
 
         text.text = (change > 0 ? "+ " : "") + change.ToString ();
 
-        switch (change) {
-            case <10:
-                // text.color = colorRed;
-                text.color = colorRed;
-                break;
-            case <50:
-                text.color = colorGreen;
-                break;
-            case >80:
-                text.color = colorPurple;
-                break;
-            default:
-                text.color = colorGreen;
-                break;
-        }
+        text.color = colorPadronized;
+
+        // switch (change) {
+        //     case <10:
+        //         // text.color = colorRed;
+        //         text.color = colorRed;
+        //         break;
+        //     case <50:
+        //         text.color = colorGreen;
+        //         break;
+        //     case >80:
+        //         text.color = colorPurple;
+        //         break;
+        //     default:
+        //         text.color = colorGreen;
+        //         break;
+        // }
         // text.color = change > 0 ? colorGreen : colorRed;
 
         LeanTween.moveY (rect, endPoint.anchoredPosition.y, 1.5f).setOnComplete (() => {
