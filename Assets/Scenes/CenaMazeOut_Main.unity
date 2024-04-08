@@ -83028,6 +83028,7 @@ MonoBehaviour:
   colorRed: {r: 1, g: 0, b: 0, a: 1}
   colorPurple: {r: 0.8745098, g: 0, b: 1, a: 1}
   colorBlue: {r: 0.2569865, g: 0.54403913, b: 0.990566, a: 1}
+  colorPadronized: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1215878662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96495,8 +96496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: 25}
-  m_SizeDelta: {x: 350, y: -75}
+  m_AnchoredPosition: {x: 25, y: 74.063}
+  m_SizeDelta: {x: 350, y: -124.06}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1460160567
 GameObject:
@@ -122696,7 +122697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v1.2
+  m_Text: v1.4
 --- !u!222 &1827497745
 CanvasRenderer:
   m_ObjectHideFlags: 0
