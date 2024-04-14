@@ -7,6 +7,8 @@ public class UI_SetHypeRateID : MonoBehaviour
 {
     public InputField IDInputField;
 
+    public Text heartRateText;
+
     public void OnEnable()
     {
         if (PlayerPrefs.HasKey("HypeRateID"))
@@ -17,6 +19,7 @@ public class UI_SetHypeRateID : MonoBehaviour
     public void ChangeHypeRateID(string id)
     {
         PlayerPrefs.SetString("HypeRateID", id);
+        RecarregarIndicadorHR();
     }
 
     private void AtualizarValorInputField()
@@ -25,5 +28,17 @@ public class UI_SetHypeRateID : MonoBehaviour
         {
             IDInputField.text = PlayerPrefs.GetString("HypeRateID");
         }
+    }
+
+    private void RecarregarIndicadorHR()
+    {
+        heartRateText.gameObject.SetActive(false);
+
+        Invoke("ReativarTexto", 1f);
+    }
+
+    void ReativarTexto()
+    {
+        heartRateText.gameObject.SetActive(true);
     }
 }

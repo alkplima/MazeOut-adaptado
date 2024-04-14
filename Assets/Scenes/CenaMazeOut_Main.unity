@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311926, g: 0.38073996, b: 0.35872683, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1137,7 +1137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -282.04013, y: -75}
+  m_AnchoredPosition: {x: -282.04016, y: -75}
   m_SizeDelta: {x: -564.08, y: 30.11}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &13712157
@@ -12128,7 +12128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144.44444, y: -260}
+  m_AnchoredPosition: {x: 144.44446, y: -260}
   m_SizeDelta: {x: 57.77778, y: 520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193672808
@@ -57293,7 +57293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -284.0101, y: -77}
+  m_AnchoredPosition: {x: -284.01013, y: -77}
   m_SizeDelta: {x: -564.65, y: 32.99}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &830468007
@@ -87649,7 +87649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -282.04013, y: -125}
+  m_AnchoredPosition: {x: -282.04016, y: -125}
   m_SizeDelta: {x: -564.08, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1310345501
@@ -87766,7 +87766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520.0301, y: 192.89001}
+  m_AnchoredPosition: {x: 520.03, y: 192.89001}
   m_SizeDelta: {x: 115.62, y: 134.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1312088252
@@ -93666,6 +93666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IDInputField: {fileID: 1409048150}
+  heartRateText: {fileID: 1895465450}
 --- !u!114 &1409048154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108728,7 +108729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 1}
   m_AnchorMax: {x: 0.95, y: 1}
-  m_AnchoredPosition: {x: -284.0001, y: -129}
+  m_AnchoredPosition: {x: -284.00012, y: -129}
   m_SizeDelta: {x: -564.65, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1631390796
