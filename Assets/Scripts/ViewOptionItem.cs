@@ -13,6 +13,7 @@ public class ViewOptionItem : MonoBehaviour
     private void OnEnable()
     {
         UpdateValues(gameObject.name);
+        Debug.Log("ShowHeartRate: " + PlayerPrefs.GetInt("ShowHeartRate"));
     }
 
     public void UpdateValues(string itemName)

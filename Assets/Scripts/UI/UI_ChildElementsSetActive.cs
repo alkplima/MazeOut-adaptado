@@ -20,13 +20,13 @@ public class UI_ChildElementsSetActive : MonoBehaviour
             scoreWrapper.SetActive(false);
         }
 
-        if (PlayerPrefs.GetInt("ShowHeartRate") == 0)
+        if (PlayerPrefs.GetInt("DataProcessingMode") == 1)
         {
-            hrWrapper.SetActive(false);
+            hrWrapper.SetActive(true);
         }
         else
         {
-            hrWrapper.SetActive(true);
+            hrWrapper.SetActive(false);
         }
     }
 }

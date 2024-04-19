@@ -54,7 +54,7 @@ public class ScoreHUD : MonoBehaviour {
 
         text.text = (change > 0 ? "+ " : "") + change.ToString ();
 
-        text.color = colorPadronized;
+        text.color = colorGreen;
 
         // switch (change) {
         //     case <10:

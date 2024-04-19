@@ -15,6 +15,7 @@ public class UI_SetHypeRateID : MonoBehaviour
             AtualizarValorInputField();
         }
     }
+    
     public void ChangeHypeRateID(string id)
     {
         PlayerPrefs.SetString("HypeRateID", id);

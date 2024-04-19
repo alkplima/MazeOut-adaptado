@@ -21,6 +21,7 @@ public class UI_ChangeName : MonoBehaviour
     {
         VariaveisGlobais.nomePaciente = name;
         PlayerPrefs.SetString("NomePaciente", name);
+        ZerarBestScore();
     }
 
     private void AtualizarValorInputField()
@@ -29,5 +30,11 @@ public class UI_ChangeName : MonoBehaviour
         {
             nomeInputField.text = VariaveisGlobais.nomePaciente;
         }
+    }
+
+    private void ZerarBestScore()
+    {
+        PlayerPrefs.SetInt("ScoreRecorde", 0);
+        VariaveisGlobais.scoreRecorde = 0;
     }
 }

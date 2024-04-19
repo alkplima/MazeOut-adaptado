@@ -26,10 +26,7 @@ public class UI_WaitNextScreen : MonoBehaviour
         switch (whatModal)
         {
             case ("success"):
-                if (VariaveisGlobais.minHRPartidaAtual != -1 &&
-                    VariaveisGlobais.avgHRPartidaAtual != -1 &&
-                    VariaveisGlobais.maxHRPartidaAtual != -1
-                    )
+                if (PlayerPrefs.GetInt("DataProcessingMode") == 1 || PlayerPrefs.GetInt("ShowHeartRate") == 1)
                     successModalWithHR.SetActive(true);
                 else
                     successModal.SetActive(true);

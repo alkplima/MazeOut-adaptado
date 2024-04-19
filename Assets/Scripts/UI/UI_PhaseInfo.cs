@@ -25,11 +25,12 @@ public class UI_PhaseInfo : MonoBehaviour
         {
             if (VariaveisGlobais.partidaCorrente == -8) // Calibração
             {
+                VariaveisGlobais.contagemPartidasAuto = 0;
                 text.text = "Fast calibration";
             }
             else // Tutorial
             {
-                text.text = "Tutorial " + (-VariaveisGlobais.partidaCorrente).ToString() + "/7";
+                text.text = "Tutorial " + (-VariaveisGlobais.partidaCorrente).ToString() + "/5";
             }
         }
         else // Partida avulsa
