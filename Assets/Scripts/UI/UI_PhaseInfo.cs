@@ -17,7 +17,12 @@ public class UI_PhaseInfo : MonoBehaviour
                 ++VariaveisGlobais.contagemPartidasAuto;
                 text.text = "Auto maze " + VariaveisGlobais.contagemPartidasAuto.ToString();
             }
-            else {
+            else if (VariaveisGlobais.partidaCorrente >= 21) // Não-adaptativo
+            {
+                text.text = "Non-adaptive " + (VariaveisGlobais.partidaCorrente - 20).ToString() + "/10";
+            }
+            else // Trilha
+            {
                 text.text = "Challenge " + VariaveisGlobais.partidaCorrente.ToString() + "/14";
             }
         }
@@ -54,6 +59,10 @@ public class UI_PhaseInfo : MonoBehaviour
         else if (VariaveisGlobais.partidaCorrente == -8 || VariaveisGlobais.partidaCorrente == 2001) // Automático / Adaptativo
         {
             VariaveisGlobais.tipoPartida = 'A';
+        }
+        else if (VariaveisGlobais.partidaCorrente >= 21) // Não-adaptativo
+        {
+            VariaveisGlobais.tipoPartida = 'N';
         }
         else // Desafio
         {

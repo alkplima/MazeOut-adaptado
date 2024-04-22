@@ -37,7 +37,7 @@ public class FinalizouPartida : MonoBehaviour
             {
                 gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfChallengeModal();
             }
-            if (VariaveisGlobais.partidaCorrente == -5 && VariaveisGlobais.estiloJogoCorrente == "Calibracao")
+            if ((VariaveisGlobais.partidaCorrente == -5 || VariaveisGlobais.partidaCorrente == 30) && VariaveisGlobais.estiloJogoCorrente == "Calibracao")
             {
                 gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfTutorialModal();
             }

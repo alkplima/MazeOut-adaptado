@@ -27,15 +27,23 @@ public class UI_SelecionarPartida : MonoBehaviour {
 		// 	VariaveisGlobais.partidaCorrente = partida;
 		// }
 		// else 
+		Debug.Log("Estilo Jogo Corrente: " + VariaveisGlobais.estiloJogoCorrente + " Partida Corrente: " + VariaveisGlobais.partidaCorrente + " Partida: " + partida);
 		if (VariaveisGlobais.estiloJogoCorrente == "Trilha") // Trilha
 		{
 			VariaveisGlobais.partidaCorrente += 1;
 		}
 		else if (VariaveisGlobais.estiloJogoCorrente == "Calibracao")
 		{
-			if (VariaveisGlobais.partidaCorrente == -8 || VariaveisGlobais.partidaCorrente == 2001) { 
+			if (VariaveisGlobais.partidaCorrente >= 21 && VariaveisGlobais.partidaCorrente != 2001)
+			{
+				VariaveisGlobais.partidaCorrente += 1; // Partidas não-adaptativas
+			}
+			else if (VariaveisGlobais.partidaCorrente == -8 || VariaveisGlobais.partidaCorrente == 2001) 
+			{ 
 				VariaveisGlobais.partidaCorrente = 2001; // Partida de labirinto automático
-			} else {
+			} 
+			else
+			{
 				VariaveisGlobais.partidaCorrente -= 1; // Calibração
 			}
 		}

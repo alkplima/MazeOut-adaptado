@@ -8,6 +8,7 @@ public class UI_ChildElementsSetActive : MonoBehaviour
 {
     [SerializeField] private GameObject scoreWrapper;
     [SerializeField] private GameObject hrWrapper;
+    [SerializeField] private GameObject GameScreenManager;
 
     public void OnEnable()
     {
@@ -23,10 +24,12 @@ public class UI_ChildElementsSetActive : MonoBehaviour
         if (PlayerPrefs.GetInt("DataProcessingMode") == 1)
         {
             hrWrapper.SetActive(true);
+            GameScreenManager.GetComponent<hyperateSocketInvisible>().enabled = false;
         }
         else
         {
             hrWrapper.SetActive(false);
+            GameScreenManager.GetComponent<hyperateSocketInvisible>().enabled = true;
         }
     }
 }

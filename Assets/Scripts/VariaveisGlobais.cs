@@ -30,7 +30,7 @@ public static class VariaveisGlobais
     public static ItemEventoDB[] itensRelatorio = new ItemEventoDB[0];
 
     // variáveis auxiliares para cada entrada no relatório
-    public static char tipoPartida = ' '; // P - Personalizado, T - Calibração, A - Automático, D - Desafio
+    public static char tipoPartida = ' '; // P - Personalizado, T - Calibração, A - Automático, D - Desafio, N - Não-adaptativo
     public static int numReta;
     public static char direcaoReta;
     public static string dateTimeInicioPartida;

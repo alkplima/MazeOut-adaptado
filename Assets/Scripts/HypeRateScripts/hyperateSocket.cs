@@ -207,6 +207,12 @@ public class hyperateSocket : MonoBehaviour
     void OnDisable()
     {
         VariaveisGlobais.avgHRPartidaAnterior = VariaveisGlobais.avgHRPartidaAtual;
+        // Stop the WebSocket connection when the script is disabled
+        if (websocket != null && websocket.State == WebSocketState.Open)
+        {
+            // Close the WebSocket connection
+            websocket.Close();
+        }
     }
 
 }

@@ -20,14 +20,25 @@ public class LoadGame : Singleton<SaveHandler> {
     private void OnEnable() {
         if (VariaveisGlobais.partidaCorrente != 2001)
         {
-            if (VariaveisGlobais.partidaCorrente == 0) {
+            if (VariaveisGlobais.partidaCorrente == 0)
+            {
                 filename = "mazeData.json";
-            } else if (VariaveisGlobais.partidaCorrente < 0) {
+            } else if (VariaveisGlobais.partidaCorrente < 0) 
+            {
                 filename = "calibration" + (VariaveisGlobais.partidaCorrente * -1).ToString() + ".json";
-            } else {
-                filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
+            } else 
+            {
+                if (VariaveisGlobais.partidaCorrente >= 21)
+                {
+                    filename = "noadaption" + (VariaveisGlobais.partidaCorrente - 20).ToString() + ".json";
+                }
+                else 
+                {
+                    filename = "level" + VariaveisGlobais.partidaCorrente.ToString() + ".json";
+                }
             }
-            StartCoroutine(onLoad());   
+            StartCoroutine(onLoad());
+            Debug.Log("Carregando partida " + filename); 
         }
     }
 
