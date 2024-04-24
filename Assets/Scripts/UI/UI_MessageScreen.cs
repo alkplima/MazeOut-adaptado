@@ -10,6 +10,7 @@ public class UI_MessageScreen : MonoBehaviour
     public GameObject endOfChallengeModal;
     public GameObject endOfCustomMatchModal;
     public GameObject endOfTutorialModal;
+    public GameObject endOfExperimentModal;
 
     public void ShowSuccessModal()
     {
@@ -64,5 +65,12 @@ public class UI_MessageScreen : MonoBehaviour
         messageScreen.SetActive(true);
         currentScreen.SetActive(false);
         endOfTutorialModal.SetActive(true);
+    }
+
+    public void ShowEndOfExperimentModal()
+    {
+        messageScreen.SetActive(true);
+        currentScreen.SetActive(false);
+        endOfExperimentModal.SetActive(true);
     }
 }
