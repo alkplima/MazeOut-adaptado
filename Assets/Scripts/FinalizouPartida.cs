@@ -33,15 +33,16 @@ public class FinalizouPartida : MonoBehaviour
                 VariaveisGlobais.AtualizarAtributosBuffer(VariaveisGlobais.tamanhoBufferBD);
                 VariaveisGlobais.conexaoBD.PostData();
             }
+            
             if (VariaveisGlobais.partidaCorrente == 14 && VariaveisGlobais.estiloJogoCorrente == "Trilha")
             {
                 gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfChallengeModal();
             }
-            if ((VariaveisGlobais.partidaCorrente == -5) && VariaveisGlobais.estiloJogoCorrente == "Calibracao")
+            else if ((VariaveisGlobais.partidaCorrente == -5) && VariaveisGlobais.estiloJogoCorrente == "Calibracao")
             {
                 gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfTutorialModal();
             }
-            if (VariaveisGlobais.partidaCorrente == 30 || VariaveisGlobais.contagemPartidasAuto == 9) //add automaze9
+            else if (VariaveisGlobais.partidaCorrente == 30 || VariaveisGlobais.contagemPartidasAuto == 9)
             {
                 gameScreenManager.GetComponent<UI_MessageScreen>().ShowEndOfExperimentModal();
             }
