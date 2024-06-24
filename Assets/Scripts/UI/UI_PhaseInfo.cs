@@ -19,10 +19,12 @@ public class UI_PhaseInfo : MonoBehaviour
             }
             else if (VariaveisGlobais.partidaCorrente >= 21) // Não-adaptativo
             {
+                VariaveisGlobais.contagemPartidasAuto = 0;
                 text.text = "Non-adaptive " + (VariaveisGlobais.partidaCorrente - 20).ToString() + "/10";
             }
             else // Trilha
             {
+                VariaveisGlobais.contagemPartidasAuto = 0;
                 text.text = "Challenge " + VariaveisGlobais.partidaCorrente.ToString() + "/14";
             }
         }
