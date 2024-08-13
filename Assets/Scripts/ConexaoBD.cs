@@ -42,37 +42,38 @@ public class ConexaoBD : MonoBehaviour {
         else
             dataAtual = System.DateTime.Now.ToString("dd'-'MM'-'yyyy' 'HH'h 'mm'm 'ss's'");
 
-
         for (int i = 0; i < VariaveisGlobais.itensRelatorio.Length; i++)
         {
-            str = str +
-                VariaveisGlobais.itensRelatorio[i].DateTimeInicioPartida + ";" + // Horário do início da partida
-                VariaveisGlobais.itensRelatorio[i].NomePaciente + ";" + // Nome do paciente
-                VariaveisGlobais.itensRelatorio[i].TipoPartida + ";" + // Tipo de partida
-                VariaveisGlobais.itensRelatorio[i].TipoAdaptacao + ";" + // Tipo de adaptacao
-                VariaveisGlobais.itensRelatorio[i].NumReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].DirecaoReta + ";" + // Tempo total configurado para a partida
-                // VariaveisGlobais.itensRelatorio[i].TempoTotalPartida + ";" + // Tempo total configurado (planejado) para a partida
-                VariaveisGlobais.itensRelatorio[i].TempoTotalGasto.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // NEW!
-                VariaveisGlobais.itensRelatorio[i].TempoTotalReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // Tempo total na reta
-                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadas + ";" +    //Total de moedas coletadas na partida (até o momento)
-                VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadasReta + ";" + // Total de moedas coletadas na reta em específico
-                VariaveisGlobais.itensRelatorio[i].UsouAjudaNaReta + ";" + // Usou ajuda na reta?
-                VariaveisGlobais.itensRelatorio[i].EscalaMaxDaAjuda.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // NEW!
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_InicioReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_InicioReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_FimReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_FimReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Maxima + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Maxima + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaX_Minima + ";" +
-                VariaveisGlobais.itensRelatorio[i].CoordenadaY_Minima + ";" +
-                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMediaReta + ";" +
-                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMinimaPartida + ";" +
-                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMediaPartida + ";" +
-                VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMaximaPartida + ";" +
-                VariaveisGlobais.itensRelatorio[i].ScoreFinal + ";" +
-                VariaveisGlobais.NomeDoJogo + System.Environment.NewLine;
+            if (!string.IsNullOrWhiteSpace(VariaveisGlobais.itensRelatorio[i].NomePaciente)) {
+                str = str +
+                    VariaveisGlobais.itensRelatorio[i].DateTimeInicioPartida + ";" + // Horário do início da partida
+                    VariaveisGlobais.itensRelatorio[i].NomePaciente + ";" + // Nome do paciente
+                    VariaveisGlobais.itensRelatorio[i].TipoPartida + ";" + // Tipo de partida
+                    VariaveisGlobais.itensRelatorio[i].TipoAdaptacao + ";" + // Tipo de adaptacao
+                    VariaveisGlobais.itensRelatorio[i].NumReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].DirecaoReta + ";" + // Tempo total configurado para a partida
+                    // VariaveisGlobais.itensRelatorio[i].TempoTotalPartida + ";" + // Tempo total configurado (planejado) para a partida
+                    VariaveisGlobais.itensRelatorio[i].TempoTotalGasto.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // NEW!
+                    VariaveisGlobais.itensRelatorio[i].TempoTotalReta.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // Tempo total na reta
+                    VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadas + ";" +    //Total de moedas coletadas na partida (até o momento)
+                    VariaveisGlobais.itensRelatorio[i].TotalMoedasColetadasReta + ";" + // Total de moedas coletadas na reta em específico
+                    VariaveisGlobais.itensRelatorio[i].UsouAjudaNaReta + ";" + // Usou ajuda na reta?
+                    VariaveisGlobais.itensRelatorio[i].EscalaMaxDaAjuda.ToString("00.00", CultureInfo.InvariantCulture).Replace(",", ".") + ";" + // NEW!
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaX_InicioReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaY_InicioReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaX_FimReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaY_FimReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaX_Maxima + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaY_Maxima + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaX_Minima + ";" +
+                    VariaveisGlobais.itensRelatorio[i].CoordenadaY_Minima + ";" +
+                    VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMediaReta + ";" +
+                    VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMinimaPartida + ";" +
+                    VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMediaPartida + ";" +
+                    VariaveisGlobais.itensRelatorio[i].FrequenciaCardiacaMaximaPartida + ";" +
+                    VariaveisGlobais.itensRelatorio[i].ScoreFinal + ";" +
+                    VariaveisGlobais.NomeDoJogo + System.Environment.NewLine;
+            }
         }
 
         return str;

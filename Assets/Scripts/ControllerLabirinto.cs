@@ -16,6 +16,7 @@ public class ControllerLabirinto : MonoBehaviour
     internal bool adjustingDimensions = false;
     Coroutine cr_adjustScreen_ref;
     private bool cr_adjust_isRunning = false;
+    
     void Awake()
     {
         // Rotina para garantir que eh o unico ControllerJogo em operacao (Singleton).

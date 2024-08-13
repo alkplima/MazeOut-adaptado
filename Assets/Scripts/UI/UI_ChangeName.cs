@@ -14,8 +14,6 @@ public class UI_ChangeName : MonoBehaviour
             VariaveisGlobais.nomePaciente = PlayerPrefs.GetString("NomePaciente");
             AtualizarValorInputField();
         }
-
-        Debug.Log("NomePaciente: " + VariaveisGlobais.nomePaciente);
     }
     public void ChangeName(string name)
     {
