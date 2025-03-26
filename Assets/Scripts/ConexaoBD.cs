@@ -12,9 +12,11 @@ public class ConexaoBD : MonoBehaviour {
     // http://wiki.unity3d.com/index.php?title=Server_Side_Highscores#C.23_-_HSController.cs
 
     private string secretKey = "GrupoJogosSerios"; // Edit this value and make sure it's the same as the one stored on the server
-    //public string addDataURL = "https://rogarpon.com.br/projetos/support/addDataGames.php?"; //be sure to add a ? to your url
-                                                                                             //public string highscoreURL = "http://localhost/unity_test/display.php";
+                                                   //public string addDataURL = "https://rogarpon.com.br/projetos/support/addDataGames.php?"; //be sure to add a ? to your url
+                                                   //public string highscoreURL = "http://localhost/unity_test/display.php";
     public string addDataPOST_URL = "https://rogarpon.com.br/projetos/support/addDataGamesPOST.php";
+    public string addDataPOST_URL_UK = "https://physiogames.co.uk/system/addDataGamesPOST.php";
+
     // Use this for initialization
     void Start () {
         if (VariaveisGlobais.conexaoBD == null)
@@ -121,7 +123,9 @@ public class ConexaoBD : MonoBehaviour {
         form.AddField("hash", PaterlandGlobal.SomaMd5(NomeDoJogo + secretKey));
         form.AddField("conteudo", conteudoPost);
 
-        var w = new WWW(addDataPOST_URL, form);
+        //var w = new WWW(addDataPOST_URL, form);
+        var w = new WWW(addDataPOST_URL_UK, form);
+        
         yield return w;
         if (w.error != null)
             Debug.Log("Houve um erro na conexão com o banco de dados: " + w.error);
